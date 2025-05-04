@@ -1,26 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Thay Switch bằng Routes
-import { CartProvider } from './context/CartContext';
-import HomePage from './pages/HomePage';
-import CakeDetail from './pages/CakeDetail';
-import Cart from './pages/Cart';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route,BrowserRouter  } from 'react-router-dom';
+import { Navigate } from 'react-router-dom'
+import CustomerRoutes from './features/customer/customerRoutes.tsx'
+import { CartProvider } from './contexts/CartContext.tsx';
 
-const App = () => {
+function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Header />
-        <Routes> {/* Thay Switch bằng Routes */}
-          <Route path="/" element={<HomePage />} /> {/* Sử dụng element thay vì component */}
-          <Route path="/cake/:id" element={<CakeDetail />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </CartProvider>
+      <CartProvider> 
+        <BrowserRouter>
+          <Routes>
+            <Route path="/customer/*" element={<CustomerRoutes />} />
+            <Route path="*" element={<Navigate to="/customer/home" />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
   );
-};
+}
 
 export default App;
