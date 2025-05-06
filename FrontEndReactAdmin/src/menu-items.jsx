@@ -12,6 +12,13 @@ const menuItems = {
           type: 'item',
           icon: 'feather icon-home',
           url: '/app/dashboard/default'
+        },
+        {
+          id: 'product',
+          title: 'Sản phẩm',
+          type: 'item',
+          icon: 'feather icon-shopping-bag',
+          url: '/app/products'
         }
       ]
     },
