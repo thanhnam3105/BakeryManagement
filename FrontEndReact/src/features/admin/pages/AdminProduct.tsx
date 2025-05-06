@@ -1,163 +1,197 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import {
-  Container, Typography, Table, TableBody, TableCell,
-  TableContainer, TableHead, TableRow, Paper, Button,
-  Dialog, DialogActions, DialogContent, DialogTitle,
-  TextField, IconButton
-} from '@mui/material';
-import { Edit, Delete } from '@mui/icons-material';
+  Button,
+  TextField,
+  Typography,
+  Box,
+  Stack,
+} from "@mui/material";
+import { Delete, Edit, Add } from "@mui/icons-material";
+import ProductFormDialog from "../components/AddEditProductDialog.tsx";
+import ConfirmDeleteDialog from "../../../components/ConfirmDeleteDialog.tsx";
 
-const ProductManagement = () => {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Sản phẩm 1', price: 100 },
-    { id: 2, name: 'Sản phẩm 2', price: 200 },
-    { id: 3, name: 'Sản phẩm 3', price: 300 }
-  ]);
+const initialRows = [
+  {
+    id: 1,
+    cake_id: "CK001",
+    cake_name: "Chocolate Cake",
+    category_id: 1,
+    size: "Medium",
+    price: 200,
+    image: "chocolate.jpg",
+    description: "Rich chocolate flavor",
+    status: "Available",
+  },
+  {
+    id: 2,
+    cake_id: "CK002",
+    cake_name: "Vanilla Cake",
+    category_id: 2,
+    size: "Large",
+    price: 180,
+    image: "vanilla.jpg",
+    description: "Classic vanilla taste",
+    status: "Out of stock",
+  },
+];
 
-  const [openDialog, setOpenDialog] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
-  const [currentProduct, setCurrentProduct] = useState<{ id?: number; name: string; price: string }>({ name: '', price: '' });
+export default function CakeManagement() {
+  const [rows, setRows] = useState(initialRows);
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [openDelete, setOpenDelete] = useState(false);
+  const [search, setSearch] = useState("");
+  const [openForm, setOpenForm] = useState(false);
+  const [formData, setFormData] = useState({
+    id: null,
+    cake_id: "",
+    cake_name: "",
+    category_id: "",
+    size: "",
+    price: "",
+    image: "",
+    description: "",
+    status: "Available",
+  });
 
-  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
-  const [productToDelete, setProductToDelete] = useState<number | null>(null);
+  const handleDelete = (id) => {
+    setRows(rows.filter((row) => row.id !== id));
+    setOpenDelete(false);
+  };
 
-  const handleOpenDialog = (product?: { id: number; name: string; price: number } | null) => {
-    if (product) {
-      setIsEdit(true);
-      setCurrentProduct({ ...product, price: String(product.price) });
+  const handleOpenForm = (row = null) => {
+    if (row) {
+      setFormData(row);
     } else {
-      setIsEdit(false);
-      setCurrentProduct({ name: '', price: '' });
+      setFormData({
+        id: null,
+        cake_id: "",
+        cake_name: "",
+        category_id: "",
+        size: "",
+        price: "",
+        image: "",
+        description: "",
+        status: "Available",
+      });
     }
-    setOpenDialog(true);
+    setOpenForm(true);
   };
 
-  const handleCloseDialog = () => {
-    setOpenDialog(false);
-    setCurrentProduct({ name: '', price: '' });
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCurrentProduct({ ...currentProduct, [name]: value });
-  };
-
-  const handleSaveProduct = () => {
-    if (isEdit && currentProduct.id !== undefined) {
-      const productToSave = { ...currentProduct, price: Number(currentProduct.price), id: currentProduct.id };
-      setProducts(products.map(p => p.id === currentProduct.id ? productToSave : p));
+  const handleSave = () => {
+    if (formData.id) {
+      setRows(rows.map((row) => (row.id === formData.id ? formData : row)));
     } else {
-      const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
-      const productToSave = { ...currentProduct, price: Number(currentProduct.price), id: newId };
-      setProducts([...products, productToSave]);
+      const newId = rows.length ? Math.max(...rows.map((r) => r.id)) + 1 : 1;
+      setRows([...rows, { ...formData, id: newId }]);
     }
-    handleCloseDialog();
+    setOpenForm(false);
   };
 
-  const handleOpenDeleteDialog = (id: number) => {
-    setProductToDelete(id);
-    setDeleteDialogOpen(true);
-  };
+  const filteredRows = rows.filter((row) =>
+    row.cake_name.toLowerCase().includes(search.toLowerCase())
+  );
 
-  const handleCloseDeleteDialog = () => {
-    setDeleteDialogOpen(false);
-    setProductToDelete(null);
-  };
-
-  const handleConfirmDelete = () => {
-    if (productToDelete !== null) {
-      setProducts(products.filter(p => p.id !== productToDelete));
-    }
-    handleCloseDeleteDialog();
-  };
+  const columns = [
+    {
+      field: "actions",
+      headerName: "Actions",
+      flex: 1.5,
+      renderCell: (params) => (
+        <Stack direction="row" spacing={1}>
+          <Button
+            variant="outlined"
+            color="primary"
+            size="small"
+            startIcon={<Edit />}
+            onClick={() => handleOpenForm(params.row)}
+          >
+          </Button>
+          <Button
+            variant="outlined"
+            color="error"
+            size="small"
+            startIcon={<Delete />}
+            onClick={() => {
+              setSelectedRow(params.row);
+              setOpenDelete(true);
+            }}
+          >
+          </Button>
+        </Stack>
+      ),
+    },
+    { field: "cake_id", headerName: "Cake ID", flex: 1 },
+    { field: "cake_name", headerName: "Name", flex: 1.5 },
+    { field: "category_id", headerName: "Category ID", flex: 1 },
+    { field: "size", headerName: "Size", flex: 1 },
+    { field: "price", headerName: "Price", flex: 1 },
+    { field: "image", headerName: "Image", flex: 1 },
+    { field: "description", headerName: "Description", flex: 2 },
+    { field: "status", headerName: "Status", flex: 1 },
+   
+  ];
 
   return (
-    <Container>
+    <Box p={3}>
       <Typography variant="h4" gutterBottom>
-        Quản Lý Danh Sách Sản Phẩm
+        🍰 Quản lý sản phẩm
       </Typography>
 
-      <Button variant="contained" color="primary" onClick={() => handleOpenDialog()}>
-        Thêm Sản Phẩm
-      </Button>
+      <Box
+        mb={2}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <TextField
+          label="Tìm kiếm sản phẩm"
+          variant="outlined"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          sx={{ width: 300 }}
+        />
+        <Button
+          variant="contained"
+          startIcon={<Add />}
+          onClick={() => handleOpenForm()}
+        >
+          Thêm sản phẩm
+        </Button>
+      </Box>
 
-      <TableContainer component={Paper} sx={{ marginTop: 2 }}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Tên Sản Phẩm</TableCell>
-              <TableCell>Giá</TableCell>
-              <TableCell>Hành Động</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {products.map((product) => (
-              <TableRow key={product.id}>
-                <TableCell>{product.id}</TableCell>
-                <TableCell>{product.name}</TableCell>
-                <TableCell>{product.price} VND</TableCell>
-                <TableCell>
-                  <IconButton color="primary" onClick={() => handleOpenDialog(product)}>
-                    <Edit />
-                  </IconButton>
-                  <IconButton color="error" onClick={() => handleOpenDeleteDialog(product.id)}>
-                    <Delete />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Box height={500}>
+        <DataGrid
+          rows={filteredRows}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5, 10]}
+          disableSelectionOnClick
+          components={{ Toolbar: GridToolbar }}
+          sx={{
+            borderRadius: 2,
+            boxShadow: 2,
+            backgroundColor: "#fff",
+          }}
+        />
+      </Box>
 
-      <Dialog open={openDialog} onClose={handleCloseDialog}>
-        <DialogTitle>{isEdit ? 'Chỉnh Sửa Sản Phẩm' : 'Thêm Sản Phẩm Mới'}</DialogTitle>
-        <DialogContent>
-          <TextField
-            label="Tên Sản Phẩm"
-            fullWidth
-            margin="normal"
-            name="name"
-            value={currentProduct.name}
-            onChange={handleChange}
-          />
-          <TextField
-            label="Giá"
-            fullWidth
-            margin="normal"
-            name="price"
-            type="number"
-            value={currentProduct.price}
-            onChange={handleChange}
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseDialog} color="primary">
-            Hủy
-          </Button>
-          <Button onClick={handleSaveProduct} color="primary">
-            {isEdit ? 'Cập Nhật' : 'Thêm'}
-          </Button>
-        </DialogActions>
-      </Dialog>
+      {/* Dialog xác nhận xóa */}
+      <ConfirmDeleteDialog
+        open={openDelete}
+        onClose={() => setOpenDelete(false)}
+        onConfirm={() => handleDelete(selectedRow.id)}
+        itemName={selectedRow?.cake_name}
+      />
 
-      <Dialog open={deleteDialogOpen} onClose={handleCloseDeleteDialog}>
-        <DialogTitle>Xác nhận xóa</DialogTitle>
-        <DialogContent>
-          <Typography>Bạn có chắc chắn muốn xóa sản phẩm này?</Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseDeleteDialog} color="primary">
-            Hủy
-          </Button>
-          <Button onClick={handleConfirmDelete} color="error">
-            Xóa
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </Container>
+      {/* Dialog form thêm/sửa */}
+      <ProductFormDialog
+        open={openForm}
+        onClose={() => setOpenForm(false)}
+        onSave={handleSave}
+        formData={formData}
+        setFormData={setFormData}
+      />
+    </Box>
   );
-};
-
-export default ProductManagement;
+}
