@@ -58,7 +58,7 @@ const routes = [
       {
         exact: 'true',
         path: '/app/products',
-        element: lazy(() => import('./views/Product'))
+        element: lazy(() => import('./01_custom/admin/pages/Product'))
       },
       {
         exact: 'true',
