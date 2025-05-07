@@ -15,10 +15,17 @@ const menuItems = {
         },
         {
           id: 'product',
-          title: 'Sản phẩm',
+          title: 'Products',
           type: 'item',
           icon: 'feather icon-shopping-bag',
           url: '/app/products'
+        },
+        {
+          id: 'orders',
+          title: 'Orders',
+          type: 'item',
+          icon: 'feather icon-shopping-bag',
+          url: '/app/orders'
         }
       ]
     },

@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { ConfigProvider } from './contexts/ConfigContext';
+import { ConfirmProvider } from './01_custom/admin/services/ConfirmServiceContext';
 
 import './index.scss';
 import App from './App';
@@ -11,7 +12,9 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <ConfigProvider>
-    <App />
+    <ConfirmProvider>
+      <App />
+    </ConfirmProvider>
   </ConfigProvider>
 );
 
