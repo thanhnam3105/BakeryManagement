@@ -1,0 +1,25 @@
+Người A (Frontend):
+	git clone https://github.com/org/project.git
+
+Tạo nhánh company từ main:
+	git checkout -b company
+	git push origin company
+
+Sau khi hoàn thành:
+	git add .
+	git commit -m "note comment"
+	git push origin company
+
+Người B (Backend):
+git clone https://github.com/org/project.git
+
+Tạo nhánh company từ main:
+	git checkout -b home
+
+lấy source mới về trước khi commit
+	git pull origin develop (nếu có)
+
+Sau khi hoàn thành:
+	git add .
+	git commit -m "note comment"
+	git push origin company
