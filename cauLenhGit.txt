@@ -22,4 +22,4 @@ lấy source mới về trước khi commit
 Sau khi hoàn thành:
 	git add .
 	git commit -m "note comment"
-	git push origin company
+	git push origin home
