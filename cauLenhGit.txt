@@ -1,4 +1,4 @@
-Người A (Frontend):
+Người A (Frontend): branch company
 	git clone https://github.com/org/project.git
 
 Tạo nhánh company từ main:
@@ -9,17 +9,28 @@ Sau khi hoàn thành:
 	git add .
 	git commit -m "note comment"
 	git push origin company
-
-Người B (Backend):
+--------------------------------------------------------
+Người B (Backend): branch home
 git clone https://github.com/org/project.git
 
 Tạo nhánh company từ main:
 	git checkout -b home
 
 lấy source mới về trước khi commit
-	git pull origin develop (nếu có)
+	git pull origin main
 
 Sau khi hoàn thành:
 	git add .
 	git commit -m "note comment"
 	git push origin home
+
+--------------------------------------------------------
+Merge src
+B1:
+đứng tại main merge front-end
+	git merge company
+
+đứng tại main merge (Backend): 
+	git merge home
+
+git push origin main
