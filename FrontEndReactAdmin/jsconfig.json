@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "jsx": "react-jsx"      //nam.pt - dùng để nhận biết file có đuôi tsx
+   
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

@@ -58,12 +58,12 @@ const routes = [
       {
         exact: 'true',
         path: '/app/products',
-        element: lazy(() => import('./01_custom/admin/pages/Product'))
+        element: lazy(() => import('./01_custom/pages/admin/Product/ProductList'))
       },
       {
         exact: 'true',
         path: '/app/orders',
-        element: lazy(() => import('./01_custom/admin/pages/Orders'))
+        element: lazy(() => import('./01_custom/pages/admin/Order/OrderList'))
       },
       {
         exact: 'true',

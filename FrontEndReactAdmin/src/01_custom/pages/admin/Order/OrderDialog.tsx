@@ -1,0 +1,95 @@
+import React, { useState, useEffect } from 'react';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+  Button,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
+} from '@mui/material';
+
+interface OrderDialogProps {
+  open: boolean;
+  onClose: () => void;
+  order?: any; // order có thể là bất kỳ kiểu gì từ backend, có thể thay thế bằng 'any'
+  onSave: (updatedOrder: any) => void;
+}
+
+const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave }) => {
+  const [formData, setFormData] = useState<any>({});
+  // Mảng statusOptions có cả value và name
+  const statusOptions = [
+    { value: '1', name: 'Pending' },
+    { value: '2', name: 'Processing' },
+    { value: '3', name: 'Shipped' },
+    { value: '4', name: 'Delivered' }
+  ];
+  // Mảng paymentMethodOptions có cả value và name
+  const paymentMethodOptions = [
+    { value: '1', name: 'Credit Card' },
+    { value: '2', name: 'PayPal' },
+    { value: '3', name: 'Bank Transfer' },
+    { value: '4', name: 'Cash on Delivery' }
+  ];
+
+  useEffect(() => {
+    if (order) {
+      setFormData(order); // Chỉ khi có `order` mới set giá trị form
+    }
+  }, [order]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev: any) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = () => {
+    onSave(formData);
+    onClose(); // Đóng dialog sau khi lưu
+  };
+
+  return (
+    <Dialog open={open} onClose={onClose}>
+      <DialogTitle>Edit Order</DialogTitle>
+      <DialogContent>
+        <FormControl fullWidth margin="normal">
+          <InputLabel>Status</InputLabel>
+          <Select name="status" value={formData?.status || ''} onChange={handleChange} label="Status">
+            {statusOptions.map((status) => (
+              <MenuItem key={status.value} value={status.value}>
+                {status.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <FormControl fullWidth margin="normal">
+          <InputLabel>Status</InputLabel>
+          <Select name="payment_method" value={formData?.payment_method || ''} onChange={handleChange} label="Payment Method">
+            {paymentMethodOptions.map((payment_method) => (
+              <MenuItem key={payment_method.value} value={payment_method.value}>
+                {payment_method.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose} color="primary">
+          Cancel
+        </Button>
+        <Button onClick={handleSubmit} color="primary">
+          Save
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
+};
+
+export default OrderDialog;
