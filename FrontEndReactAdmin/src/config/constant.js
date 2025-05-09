@@ -82,3 +82,17 @@ export const LABELS_ORDER = {
   CONFIRM_DELETE: 'Xác nhận xóa',
   CONFIRM_DELETE_MESSAGE: 'Bạn có chắc chắn muốn xóa đơn hàng "'
 };
+
+export const statusOptions = [
+  { value: '1', name: 'Pending' },
+  { value: '2', name: 'Processing' },
+  { value: '3', name: 'Shipped' },
+  { value: '4', name: 'Delivered' }
+];
+
+export const paymentMethodOptions = [
+  { value: '1', name: 'Credit Card' },
+  { value: '2', name: 'PayPal' },
+  { value: '3', name: 'Bank Transfer' },
+  { value: '4', name: 'Cash on Delivery' }
+];

@@ -12,6 +12,7 @@ import {
   MenuItem
 } from '@mui/material';
 import ApiService from '../../../services/api.services';
+import { paymentMethodOptions, statusOptions } from 'config/constant';
 
 interface OrderDialogProps {
   open: boolean;
@@ -25,21 +26,6 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave 
   const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState<any>({});
   const urlAPI = 'https://localhost:7031/api/Orders';
-
-  // Mảng statusOptions có cả value và name
-  const statusOptions = [
-    { value: '1', name: 'Pending' },
-    { value: '2', name: 'Processing' },
-    { value: '3', name: 'Shipped' },
-    { value: '4', name: 'Delivered' }
-  ];
-  // Mảng paymentMethodOptions có cả value và name
-  const paymentMethodOptions = [
-    { value: '1', name: 'Credit Card' },
-    { value: '2', name: 'PayPal' },
-    { value: '3', name: 'Bank Transfer' },
-    { value: '4', name: 'Cash on Delivery' }
-  ];
 
   useEffect(() => {
     if (order) {
@@ -57,17 +43,13 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave 
 
   const handleSubmit = () => {
     setIsSaving(true); // Đánh dấu đang lưu
-    apiService
-      .apiPut(urlAPI, formData)
-      .then((response) => {
+    apiService.apiPut(urlAPI, formData).then((response) => {
         onSave(response);
         onClose(); // Đóng dialog sau khi lưu
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.log(error);
         // toastService.showErrorToast(error)
-      })
-      .finally(() => {
+      }).finally(() => {
         setIsSaving(false);
         // loadingStore.hide();
         // toggleSidebar();
