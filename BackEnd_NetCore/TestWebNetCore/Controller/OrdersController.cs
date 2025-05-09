@@ -30,6 +30,14 @@ namespace MyApi.Controllers
             return CreatedAtAction(nameof(GetOrders), new { id = order.Id }, order);
         }
 
+        [HttpPut]
+        public async Task<ActionResult<Order>> UpdateOrder(Order order)
+        {
+            _context.Orders.Update(order);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetOrders), new { id = order.Id }, order);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
