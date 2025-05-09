@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import ConfirmDialog from '../components/common/DialogConfirm';
 
-const ConfirmContext = createContext();
+const ConfirmContext = createContext({});
 
 export const ConfirmProvider = ({ children }) => {
   const [open, setOpen] = useState(false);

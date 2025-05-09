@@ -11,6 +11,7 @@ import {
   Select,
   MenuItem
 } from '@mui/material';
+import ApiService from '../../../services/api.services'; 
 
 interface OrderDialogProps {
   open: boolean;
@@ -20,7 +21,11 @@ interface OrderDialogProps {
 }
 
 const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave }) => {
+  const apiService = new ApiService();
+  const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState<any>({});
+  const urlAPI = 'https://localhost:7031/api/Orders'; 
+
   // Mảng statusOptions có cả value và name
   const statusOptions = [
     { value: '1', name: 'Pending' },
@@ -51,8 +56,21 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave 
   };
 
   const handleSubmit = () => {
-    onSave(formData);
-    onClose(); // Đóng dialog sau khi lưu
+    // onSave(formData);
+    // onClose(); // Đóng dialog sau khi lưu
+
+    setIsSaving(true); // Đánh dấu đang lưu
+    apiService.apiPut(urlAPI, { 
+      // params: searchParams
+    }).then((response) => {
+      // setRows(response);
+    }).catch((error) => {
+      // toastService.showErrorToast(error)
+    }).finally(() => {
+      setIsSaving(false);
+      // loadingStore.hide();
+      // toggleSidebar();
+    });
   };
 
   return (

@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 
 const ConfirmDeleteDialog = ({ open, onCancel, onConfirm, title = 'Xác nhận xóa', content = null }) => {
@@ -15,14 +13,6 @@ const ConfirmDeleteDialog = ({ open, onCancel, onConfirm, title = 'Xác nhận x
       </DialogActions>
     </Dialog>
   );
-};
-
-ConfirmDeleteDialog.propTypes = {
-  open: PropTypes.bool.isRequired,
-  onCancel: PropTypes.func.isRequired,
-  onConfirm: PropTypes.func.isRequired,
-  title: PropTypes.string,
-  content: PropTypes.node
 };
 
 export default ConfirmDeleteDialog;
