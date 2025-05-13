@@ -3222,7 +3222,7 @@
     "es-set-tostringtag" "^2.1.0"
     "mime-types" "^2.1.12"
 
-"formik@2.4.5":
+"formik@^2.4.5":
   "integrity" "sha512-Gxlht0TD3vVdzMDHwkiNZqJ7Mvg77xQNfmBRrNtvzcHZs72TJppSTDKHpImCMJZwcWPBJ8jSQQ95GJzXFf1nAQ=="
   "resolved" "https://registry.npmjs.org/formik/-/formik-2.4.5.tgz"
   "version" "2.4.5"
@@ -5251,10 +5251,10 @@
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
 
-"yup@1.4.0":
-  "integrity" "sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg=="
-  "resolved" "https://registry.npmjs.org/yup/-/yup-1.4.0.tgz"
-  "version" "1.4.0"
+"yup@^1.6.1":
+  "integrity" "sha512-JED8pB50qbA4FOkDol0bYF/p60qSEDQqBD0/qeIrUCG1KbPBIQ776fCUNb9ldbPcSTxA69g/47XTo4TqWiuXOA=="
+  "resolved" "https://registry.npmjs.org/yup/-/yup-1.6.1.tgz"
+  "version" "1.6.1"
   dependencies:
     "property-expr" "^2.0.5"
     "tiny-case" "^1.0.3"

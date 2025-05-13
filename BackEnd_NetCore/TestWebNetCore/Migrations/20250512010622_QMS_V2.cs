@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace TestWebNetCore.Migrations
 {
     /// <inheritdoc />
-    public partial class QMS_V222 : Migration
+    public partial class QMS_V2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,16 +18,16 @@ namespace TestWebNetCore.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    OrderId = table.Column<string>(type: "text", nullable: false),
-                    CustomerId = table.Column<string>(type: "text", nullable: false),
-                    StaffId = table.Column<string>(type: "text", nullable: false),
-                    BranchId = table.Column<string>(type: "text", nullable: false),
-                    OrderDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    DeliveryDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false),
-                    TotalAmount = table.Column<decimal>(type: "numeric", nullable: false),
-                    DeliveryAddress = table.Column<string>(type: "text", nullable: false),
-                    PaymentMethod = table.Column<string>(type: "text", nullable: false)
+                    order_id = table.Column<string>(type: "text", nullable: false),
+                    customer_id = table.Column<string>(type: "text", nullable: false),
+                    staff_id = table.Column<string>(type: "text", nullable: false),
+                    branch_id = table.Column<string>(type: "text", nullable: false),
+                    order_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    delivery_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    status = table.Column<string>(type: "text", nullable: false),
+                    total_amount = table.Column<decimal>(type: "numeric", nullable: false),
+                    delivery_address = table.Column<string>(type: "text", nullable: false),
+                    payment_method = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

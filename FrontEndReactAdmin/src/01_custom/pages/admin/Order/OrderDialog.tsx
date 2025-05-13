@@ -71,7 +71,7 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave 
           </Select>
         </FormControl>
         <FormControl fullWidth margin="normal">
-          <InputLabel>Status</InputLabel>
+          <InputLabel>Payment Method</InputLabel>
           <Select name="payment_method" value={formData?.payment_method || ''} onChange={handleChange} label="Payment Method">
             {paymentMethodOptions.map((payment_method) => (
               <MenuItem key={payment_method.value} value={payment_method.value}>

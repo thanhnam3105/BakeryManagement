@@ -12,8 +12,8 @@ using TestWebNetCore.Data;
 namespace TestWebNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250508043115_QMS_V222")]
-    partial class QMS_V222
+    [Migration("20250512010622_QMS_V2")]
+    partial class QMS_V2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,41 +33,41 @@ namespace TestWebNetCore.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("BranchId")
+                    b.Property<string>("branch_id")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CustomerId")
+                    b.Property<string>("customer_id")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("DeliveryAddress")
+                    b.Property<string>("delivery_address")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DeliveryDate")
+                    b.Property<DateTime>("delivery_date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("OrderDate")
+                    b.Property<DateTime>("order_date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("OrderId")
+                    b.Property<string>("order_id")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PaymentMethod")
+                    b.Property<string>("payment_method")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("StaffId")
+                    b.Property<string>("staff_id")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("status")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("TotalAmount")
+                    b.Property<decimal>("total_amount")
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
