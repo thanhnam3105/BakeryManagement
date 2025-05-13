@@ -13,25 +13,26 @@ import {
 } from '@mui/material';
 import ApiService from '../../../services/api.services';
 import { paymentMethodOptions, statusOptions } from 'config/constant';
+import { ToastService } from '../../../services/toast.service';
 
 interface OrderDialogProps {
   open: boolean;
   onClose: () => void;
-  order?: any; // order có thể là bất kỳ kiểu gì từ backend, có thể thay thế bằng 'any'
+  data?: any; // order có thể là bất kỳ kiểu gì từ backend, có thể thay thế bằng 'any'
   onSave: (updatedOrder: any) => void;
 }
 
-const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave }) => {
+const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, data, onSave }) => {
   const apiService = new ApiService();
   const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState<any>({});
   const urlAPI = 'https://localhost:7031/api/Orders';
 
   useEffect(() => {
-    if (order) {
-      setFormData(order); // Chỉ khi có `order` mới set giá trị form
+    if (data) {
+      setFormData(data); // Chỉ khi có `order` mới set giá trị form
     }
-  }, [order]);
+  }, [data]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -41,14 +42,14 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave 
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSave = () => {
     setIsSaving(true); // Đánh dấu đang lưu
     apiService.apiPut(urlAPI, formData).then((response) => {
         onSave(response);
         onClose(); // Đóng dialog sau khi lưu
+        ToastService.success('Lưu dữ liệu thành công!');
       }).catch((error) => {
-        console.log(error);
-        // toastService.showErrorToast(error)
+        ToastService.error('Lỗi khi lưu dữ liệu! '+error);
       }).finally(() => {
         setIsSaving(false);
         // loadingStore.hide();
@@ -85,7 +86,7 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, order, onSave 
         <Button onClick={onClose} color="primary">
           Cancel
         </Button>
-        <Button onClick={handleSubmit} color="primary">
+        <Button onClick={handleSave} color="primary">
           Save
         </Button>
       </DialogActions>

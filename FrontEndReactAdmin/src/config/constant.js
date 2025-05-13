@@ -26,7 +26,7 @@ export const PRODUCT_STATUS = {
 
 export const LBL_PRODUCT = {
   TITLE: 'Products',
-  ADD_PRODUCT: 'Thêm sản phẩm',
+  ADD_PRODUCT: 'Thêm mới',
   SEARCH: 'Tìm kiếm',
   ACTIONS: 'Thao tác',
   STATUS: 'Trạng thái',

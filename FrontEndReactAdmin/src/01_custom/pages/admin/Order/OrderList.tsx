@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 import { GridPaginationModel } from '@mui/x-data-grid';
 import { LABELS_ORDER } from '../../../../config/constant';
 import ApiService from '../../../services/api.services';
-import DataGridTable from '../../../components/common/Table';
+import DataGridTable from '../../../components/common/Common_GridTable';
 import OrderDialog from './OrderDialog';
-import { columns } from './settings/columns';
+import { columns } from './settings/settings-columns';
+import { ToastService } from '../../../services/toast.service';
+import 'react-toastify/dist/ReactToastify.css';
+import { useLoading } from '../../../services/loading.services';
 
 export default function OrderManagement(): JSX.Element {
   const apiService = new ApiService();
@@ -14,34 +17,36 @@ export default function OrderManagement(): JSX.Element {
   const [search, setSearch] = useState('');
   const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({ page: 0, pageSize: 5 });
   const [openDialog, setOpenDialog] = useState(false);
-  const [selectedOrder, setSelectedOrder] = useState<any>(null);
+  const [selectedOrder, setSelectedData] = useState<any>(null);
+  const { showLoading, hideLoading } = useLoading();
+  const filteredRows = filterRowsByOrderId(rows, search);
 
   useEffect(() => {
     handleSearch();
   }, []);
 
   function handleSearch() {
-    // apiService.apiGet(urlAPI).then(setRows).catch(console.error);
-
-    // loadingStore.show();
     // const searchParams = formGroupSearch.value;
-
-    // Call API 
-    apiService.apiGet(urlAPI, { 
-      // params: searchParams
-    }).then((response) => {
-      setRows(response);
-    }).catch((error) => {
-      console.error
-      // toastService.showErrorToast(error)
-    }).finally(() => {
-      // loadingStore.hide();
-      // toggleSidebar();
-    });
+    showLoading();
+    // Call API
+    apiService
+      .apiGet(urlAPI, {
+        // params: searchParams
+      })
+      .then((response) => {
+        setRows(response);
+        ToastService.success('Đã search xong!');
+      })
+      .catch((error) => {
+        ToastService.error(error);
+      })
+      .finally(() => {
+        hideLoading();
+      });
   }
 
   function handleEditClick(order: any) {
-    setSelectedOrder(order);
+    setSelectedData(order);
     setOpenDialog(true);
   }
 
@@ -52,8 +57,6 @@ export default function OrderManagement(): JSX.Element {
   function filterRowsByOrderId(rows: any[], search: string) {
     return rows.filter((row) => row.order_id?.toLowerCase().includes(search.toLowerCase()));
   }
-
-  const filteredRows = filterRowsByOrderId(rows, search);
 
   return (
     <DataGridTable
@@ -66,7 +69,7 @@ export default function OrderManagement(): JSX.Element {
       onPaginationModelChange={setPaginationModel}
       onEditClick={handleEditClick}
     >
-      <OrderDialog open={openDialog} onClose={() => setOpenDialog(false)} order={selectedOrder} onSave={handleSave} />
+      <OrderDialog open={openDialog} onClose={() => setOpenDialog(false)} data={selectedOrder} onSave={handleSave} />
     </DataGridTable>
   );
 }

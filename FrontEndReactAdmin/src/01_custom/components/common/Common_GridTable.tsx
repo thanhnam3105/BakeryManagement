@@ -1,8 +1,8 @@
 // src/components/DataGridTable.tsx
 import React from 'react';
-import { Box, Typography, TextField, Stack, IconButton } from '@mui/material';
+import { Box, Typography, TextField, Stack, IconButton, Button } from '@mui/material';
 import { DataGrid, GridColDef, GridPaginationModel, GridToolbar } from '@mui/x-data-grid';
-import { Edit } from '@mui/icons-material';
+import { Edit, Delete } from '@mui/icons-material';
 
 interface DataGridTableProps {
   title: string;
@@ -13,7 +13,13 @@ interface DataGridTableProps {
   paginationModel: GridPaginationModel;
   onPaginationModelChange: (model: GridPaginationModel) => void;
   onEditClick?: (row: any) => void;
+  onDeleteClick?: (row: any) => void;
   children?: React.ReactNode;
+  addButton?: {
+    label: string;
+    onClick: () => void;
+    icon?: React.ReactNode;
+  };
 }
 
 const DataGridTable: React.FC<DataGridTableProps> = ({
@@ -25,19 +31,28 @@ const DataGridTable: React.FC<DataGridTableProps> = ({
   paginationModel,
   onPaginationModelChange,
   onEditClick,
-  children
+  onDeleteClick,
+  children,
+  addButton
 }) => {
   const enhancedColumns = columns.map((col) => {
-    if (col.field === 'actions' && onEditClick) {
+    if (col.field === 'actions' && (onEditClick || onDeleteClick)) {
       return {
         ...col,
         sortable: false,
         filterable: false,
         renderCell: (params: any) => (
           <Stack direction="row" spacing={1}>
-            <IconButton color="warning" onClick={() => onEditClick(params.row)}>
-              <Edit />
-            </IconButton>
+            {onEditClick && (
+              <IconButton color="warning" onClick={() => onEditClick(params.row)}>
+                <Edit />
+              </IconButton>
+            )}
+            {onDeleteClick && (
+              <IconButton color="error" onClick={() => onDeleteClick(params.row)}>
+                <Delete />
+              </IconButton>
+            )}
           </Stack>
         )
       };
@@ -59,6 +74,11 @@ const DataGridTable: React.FC<DataGridTableProps> = ({
           onChange={(e) => onSearchChange(e.target.value)}
           sx={{ width: 300 }}
         />
+        {addButton && (
+          <Button variant="contained" startIcon={addButton.icon} onClick={addButton.onClick}>
+            {addButton.label}
+          </Button>
+        )}
       </Box>
 
       <Box height={500}>

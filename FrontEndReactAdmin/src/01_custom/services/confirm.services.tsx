@@ -1,7 +1,7 @@
 // components/ConfirmServiceContext.jsx
 import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import ConfirmDialog from '../components/common/DialogConfirm';
+import ConfirmDialog from '../components/common/Common_DialogConfirm';
 
 const ConfirmContext = createContext({});
 
