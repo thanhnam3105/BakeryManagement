@@ -1,10 +1,10 @@
-// src/components/DataGridTable.tsx
 import React from 'react';
 import { Box, Typography, TextField, Stack, IconButton, Button } from '@mui/material';
 import { DataGrid, GridColDef, GridPaginationModel, GridToolbar } from '@mui/x-data-grid';
 import { Edit, Delete } from '@mui/icons-material';
+import { v4 as uuidv4 } from 'uuid';
 
-interface DataGridTableProps {
+interface Common_GridTableProps {
   title: string;
   rows: any[];
   columns: GridColDef[];
@@ -22,7 +22,7 @@ interface DataGridTableProps {
   };
 }
 
-const DataGridTable: React.FC<DataGridTableProps> = ({
+const Common_GridTable: React.FC<Common_GridTableProps> = ({
   title,
   rows,
   columns,
@@ -35,6 +35,11 @@ const DataGridTable: React.FC<DataGridTableProps> = ({
   children,
   addButton
 }) => {
+  const rowsWithId = rows.map((row) => ({
+    ...row,
+    id: row.id ?? uuidv4()
+  }));
+
   const enhancedColumns = columns.map((col) => {
     if (col.field === 'actions' && (onEditClick || onDeleteClick)) {
       return {
@@ -67,13 +72,7 @@ const DataGridTable: React.FC<DataGridTableProps> = ({
       </Typography>
 
       <Box mb={2} display="flex" justifyContent="space-between" alignItems="center">
-        <TextField
-          label="Search"
-          variant="outlined"
-          value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
-          sx={{ width: 300 }}
-        />
+        <TextField label="Search" variant="outlined" value={search} onChange={(e) => onSearchChange(e.target.value)} sx={{ width: 300 }} />
         {addButton && (
           <Button variant="contained" startIcon={addButton.icon} onClick={addButton.onClick}>
             {addButton.label}
@@ -83,7 +82,7 @@ const DataGridTable: React.FC<DataGridTableProps> = ({
 
       <Box height={500}>
         <DataGrid
-          rows={rows}
+          rows={rowsWithId}
           columns={enhancedColumns}
           paginationModel={paginationModel}
           onPaginationModelChange={onPaginationModelChange}
@@ -103,4 +102,4 @@ const DataGridTable: React.FC<DataGridTableProps> = ({
   );
 };
 
-export default DataGridTable;
+export default Common_GridTable;

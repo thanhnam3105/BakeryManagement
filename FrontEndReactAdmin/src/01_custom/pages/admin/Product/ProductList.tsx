@@ -5,7 +5,7 @@ import ProductDialog from './ProductDialog';
 import { useConfirm } from '../../../services/confirm.services';
 import { LBL_PRODUCT } from '../../../../config/constant';
 import { columns } from './settings/settings-columns';
-import DataGridTable from '../../../components/common/Common_GridTable';
+import Common_GridTable from '../../../components/common/Common_GridTable';
 import ApiService from '../../../services/api.services';
 import { ToastService } from '../../../services/toast.service';
 import { useLoading } from '../../../services/loading.services';
@@ -56,18 +56,18 @@ export default function ProductManagement() {
   }
 
   function handleSave(updatedProduct) {
-    setRows((prev) => prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p)));
+    handleSearch();
   }
 
   function handleDeleteClick(product) {
     confirm({
       title: LBL_PRODUCT.CONFIRM_DELETE,
-      content: `${LBL_PRODUCT.CONFIRM_DELETE_MESSAGE}${product.name}"?`,
+      content: `${LBL_PRODUCT.CONFIRM_DELETE_MESSAGE}${product.nm_product}"?`,
       onConfirm: () => {
         apiService
-          .apiDelete(`${urlAPI}/${product.id}`)
+          .apiDelete(`${urlAPI}/${product.cd_product}`)
           .then(() => {
-            setRows((prev) => prev.filter((p) => p.id !== product.id));
+            setRows((prev) => prev.filter((p) => p.cd_product !== product.cd_product));
             ToastService.success('Xóa sản phẩm thành công!');
           })
           .catch((error) => {
@@ -78,11 +78,11 @@ export default function ProductManagement() {
   }
 
   function filterRowsByName(rows, search) {
-    return rows.filter((row) => row.name?.toLowerCase().includes(search.toLowerCase()));
+    return rows.filter((row) => row.nm_product?.toLowerCase().includes(search.toLowerCase()));
   }
 
   return (
-    <DataGridTable
+    <Common_GridTable
       title={LBL_PRODUCT.TITLE}
       rows={filteredRows}
       columns={columns}
@@ -107,6 +107,6 @@ export default function ProductManagement() {
         data={selectedProduct} 
         onSave={handleSave} 
       />
-    </DataGridTable>
+    </Common_GridTable>
   );
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TestWebNetCore.Data;
@@ -11,9 +12,11 @@ using TestWebNetCore.Data;
 namespace TestWebNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250514022646_QMS_V2222222")]
+    partial class QMS_V2222222
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,13 +35,11 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_create")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_customer")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("cd_payment_method")
                         .HasColumnType("text");
 
                     b.Property<string>("cd_staff")
@@ -46,12 +47,15 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_status")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_update")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("delivery_address")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("dt_create")
@@ -65,6 +69,10 @@ namespace TestWebNetCore.Migrations
 
                     b.Property<DateTime?>("dt_update")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("payment_method")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<decimal>("total_amount")
                         .HasColumnType("numeric");
@@ -80,18 +88,23 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_category")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_create")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_size")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_status")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_update")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("dt_create")
@@ -101,6 +114,7 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("image")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("nm_product")

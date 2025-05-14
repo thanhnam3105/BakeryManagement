@@ -4,14 +4,18 @@ namespace TestWebNetCore.Models
 {
     public class Product
     {
-        public int Id { get; set; }
-        public string cake_id { get; set; }
-        public string name { get; set; }
-        public decimal price { get; set; }
-        public string category { get; set; }
-        public string stock { get; set; }
-        public string size { get; set; }
-        public string image { get; set; }
-        public string status { get; set; }
+        [Required]
+        [Key]
+        public string cd_product { get; set; }
+        public string nm_product { get; set; }
+        public Nullable<decimal> price { get; set; }
+        public string? cd_category { get; set; }
+        public string? cd_size { get; set; }
+        public string? image { get; set; }
+        public string? cd_status { get; set; }
+        public string? cd_create { get; set; }
+        public string? cd_update { get; set; }
+        public Nullable<System.DateTime> dt_create { get; set; }
+        public Nullable<System.DateTime> dt_update { get; set; }
     }
 }

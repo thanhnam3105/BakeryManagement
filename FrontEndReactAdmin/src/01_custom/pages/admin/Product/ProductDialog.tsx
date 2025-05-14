@@ -6,12 +6,17 @@ import { validationSettings } from './settings/settings-validates';
 import { formFieldSettings } from './settings/settings-columns';
 import ApiService from '../../../services/api.services';
 import { ToastService } from '../../../services/toast.service';
+import { LBL_PRODUCT_DIALOG } from '../../../../config/constant';
 
 // ✅ Tạo initialValues từ config và data nếu có
 const getInitialValues = (data) => {
   const initial = {};
   formFieldSettings.forEach((field) => {
-    initial[field.name] = data?.[field.name] ?? (field.name === 'status' ? 'Available' : '');
+    if (field.hidden) {
+      initial[field.name] = null;
+    } else {
+      initial[field.name] = data?.[field.name] ?? (field.name === 'cd_status' ? '1' : '');
+    }
   });
   return initial;
 };
@@ -26,17 +31,25 @@ const ProductDialog = ({ open, onClose, data, onSave }) => {
     validationSchema: validationSettings,
     enableReinitialize: true,
     onSubmit: (values) => {
-      setIsSaving(true);
-      const apiCall = data ? apiService.apiPut(`${urlAPI}/${data.id}`, {data :values}) : apiService.apiPost(urlAPI, {data :values});
-
-      apiCall
+      const apiMethod = data ? apiService.apiPut : apiService.apiPost;
+      
+      // Set hidden fields to null before saving
+      const formData = { ...values };
+      formFieldSettings.forEach((field) => {
+        if (field.hidden) {
+          formData[field.name] = null;
+        }
+      });
+      
+      apiMethod(urlAPI, formData)
         .then((response) => {
           onSave(response);
           onClose();
-          ToastService.success(data ? 'Cập nhật thành công!' : 'Thêm mới thành công!');
+          ToastService.success(data ? LBL_PRODUCT_DIALOG.SUCCESS_UPDATE : LBL_PRODUCT_DIALOG.SUCCESS_ADD);
         })
         .catch((error) => {
-          ToastService.error(error);
+          const message = error.response?.data ?? error.message ?? LBL_PRODUCT_DIALOG.ERROR_SAVE;
+          ToastService.error(message);
         })
         .finally(() => {
           setIsSaving(false);
@@ -64,11 +77,13 @@ const ProductDialog = ({ open, onClose, data, onSave }) => {
         sx: { width: '700px', maxWidth: '90%' }
       }}
     >
-      <DialogTitle>{data ? 'Sửa sản phẩm' : 'Thêm sản phẩm mới'}</DialogTitle>
+      <DialogTitle>{data ? LBL_PRODUCT_DIALOG.TITLE_EDIT : LBL_PRODUCT_DIALOG.TITLE_ADD}</DialogTitle>
       <form onSubmit={formik.handleSubmit}>
         <DialogContent>
           <Box sx={{ pt: 3, display: 'flex', flexDirection: 'column', gap: 3 }}>
-            {formFieldSettings.map(({ name, label, type }) => (
+            {formFieldSettings
+              .filter(field => !field.hidden)
+              .map(({ name, label, type }) => (
               <TextField
                 key={name}
                 name={name}
@@ -91,10 +106,10 @@ const ProductDialog = ({ open, onClose, data, onSave }) => {
               onClose();
             }}
           >
-            Hủy
+            {LBL_PRODUCT_DIALOG.BUTTON_CANCEL}
           </Button>
           <Button type="submit" variant="contained" disabled={isSaving}>
-            {data ? 'Cập nhật' : 'Thêm mới'}
+            {data ? LBL_PRODUCT_DIALOG.BUTTON_UPDATE : LBL_PRODUCT_DIALOG.BUTTON_ADD}
           </Button>
         </DialogActions>
       </form>

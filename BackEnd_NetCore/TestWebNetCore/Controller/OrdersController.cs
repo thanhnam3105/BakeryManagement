@@ -27,7 +27,7 @@ namespace MyApi.Controllers
         {
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetOrders), new { id = order.Id }, order);
+            return CreatedAtAction(nameof(GetOrders), new { id = order.cd_order }, order);
         }
 
         [HttpPut]
@@ -35,7 +35,7 @@ namespace MyApi.Controllers
         {
             _context.Orders.Update(order);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetOrders), new { id = order.Id }, order);
+            return CreatedAtAction(nameof(GetOrders), new { id = order.cd_order }, order);
         }
 
         [HttpDelete("{id}")]

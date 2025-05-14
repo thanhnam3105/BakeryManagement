@@ -12,8 +12,8 @@ using TestWebNetCore.Data;
 namespace TestWebNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250513073834_QMS_V222")]
-    partial class QMS_V222
+    [Migration("20250514073309_QMS_V23")]
+    partial class QMS_V23
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,17 +27,34 @@ namespace TestWebNetCore.Migrations
 
             modelBuilder.Entity("TestWebNetCore.Models.Order", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.Property<string>("cd_order")
+                        .HasColumnType("text");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("branch_id")
+                    b.Property<string>("cd_branch")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("customer_id")
+                    b.Property<string>("cd_create")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_customer")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_payment_method")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_staff")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_update")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -45,76 +62,69 @@ namespace TestWebNetCore.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("delivery_date")
+                    b.Property<DateTime?>("dt_create")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("order_date")
+                    b.Property<DateTime?>("dt_delivery")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("order_id")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime?>("dt_order")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("payment_method")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("staff_id")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime?>("dt_update")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<decimal>("total_amount")
                         .HasColumnType("numeric");
 
-                    b.HasKey("Id");
+                    b.HasKey("cd_order");
 
                     b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("TestWebNetCore.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.Property<string>("cd_product")
+                        .HasColumnType("text");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("cake_id")
+                    b.Property<string>("cd_category")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("category")
+                    b.Property<string>("cd_create")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("cd_size")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_update")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("dt_create")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("dt_update")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("name")
+                    b.Property<string>("nm_product")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("price")
+                    b.Property<decimal?>("price")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("size")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("status")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("stock")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
+                    b.HasKey("cd_product");
 
                     b.ToTable("Products");
                 });

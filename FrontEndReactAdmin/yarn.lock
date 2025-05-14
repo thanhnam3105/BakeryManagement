@@ -5220,6 +5220,11 @@
   "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz"
   "version" "1.5.0"
 
+"uuid@^11.1.0":
+  "integrity" "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="
+  "resolved" "https://registry.npmjs.org/uuid/-/uuid-11.1.0.tgz"
+  "version" "11.1.0"
+
 "vite-jsconfig-paths@2.0.1":
   "integrity" "sha512-rabcTTfKs0MdAsQWcZjbIMo5fcp6jthZce7uFEPgVPgpSY+RNOwjzIJOPES6cB/GJZLSoLGfHM9kt5HNmJvp7A=="
   "resolved" "https://registry.npmjs.org/vite-jsconfig-paths/-/vite-jsconfig-paths-2.0.1.tgz"

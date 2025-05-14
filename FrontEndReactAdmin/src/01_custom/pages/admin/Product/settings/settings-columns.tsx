@@ -1,19 +1,22 @@
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import { LBL_PRODUCT } from '../../../../../config/constant';
+import { LBL_PRODUCT, LBL_PRODUCT_FORM } from '../../../../../config/constant';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton, Stack } from '@mui/material';
 
 export const formFieldSettings = [
-  { name: 'cake_id', label: 'Mã sản phẩm', type: 'text' },
-  { name: 'name', label: 'Tên sản phẩm', type: 'text' },
-  { name: 'price', label: 'Giá', type: 'number' },
-  { name: 'category', label: 'Danh mục', type: 'text' },
-  { name: 'stock', label: 'Tồn kho', type: 'number' },
-  { name: 'size', label: 'Kích thước', type: 'text' },
-  { name: 'image', label: 'Hình ảnh', type: 'text' },
-  { name: 'description', label: 'Mô tả', type: 'text' },
-  { name: 'status', label: 'Trạng thái', type: 'text' }
+  { name: 'cd_product', label: LBL_PRODUCT_FORM.PRODUCT_CODE, type: 'text' },
+  { name: 'nm_product', label: LBL_PRODUCT_FORM.PRODUCT_NAME, type: 'text' },
+  { name: 'price', label: LBL_PRODUCT_FORM.PRICE, type: 'number' },
+  { name: 'cd_category', label: LBL_PRODUCT_FORM.CATEGORY, type: 'text' },
+  { name: 'cd_size', label: LBL_PRODUCT_FORM.SIZE, type: 'text' },
+  { name: 'image', label: LBL_PRODUCT_FORM.IMAGE, type: 'text' },
+  { name: 'description', label: LBL_PRODUCT_FORM.DESCRIPTION, type: 'text' },
+  { name: 'cd_status', label: LBL_PRODUCT_FORM.STATUS, type: 'text' },
+  { name: 'cd_create', label: '', type: 'text', hidden: true },
+  { name: 'cd_update', label: '', type: 'text', hidden: true },
+  { name: 'dt_create', label: '', type: 'date', hidden: true },
+  { name: 'dt_update', label: '', type: 'date', hidden: true }
 ];
 
 export const columns: GridColDef[] = [
@@ -35,7 +38,7 @@ export const columns: GridColDef[] = [
     )
   },
   {
-    field: 'status',
+    field: 'cd_status',
     headerName: 'Status',
     width: 130,
     renderCell: (params: GridRenderCellParams) => <span>{params.value}</span>
@@ -49,17 +52,12 @@ export const columns: GridColDef[] = [
     )
   },
   {
-    field: 'id',
-    headerName: 'ID',
-    width: 90
-  },
-  {
-    field: 'cake_id',
+    field: 'cd_product',
     headerName: 'Product Code',
     width: 130
   },
   {
-    field: 'name',
+    field: 'nm_product',
     headerName: 'Product Name',
     width: 200
   },
@@ -67,22 +65,17 @@ export const columns: GridColDef[] = [
     field: 'price',
     headerName: 'Price',
     width: 130,
-    valueFormatter: (params: { value: number }) => {
-      return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(params.value);
-    }
+    // valueFormatter: (params: { value: number }) => {
+    //   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(params.value);
+    // }
   },
   {
-    field: 'category',
+    field: 'cd_category',
     headerName: 'Category',
     width: 150
   },
   {
-    field: 'stock',
-    headerName: 'Stock',
-    width: 130
-  },
-  {
-    field: 'size',
+    field: 'cd_size',
     headerName: 'Size',
     width: 130
   }

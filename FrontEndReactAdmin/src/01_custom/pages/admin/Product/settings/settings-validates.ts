@@ -1,41 +1,37 @@
 import * as Yup from 'yup';
+import { MESSAGES } from '../../../../../config/constant';
 
 export const validationSettings = Yup.object().shape({
-  cake_id: Yup.string()
-    .required('Mã sản phẩm là bắt buộc')
+  cd_product: Yup.string()
+    .required(MESSAGES.PRODUCT.CODE_REQUIRED)
     // .matches(/^[A-Z0-9]+$/, 'Mã sản phẩm chỉ được chứa chữ hoa và số')
     // .min(3, 'Mã sản phẩm phải có ít nhất 3 ký tự')
-    .max(10, 'Mã sản phẩm không được vượt quá 10 ký tự'),
+    .max(10, MESSAGES.PRODUCT.CODE_MAX_LENGTH),
 
-  name: Yup.string()
-    .required('Tên sản phẩm là bắt buộc')
+  nm_product: Yup.string()
+    .required(MESSAGES.PRODUCT.NAME_REQUIRED)
     // .min(2, 'Tên sản phẩm phải có ít nhất 2 ký tự')
-    .max(100, 'Tên sản phẩm không được vượt quá 100 ký tự'),
+    .max(100, MESSAGES.PRODUCT.NAME_MAX_LENGTH),
 
   price: Yup.number()
-    .required('Giá sản phẩm là bắt buộc')
-    .min(0, 'Giá sản phẩm không được âm')
-    .max(1000000000, 'Giá sản phẩm không được vượt quá 1 tỷ'),
+    .required(MESSAGES.PRODUCT.PRICE_REQUIRED)
+    .min(0, MESSAGES.PRODUCT.PRICE_MIN)
+    .max(1000000000, MESSAGES.PRODUCT.PRICE_MAX),
 
-  category: Yup.string()
-    .required('Danh mục là bắt buộc')
+  cd_category: Yup.string()
+    .required(MESSAGES.PRODUCT.CATEGORY_REQUIRED)
     // .min(2, 'Danh mục phải có ít nhất 2 ký tự')
-    .max(50, 'Danh mục không được vượt quá 50 ký tự'),
+    .max(50, MESSAGES.PRODUCT.CATEGORY_MAX_LENGTH),
 
-  stock: Yup.number()
-    .required('Số lượng tồn kho là bắt buộc')
-    .min(0, 'Số lượng tồn kho không được âm')
-    .max(10000, 'Số lượng tồn kho không được vượt quá 10000'),
-
-  size: Yup.string()
-    .required('Kích thước là bắt buộc'),
+  cd_size: Yup.string()
+    .required(MESSAGES.PRODUCT.SIZE_REQUIRED),
     // .oneOf(['Small', 'Medium', 'Large'], 'Kích thước phải là Small, Medium hoặc Large'),
 
   image: Yup.string()
-    .required('Hình ảnh là bắt buộc'),
+    .required(MESSAGES.PRODUCT.IMAGE_REQUIRED),
     // .url('Hình ảnh phải là một URL hợp lệ'),
 
-  status: Yup.string()
-    .required('Trạng thái là bắt buộc')
+  cd_status: Yup.string()
+    .required(MESSAGES.PRODUCT.STATUS_REQUIRED)
     // .oneOf(['Available', 'Unavailable'], 'Trạng thái phải là Available hoặc Unavailable')
 }); 

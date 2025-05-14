@@ -1,10 +1,10 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { convertBlankToNull } from './common-funtion';
 // import { DialogStore } from '@/store/dialogStore';
 // import { useI18n } from 'vue-i18n';
 // import { Offcanvas } from "bootstrap";
 // import { useRouter } from 'vue-router';
 // import { inject } from 'vue';
-// import { convertBlankToNull } from '@/components/common/service/common-funtion';
 
 class ApiService {
     private apiClient: AxiosInstance; // Axios instance
@@ -92,8 +92,9 @@ class ApiService {
      */
     apiPost = async (url: string, params = {}): Promise<any> => {
         try {
-          // const response = await this.apiClient.post(url, convertBlankToNull({ ...params }));
-          const response = await this.apiClient.post(url, { ...params });
+          let dataNew = convertBlankToNull({ ...params });
+          const response = await this.apiClient.post(url, dataNew);
+          // const response = await this.apiClient.post(url, { ...params });
           return response.data;
         } catch (error: any) {
           const err = this.getServerErrorMessage(error);
@@ -110,8 +111,8 @@ class ApiService {
      */
     apiPut = async (url: string, params = {}): Promise<any> => {
         try {
-          // const response = await this.apiClient.put(url, convertBlankToNull({ ...params }));
-          const response = await this.apiClient.put(url, { ...params });
+          const response = await this.apiClient.put(url, convertBlankToNull({ ...params }));
+          // const response = await this.apiClient.put(url, { ...params });
           return response.data;
         } catch (error: any) {
           const err = this.getServerErrorMessage(error);
