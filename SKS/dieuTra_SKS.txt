@@ -1,0 +1,44 @@
+Điều tra phạm vi ảnh hưởng nếu thay đổi mục 販責会社 ở 基本情報 hệ thống SKS
+★Nguyên nhân
+Theo spec hiện tại ở hệ thống 原価試算 (tính toán giá thành), khi user login có quyền 研究所 (nghiên cứu) KP thì chỉ có thể search dữ liệu của công ty phụ trách bán hàng là Kewpie.
+Do tôi muốn nhân viên KP có thể tham khảo nên nếu đổi từ data có 販責会社 ： キユーピータマゴ (KP Tamago) sang 販責会社 ：キユーピー (KP) thì tôi muốn biết kết quả sẽ ảnh hưởng ra sao
+Nếu không bị ảnh hưởng gì thì sẽ tiến hành thay đổi sang 販責会社 ：キユーピー
+
+
+9999910527
+
+
+hiện tại: 
+	chỉ tamago coi được
+	kewpie ko coi được
+
+mong muốn:
+	đổi từ tamago -> kewpie: tính toán có gì khác nhau hay ko 
+	cho kewpie cho coi được
+
+màn hình 04_0083_shohinkaihatsu
+	khi thay doi có su kien gi xay ra hay ko 
+
+
+
+
+- shisaquick
+
+-------------------------------------------
+200_SeihoIchiran.aspx - >
+203_HaigoTorokuKaihatsuBumon.aspx 
+	711_ShisakuCopy_Dialog.ASPX (chưa vào được)
+		711_ShisakuCopy_DialogController
+			sp_shohinkaihatsu_copy_711
+				-> INSERT tr_shisakuhin.cd_hanseki = NULL
+		
+100_ShishakuIchiran.aspx		
+	101_ShishakuData.aspx		
+	101_ShishakuData_KihonJohyo_Tab.aspx
+	101_ShishakuDataController
+		-> only save, search
+
+151_ShishakuData.aspx
+151_ShishakuDataController
+
+151_ShishakuData_KihonJohyo_Tab.aspx (đã comment)
