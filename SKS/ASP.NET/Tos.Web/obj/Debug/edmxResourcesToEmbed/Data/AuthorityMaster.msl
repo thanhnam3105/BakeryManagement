@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AuthorityMasterModelStoreContainer" CdmEntityContainer="AuthorityMasterEntities">
+    <EntitySetMapping Name="vw_shain_info">
+      <EntityTypeMapping TypeName="AuthorityMasterModel.vw_shain_info">
+        <MappingFragment StoreEntitySet="vw_shain_info">
+          <ScalarProperty Name="cd_kengen" ColumnName="cd_kengen" />
+          <ScalarProperty Name="type_kengen" ColumnName="type_kengen" />
+          <ScalarProperty Name="cd_system" ColumnName="cd_system" />
+          <ScalarProperty Name="nm_kaisha" ColumnName="nm_kaisha" />
+          <ScalarProperty Name="cd_kaisha" ColumnName="cd_kaisha" />
+          <ScalarProperty Name="nm_shozoku" ColumnName="nm_shozoku" />
+          <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+          <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+          <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+          <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

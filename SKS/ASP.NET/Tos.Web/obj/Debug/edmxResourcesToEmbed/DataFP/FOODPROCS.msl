@@ -1,0 +1,1026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FOODPROCSModelStoreContainer" CdmEntityContainer="FOODPROCSEntities">
+    <EntitySetMapping Name="ma_bunrui">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_bunrui">
+        <MappingFragment StoreEntitySet="ma_bunrui">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="nm_bunrui" ColumnName="nm_bunrui" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="flg_egg" ColumnName="flg_egg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_genshizai">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_genshizai">
+        <MappingFragment StoreEntitySet="ma_genshizai">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="nm_hin_r" ColumnName="nm_hin_r" />
+          <ScalarProperty Name="nisugata_qty" ColumnName="nisugata_qty" />
+          <ScalarProperty Name="nisugata_hyoji" ColumnName="nisugata_hyoji" />
+          <ScalarProperty Name="su_iri" ColumnName="su_iri" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="cd_tani_nonyu" ColumnName="cd_tani_nonyu" />
+          <ScalarProperty Name="cd_tani_shiyo" ColumnName="cd_tani_shiyo" />
+          <ScalarProperty Name="cd_shukei" ColumnName="cd_shukei" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="size_hachu" ColumnName="size_hachu" />
+          <ScalarProperty Name="su_leadtime" ColumnName="su_leadtime" />
+          <ScalarProperty Name="su_saitei" ColumnName="su_saitei" />
+          <ScalarProperty Name="cd_kura" ColumnName="cd_kura" />
+          <ScalarProperty Name="kin_tanka" ColumnName="kin_tanka" />
+          <ScalarProperty Name="kbn_zei" ColumnName="kbn_zei" />
+          <ScalarProperty Name="cd_hini" ColumnName="cd_hini" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="cd_seizo" ColumnName="cd_seizo" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="cd_niuke" ColumnName="cd_niuke" />
+          <ScalarProperty Name="cd_maker_hin" ColumnName="cd_maker_hin" />
+          <ScalarProperty Name="kikan_shomi" ColumnName="kikan_shomi" />
+          <ScalarProperty Name="tani_shomi" ColumnName="tani_shomi" />
+          <ScalarProperty Name="kikan_shomi_kaifu" ColumnName="kikan_shomi_kaifu" />
+          <ScalarProperty Name="tani_shomi_kaifu" ColumnName="tani_shomi_kaifu" />
+          <ScalarProperty Name="kbn_ksys_denso" ColumnName="kbn_ksys_denso" />
+          <ScalarProperty Name="cd_jigyosho" ColumnName="cd_jigyosho" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="nm_hin_rm" ColumnName="nm_hin_rm" />
+          <ScalarProperty Name="no_kikaku" ColumnName="no_kikaku" />
+          <ScalarProperty Name="nm_kikaku" ColumnName="nm_kikaku" />
+          <ScalarProperty Name="cd_hini_gmat" ColumnName="cd_hini_gmat" />
+          <ScalarProperty Name="nm_seizo" ColumnName="nm_seizo" />
+          <ScalarProperty Name="nm_hanbai" ColumnName="nm_hanbai" />
+          <ScalarProperty Name="dt_toroku_kikaku" ColumnName="dt_toroku_kikaku" />
+          <ScalarProperty Name="nm_bussitsu" ColumnName="nm_bussitsu" />
+          <ScalarProperty Name="cd_doto_hin" ColumnName="cd_doto_hin" />
+          <ScalarProperty Name="dt_doto_SET_DATE" ColumnName="dt_doto_SET_DATE" />
+          <ScalarProperty Name="cd_doto_kaisha" ColumnName="cd_doto_kaisha" />
+          <ScalarProperty Name="su_order_leadtime" ColumnName="su_order_leadtime" />
+          <ScalarProperty Name="nm_kana_name" ColumnName="nm_kana_name" />
+          <ScalarProperty Name="cd_spu" ColumnName="cd_spu" />
+          <ScalarProperty Name="kbn_genryohin" ColumnName="kbn_genryohin" />
+          <ScalarProperty Name="nm_kana_nisugata" ColumnName="nm_kana_nisugata" />
+          <ScalarProperty Name="cd_tani_keiri" ColumnName="cd_tani_keiri" />
+          <ScalarProperty Name="kbn_hokan_kaifu1" ColumnName="kbn_hokan_kaifu1" />
+          <ScalarProperty Name="kbn_hokan_kaifu2" ColumnName="kbn_hokan_kaifu2" />
+          <ScalarProperty Name="kikan_shomi_kaifu2" ColumnName="kikan_shomi_kaifu2" />
+          <ScalarProperty Name="tani_shomi_kaifu2" ColumnName="tani_shomi_kaifu2" />
+          <ScalarProperty Name="size_hachu_min" ColumnName="size_hachu_min" />
+          <ScalarProperty Name="su_saidai" ColumnName="su_saidai" />
+          <ScalarProperty Name="kbn_denso" ColumnName="kbn_denso" />
+          <ScalarProperty Name="kin_tanka_zaiko" ColumnName="kin_tanka_zaiko" />
+          <ScalarProperty Name="kin_tanka_uriage" ColumnName="kin_tanka_uriage" />
+          <ScalarProperty Name="kin_tanka_nisugata" ColumnName="kin_tanka_nisugata" />
+          <ScalarProperty Name="kbn_shiyo_tanka" ColumnName="kbn_shiyo_tanka" />
+          <ScalarProperty Name="cd_shokuba_hachu" ColumnName="cd_shokuba_hachu" />
+          <ScalarProperty Name="cd_route" ColumnName="cd_route" />
+          <ScalarProperty Name="kbn_uri" ColumnName="kbn_uri" />
+          <ScalarProperty Name="cd_route_uriage" ColumnName="cd_route_uriage" />
+          <ScalarProperty Name="kbn_qt" ColumnName="kbn_qt" />
+          <ScalarProperty Name="kbn_azuke_kura" ColumnName="kbn_azuke_kura" />
+          <ScalarProperty Name="kbn_alarm_zaiko" ColumnName="kbn_alarm_zaiko" />
+          <ScalarProperty Name="kbn_tsushin_hachu" ColumnName="kbn_tsushin_hachu" />
+          <ScalarProperty Name="kbn_jit" ColumnName="kbn_jit" />
+          <ScalarProperty Name="kbn_edi" ColumnName="kbn_edi" />
+          <ScalarProperty Name="kbn_rat_shomi" ColumnName="kbn_rat_shomi" />
+          <ScalarProperty Name="kbn_kisan_shomi" ColumnName="kbn_kisan_shomi" />
+          <ScalarProperty Name="cd_tani_a" ColumnName="cd_tani_a" />
+          <ScalarProperty Name="cd_tani_b" ColumnName="cd_tani_b" />
+          <ScalarProperty Name="cd_kamoku_b" ColumnName="cd_kamoku_b" />
+          <ScalarProperty Name="kbn_genryo_shiyo" ColumnName="kbn_genryo_shiyo" />
+          <ScalarProperty Name="cd_basho_kowake" ColumnName="cd_basho_kowake" />
+          <ScalarProperty Name="kbn_conv_1" ColumnName="kbn_conv_1" />
+          <ScalarProperty Name="kbn_conv_2" ColumnName="kbn_conv_2" />
+          <ScalarProperty Name="kbn_conv_3" ColumnName="kbn_conv_3" />
+          <ScalarProperty Name="kbn_shokuba" ColumnName="kbn_shokuba" />
+          <ScalarProperty Name="su_kanzan_kama" ColumnName="su_kanzan_kama" />
+          <ScalarProperty Name="kbn_senko" ColumnName="kbn_senko" />
+          <ScalarProperty Name="su_lot_shikakari" ColumnName="su_lot_shikakari" />
+          <ScalarProperty Name="kikan_su_saitei_2" ColumnName="kikan_su_saitei_2" />
+          <ScalarProperty Name="su_saitei_2" ColumnName="su_saitei_2" />
+          <ScalarProperty Name="kikan_size_hachu_min_2" ColumnName="kikan_size_hachu_min_2" />
+          <ScalarProperty Name="size_hachu_min_2" ColumnName="size_hachu_min_2" />
+          <ScalarProperty Name="kbn_size_hachu_min_2" ColumnName="kbn_size_hachu_min_2" />
+          <ScalarProperty Name="kikan_hosho_gmat" ColumnName="kikan_hosho_gmat" />
+          <ScalarProperty Name="tani_hosho_gmat" ColumnName="tani_hosho_gmat" />
+          <ScalarProperty Name="kbn_hokan_gmat" ColumnName="kbn_hokan_gmat" />
+          <ScalarProperty Name="kbn_nisugata_hachu" ColumnName="kbn_nisugata_hachu" />
+          <ScalarProperty Name="kbn_sanshutsu" ColumnName="kbn_sanshutsu" />
+          <ScalarProperty Name="qty_max_bin" ColumnName="qty_max_bin" />
+          <ScalarProperty Name="kbn_hayade" ColumnName="kbn_hayade" />
+          <ScalarProperty Name="kbn_nonyubin" ColumnName="kbn_nonyubin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="kikan_shomi_refreeze" ColumnName="kikan_shomi_refreeze" />
+          <ScalarProperty Name="kikan_shomi_rethawing" ColumnName="kikan_shomi_rethawing" />
+          <ScalarProperty Name="su_palette" ColumnName="su_palette" />
+          <ScalarProperty Name="no_location" ColumnName="no_location" />
+          <ScalarProperty Name="flg_kuradashi_nonyu" ColumnName="flg_kuradashi_nonyu" />
+          <ScalarProperty Name="kbn_labelnyukohyo" ColumnName="kbn_labelnyukohyo" />
+          <ScalarProperty Name="kin_tanka_shiire_new" ColumnName="kin_tanka_shiire_new" />
+          <ScalarProperty Name="dt_tanka_shiire_new" ColumnName="dt_tanka_shiire_new" />
+          <ScalarProperty Name="kin_tanka_nisugata_new" ColumnName="kin_tanka_nisugata_new" />
+          <ScalarProperty Name="dt_tanka_nisugata_new" ColumnName="dt_tanka_nisugata_new" />
+          <ScalarProperty Name="su_leadtime_hachu" ColumnName="su_leadtime_hachu" />
+          <ScalarProperty Name="su_leadtime_irai_from" ColumnName="su_leadtime_irai_from" />
+          <ScalarProperty Name="su_leadtime_irai_to" ColumnName="su_leadtime_irai_to" />
+          <ScalarProperty Name="kbn_unmatch" ColumnName="kbn_unmatch" />
+          <ScalarProperty Name="kbn_shiyo" ColumnName="kbn_shiyo" />
+          <ScalarProperty Name="zan_futai" ColumnName="zan_futai" />
+          <ScalarProperty Name="su_nonyubin_from" ColumnName="su_nonyubin_from" />
+          <ScalarProperty Name="su_nonyubin_to" ColumnName="su_nonyubin_to" />
+          <ScalarProperty Name="flg_kanri_jika" ColumnName="flg_kanri_jika" />
+          <ScalarProperty Name="su_ageing" ColumnName="su_ageing" />
+          <ScalarProperty Name="cd_tekiyo" ColumnName="cd_tekiyo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_haigo_mei">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_haigo_mei">
+        <MappingFragment StoreEntitySet="ma_haigo_mei">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="nm_haigo" ColumnName="nm_haigo" />
+          <ScalarProperty Name="nm_haigo_r" ColumnName="nm_haigo_r" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="qty_kihon" ColumnName="qty_kihon" />
+          <ScalarProperty Name="ritsu_kihon" ColumnName="ritsu_kihon" />
+          <ScalarProperty Name="cd_setsubi" ColumnName="cd_setsubi" />
+          <ScalarProperty Name="flg_gasan" ColumnName="flg_gasan" />
+          <ScalarProperty Name="qty_max" ColumnName="qty_max" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="qty_haigo_kei" ColumnName="qty_haigo_kei" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="no_seiho" ColumnName="no_seiho" />
+          <ScalarProperty Name="cd_tanto_seizo" ColumnName="cd_tanto_seizo" />
+          <ScalarProperty Name="dt_seizo" ColumnName="dt_seizo" />
+          <ScalarProperty Name="cd_tanto_hinkan" ColumnName="cd_tanto_hinkan" />
+          <ScalarProperty Name="dt_hinkan" ColumnName="dt_hinkan" />
+          <ScalarProperty Name="dt_from" ColumnName="dt_from" />
+          <ScalarProperty Name="dt_to" ColumnName="dt_to" />
+          <ScalarProperty Name="kbn_vw" ColumnName="kbn_vw" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="flg_shorihin" ColumnName="flg_shorihin" />
+          <ScalarProperty Name="flg_hinkan" ColumnName="flg_hinkan" />
+          <ScalarProperty Name="flg_seizo" ColumnName="flg_seizo" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="kbn_shiagari" ColumnName="kbn_shiagari" />
+          <ScalarProperty Name="nm_haigo_rm" ColumnName="nm_haigo_rm" />
+          <ScalarProperty Name="cd_haigo_seiho" ColumnName="cd_haigo_seiho" />
+          <ScalarProperty Name="flg_seiho_base" ColumnName="flg_seiho_base" />
+          <ScalarProperty Name="nm_seiho" ColumnName="nm_seiho" />
+          <ScalarProperty Name="kbn_koshin" ColumnName="kbn_koshin" />
+          <ScalarProperty Name="kin_keihi" ColumnName="kin_keihi" />
+          <ScalarProperty Name="flg_tenkai" ColumnName="flg_tenkai" />
+          <ScalarProperty Name="qty_haigo_auto" ColumnName="qty_haigo_auto" />
+          <ScalarProperty Name="su_kigen_min" ColumnName="su_kigen_min" />
+          <ScalarProperty Name="su_kigen_max" ColumnName="su_kigen_max" />
+          <ScalarProperty Name="flg_mishiyo_seizo" ColumnName="flg_mishiyo_seizo" />
+          <ScalarProperty Name="qty_kowake" ColumnName="qty_kowake" />
+          <ScalarProperty Name="su_kowake" ColumnName="su_kowake" />
+          <ScalarProperty Name="kikan_shomi" ColumnName="kikan_shomi" />
+          <ScalarProperty Name="qty_haigo_genka" ColumnName="qty_haigo_genka" />
+          <ScalarProperty Name="no_han_genka" ColumnName="no_han_genka" />
+          <ScalarProperty Name="flg_unten" ColumnName="flg_unten" />
+          <ScalarProperty Name="cd_tanto_unten" ColumnName="cd_tanto_unten" />
+          <ScalarProperty Name="dt_unten" ColumnName="dt_unten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_haigo_mei_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_haigo_mei_hyoji">
+        <MappingFragment StoreEntitySet="ma_haigo_mei_hyoji">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="nm_haigo" ColumnName="nm_haigo" />
+          <ScalarProperty Name="nm_haigo_r" ColumnName="nm_haigo_r" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="qty_kihon" ColumnName="qty_kihon" />
+          <ScalarProperty Name="ritsu_kihon" ColumnName="ritsu_kihon" />
+          <ScalarProperty Name="cd_setsubi" ColumnName="cd_setsubi" />
+          <ScalarProperty Name="flg_gasan" ColumnName="flg_gasan" />
+          <ScalarProperty Name="qty_max" ColumnName="qty_max" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="qty_haigo_kei" ColumnName="qty_haigo_kei" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="no_seiho" ColumnName="no_seiho" />
+          <ScalarProperty Name="cd_tanto_seizo" ColumnName="cd_tanto_seizo" />
+          <ScalarProperty Name="dt_seizo" ColumnName="dt_seizo" />
+          <ScalarProperty Name="cd_tanto_hinkan" ColumnName="cd_tanto_hinkan" />
+          <ScalarProperty Name="dt_hinkan" ColumnName="dt_hinkan" />
+          <ScalarProperty Name="dt_from" ColumnName="dt_from" />
+          <ScalarProperty Name="dt_to" ColumnName="dt_to" />
+          <ScalarProperty Name="kbn_vw" ColumnName="kbn_vw" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="flg_shorihin" ColumnName="flg_shorihin" />
+          <ScalarProperty Name="flg_hinkan" ColumnName="flg_hinkan" />
+          <ScalarProperty Name="flg_seizo" ColumnName="flg_seizo" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="kbn_shiagari" ColumnName="kbn_shiagari" />
+          <ScalarProperty Name="nm_haigo_rm" ColumnName="nm_haigo_rm" />
+          <ScalarProperty Name="cd_haigo_seiho" ColumnName="cd_haigo_seiho" />
+          <ScalarProperty Name="flg_seiho_base" ColumnName="flg_seiho_base" />
+          <ScalarProperty Name="nm_seiho" ColumnName="nm_seiho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_haigo_recipe">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_haigo_recipe">
+        <MappingFragment StoreEntitySet="ma_haigo_recipe">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="no_kotei" ColumnName="no_kotei" />
+          <ScalarProperty Name="no_tonyu" ColumnName="no_tonyu" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="cd_mark" ColumnName="cd_mark" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="qty_haigo" ColumnName="qty_haigo" />
+          <ScalarProperty Name="qty_nisugata" ColumnName="qty_nisugata" />
+          <ScalarProperty Name="su_nisugata" ColumnName="su_nisugata" />
+          <ScalarProperty Name="qty_kowake" ColumnName="qty_kowake" />
+          <ScalarProperty Name="su_kowake" ColumnName="su_kowake" />
+          <ScalarProperty Name="cd_futai" ColumnName="cd_futai" />
+          <ScalarProperty Name="qty_futai" ColumnName="qty_futai" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="kbn_shitei" ColumnName="kbn_shitei" />
+          <ScalarProperty Name="kbn_bunkatsu" ColumnName="kbn_bunkatsu" />
+          <ScalarProperty Name="flg_kowake_nochk" ColumnName="flg_kowake_nochk" />
+          <ScalarProperty Name="cd_shokuba" ColumnName="cd_shokuba" />
+          <ScalarProperty Name="keisu" ColumnName="keisu" />
+          <ScalarProperty Name="flg_hijyu" ColumnName="flg_hijyu" />
+          <ScalarProperty Name="cd_station" ColumnName="cd_station" />
+          <ScalarProperty Name="su_leadtime_kura" ColumnName="su_leadtime_kura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_haigo_recipe_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_haigo_recipe_hyoji">
+        <MappingFragment StoreEntitySet="ma_haigo_recipe_hyoji">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="no_kotei" ColumnName="no_kotei" />
+          <ScalarProperty Name="no_tonyu" ColumnName="no_tonyu" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="cd_mark" ColumnName="cd_mark" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="qty_haigo" ColumnName="qty_haigo" />
+          <ScalarProperty Name="qty_nisugata" ColumnName="qty_nisugata" />
+          <ScalarProperty Name="su_nisugata" ColumnName="su_nisugata" />
+          <ScalarProperty Name="qty_kowake" ColumnName="qty_kowake" />
+          <ScalarProperty Name="su_kowake" ColumnName="su_kowake" />
+          <ScalarProperty Name="cd_futai" ColumnName="cd_futai" />
+          <ScalarProperty Name="qty_futai" ColumnName="qty_futai" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="kbn_shitei" ColumnName="kbn_shitei" />
+          <ScalarProperty Name="kbn_bunkatsu" ColumnName="kbn_bunkatsu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_kojyo">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_kojyo">
+        <MappingFragment StoreEntitySet="ma_kojyo">
+          <ScalarProperty Name="cd_kojyo" ColumnName="cd_kojyo" />
+          <ScalarProperty Name="cd_kaisha" ColumnName="cd_kaisha" />
+          <ScalarProperty Name="nm_kojyo" ColumnName="nm_kojyo" />
+          <ScalarProperty Name="no_yubin" ColumnName="no_yubin" />
+          <ScalarProperty Name="jyusho_1" ColumnName="jyusho_1" />
+          <ScalarProperty Name="jyusho_2" ColumnName="jyusho_2" />
+          <ScalarProperty Name="jyusho_3" ColumnName="jyusho_3" />
+          <ScalarProperty Name="tel_1" ColumnName="tel_1" />
+          <ScalarProperty Name="tel_2" ColumnName="tel_2" />
+          <ScalarProperty Name="fax_1" ColumnName="fax_1" />
+          <ScalarProperty Name="fax_2" ColumnName="fax_2" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="dt_kakutei" ColumnName="dt_kakutei" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="flg_ean" ColumnName="flg_ean" />
+          <ScalarProperty Name="param_edi_densokaishi" ColumnName="param_edi_densokaishi" />
+          <ScalarProperty Name="param_edi_saishodenso" ColumnName="param_edi_saishodenso" />
+          <ScalarProperty Name="cd_jigyobu_default" ColumnName="cd_jigyobu_default" />
+          <ScalarProperty Name="cd_depo_default" ColumnName="cd_depo_default" />
+          <ScalarProperty Name="cd_jigyosho_default" ColumnName="cd_jigyosho_default" />
+          <ScalarProperty Name="literal_iraisho" ColumnName="literal_iraisho" />
+          <ScalarProperty Name="literal_iraisho_shokuyu" ColumnName="literal_iraisho_shokuyu" />
+          <ScalarProperty Name="dt_joken_shiharai" ColumnName="dt_joken_shiharai" />
+          <ScalarProperty Name="tekiyo" ColumnName="tekiyo" />
+          <ScalarProperty Name="dt_data_kakutei" ColumnName="dt_data_kakutei" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_konpo">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_konpo">
+        <MappingFragment StoreEntitySet="ma_konpo">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nisugata_qty" ColumnName="nisugata_qty" />
+          <ScalarProperty Name="nisugata_hyoji" ColumnName="nisugata_hyoji" />
+          <ScalarProperty Name="su_iri" ColumnName="su_iri" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="su_iri_banju" ColumnName="su_iri_banju" />
+          <ScalarProperty Name="kbn_hako" ColumnName="kbn_hako" />
+          <ScalarProperty Name="cd_jan" ColumnName="cd_jan" />
+          <ScalarProperty Name="su_uchibako" ColumnName="su_uchibako" />
+          <ScalarProperty Name="su_sotobako" ColumnName="su_sotobako" />
+          <ScalarProperty Name="su_palette" ColumnName="su_palette" />
+          <ScalarProperty Name="kbn_data_convert" ColumnName="kbn_data_convert" />
+          <ScalarProperty Name="cd_hanbai_1" ColumnName="cd_hanbai_1" />
+          <ScalarProperty Name="cd_hanbai_2" ColumnName="cd_hanbai_2" />
+          <ScalarProperty Name="kin_keihi" ColumnName="kin_keihi" />
+          <ScalarProperty Name="su_noritsu" ColumnName="su_noritsu" />
+          <ScalarProperty Name="cd_shukei" ColumnName="cd_shukei" />
+          <ScalarProperty Name="kbn_ksys_denso" ColumnName="kbn_ksys_denso" />
+          <ScalarProperty Name="kbn_ksys_dekidaka" ColumnName="kbn_ksys_dekidaka" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="kbn_tenkai" ColumnName="kbn_tenkai" />
+          <ScalarProperty Name="nm_hin_tag" ColumnName="nm_hin_tag" />
+          <ScalarProperty Name="kbn_itaku" ColumnName="kbn_itaku" />
+          <ScalarProperty Name="su_batch_dekidaka" ColumnName="su_batch_dekidaka" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="cd_tani_keiri" ColumnName="cd_tani_keiri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_line">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_line">
+        <MappingFragment StoreEntitySet="ma_line">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_line" ColumnName="cd_line" />
+          <ScalarProperty Name="nm_line" ColumnName="nm_line" />
+          <ScalarProperty Name="cd_shokuba" ColumnName="cd_shokuba" />
+          <ScalarProperty Name="cd_team" ColumnName="cd_team" />
+          <ScalarProperty Name="flg_shuka_2" ColumnName="flg_shuka_2" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="cd_line_2" ColumnName="cd_line_2" />
+          <ScalarProperty Name="time_hayade_seizo_minute" ColumnName="time_hayade_seizo_minute" />
+          <ScalarProperty Name="flg_egg" ColumnName="flg_egg" />
+          <ScalarProperty Name="no_hyoji" ColumnName="no_hyoji" />
+          <ScalarProperty Name="cd_pallet_line" ColumnName="cd_pallet_line" />
+          <ScalarProperty Name="flg_autorack_denso" ColumnName="flg_autorack_denso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_maeshori">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_maeshori">
+        <MappingFragment StoreEntitySet="ma_maeshori">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_maeshori" ColumnName="cd_maeshori" />
+          <ScalarProperty Name="nm_maeshori" ColumnName="nm_maeshori" />
+          <ScalarProperty Name="nm_maeshori_r" ColumnName="nm_maeshori_r" />
+          <ScalarProperty Name="nm_maeshori_rm" ColumnName="nm_maeshori_rm" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="shiji_sagyo" ColumnName="shiji_sagyo" />
+          <ScalarProperty Name="cd_setsubi" ColumnName="cd_setsubi" />
+          <ScalarProperty Name="su_jyunbi" ColumnName="su_jyunbi" />
+          <ScalarProperty Name="cd_hini" ColumnName="cd_hini" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="cd_shukei" ColumnName="cd_shukei" />
+          <ScalarProperty Name="jikan_hinon" ColumnName="jikan_hinon" />
+          <ScalarProperty Name="percent_shio" ColumnName="percent_shio" />
+          <ScalarProperty Name="nm_tenkabutsu" ColumnName="nm_tenkabutsu" />
+          <ScalarProperty Name="percent_tenkabutsu" ColumnName="percent_tenkabutsu" />
+          <ScalarProperty Name="hoho_reikyaku" ColumnName="hoho_reikyaku" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="budomari_second" ColumnName="budomari_second" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_mark">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_mark">
+        <MappingFragment StoreEntitySet="ma_mark">
+          <ScalarProperty Name="cd_mark" ColumnName="cd_mark" />
+          <ScalarProperty Name="nm_mark" ColumnName="nm_mark" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="kbn_shubetsu" ColumnName="kbn_shubetsu" />
+          <ScalarProperty Name="cd_tani_shiyo" ColumnName="cd_tani_shiyo" />
+          <ScalarProperty Name="flg_label" ColumnName="flg_label" />
+          <ScalarProperty Name="flg_lot" ColumnName="flg_lot" />
+          <ScalarProperty Name="kbn_qty_haigo" ColumnName="kbn_qty_haigo" />
+          <ScalarProperty Name="kbn_qty_nisugata" ColumnName="kbn_qty_nisugata" />
+          <ScalarProperty Name="kbn_su_nisugata" ColumnName="kbn_su_nisugata" />
+          <ScalarProperty Name="kbn_qty_kowake" ColumnName="kbn_qty_kowake" />
+          <ScalarProperty Name="kbn_su_kowake" ColumnName="kbn_su_kowake" />
+          <ScalarProperty Name="kbn_hijyu" ColumnName="kbn_hijyu" />
+          <ScalarProperty Name="kbn_budomari" ColumnName="kbn_budomari" />
+          <ScalarProperty Name="kbn_futai" ColumnName="kbn_futai" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="ss_kbn_qty_haigo" ColumnName="ss_kbn_qty_haigo" />
+          <ScalarProperty Name="ss_kbn_nisugata" ColumnName="ss_kbn_nisugata" />
+          <ScalarProperty Name="ss_kbn_gosa" ColumnName="ss_kbn_gosa" />
+          <ScalarProperty Name="ss_kbn_budomari" ColumnName="ss_kbn_budomari" />
+          <ScalarProperty Name="ss_flg_genryo" ColumnName="ss_flg_genryo" />
+          <ScalarProperty Name="ss_flg_maeshori" ColumnName="ss_flg_maeshori" />
+          <ScalarProperty Name="ss_flg_shikakari" ColumnName="ss_flg_shikakari" />
+          <ScalarProperty Name="ss_flg_sagyo" ColumnName="ss_flg_sagyo" />
+          <ScalarProperty Name="kbn_kowake_shokuba" ColumnName="kbn_kowake_shokuba" />
+          <ScalarProperty Name="kbn_kowake_nochk" ColumnName="kbn_kowake_nochk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_sagyo">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_sagyo">
+        <MappingFragment StoreEntitySet="ma_sagyo">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_sagyo" ColumnName="cd_sagyo" />
+          <ScalarProperty Name="nm_sagyo" ColumnName="nm_sagyo" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_seihin">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_seihin">
+        <MappingFragment StoreEntitySet="ma_seihin">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="nm_hin_r" ColumnName="nm_hin_r" />
+          <ScalarProperty Name="nm_hin_rm" ColumnName="nm_hin_rm" />
+          <ScalarProperty Name="cd_tani_jyuchu" ColumnName="cd_tani_jyuchu" />
+          <ScalarProperty Name="cd_tani_shiyo" ColumnName="cd_tani_shiyo" />
+          <ScalarProperty Name="cd_niuke" ColumnName="cd_niuke" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="su_saitei" ColumnName="su_saitei" />
+          <ScalarProperty Name="kikan_shomi" ColumnName="kikan_shomi" />
+          <ScalarProperty Name="tani_shomi" ColumnName="tani_shomi" />
+          <ScalarProperty Name="kikan_shomi_kaifu" ColumnName="kikan_shomi_kaifu" />
+          <ScalarProperty Name="tani_shomi_kaifu" ColumnName="tani_shomi_kaifu" />
+          <ScalarProperty Name="cd_hini" ColumnName="cd_hini" />
+          <ScalarProperty Name="kin_romu" ColumnName="kin_romu" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_yusen" ColumnName="no_yusen" />
+          <ScalarProperty Name="cd_haigo_hyoji" ColumnName="cd_haigo_hyoji" />
+          <ScalarProperty Name="no_yusen_hyoji" ColumnName="no_yusen_hyoji" />
+          <ScalarProperty Name="kin_tanka" ColumnName="kin_tanka" />
+          <ScalarProperty Name="kbn_seisan" ColumnName="kbn_seisan" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="kbn_seihin" ColumnName="kbn_seihin" />
+          <ScalarProperty Name="kbn_kuraire" ColumnName="kbn_kuraire" />
+          <ScalarProperty Name="kbn_vw" ColumnName="kbn_vw" />
+          <ScalarProperty Name="su_leadtime" ColumnName="su_leadtime" />
+          <ScalarProperty Name="cd_tani_nonyu" ColumnName="cd_tani_nonyu" />
+          <ScalarProperty Name="kbn_zei" ColumnName="kbn_zei" />
+          <ScalarProperty Name="kin_tanka_nonyu" ColumnName="kin_tanka_nonyu" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="cd_spu" ColumnName="cd_spu" />
+          <ScalarProperty Name="kbn_genryohin" ColumnName="kbn_genryohin" />
+          <ScalarProperty Name="kin_genka" ColumnName="kin_genka" />
+          <ScalarProperty Name="no_kikaku" ColumnName="no_kikaku" />
+          <ScalarProperty Name="nm_kikaku" ColumnName="nm_kikaku" />
+          <ScalarProperty Name="cd_hini_gmat" ColumnName="cd_hini_gmat" />
+          <ScalarProperty Name="nm_seizo" ColumnName="nm_seizo" />
+          <ScalarProperty Name="nm_hanbai" ColumnName="nm_hanbai" />
+          <ScalarProperty Name="dt_toroku_kikaku" ColumnName="dt_toroku_kikaku" />
+          <ScalarProperty Name="nm_bussitsu" ColumnName="nm_bussitsu" />
+          <ScalarProperty Name="cd_doto_hin" ColumnName="cd_doto_hin" />
+          <ScalarProperty Name="dt_doto_SET_DATE" ColumnName="dt_doto_SET_DATE" />
+          <ScalarProperty Name="cd_doto_kaisha" ColumnName="cd_doto_kaisha" />
+          <ScalarProperty Name="cd_itf" ColumnName="cd_itf" />
+          <ScalarProperty Name="kbn_kisan_shomi" ColumnName="kbn_kisan_shomi" />
+          <ScalarProperty Name="kikan_shomi_kaifu2" ColumnName="kikan_shomi_kaifu2" />
+          <ScalarProperty Name="tani_shomi_kaifu2" ColumnName="tani_shomi_kaifu2" />
+          <ScalarProperty Name="kbn_hokan_kaifu1" ColumnName="kbn_hokan_kaifu1" />
+          <ScalarProperty Name="kbn_hokan_kaifu2" ColumnName="kbn_hokan_kaifu2" />
+          <ScalarProperty Name="su_saidai" ColumnName="su_saidai" />
+          <ScalarProperty Name="kin_tanka_shiire" ColumnName="kin_tanka_shiire" />
+          <ScalarProperty Name="cd_kura" ColumnName="cd_kura" />
+          <ScalarProperty Name="cd_shokuba_hachu" ColumnName="cd_shokuba_hachu" />
+          <ScalarProperty Name="kin_tanka_zaiko" ColumnName="kin_tanka_zaiko" />
+          <ScalarProperty Name="kbn_shiyo_tanka" ColumnName="kbn_shiyo_tanka" />
+          <ScalarProperty Name="kbn_uri" ColumnName="kbn_uri" />
+          <ScalarProperty Name="cd_route_uriage" ColumnName="cd_route_uriage" />
+          <ScalarProperty Name="kbn_deki" ColumnName="kbn_deki" />
+          <ScalarProperty Name="kbn_kura" ColumnName="kbn_kura" />
+          <ScalarProperty Name="kbn_auto_kura" ColumnName="kbn_auto_kura" />
+          <ScalarProperty Name="kbn_azuke_kura" ColumnName="kbn_azuke_kura" />
+          <ScalarProperty Name="kbn_alarm_zaiko" ColumnName="kbn_alarm_zaiko" />
+          <ScalarProperty Name="kbn_jit" ColumnName="kbn_jit" />
+          <ScalarProperty Name="kbn_rat_shomi" ColumnName="kbn_rat_shomi" />
+          <ScalarProperty Name="cd_route" ColumnName="cd_route" />
+          <ScalarProperty Name="cd_tani_a" ColumnName="cd_tani_a" />
+          <ScalarProperty Name="cd_tani_b" ColumnName="cd_tani_b" />
+          <ScalarProperty Name="cd_kamoku_b" ColumnName="cd_kamoku_b" />
+          <ScalarProperty Name="kbn_genryo_shiyo" ColumnName="kbn_genryo_shiyo" />
+          <ScalarProperty Name="cd_basho_kowake" ColumnName="cd_basho_kowake" />
+          <ScalarProperty Name="kin_tanka_nisugata" ColumnName="kin_tanka_nisugata" />
+          <ScalarProperty Name="kbn_conv_1" ColumnName="kbn_conv_1" />
+          <ScalarProperty Name="kbn_conv_2" ColumnName="kbn_conv_2" />
+          <ScalarProperty Name="kbn_conv_3" ColumnName="kbn_conv_3" />
+          <ScalarProperty Name="kbn_shokuba" ColumnName="kbn_shokuba" />
+          <ScalarProperty Name="su_kanzan_kama" ColumnName="su_kanzan_kama" />
+          <ScalarProperty Name="kbn_sakusei" ColumnName="kbn_sakusei" />
+          <ScalarProperty Name="cd_depo" ColumnName="cd_depo" />
+          <ScalarProperty Name="su_jinin" ColumnName="su_jinin" />
+          <ScalarProperty Name="cd_haigo2" ColumnName="cd_haigo2" />
+          <ScalarProperty Name="kbn_check" ColumnName="kbn_check" />
+          <ScalarProperty Name="kbn_check_date" ColumnName="kbn_check_date" />
+          <ScalarProperty Name="kbn_sanshutsu" ColumnName="kbn_sanshutsu" />
+          <ScalarProperty Name="kikan_shomi_refreeze" ColumnName="kikan_shomi_refreeze" />
+          <ScalarProperty Name="kikan_shomi_rethawing" ColumnName="kikan_shomi_rethawing" />
+          <ScalarProperty Name="kbn_hakodume" ColumnName="kbn_hakodume" />
+          <ScalarProperty Name="no_location" ColumnName="no_location" />
+          <ScalarProperty Name="kbn_labelnyukohyo" ColumnName="kbn_labelnyukohyo" />
+          <ScalarProperty Name="kin_tanka_shiire_new" ColumnName="kin_tanka_shiire_new" />
+          <ScalarProperty Name="dt_tanka_shiire_new" ColumnName="dt_tanka_shiire_new" />
+          <ScalarProperty Name="kin_tanka_nisugata_new" ColumnName="kin_tanka_nisugata_new" />
+          <ScalarProperty Name="dt_tanka_nisugata_new" ColumnName="dt_tanka_nisugata_new" />
+          <ScalarProperty Name="su_leadtime_hachu" ColumnName="su_leadtime_hachu" />
+          <ScalarProperty Name="su_leadtime_irai_from" ColumnName="su_leadtime_irai_from" />
+          <ScalarProperty Name="su_leadtime_irai_to" ColumnName="su_leadtime_irai_to" />
+          <ScalarProperty Name="kbn_unmatch" ColumnName="kbn_unmatch" />
+          <ScalarProperty Name="kbn_shiyo" ColumnName="kbn_shiyo" />
+          <ScalarProperty Name="zan_futai" ColumnName="zan_futai" />
+          <ScalarProperty Name="su_hiritsu" ColumnName="su_hiritsu" />
+          <ScalarProperty Name="su_hiritsu2" ColumnName="su_hiritsu2" />
+          <ScalarProperty Name="flg_kanri_jika" ColumnName="flg_kanri_jika" />
+          <ScalarProperty Name="su_ageing" ColumnName="su_ageing" />
+          <ScalarProperty Name="flg_mishiyo_seizo" ColumnName="flg_mishiyo_seizo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_seizo_line">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_seizo_line">
+        <MappingFragment StoreEntitySet="ma_seizo_line">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_yusen" ColumnName="no_yusen" />
+          <ScalarProperty Name="cd_line" ColumnName="cd_line" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="qty_noryoku" ColumnName="qty_noryoku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_seizo_line_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_seizo_line_hyoji">
+        <MappingFragment StoreEntitySet="ma_seizo_line_hyoji">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_yusen" ColumnName="no_yusen" />
+          <ScalarProperty Name="cd_line" ColumnName="cd_line" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_setsubi">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_setsubi">
+        <MappingFragment StoreEntitySet="ma_setsubi">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_shokuba" ColumnName="cd_shokuba" />
+          <ScalarProperty Name="cd_setsubi" ColumnName="cd_setsubi" />
+          <ScalarProperty Name="nm_setsubi" ColumnName="nm_setsubi" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="no_node" ColumnName="no_node" />
+          <ScalarProperty Name="no_kotei" ColumnName="no_kotei" />
+          <ScalarProperty Name="kbn_jyushin" ColumnName="kbn_jyushin" />
+          <ScalarProperty Name="flg_line" ColumnName="flg_line" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_tani">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_tani">
+        <MappingFragment StoreEntitySet="ma_tani">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_tani" ColumnName="cd_tani" />
+          <ScalarProperty Name="nm_tani" ColumnName="nm_tani" />
+          <ScalarProperty Name="flg_kinshi" ColumnName="flg_kinshi" />
+          <ScalarProperty Name="flg_hasu_check" ColumnName="flg_hasu_check" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_tanto">
+      <EntityTypeMapping TypeName="FOODPROCSModel.ma_tanto">
+        <MappingFragment StoreEntitySet="ma_tanto">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_tanto" ColumnName="cd_tanto" />
+          <ScalarProperty Name="nm_tanto" ColumnName="nm_tanto" />
+          <ScalarProperty Name="cd_password" ColumnName="cd_password" />
+          <ScalarProperty Name="nm_shozoku" ColumnName="nm_shozoku" />
+          <ScalarProperty Name="renraku" ColumnName="renraku" />
+          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+          <ScalarProperty Name="flg_kengen_1" ColumnName="flg_kengen_1" />
+          <ScalarProperty Name="flg_kengen_2" ColumnName="flg_kengen_2" />
+          <ScalarProperty Name="flg_kengen_3" ColumnName="flg_kengen_3" />
+          <ScalarProperty Name="flg_kengen_4" ColumnName="flg_kengen_4" />
+          <ScalarProperty Name="flg_kengen_5" ColumnName="flg_kengen_5" />
+          <ScalarProperty Name="flg_kengen_6" ColumnName="flg_kengen_6" />
+          <ScalarProperty Name="flg_kengen_7" ColumnName="flg_kengen_7" />
+          <ScalarProperty Name="flg_kengen_8" ColumnName="flg_kengen_8" />
+          <ScalarProperty Name="flg_kengen_9" ColumnName="flg_kengen_9" />
+          <ScalarProperty Name="flg_kengen_10" ColumnName="flg_kengen_10" />
+          <ScalarProperty Name="flg_kengen_11" ColumnName="flg_kengen_11" />
+          <ScalarProperty Name="flg_kengen_12" ColumnName="flg_kengen_12" />
+          <ScalarProperty Name="flg_kengen_13" ColumnName="flg_kengen_13" />
+          <ScalarProperty Name="flg_login" ColumnName="flg_login" />
+          <ScalarProperty Name="flg_mrp" ColumnName="flg_mrp" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="cd_ope" ColumnName="cd_ope" />
+          <ScalarProperty Name="cd_shokuba" ColumnName="cd_shokuba" />
+          <ScalarProperty Name="flg_hakari" ColumnName="flg_hakari" />
+          <ScalarProperty Name="flg_jitsusakujyo" ColumnName="flg_jitsusakujyo" />
+          <ScalarProperty Name="flg_shikakari" ColumnName="flg_shikakari" />
+          <ScalarProperty Name="flg_saikin" ColumnName="flg_saikin" />
+          <ScalarProperty Name="flg_harikae" ColumnName="flg_harikae" />
+          <ScalarProperty Name="dt_henko_password" ColumnName="dt_henko_password" />
+          <ScalarProperty Name="dt_login" ColumnName="dt_login" />
+          <ScalarProperty Name="flg_shokuyu_haigo_hiritsu" ColumnName="flg_shokuyu_haigo_hiritsu" />
+          <ScalarProperty Name="flg_genshizai_chotatsu_bu" ColumnName="flg_genshizai_chotatsu_bu" />
+          <ScalarProperty Name="flg_bun_master" ColumnName="flg_bun_master" />
+          <ScalarProperty Name="flg_bun_shiyaku" ColumnName="flg_bun_shiyaku" />
+          <ScalarProperty Name="flg_bun_tanto" ColumnName="flg_bun_tanto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_vw_hin">
+      <EntityTypeMapping TypeName="FOODPROCSModel.SS_vw_hin">
+        <MappingFragment StoreEntitySet="SS_vw_hin">
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="cd_hin_var" ColumnName="cd_hin_var" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="no_kikaku" ColumnName="no_kikaku" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="kbn_hin_toroku" ColumnName="kbn_hin_toroku" />
+          <ScalarProperty Name="cd_tani_hin" ColumnName="cd_tani_hin" />
+          <ScalarProperty Name="nisugata_gty" ColumnName="nisugata_gty" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_vw_hin_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.SS_vw_hin_hyoji">
+        <MappingFragment StoreEntitySet="SS_vw_hin_hyoji">
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="cd_hin_var" ColumnName="cd_hin_var" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="no_kikaku" ColumnName="no_kikaku" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="kbn_hin_toroku" ColumnName="kbn_hin_toroku" />
+          <ScalarProperty Name="cd_tani_hin" ColumnName="cd_tani_hin" />
+          <ScalarProperty Name="nisugata_gty" ColumnName="nisugata_gty" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="no_sort" ColumnName="no_sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_vw_hin_varchar">
+      <EntityTypeMapping TypeName="FOODPROCSModel.SS_vw_hin_varchar">
+        <MappingFragment StoreEntitySet="SS_vw_hin_varchar">
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="no_kikaku" ColumnName="no_kikaku" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="kbn_hin_toroku" ColumnName="kbn_hin_toroku" />
+          <ScalarProperty Name="cd_tani_hin" ColumnName="cd_tani_hin" />
+          <ScalarProperty Name="nisugata_gty" ColumnName="nisugata_gty" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SS_vw_hin_varchar_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.SS_vw_hin_varchar_hyoji">
+        <MappingFragment StoreEntitySet="SS_vw_hin_varchar_hyoji">
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="no_kikaku" ColumnName="no_kikaku" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="kbn_hin_toroku" ColumnName="kbn_hin_toroku" />
+          <ScalarProperty Name="cd_tani_hin" ColumnName="cd_tani_hin" />
+          <ScalarProperty Name="nisugata_gty" ColumnName="nisugata_gty" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="no_sort" ColumnName="no_sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ma_haigo_mei_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.vw_ma_haigo_mei_hyoji">
+        <MappingFragment StoreEntitySet="vw_ma_haigo_mei_hyoji">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="nm_haigo" ColumnName="nm_haigo" />
+          <ScalarProperty Name="nm_haigo_r" ColumnName="nm_haigo_r" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="qty_kihon" ColumnName="qty_kihon" />
+          <ScalarProperty Name="ritsu_kihon" ColumnName="ritsu_kihon" />
+          <ScalarProperty Name="cd_setsubi" ColumnName="cd_setsubi" />
+          <ScalarProperty Name="flg_gasan" ColumnName="flg_gasan" />
+          <ScalarProperty Name="qty_max" ColumnName="qty_max" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="qty_haigo_kei" ColumnName="qty_haigo_kei" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="no_seiho" ColumnName="no_seiho" />
+          <ScalarProperty Name="cd_tanto_seizo" ColumnName="cd_tanto_seizo" />
+          <ScalarProperty Name="dt_seizo" ColumnName="dt_seizo" />
+          <ScalarProperty Name="cd_tanto_hinkan" ColumnName="cd_tanto_hinkan" />
+          <ScalarProperty Name="dt_hinkan" ColumnName="dt_hinkan" />
+          <ScalarProperty Name="dt_from" ColumnName="dt_from" />
+          <ScalarProperty Name="dt_to" ColumnName="dt_to" />
+          <ScalarProperty Name="kbn_vw" ColumnName="kbn_vw" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="flg_shorihin" ColumnName="flg_shorihin" />
+          <ScalarProperty Name="flg_hinkan" ColumnName="flg_hinkan" />
+          <ScalarProperty Name="flg_seizo" ColumnName="flg_seizo" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="kbn_shiagari" ColumnName="kbn_shiagari" />
+          <ScalarProperty Name="nm_haigo_rm" ColumnName="nm_haigo_rm" />
+          <ScalarProperty Name="cd_haigo_seiho" ColumnName="cd_haigo_seiho" />
+          <ScalarProperty Name="flg_seiho_base" ColumnName="flg_seiho_base" />
+          <ScalarProperty Name="nm_seiho" ColumnName="nm_seiho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ma_haigo_recipe_hyoji">
+      <EntityTypeMapping TypeName="FOODPROCSModel.vw_ma_haigo_recipe_hyoji">
+        <MappingFragment StoreEntitySet="vw_ma_haigo_recipe_hyoji">
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="no_kotei" ColumnName="no_kotei" />
+          <ScalarProperty Name="no_tonyu" ColumnName="no_tonyu" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="cd_mark" ColumnName="cd_mark" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="qty_haigo" ColumnName="qty_haigo" />
+          <ScalarProperty Name="qty_nisugata" ColumnName="qty_nisugata" />
+          <ScalarProperty Name="su_nisugata" ColumnName="su_nisugata" />
+          <ScalarProperty Name="qty_kowake" ColumnName="qty_kowake" />
+          <ScalarProperty Name="su_kowake" ColumnName="su_kowake" />
+          <ScalarProperty Name="cd_futai" ColumnName="cd_futai" />
+          <ScalarProperty Name="qty_futai" ColumnName="qty_futai" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="kbn_shitei" ColumnName="kbn_shitei" />
+          <ScalarProperty Name="kbn_bunkatsu" ColumnName="kbn_bunkatsu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SS_Hin_Check_sp" FunctionName="FOODPROCSModel.Store.SS_Hin_Check_sp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FOODPROCSModel.SS_Hin_Check_sp_Result">
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="nm_hin_r" ColumnName="nm_hin_r" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SS_Hin_Check_sp_hyoji" FunctionName="FOODPROCSModel.Store.SS_Hin_Check_sp_hyoji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FOODPROCSModel.SS_Hin_Check_sp_hyoji_Result">
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="nm_hin_r" ColumnName="nm_hin_r" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SS_Hin_Check_sp_hyoji_qpnmacs" FunctionName="FOODPROCSModel.Store.SS_Hin_Check_sp_hyoji_qpnmacs">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FOODPROCSModel.SS_Hin_Check_sp_hyoji_qpnmacs_Result">
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="nm_hin_r" ColumnName="nm_hin_r" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SS_Hin_Check_sp_qpnmacs" FunctionName="FOODPROCSModel.Store.SS_Hin_Check_sp_qpnmacs">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FOODPROCSModel.SS_Hin_Check_sp_qpnmacs_Result">
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="nm_hin_r" ColumnName="nm_hin_r" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="vw_ma_haigo_mei">
+      <EntityTypeMapping TypeName="FOODPROCSModel.vw_ma_haigo_mei">
+        <MappingFragment StoreEntitySet="vw_ma_haigo_mei">
+          <ScalarProperty Name="kin_keihi" ColumnName="kin_keihi" />
+          <ScalarProperty Name="kbn_koshin" ColumnName="kbn_koshin" />
+          <ScalarProperty Name="nm_seiho" ColumnName="nm_seiho" />
+          <ScalarProperty Name="flg_seiho_base" ColumnName="flg_seiho_base" />
+          <ScalarProperty Name="cd_haigo_seiho" ColumnName="cd_haigo_seiho" />
+          <ScalarProperty Name="nm_haigo_rm" ColumnName="nm_haigo_rm" />
+          <ScalarProperty Name="kbn_shiagari" ColumnName="kbn_shiagari" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="flg_seizo" ColumnName="flg_seizo" />
+          <ScalarProperty Name="flg_hinkan" ColumnName="flg_hinkan" />
+          <ScalarProperty Name="flg_shorihin" ColumnName="flg_shorihin" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="kbn_vw" ColumnName="kbn_vw" />
+          <ScalarProperty Name="dt_to" ColumnName="dt_to" />
+          <ScalarProperty Name="dt_from" ColumnName="dt_from" />
+          <ScalarProperty Name="dt_hinkan" ColumnName="dt_hinkan" />
+          <ScalarProperty Name="cd_tanto_hinkan" ColumnName="cd_tanto_hinkan" />
+          <ScalarProperty Name="dt_seizo" ColumnName="dt_seizo" />
+          <ScalarProperty Name="cd_tanto_seizo" ColumnName="cd_tanto_seizo" />
+          <ScalarProperty Name="no_seiho" ColumnName="no_seiho" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="qty_haigo_kei" ColumnName="qty_haigo_kei" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="qty_max" ColumnName="qty_max" />
+          <ScalarProperty Name="flg_gasan" ColumnName="flg_gasan" />
+          <ScalarProperty Name="cd_setsubi" ColumnName="cd_setsubi" />
+          <ScalarProperty Name="ritsu_kihon" ColumnName="ritsu_kihon" />
+          <ScalarProperty Name="qty_kihon" ColumnName="qty_kihon" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="cd_bunrui" ColumnName="cd_bunrui" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="nm_haigo_r" ColumnName="nm_haigo_r" />
+          <ScalarProperty Name="nm_haigo" ColumnName="nm_haigo" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ma_haigo_recipe">
+      <EntityTypeMapping TypeName="FOODPROCSModel.vw_ma_haigo_recipe">
+        <MappingFragment StoreEntitySet="vw_ma_haigo_recipe">
+          <ScalarProperty Name="kbn_bunkatsu" ColumnName="kbn_bunkatsu" />
+          <ScalarProperty Name="kbn_shitei" ColumnName="kbn_shitei" />
+          <ScalarProperty Name="kbn_jyotai" ColumnName="kbn_jyotai" />
+          <ScalarProperty Name="cd_koshin" ColumnName="cd_koshin" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="dt_toroku" ColumnName="dt_toroku" />
+          <ScalarProperty Name="flg_mishiyo" ColumnName="flg_mishiyo" />
+          <ScalarProperty Name="flg_sakujyo" ColumnName="flg_sakujyo" />
+          <ScalarProperty Name="budomari" ColumnName="budomari" />
+          <ScalarProperty Name="hijyu" ColumnName="hijyu" />
+          <ScalarProperty Name="qty_futai" ColumnName="qty_futai" />
+          <ScalarProperty Name="cd_futai" ColumnName="cd_futai" />
+          <ScalarProperty Name="su_kowake" ColumnName="su_kowake" />
+          <ScalarProperty Name="qty_kowake" ColumnName="qty_kowake" />
+          <ScalarProperty Name="su_nisugata" ColumnName="su_nisugata" />
+          <ScalarProperty Name="qty_nisugata" ColumnName="qty_nisugata" />
+          <ScalarProperty Name="qty_haigo" ColumnName="qty_haigo" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="cd_mark" ColumnName="cd_mark" />
+          <ScalarProperty Name="nm_hin" ColumnName="nm_hin" />
+          <ScalarProperty Name="kbn_hin" ColumnName="kbn_hin" />
+          <ScalarProperty Name="cd_hin" ColumnName="cd_hin" />
+          <ScalarProperty Name="no_tonyu" ColumnName="no_tonyu" />
+          <ScalarProperty Name="no_kotei" ColumnName="no_kotei" />
+          <ScalarProperty Name="qty_haigo_h" ColumnName="qty_haigo_h" />
+          <ScalarProperty Name="no_han" ColumnName="no_han" />
+          <ScalarProperty Name="cd_haigo" ColumnName="cd_haigo" />
+          <ScalarProperty Name="no_seq" ColumnName="no_seq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ma_mark">
+      <EntityTypeMapping TypeName="FOODPROCSModel.vw_ma_mark">
+        <MappingFragment StoreEntitySet="vw_ma_mark">
+          <ScalarProperty Name="ss_flg_sagyo" ColumnName="ss_flg_sagyo" />
+          <ScalarProperty Name="ss_flg_shikakari" ColumnName="ss_flg_shikakari" />
+          <ScalarProperty Name="ss_flg_maeshori" ColumnName="ss_flg_maeshori" />
+          <ScalarProperty Name="ss_flg_genryo" ColumnName="ss_flg_genryo" />
+          <ScalarProperty Name="ss_kbn_budomari" ColumnName="ss_kbn_budomari" />
+          <ScalarProperty Name="ss_kbn_gosa" ColumnName="ss_kbn_gosa" />
+          <ScalarProperty Name="ss_kbn_nisugata" ColumnName="ss_kbn_nisugata" />
+          <ScalarProperty Name="ss_kbn_qty_haigo" ColumnName="ss_kbn_qty_haigo" />
+          <ScalarProperty Name="dt_henko" ColumnName="dt_henko" />
+          <ScalarProperty Name="kbn_futai" ColumnName="kbn_futai" />
+          <ScalarProperty Name="kbn_budomari" ColumnName="kbn_budomari" />
+          <ScalarProperty Name="kbn_hijyu" ColumnName="kbn_hijyu" />
+          <ScalarProperty Name="kbn_su_kowake" ColumnName="kbn_su_kowake" />
+          <ScalarProperty Name="kbn_qty_kowake" ColumnName="kbn_qty_kowake" />
+          <ScalarProperty Name="kbn_su_nisugata" ColumnName="kbn_su_nisugata" />
+          <ScalarProperty Name="kbn_qty_nisugata" ColumnName="kbn_qty_nisugata" />
+          <ScalarProperty Name="kbn_qty_haigo" ColumnName="kbn_qty_haigo" />
+          <ScalarProperty Name="cd_tani_shiyo" ColumnName="cd_tani_shiyo" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="nm_mark" ColumnName="nm_mark" />
+          <ScalarProperty Name="cd_mark" ColumnName="cd_mark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

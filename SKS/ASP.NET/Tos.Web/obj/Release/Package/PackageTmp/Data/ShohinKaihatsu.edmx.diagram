@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="93e7d8fd58c44d4bbb758a43c3ea198b" Name="Diagram1" ZoomLevel="112">
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_kbn_hin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_hin_syurui" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_kaisha" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_cyuui" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_haigo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisaku_list" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_genryo" Width="1.5" PointX="4.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_busho" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_yoki_hoso" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_yoki_hoso_shizai" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_user_gamen_info" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_category" Width="1.5" PointX="6.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunrui" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_shisaku_saiban" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_hin" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_ma_bunrui" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_shohinkaihatsu_dialog_g3_nm_meisho_hinmei" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_tantokaisya" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_ma_setsubi" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_ma_kojyo" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seihin_seiho" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_line_togo" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_event_log" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_ma_seizo_line" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_kengen" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_shizai" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_tani" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_member" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_user_new" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_rireki" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_shohinkaihatsu_008_busho_kaisha" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_memo" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_memo_eigyo" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_shisaku" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_shisakuhin" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_status" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_genryo_seiho" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seizo_line" Width="1.5" PointX="12.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_hin_shikakari" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_kotei" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_shohinkaihatsu_dialog_kaisha_501" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_haigo_header" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_denso" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_group" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_team" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_no_seiho_shurui" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_kihonjoho" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_haigo" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_shizai" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisan_status_rireki" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_ma_mark" Width="1.5" PointX="14.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_genryokojo" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.cn_no_ikkatsu" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_shohinkaihatsu_ikkatsuShutsuryoToroku_206" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.wk_shisaku_genryo_delivery" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_kaisha_kojyo" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_user_info" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisakuhin" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_tenpu_bunsho" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_user_togo" Width="1.5" PointX="10.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_kinou" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_haigo_meisai" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_genryo_setsubi" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_haigo_chui" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_kakuninjiko" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_koteizu_b" Width="1.5" PointX="16.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_seihinkikaku" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_shomikigen" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_tokuseichi" Width="1.5" PointX="4.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_yokihoso" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_literal" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_hyoshi" Width="1.5" PointX="16.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisaku" Width="1.5" PointX="8.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_shohin_rireki" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_gate_bunrui" Width="1.5" PointX="10.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_gate_header" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_gate_attachment" Width="1.5" PointX="12.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_tr_gate_attachment" Width="1.5" PointX="16.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_change_log" Width="1.5" PointX="14.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_gate_meisai" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_gate_check" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_ma_gate_check" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_gate_bunrui" Width="1.5" PointX="18.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_user_reigai" Width="1.5" PointX="2.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_seiho_bunsho_yokihoso_shizai" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_yoki_hoso_shizai" Width="1.5" PointX="4.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_busho_convert_bf" Width="1.5" PointX="18.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisaku_list_bf" Width="1.5" PointX="6.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_cyuui_bf" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_genryokojo_bf" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_shisaku_saiban_bf" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_user" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_genryo_bf" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_haigo_bf" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisakuhin_bf" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.wk_shisaku_genryo_delivery_bf" Width="1.5" PointX="14.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_shisaku_bf" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.ma_genryo" Width="1.5" PointX="16.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.tr_log_operation" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="ShohinKaihatsuModel.vw_shohinkaihatsu_log_operation" Width="1.5" PointX="20.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

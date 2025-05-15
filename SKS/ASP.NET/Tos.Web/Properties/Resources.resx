@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuthorizedErrorMessage" xml:space="preserve">
+    <value>適切な権限のあるユーザーでログインしてください。</value>
+  </data>
+  <data name="AuthorizedErrorMessageTitle" xml:space="preserve">
+    <value>ページにアクセスする権限がありません。</value>
+  </data>
+  <data name="DbSaveErrorMessage" xml:space="preserve">
+    <value>データの保存に失敗しました。</value>
+  </data>
+  <data name="DbUpdateConcurrencyError" xml:space="preserve">
+    <value>すでに他のユーザーがこのデータを変更しています。最新のデータを取得してください。</value>
+  </data>
+  <data name="ErrorMessageTitle" xml:space="preserve">
+    <value>エラーが発生しました。</value>
+  </data>
+  <data name="FileDownloadSelectErrorMessage" xml:space="preserve">
+    <value>ファイルダウンロードで出力する項目が選択されていません。</value>
+  </data>
+  <data name="FileSaveErrorMessage" xml:space="preserve">
+    <value>ファイルの保存に失敗しました。</value>
+  </data>
+  <data name="FileSaveSuccessMessage" xml:space="preserve">
+    <value>ファイルを保存しました。</value>
+  </data>
+  <data name="FileSizeErrorMessage" xml:space="preserve">
+    <value>ファイルサイズが{0}KB以上は保存できません。</value>
+  </data>
+  <data name="InvalidUserIdOrPassword" xml:space="preserve">
+    <value>ユーザーIDまたはパスワードが違います。</value>
+  </data>
+  <data name="LoginPage" xml:space="preserve">
+    <value>WinLogin.aspx</value>
+  </data>
+  <data name="LogonUser" xml:space="preserve">
+    <value>LOGON_USER</value>
+  </data>
+  <data name="NoDataExsists" xml:space="preserve">
+    <value>該当データが存在しません。</value>
+  </data>
+  <data name="NoFileAttachmentMessage" xml:space="preserve">
+    <value>ファイルが指定されていません。</value>
+  </data>
+  <data name="NoFileDataMessage" xml:space="preserve">
+    <value>ファイルサイズが 0KB のためアップロードできません。</value>
+  </data>
+  <data name="NotChangePassword" xml:space="preserve">
+    <value>パスワードの変更に失敗しました。</value>
+  </data>
+  <data name="NotNullAllow" xml:space="preserve">
+    <value>NULL は許可されません。</value>
+  </data>
+  <data name="NoUploadDataError" xml:space="preserve">
+    <value>アップロードするデータが1件もありませんでした。</value>
+  </data>
+  <data name="PrimaryKeyViolation" xml:space="preserve">
+    <value>プライマリキー制約違反です。</value>
+  </data>
+  <data name="RaiseFileDownloadServerError" xml:space="preserve">
+    <value>ファイルダウンロード処理中にサーバーで不明なエラーが発生しました。システム管理者に問い合わせしてください。</value>
+  </data>
+  <data name="RaiseFileUploadServerError" xml:space="preserve">
+    <value>ファイルアップロード処理中にサーバーで不明なエラーが発生しました。システム管理者に問い合わせしてください。</value>
+  </data>
+  <data name="RaiseReportServerError" xml:space="preserve">
+    <value>印刷処理中にサーバーで不明なエラーが発生しました。システム管理者に問い合わせしてください。</value>
+  </data>
+  <data name="ReturnUrl" xml:space="preserve">
+    <value>MixedSecurity.ReturnUrl</value>
+  </data>
+  <data name="ServiceError" xml:space="preserve">
+    <value>サービスでエラーが発生しました。</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>不明なエラーが発生しました。</value>
+  </data>
+  <data name="ValidationKey" xml:space="preserve">
+    <value>同一キーのデータが既に存在します。</value>
+  </data>
+  <data name="NoUserExists" xml:space="preserve">
+    <value>ログインしたユーザーの社員コードで社員マスタに情報が存在しませんでした。</value>
+  </data>
+  <data name="RequestClientKeyName" xml:space="preserve">
+    <value>__key</value>
+  </data>
+  <data name="ResponseHtmlFormat" xml:space="preserve">
+    <value>&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv='content-type' content='text/html; charset=UTF-8' /&gt;
+        &lt;script type='text/javascript'&gt;
+            if(window.parent &amp;&amp; window.parent.postMessage){{
+                    window.parent.postMessage('{0}','{1}');
+                }}
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class='key'&gt;{2}&lt;/div&gt; 
+        &lt;div class='result'&gt;{3}&lt;/div&gt; 
+        &lt;div class='message'&gt;{4}&lt;/div&gt; 
+        &lt;div class='data'&gt;{5}&lt;/div&gt; 
+    &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="InvalidColumnSizeTextFieldFile" xml:space="preserve">
+    <value>列数が不正です。</value>
+  </data>
+  <data name="OutOfRangeTextField" xml:space="preserve">
+    <value>値が範囲を超えています。{0} から {1} までの数値を設定してください。</value>
+  </data>
+  <data name="RequiredTextField" xml:space="preserve">
+    <value>必須の項目です。</value>
+  </data>
+  <data name="CSVUploadError" xml:space="preserve">
+    <value>アップロードでエラーが発生しています。
+アップロードしたファイルの下記のエラーを修正して再度アップロードしてください。</value>
+  </data>
+  <data name="AuthenticationErrorMessage" xml:space="preserve">
+    <value>適切なユーザーでログインしてください。</value>
+  </data>
+  <data name="OutOfLengthTextField" xml:space="preserve">
+    <value>値が指定桁数を超えています。半角{0}桁、全角{1}桁までで設定してください。</value>
+  </data>
+  <data name="NoKeyDataExsists" xml:space="preserve">
+    <value>入力されたコードがマスタに存在しません。</value>
+  </data>
+  <data name="NoFileExists" xml:space="preserve">
+    <value>指定されたファイルが存在しません。</value>
+  </data>
+  <data name="ColumnName" xml:space="preserve">
+    <value>列</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>エラーメッセージ</value>
+  </data>
+  <data name="ErrorValue" xml:space="preserve">
+    <value>エラー値</value>
+  </data>
+  <data name="RecordNumber" xml:space="preserve">
+    <value>行</value>
+  </data>
+  <data name="Encoding" xml:space="preserve">
+    <value>Shift-JIS</value>
+  </data>
+  <data name="CsvExtension" xml:space="preserve">
+    <value>.csv</value>
+  </data>
+  <data name="ExcelExtension" xml:space="preserve">
+    <value>.xlsx</value>
+  </data>
+  <data name="NumberToBoolean" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="InvalidBitFormatError" xml:space="preserve">
+    <value>０/１もしくはTrue/Falseで指定してください。</value>
+  </data>
+  <data name="InvalidDateFormatError" xml:space="preserve">
+    <value>日付フォーマットで指定してください。形式：{0}</value>
+  </data>
+  <data name="InvalidNumberFormatError" xml:space="preserve">
+    <value>数値で指定してください</value>
+  </data>
+  <data name="InvalidHankakuError" xml:space="preserve">
+    <value>半角のみで指定してください。</value>
+  </data>
+  <data name="InvalidZenkakuError" xml:space="preserve">
+    <value>全角のみで指定してください。</value>
+  </data>
+  <data name="InvalidUserIdOrPasswordOrExpire" xml:space="preserve">
+    <value>ユーザーIDまたはパスワードが違います。もしくは有効期限が切れています。</value>
+  </data>
+  <data name="InvalidAlphabetError" xml:space="preserve">
+    <value>半角アルファベットのみで指定してください。</value>
+  </data>
+  <data name="InvalidAlphabetNumberError" xml:space="preserve">
+    <value>半角アルファベット・数字のみで指定してください。</value>
+  </data>
+  <data name="InvalidDigitsFormatError" xml:space="preserve">
+    <value>数字で指定してください</value>
+  </data>
+  <data name="InvalidHankakuEiSuKigoError" xml:space="preserve">
+    <value>半角アルファベット・数字・記号のみで指定してください。</value>
+  </data>
+  <data name="InvalidHankakuKanaError" xml:space="preserve">
+    <value>半角カナのみで指定してください。</value>
+  </data>
+  <data name="InvalidIntegerFormatError" xml:space="preserve">
+    <value>整数値で指定してください</value>
+  </data>
+  <data name="InvalidPointLengthFormatError" xml:space="preserve">
+    <value>整数部{0}桁、小数点以下{1}桁までの数値を設定してください。</value>
+  </data>
+  <data name="KategoriMasterDownload" xml:space="preserve">
+    <value>_KategoriMaster_</value>
+  </data>
+  <data name="KengenCodeSaiban" xml:space="preserve">
+    <value>権限コード</value>
+  </data>
+  <data name="kbn_eigyo_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="kbn_eigyo_2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="kbn_eigyo_3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="kengen_eigyo_114" xml:space="preserve">
+    <value>114</value>
+  </data>
+  <data name="kengen_eigyo_48" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="kengen_eigyo_50" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="id_gamen_200" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="id_kino_100" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="id_kino_102" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="id_kino_103" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="id_system_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="id_system_2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="id_system_3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EncodingUTF8" xml:space="preserve">
+    <value>UTF-8</value>
+  </data>
+  <data name="cd_jyotai_0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cd_jyotai_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cd_jyotai_2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="denso_zumi_status" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="shinsei_zumi_status" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="id_gamen_203" xml:space="preserve">
+    <value>203</value>
+  </data>
+  <data name="flag_eigyo" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flag_honbu" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="group_code" xml:space="preserve">
+    <value>グループコード</value>
+  </data>
+  <data name="team_code" xml:space="preserve">
+    <value>チームコード</value>
+  </data>
+  <data name="haishi" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="henshuchu_status" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AP0102" xml:space="preserve">
+    <value>対象データが存在しません。会社コード：{0}、{1}:{2}（AP0102）</value>
+  </data>
+  <data name="kbn_hin_haigo" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="kbn_hin_shikakarihin" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="IkkatsuShutsuryokuIchiran" xml:space="preserve">
+    <value>一括出力一覧</value>
+  </data>
+  <data name="cd_category_25" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="cd_category_27" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="JikaGenyyo" xml:space="preserve">
+    <value>自家原料</value>
+  </data>
+  <data name="m_kirikae_foodprocs" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_kirikae_hyoji" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="shisanrirekijun" xml:space="preserve">
+    <value>試算履歴順</value>
+  </data>
+  <data name="JushinchuStatus" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Shonin2Status" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="KakuninStatus" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Maxmojisu" xml:space="preserve">
+    <value>{0}文字以内で入力してください。</value>
+  </data>
+  <data name="CSV200_Download" xml:space="preserve">
+    <value>製法一覧</value>
+  </data>
+  <data name="CSV203_DownloadDetail" xml:space="preserve">
+    <value>配合明細</value>
+  </data>
+  <data name="CSV203_DownloadSeiho" xml:space="preserve">
+    <value>配合製造ライン</value>
+  </data>
+  <data name="kbn_bunkatsu" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cd_category" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="flg_denso_taisho" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flg_mishiyo" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="kbn_haishi" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="kbn_hin" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="kbn_kengen" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="CSV209_Download" xml:space="preserve">
+    <value>配合製造ライン</value>
+  </data>
+  <data name="CSV209_DownloadDetail" xml:space="preserve">
+    <value>配合レシピ</value>
+  </data>
+  <data name="BunshoExcelName" xml:space="preserve">
+    <value>製法文書_</value>
+  </data>
+  <data name="BunshoTemplateExcelName" xml:space="preserve">
+    <value>製法文書_製法番号_yyyyMMddhhmmss</value>
+  </data>
+  <data name="CSV212_Download" xml:space="preserve">
+    <value>原料一覧</value>
+  </data>
+  <data name="ExcelXlsmExtension" xml:space="preserve">
+    <value>.xlsm</value>
+  </data>
+  <data name="SonotaGenkaShisanHyoExcelName" xml:space="preserve">
+    <value>その他原価試算表</value>
+  </data>
+  <data name="SonotaGenkaShisanHyoTemplateExcelName" xml:space="preserve">
+    <value>【研＿その他調味料以外】原価試算フォーマット</value>
+  </data>
+  <data name="ChomiryoGenkaShisanHyoExcelName" xml:space="preserve">
+    <value>調味料原価試算表</value>
+  </data>
+  <data name="ChomiryoGenkaShisanHyoTemplateExcelName" xml:space="preserve">
+    <value>【研＿調味料】原価試算フォーマット</value>
+  </data>
+  <data name="kbn_bumon_factory" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="kbn_bumon_lab" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ShisakuHyojiYohoExcelTemplate" xml:space="preserve">
+    <value>試作表(横バージョン)</value>
+  </data>
+  <data name="CSV208_Download" xml:space="preserve">
+    <value>配合名マスタ</value>
+  </data>
+  <data name="SanpuruSetsumeishoExcel" xml:space="preserve">
+    <value>表示作成用フォーマット(加食版)</value>
+  </data>
+  <data name="SakuseiFomattoExcel" xml:space="preserve">
+    <value>表示作成用フォーマット(調味料版)</value>
+  </data>
+  <data name="ShisakuHyojiYohoExcelName" xml:space="preserve">
+    <value>試作表(横)</value>
+  </data>
+  <data name="ShisakuHaigoHyoOutputExcel" xml:space="preserve">
+    <value>試作表(縦)</value>
+  </data>
+  <data name="ShisakuHaigoHyoTemplateExcel" xml:space="preserve">
+    <value>試作表(縦バージョン)</value>
+  </data>
+  <data name="SakuseiFomattoExcelName" xml:space="preserve">
+    <value>サンプル説明書_合算</value>
+  </data>
+  <data name="SanpuruSetsumeishoExcelName" xml:space="preserve">
+    <value>サンプル説明書_個別</value>
+  </data>
+  <data name="HaigoSakuseiExcelName" xml:space="preserve">
+    <value>配合作成表_{0}_</value>
+  </data>
+  <data name="HaigoSakuseiTemplateExcelName" xml:space="preserve">
+    <value>配合作成表_配合コード_yyyyMMddhhmmss</value>
+  </data>
+  <data name="SekkeiHinshutsuGetoExcelTemplate" xml:space="preserve">
+    <value>設計品質ゲート_試作No_yyyyMMddhhmmss</value>
+  </data>
+  <data name="SekkeiHinshutsuGetoExceName" xml:space="preserve">
+    <value>設計品質ゲート_</value>
+  </data>
+  <data name="saiban401Key1" xml:space="preserve">
+    <value>ゲート分類番号</value>
+  </data>
+  <data name="saiban402Key1" xml:space="preserve">
+    <value>チェック番号</value>
+  </data>
+  <data name="TankaMaxlenght" xml:space="preserve">
+    <value>整数部8桁、小数部2桁以内で指定してください。</value>
+  </data>
+  <data name="TankaOutOfRange" xml:space="preserve">
+    <value>範囲内(0～99999999.99)で指定してください。</value>
+  </data>
+  <data name="Maxlenght" xml:space="preserve">
+    <value>{0}文字以内で入力してください。</value>
+  </data>
+  <data name="BushoNotfound" xml:space="preserve">
+    <value>存在しない部署コードが指定されています。</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>部署内で品コードが重複しています。</value>
+  </data>
+  <data name="CodeNotfound" xml:space="preserve">
+    <value>存在しない{0}が指定されています。</value>
+  </data>
+  <data name="ShisakuHyojiYoho153ExcelName" xml:space="preserve">
+    <value>試作表_アヲハタ(横)</value>
+  </data>
+  <data name="ShisakuHyojiYoho154ExcelName" xml:space="preserve">
+    <value>試作表_アヲハタ(縦)</value>
+  </data>
+  <data name="SanpuruSetsumeisho156Excel" xml:space="preserve">
+    <value>サンプル説明書_アヲハタ（個別）</value>
+  </data>
+</root>

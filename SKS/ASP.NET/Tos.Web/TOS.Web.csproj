@@ -1,0 +1,2479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25401345-1215-4D9F-84D2-DD81462F7CAA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tos.Web</RootNamespace>
+    <AssemblyName>Tos.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.87.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.87.1\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="jp.co.fit.vfreport.SvfrClient, Version=8.1.0.0, Culture=neutral, PublicKeyToken=9bf31437c001b341, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\jp.co.fit.vfreport.SvfrClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.5.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.5.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services">
+      <HintPath>..\packages\Microsoft.Data.Services.5.5.0\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.5.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.5.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\LoginNotAD.aspx" />
+    <Content Include="Account\PasswordChange.aspx" />
+    <Content Include="Account\WinLogin.aspx" />
+    <Content Include="AuthorizedError.aspx" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap.min.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\variables.min.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\constants.css">
+      <DependentUpon>constants.less</DependentUpon>
+    </Content>
+    <Content Include="Content\constants.min.css">
+      <DependentUpon>constants.less</DependentUpon>
+    </Content>
+    <Content Include="Content\headerdetail.css">
+      <DependentUpon>headerdetail.less</DependentUpon>
+    </Content>
+    <Content Include="Content\headerdetail.min.css">
+      <DependentUpon>headerdetail.less</DependentUpon>
+    </Content>
+    <Content Include="Content\icons.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\icons-triangle.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\tos_logo.png" />
+    <Content Include="Content\menu.css">
+      <DependentUpon>menu.less</DependentUpon>
+    </Content>
+    <Content Include="Content\menu.min.css">
+      <DependentUpon>menu.less</DependentUpon>
+    </Content>
+    <Content Include="Content\part.css" />
+    <Content Include="Content\reset.css">
+      <DependentUpon>reset.less</DependentUpon>
+    </Content>
+    <Content Include="Content\reset.min.css">
+      <DependentUpon>reset.less</DependentUpon>
+    </Content>
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\selectize.css" />
+    <Content Include="Content\site.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Data\ShohinKaihatsu.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShohinKaihatsu.edmx</DependentUpon>
+      <LastGenOutput>ShohinKaihatsu.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\ShohinKaihatsu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShohinKaihatsu.edmx</DependentUpon>
+      <LastGenOutput>ShohinKaihatsu.cs</LastGenOutput>
+    </Content>
+    <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="ExcelTemplates\readme.txt" />
+    <Content Include="excel\readme.txt" />
+    <Content Include="excel\seiho_excel\readme.txt" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\iconpaper.PNG" />
+    <Content Include="Images\iconpaperspace.PNG" />
+    <Content Include="jp.co.fit.vfreport.SvfrClient.dll" />
+    <Content Include="output\ikkatsu\readme.txt" />
+    <Content Include="output\readme.txt" />
+    <Content Include="Pages\004_ShisakuBunsekiDataKakunin.aspx" />
+    <Content Include="Pages\005_BunsekichiNyuryoku.aspx" />
+    <Content Include="Pages\006_ZenkojoTankaBudomari.aspx" />
+    <Content Include="Pages\007_CategoryMaster.aspx" />
+    <Content Include="Pages\008_GroupMaster.aspx" />
+    <Content Include="Pages\009_KengenMaster.aspx" />
+    <Content Include="Pages\010_TantoshaMaster.aspx" />
+    <Content Include="Pages\011_TantoshaMasterEigyo.aspx" />
+    <Content Include="Pages\012_YokiHosoMaster.aspx" />
+    <Content Include="Pages\013_YokiHosoShizaiMaster.aspx" />
+    <Content Include="Pages\014_ShisaquickLaboUpload.aspx" />
+    <Content Include="Pages\015_RoguShutsuryokuDownload.aspx" />
+    <Content Include="Pages\054_ShisakuBunsekiDataKakunin.aspx" />
+    <Content Include="Pages\055_BunsekichiNyuryoku.aspx" />
+    <Content Include="Pages\200_SeihoIchiran.aspx" />
+    <Content Include="Pages\202_G-LabelRenkei.aspx" />
+    <Content Include="Pages\203_HaigoTorokuKaihatsuBumon.aspx" />
+    <Content Include="Pages\101_ShishakuData_KihonJohyo_Tab.aspx" />
+    <Content Include="Pages\101_ShishakuData_GenkaShisan_Tab.aspx" />
+    <Content Include="Pages\204_SeihoToroku.aspx" />
+    <Content Include="Pages\205_IkkatsuShutsuryokuIchiran.aspx" />
+    <Content Include="Pages\206_IkkatsuShutsuryokuToroku.aspx" />
+    <Content Include="Pages\207_HaigoJyushin.aspx" />
+    <Content Include="Pages\208_HaigoIchiran.aspx" />
+    <Content Include="Pages\209_HaigoTorokuKojyoBumon.aspx" />
+    <Content Include="Pages\211_TenpuBunsho.aspx" />
+    <Content Include="Pages\212_GenryoIchiran.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_HaigoHyo_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_HaigoSeizoChuiJiko_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_Hyoshi_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_RirekiHyo_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_SeihinKikakuan_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_SeihojyoKakuninJiko_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_SeizoKoteizu_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_ShomikigenSetteiHyo_Tab.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_GenryoSetsubi_Tab.aspx" />
+    <Content Include="Pages\400_SekkeiHinshutsuGeto.aspx" />
+    <Content Include="Pages\401_BunruiIchiran.aspx" />
+    <Content Include="Pages\402_ChekkuMasutaIchiran.aspx" />
+    <Content Include="Pages\403_KanrenShiryo.aspx" />
+    <Content Include="Pages\404_KoshinRireki.aspx" />
+    <Content Include="Pages\056_TankanUpload.aspx" />
+    <Content Include="Pages\151_ShishakuData.aspx" />
+    <Content Include="Pages\151_ShishakuData_HaigoHyo_Tab.aspx" />
+    <Content Include="Pages\151_ShishakuData_KihonJohyo_Tab.aspx" />
+    <Content Include="Pages\151_ShishakuData_TokuseiChi_Tab.aspx" />
+    <Content Include="Pages\150_ShishakuIchiran.aspx" />
+    <Content Include="Pages\Dialogs\405_CopyMotoSentakuDialog.aspx" />
+    <Content Include="Pages\Dialogs\500_SeizoTantoKaishaKensaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\501_TantoshaIchiranEigyo_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\600_SeizoKoteiDialog.aspx" />
+    <Content Include="Pages\Dialogs\601_MemoNyuryoku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\602_IroShitei_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\604_BunsekiGenryoKakuninDataKakunin.aspx" />
+    <Content Include="Pages\Dialogs\605_TantoEigyoKensaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\606_GenzairyoKakunin_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\700_HaigoTorikomi_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\705_HaigoCopy_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\706_MarkKensaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\707_LineKenSaKu_DiaLog.aspx" />
+    <Content Include="Pages\Dialogs\708_GenryoMasterSansho_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\709_BunruiKensaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\711_ShisakuCopy_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\804_SeihinSansho_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\805_ShikakarihinSentaku_Dialog.aspx" />
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Account\Redirect401.html" />
+    <Content Include="Pages\Dialogs\603_ShisakuRetuTuika_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\710_HinmeiKaihatsu_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\800_HinmeiSentaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\801_SeihobunshoSakusei_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\802_CopyHaniSelection_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\803_ExcelHaniSelection_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\806_ShisakuretsuSentaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\807_RenewalMotoSentaku.aspx" />
+    <Content Include="Pages\Dialogs\ConfirmDialog.aspx" />
+    <Content Include="Pages\Dialogs\704_SeizoKojoShitei_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\703_SeihinKensaku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\701_SeihinJohoNyuryoku_Dialog.aspx" />
+    <Content Include="Pages\Dialogs\102_GenryoIchiranDialog.aspx" />
+    <Content Include="Pages\Dialogs\650_SeizoKoteiDialog.aspx" />
+    <Content Include="Pages\Dialogs\S_IroSettingDialog2.aspx" />
+    <Content Include="Pages\Dialogs\S_MemoDialog.aspx" />
+    <Content Include="Pages\Dialogs\S_ShisakuRetuTuikaDialog.aspx" />
+    <Content Include="Pages\100_ShishakuIchiran.aspx" />
+    <Content Include="Pages\101_ShishakuData.aspx" />
+    <Content Include="Pages\101_ShishakuData_HaigoHyo_Tab.aspx" />
+    <Content Include="Pages\101_ShishakuData_TokuseiChi_Tab.aspx" />
+    <Content Include="Pages\Dialogs\702_TsuikaJohoNyuryoku_Dialog.aspx" />
+    <Content Include="Pages\210_CodeFurikae.aspx" />
+    <Content Include="Pages\Transfer.aspx" />
+    <Content Include="Pages\MainMenu.aspx" />
+    <Content Include="Pages\300_SeihoBunshoSakusei_YoukiHousou_Tab.aspx" />
+    <Content Include="readme.txt" />
+    <Content Include="Resources\message.app.ja.js" />
+    <Content Include="Resources\account\pagedata-login.en.js" />
+    <Content Include="Resources\account\pagedata-login.ja.js" />
+    <Content Include="Resources\account\pagedata-passwordchange.en.js" />
+    <Content Include="Resources\account\pagedata-passwordchange.ja.js" />
+    <Content Include="Resources\menu.en.js" />
+    <Content Include="Resources\menu.ja.js" />
+    <Content Include="Resources\message.en.js" />
+    <Content Include="Resources\message.ja.js" />
+    <Content Include="Resources\pagedata-all.en.js" />
+    <Content Include="Resources\pagedata-all.ja.js" />
+    <Content Include="Resources\pagedata-dialog.en.js" />
+    <Content Include="Resources\pagedata-dialog.ja.js" />
+    <Content Include="Resources\select2-messages\af.js" />
+    <Content Include="Resources\select2-messages\ar.js" />
+    <Content Include="Resources\select2-messages\az.js" />
+    <Content Include="Resources\select2-messages\bg.js" />
+    <Content Include="Resources\select2-messages\bs.js" />
+    <Content Include="Resources\select2-messages\ca.js" />
+    <Content Include="Resources\select2-messages\cs.js" />
+    <Content Include="Resources\select2-messages\da.js" />
+    <Content Include="Resources\select2-messages\de.js" />
+    <Content Include="Resources\select2-messages\dsb.js" />
+    <Content Include="Resources\select2-messages\el.js" />
+    <Content Include="Resources\select2-messages\en.js" />
+    <Content Include="Resources\select2-messages\es.js" />
+    <Content Include="Resources\select2-messages\et.js" />
+    <Content Include="Resources\select2-messages\eu.js" />
+    <Content Include="Resources\select2-messages\fa.js" />
+    <Content Include="Resources\select2-messages\fi.js" />
+    <Content Include="Resources\select2-messages\fr.js" />
+    <Content Include="Resources\select2-messages\gl.js" />
+    <Content Include="Resources\select2-messages\he.js" />
+    <Content Include="Resources\select2-messages\hi.js" />
+    <Content Include="Resources\select2-messages\hr.js" />
+    <Content Include="Resources\select2-messages\hsb.js" />
+    <Content Include="Resources\select2-messages\hu.js" />
+    <Content Include="Resources\select2-messages\hy.js" />
+    <Content Include="Resources\select2-messages\id.js" />
+    <Content Include="Resources\select2-messages\is.js" />
+    <Content Include="Resources\select2-messages\it.js" />
+    <Content Include="Resources\select2-messages\ja.js" />
+    <Content Include="Resources\select2-messages\km.js" />
+    <Content Include="Resources\select2-messages\ko.js" />
+    <Content Include="Resources\select2-messages\lt.js" />
+    <Content Include="Resources\select2-messages\lv.js" />
+    <Content Include="Resources\select2-messages\mk.js" />
+    <Content Include="Resources\select2-messages\ms.js" />
+    <Content Include="Resources\select2-messages\nb.js" />
+    <Content Include="Resources\select2-messages\nl.js" />
+    <Content Include="Resources\select2-messages\pl.js" />
+    <Content Include="Resources\select2-messages\ps.js" />
+    <Content Include="Resources\select2-messages\pt-BR.js" />
+    <Content Include="Resources\select2-messages\pt.js" />
+    <Content Include="Resources\select2-messages\ro.js" />
+    <Content Include="Resources\select2-messages\ru.js" />
+    <Content Include="Resources\select2-messages\sk.js" />
+    <Content Include="Resources\select2-messages\sl.js" />
+    <Content Include="Resources\select2-messages\sr-Cyrl.js" />
+    <Content Include="Resources\select2-messages\sr.js" />
+    <Content Include="Resources\select2-messages\sv.js" />
+    <Content Include="Resources\select2-messages\th.js" />
+    <Content Include="Resources\select2-messages\tk.js" />
+    <Content Include="Resources\select2-messages\tr.js" />
+    <Content Include="Resources\select2-messages\uk.js" />
+    <Content Include="Resources\select2-messages\vi.js" />
+    <Content Include="Resources\select2-messages\zh-CN.js" />
+    <Content Include="Resources\select2-messages\zh-TW.js" />
+    <Content Include="Resources\settings.app.en.js" />
+    <Content Include="Resources\settings.en.js" />
+    <Content Include="Resources\settings.ja.js" />
+    <Content Include="Resources\settings.app.ja.js" />
+    <Content Include="Scripts\app.ajax.file.js" />
+    <Content Include="Scripts\app.ajax.file.min.js">
+      <DependentUpon>app.ajax.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.ajax.js" />
+    <Content Include="Scripts\app.base.js" />
+    <Content Include="Scripts\app.extend.js" />
+    <Content Include="Scripts\app.file.js" />
+    <Content Include="Scripts\app.file.min.js">
+      <DependentUpon>app.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.js">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.logger.js" />
+    <Content Include="Scripts\app.logger.min.js">
+      <DependentUpon>app.logger.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.min.js">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.obj.js" />
+    <Content Include="Scripts\app.ui.js" />
+    <Content Include="Scripts\app.validation.js" />
+    <Content Include="Scripts\bignumber.js" />
+    <Content Include="Scripts\bignumber.min.js">
+      <DependentUpon>bignumber.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\calendar.min.js">
+      <DependentUpon>calendar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\datatable.js" />
+    <Content Include="Scripts\datatable.min.js">
+      <DependentUpon>datatable.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\downloadfile.min.js">
+      <DependentUpon>downloadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\encoding-indexes.js" />
+    <Content Include="Scripts\encoding-shiftjis.js">
+      <DependentUpon>encoding-shiftjis.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\encoding-shiftjis.min.js">
+      <DependentUpon>encoding-shiftjis.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\encoding.js" />
+    <Content Include="Scripts\entertotab.js" />
+    <Content Include="Scripts\entertotab.min.js">
+      <DependentUpon>entertotab.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\excanvas.js" />
+    <Content Include="Scripts\excanvas.min.js" />
+    <Content Include="Scripts\filedad.js" />
+    <Content Include="Scripts\filedad.min.js">
+      <DependentUpon>filedad.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\flexmulticolumns.js" />
+    <Content Include="Scripts\flexmulticolumns.min.js">
+      <DependentUpon>flexmulticolumns.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\app.ajax.file.min.js.map">
+      <DependentUpon>app.ajax.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.file.min.js.map">
+      <DependentUpon>app.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.logger.min.js.map">
+      <DependentUpon>app.logger.js</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Data\ShohinKaihatsu.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShohinKaihatsu.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\ShohinKaihatsu.edmx.diagram">
+      <DependentUpon>ShohinKaihatsu.edmx</DependentUpon>
+    </Content>
+    <Content Include="ExcelTemplates\製法文書_製法番号_yyyyMMddhhmmss.xlsx" />
+    <EntityDeploy Include="Data\GLabel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GLabel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\GLabel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GLabel.edmx</DependentUpon>
+      <LastGenOutput>GLabel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\GLabel.edmx.diagram">
+      <DependentUpon>GLabel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\GLabel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GLabel.edmx</DependentUpon>
+      <LastGenOutput>GLabel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="DataFP\FOODPROCS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FOODPROCS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataFP\FOODPROCS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FOODPROCS.edmx</DependentUpon>
+      <LastGenOutput>FOODPROCS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataFP\FOODPROCS.edmx.diagram">
+      <DependentUpon>FOODPROCS.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataFP\FOODPROCS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FOODPROCS.edmx</DependentUpon>
+      <LastGenOutput>FOODPROCS.cs</LastGenOutput>
+    </Content>
+    <Content Include="ExcelTemplates\配合作成表_配合コード_yyyyMMddhhmmss.xlsx" />
+    <Content Include="ExcelTemplates\設計品質ゲート_試作No_yyyyMMddhhmmss.xlsx" />
+    <Content Include="ExcelTemplates\試作表_アヲハタ%28横%29.xlsm" />
+    <Content Include="ExcelTemplates\試作表_アヲハタ%28縦%29.xlsm" />
+    <Content Include="ExcelTemplates\サンプル説明書_アヲハタ（個別）.xlsm" />
+    <None Include="Properties\PublishProfiles\nam.pubxml" />
+    <None Include="Scripts\encoding-shiftjis.js.bundle">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Scripts\encoding-shiftjis.min.js.map">
+      <DependentUpon>encoding-shiftjis.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\filedad.min.js.map">
+      <DependentUpon>filedad.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.extablefocus.js" />
+    <Content Include="Scripts\jquery.extablefocus.min.js">
+      <DependentUpon>jquery.extablefocus.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.flot.categories.js" />
+    <Content Include="Scripts\jquery.flot.categories.min.js" />
+    <Content Include="Scripts\jquery.flot.dashes.js" />
+    <Content Include="Scripts\jquery.flot.dashes.min.js" />
+    <Content Include="Scripts\jquery.flot.js" />
+    <Content Include="Scripts\jquery.flot.min.js" />
+    <Content Include="Scripts\jquery.flot.orderBars.js" />
+    <Content Include="Scripts\jquery.flot.orderBars.min.js" />
+    <Content Include="Scripts\jquery.flot.resize.js" />
+    <Content Include="Scripts\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\jquery.flot.stack.js" />
+    <Content Include="Scripts\jquery.flot.stack.min.js" />
+    <Content Include="Scripts\jquery.flot.time.js" />
+    <Content Include="Scripts\jquery.flot.time.min.js" />
+    <Content Include="Scripts\jquery.flot.valuelabels.js" />
+    <Content Include="Scripts\jquery.flot.valuelabels.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-ja.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker-ja.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker.min.js">
+      <DependentUpon>jquery.ui.monthpicker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\part.js" />
+    <Content Include="Scripts\part.min.js">
+      <DependentUpon>part.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js">
+      <DependentUpon>select2.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\selectize.js" />
+    <Content Include="Scripts\subtotal.js" />
+    <Content Include="Scripts\subtotal.min.js">
+      <DependentUpon>subtotal.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\tabcomm.js" />
+    <Content Include="Scripts\tabcomm.min.js">
+      <DependentUpon>tabcomm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\uploadfile.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\app.validation.method.js" />
+    <Content Include="Scripts\downloadfile.js" />
+    <Content Include="Scripts\uploadfile.min.js">
+      <DependentUpon>uploadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Services\ShisaQuickService.svc" />
+    <Content Include="Temp\readme.txt" />
+    <Content Include="vsersion.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginNotAD.aspx.cs">
+      <DependentUpon>LoginNotAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginNotAD.aspx.designer.cs">
+      <DependentUpon>LoginNotAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\MixedAuthentication.cs" />
+    <Compile Include="Account\PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\WinLogin.aspx.cs">
+      <DependentUpon>WinLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\WinLogin.aspx.designer.cs">
+      <DependentUpon>WinLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthorizedError.aspx.cs">
+      <DependentUpon>AuthorizedError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizedError.aspx.designer.cs">
+      <DependentUpon>AuthorizedError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\004_ShisakuBunsekiDataKakuninController.cs" />
+    <Compile Include="Controllers\005_BunsekichiNyuryokuController.cs" />
+    <Compile Include="Controllers\006_ZenkojoTankaBudomariController.cs" />
+    <Compile Include="Controllers\007_CategoryMasterController.cs" />
+    <Compile Include="Controllers\007_CategoryMaster_CSVDownloadController.cs" />
+    <Compile Include="Controllers\008_GroupMasterController.cs" />
+    <Compile Include="Controllers\009_KengenMasterController.cs" />
+    <Compile Include="Controllers\010_TantoshaMasterController.cs" />
+    <Compile Include="Controllers\011_TantoshaMasterEigyoController.cs" />
+    <Compile Include="Controllers\012_YokiHosoMasterController.cs" />
+    <Compile Include="Controllers\013_YokiHosoShizaiMasterController.cs" />
+    <Compile Include="Controllers\014_ShisaquickLaboUploadController.cs" />
+    <Compile Include="Controllers\015_RoguShutsuryokuCSVDownloadController.cs" />
+    <Compile Include="Controllers\054_ShisakuBunsekiDataKakuninController.cs" />
+    <Compile Include="Controllers\101_ShishakuDataController.cs" />
+    <Compile Include="Controllers\101_ShishakuData_HaigoHyo_Tab_Controller.cs" />
+    <Compile Include="Controllers\101_ShishakuData_TokuseiChi_Tab_Controller.cs" />
+    <Compile Include="Controllers\102_GenryoIchiranDialogController.cs" />
+    <Compile Include="Controllers\103_ShishakuData_HyojiYoko_Excel_Controller.cs" />
+    <Compile Include="Controllers\105_ShishakuData_SanpuruSetsumeisho_Excel_Controller.cs" />
+    <Compile Include="Controllers\107_ShisakuData_GenkaShisan_Chomiryo_Excel_Controller.cs" />
+    <Compile Include="Controllers\108_ShisakuData_GenkaShisan_Sonota_Excel_Controller.cs" />
+    <Compile Include="Controllers\200_SeihoIchiranController.cs" />
+    <Compile Include="Controllers\200_SeihoIchiranCSVDownloadController.cs" />
+    <Compile Include="Controllers\202_G-LabelRenkeiController.cs" />
+    <Compile Include="Controllers\203_HaigoTorokuKaihatsuBumonController.cs" />
+    <Compile Include="Controllers\203_HaigoTorokuKaihatsuBumonCSVDownload.cs" />
+    <Compile Include="Controllers\204_SeihoTorokuController.cs" />
+    <Compile Include="Controllers\205_IkkatsuShutsuryokuIchiranController.cs" />
+    <Compile Include="Controllers\205_IkkatsuShutsuryokuIchiranCSVDownloadController.cs" />
+    <Compile Include="Controllers\206_IkkatsuShutsuryokuTorokuController.cs" />
+    <Compile Include="Controllers\207_HaigoJyushinController.cs" />
+    <Compile Include="Controllers\208_HaigoIchiranController.cs" />
+    <Compile Include="Controllers\208_HaigoIchiranDownloadCSVController.cs" />
+    <Compile Include="Controllers\209_HaigoTorokuKojyoBumonController.cs" />
+    <Compile Include="Controllers\209_HaigoTorokuKojyoBumonDownloadCSVController.cs" />
+    <Compile Include="Controllers\210_CodeFurikaeController.cs" />
+    <Compile Include="Controllers\211_TenpuBunshoController.cs" />
+    <Compile Include="Controllers\212_GenryoIchiranController.cs" />
+    <Compile Include="Controllers\212_GenryoIchiranCSVDownloadController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_ExcelController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_Hyoshi_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_RirekiHyo_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_SeihinKikakuan_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_SeihojyoKakuninJiko_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_SeizoKoteizu_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_ShomikigenSetteiHyo_TabController.cs" />
+    <Compile Include="Controllers\302_HaigoSakuseiHyo_ExcelController.cs" />
+    <Compile Include="Controllers\400_SekkeiHinshutsuGetoController.cs" />
+    <Compile Include="Controllers\400_SekkeiHinshutsuGetoExcelController.cs" />
+    <Compile Include="Controllers\402_ChekkuMasutaIchiranController.cs" />
+    <Compile Include="Controllers\404_KoshinRirekiController.cs" />
+    <Compile Include="Controllers\405_CopyMotoSentaku_DialogController.cs" />
+    <Compile Include="Controllers\501_TantoshaIchiranEigyo_DialogController.cs" />
+    <Compile Include="Controllers\604_BunsekiGenryoKakuninDataKakunin_DialogController.cs" />
+    <Compile Include="Controllers\605_TantoEigyoKensaku_DialogController.cs" />
+    <Compile Include="Controllers\703_SeihinKensaku_DialogController.cs" />
+    <Compile Include="Controllers\705_HaigoCopy_DialogController.cs" />
+    <Compile Include="Controllers\706_MarkKensaku_DialogController.cs" />
+    <Compile Include="Controllers\707_LineKensaku_DialogController.cs" />
+    <Compile Include="Controllers\708_GenryoMasterSansho_DialogController.cs" />
+    <Compile Include="Controllers\709_BunruiKensaku_DialogController.cs" />
+    <Compile Include="Controllers\710_HinmeiKaihatsu_DialogController.cs" />
+    <Compile Include="Controllers\801_SeihobunshoSakusei_DialogController.cs" />
+    <Compile Include="Controllers\804_SeihinSansho_DialogController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ClientLogController.cs" />
+    <Compile Include="Controllers\101_ShishakuData_GenkaShisan_Tab_Controller.cs" />
+    <Compile Include="Controllers\101_ShishakuData_KihonJohyo_Tab_Controller.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_HaigoSeizoChuiJiko_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakuseiController.cs" />
+    <Compile Include="Controllers\805_ShikakarihinSentaku_DialogController.cs" />
+    <Compile Include="Controllers\702_TsuikaJohoNyuryoku_DialogController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_HaigoHyo_TabController.cs" />
+    <Compile Include="Controllers\701_SeihinJohoNyuryoku_DialogController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_YoukiHousou_TabController.cs" />
+    <Compile Include="Controllers\300_SeihoBunshoSakusei_GenryoSetsubi_TabController.cs" />
+    <Compile Include="Controllers\806_ShisakuretsuSentaku_DialogController.cs" />
+    <Compile Include="Controllers\700_HaigoTorikomi_DialogController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\104_ShishakuData_HaigoHyo_Excel_Controller.cs" />
+    <Compile Include="Controllers\807_RenewalMotoSentaku_DialogController.cs" />
+    <Compile Include="Controllers\401_BunruiIchiranController.cs" />
+    <Compile Include="Controllers\403_KanrenShiryoController.cs" />
+    <Compile Include="Controllers\711_ShisakuCopy_DialogController.cs" />
+    <Compile Include="Controllers\056_TankanUploadController.cs" />
+    <Compile Include="Controllers\150_ShishakuIchiranController.cs" />
+    <Compile Include="Controllers\151_ShishakuDataController.cs" />
+    <Compile Include="Controllers\151_ShishakuData_HaigoHyo_Tab_Controller.cs" />
+    <Compile Include="Controllers\151_ShishakuData_KihonJohyo_Tab_Controller.cs" />
+    <Compile Include="Controllers\153_ShishakuData_HyojiYoko_Excel_Controller.cs" />
+    <Compile Include="Controllers\154_ShishakuData_HaigoHyo_Excel_Controller.cs" />
+    <Compile Include="Controllers\156_ShishakuData_SanpuruSetsumeisho_Excel_Controller.cs" />
+    <Compile Include="Controllers\055_BunsekichiNyuryokuController.cs" />
+    <Compile Include="Controllers\Filters\AuthenticationFilterAttribute.cs" />
+    <Compile Include="Controllers\Helpers\Constants.cs" />
+    <Compile Include="Controllers\Helpers\ExcelFile.cs" />
+    <Compile Include="Controllers\Helpers\ExcelFileAppExtend.cs" />
+    <Compile Include="Controllers\Helpers\FileUploadDownloadUtility.cs" />
+    <Compile Include="Controllers\Helpers\TextFieldFile.cs" />
+    <Compile Include="Controllers\Helpers\ValidationExtension.cs" />
+    <Compile Include="Controllers\Helpers\ValidationRule.cs" />
+    <Compile Include="Controllers\PasswordChangeController.cs" />
+    <Compile Include="Controllers\Filters\GenericExceptionFilterAttribute.cs" />
+    <Compile Include="Controllers\100_ShishakuIchiranController.cs" />
+    <Compile Include="DataFP\FOODPROCS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FOODPROCS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\FOODPROCS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\FOODPROCS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FOODPROCS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\FOODPROCSEntitiesPartial.cs" />
+    <Compile Include="DataFP\ma_bunrui.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_genshizai.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_haigo_mei.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_haigo_mei_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_haigo_recipe.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_haigo_recipe_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_kojyo.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_konpo.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_line.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_maeshori.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_mark.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_sagyo.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_seihin.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_seizo_line.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_seizo_line_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_setsubi.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_tani.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\ma_tanto.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_Hin_Check_sp_hyoji_qpnmacs_Result.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_Hin_Check_sp_hyoji_Result.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_Hin_Check_sp_qpnmacs_Result.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_Hin_Check_sp_Result.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_vw_hin.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_vw_hin_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_vw_hin_varchar.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\SS_vw_hin_varchar_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\vw_ma_haigo_mei.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\vw_ma_haigo_mei_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\vw_ma_haigo_recipe.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\vw_ma_haigo_recipe_hyoji.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFP\vw_ma_mark.cs">
+      <DependentUpon>FOODPROCS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\cn_no_ikkatsu.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GLabel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLabel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GLabel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLabel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GLabel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GLabel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_busho.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_busho_convert_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_category.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_gate_bunrui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_gate_check.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_genryo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_genryokojo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_genryokojo_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_genryo_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_genryo_seiho.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_group.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_haigo_header.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_haigo_meisai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_hin_syurui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_kaisha.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_kbn_hin.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_kengen.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_kinou.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_kojyo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_kotei.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_line_togo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_literal.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_member.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_saiban.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seihin_seiho.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunrui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_genryo_setsubi.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_haigo_chui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_hyoshi.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_kakuninjiko.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_koteizu_b.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_seihinkikaku.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_shohin_rireki.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_shomikigen.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_tokuseichi.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_yokihoso.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_bunsho_yokihoso_shizai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seiho_denso.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_seizo_line.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_shisaku_saiban.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_shisaku_saiban_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_shizai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_tani.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_tantokaisya.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_team.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_user.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_user_new.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_user_reigai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_user_togo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_yoki_hoso.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_yoki_hoso_shizai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ShohinKaihatsu.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShohinKaihatsu.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ShohinKaihatsu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ShohinKaihatsu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShohinKaihatsu.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_bunruiichiran_search_401_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_chekkumasutaichiran_search_402_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_kanrenshiryo_search_403_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_koshinrireki_search_404_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shishakuichiran_search_100_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shishakuichiran_search_150_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_copy_711_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_csv_205_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_detailsearch_202_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_download_200_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_download_203_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_download_lab_212_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_download_seiho_203_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_dropdown_202_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_dropdown_kaisha_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_gamen_kino_data_009_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_getDataGateBunrui_400_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_getMaxNoSeq_203_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_getUnusedDataAttachment_400_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_haigoseiho_204_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_haita_check_101_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_haita_check_151_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_haita_check_400_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_headersearch_202_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_insert_005_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_insert_055_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_juyshin_207_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_searchGate_400_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_searchInCaseNotNoHaigo_702_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_searchInfoHinmei_203_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_searchModeKaihatsu_700_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_004_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_005_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_006_header_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_006_tantokaisha_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_010_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_011_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_012_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_013_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_054_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_055_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_101_change_kojo_event_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_101_haigo_list_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_101_shisan_haigo_list_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_102_hyoji_kojyo_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_103_kotei_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_103_shisakuhin_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_103_shisakulist_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_103_shisaku_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_104_kotei_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_104_shisakuhin_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_104_shisakulist_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_105_sanpuru_setsumeisho_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_107_haigo_shisaku_list_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_107_shisaku_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_108_haigo_shisaku_list_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_108_shisakuhin_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_108_shisaku_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_151_change_kojo_event_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_151_genryo_select_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_151_haigo_list_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_153_kotei_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_153_shisakuhin_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_153_shisakulist_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_153_shisaku_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_154_kotei_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_154_shisakuhin_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_154_shisakulist_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_156_sanpuru_setsumeisho_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_200_gethinmei_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_200_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_204_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_205_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_206_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_207_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_212_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_haigohyo_detail_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_haigohyo_excel_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_haigohyo_header_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_haigoseizochuijiko_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_hyoshi_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_rirekihyo_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_seihinkikakuan_excel_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_seizokoteizu_genryo_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_seizokoteizu_header_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_youkihousou_masterdata_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_300_youkihousou_shizai_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_501_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_605_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_703_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_708_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_710_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_804_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_806_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_807_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_search_view_206_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_shohinkaihatsu_validation_202_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sp_tankan_upload_056_Result.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_change_log.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_cyuui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_cyuui_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_event_log.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_gate_attachment.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_gate_bunrui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_gate_header.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_gate_meisai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_genryo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_haigo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_haigo_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_ikkatsu_output.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_log_operation.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisaku.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisakuhin.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisakuhin_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisaku_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisaku_list.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisaku_list_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_haigo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_kihonjoho.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_memo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_memo_eigyo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_rireki.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_shisaku.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_shisakuhin.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_shizai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_status.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_shisan_status_rireki.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_tenpu_bunsho.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_hin.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_hin_shikakari.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_kaisha_kojyo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_ma_bunrui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_ma_gate_check.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_ma_kojyo.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_ma_mark.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_ma_seizo_line.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_ma_setsubi.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_no_seiho_shurui.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shain_info.cs">
+      <DependentUpon>AuthorityMaster.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shohinkaihatsu_008_busho_kaisha.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shohinkaihatsu_dialog_g3_nm_meisho_hinmei.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shohinkaihatsu_dialog_kaisha_501.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shohinkaihatsu_ikkatsuShutsuryoToroku_206.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shohinkaihatsu_log_operation.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_tr_gate_attachment.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_user_gamen_info.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_user_info.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_yoki_hoso_shizai.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wk_shisaku_genryo_delivery.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wk_shisaku_genryo_delivery_bf.cs">
+      <DependentUpon>ShohinKaihatsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Filters\LoggingExceptionFilterAttribute.cs" />
+    <Compile Include="Controllers\Filters\RolesAuthorizationFilterAttribute.cs" />
+    <Compile Include="Data\AuthorityMaster.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorityMaster.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AuthorityMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorityMaster.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AuthorityMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataCopier.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\ChangeSet.cs" />
+    <Compile Include="Data\InvalidationSet.cs" />
+    <Compile Include="Data\SqlErrorNumbers.cs" />
+    <Compile Include="Data\StoredProcedureResult.cs" />
+    <Compile Include="Data\AuthorityMasterEntities.cs" />
+    <Compile Include="Data\UserInfo.cs" />
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Pages\004_ShisakuBunsekiDataKakunin.aspx.cs">
+      <DependentUpon>004_ShisakuBunsekiDataKakunin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\004_ShisakuBunsekiDataKakunin.aspx.designer.cs">
+      <DependentUpon>004_ShisakuBunsekiDataKakunin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\005_BunsekichiNyuryoku.aspx.cs">
+      <DependentUpon>005_BunsekichiNyuryoku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\005_BunsekichiNyuryoku.aspx.designer.cs">
+      <DependentUpon>005_BunsekichiNyuryoku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\006_ZenkojoTankaBudomari.aspx.cs">
+      <DependentUpon>006_ZenkojoTankaBudomari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\006_ZenkojoTankaBudomari.aspx.designer.cs">
+      <DependentUpon>006_ZenkojoTankaBudomari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\007_CategoryMaster.aspx.cs">
+      <DependentUpon>007_CategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\007_CategoryMaster.aspx.designer.cs">
+      <DependentUpon>007_CategoryMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\008_GroupMaster.aspx.cs">
+      <DependentUpon>008_GroupMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\008_GroupMaster.aspx.designer.cs">
+      <DependentUpon>008_GroupMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\009_KengenMaster.aspx.cs">
+      <DependentUpon>009_KengenMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\009_KengenMaster.aspx.designer.cs">
+      <DependentUpon>009_KengenMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\010_TantoshaMaster.aspx.cs">
+      <DependentUpon>010_TantoshaMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\010_TantoshaMaster.aspx.designer.cs">
+      <DependentUpon>010_TantoshaMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\011_TantoshaMasterEigyo.aspx.cs">
+      <DependentUpon>011_TantoshaMasterEigyo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\011_TantoshaMasterEigyo.aspx.designer.cs">
+      <DependentUpon>011_TantoshaMasterEigyo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\012_YokiHosoMaster.aspx.cs">
+      <DependentUpon>012_YokiHosoMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\012_YokiHosoMaster.aspx.designer.cs">
+      <DependentUpon>012_YokiHosoMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\013_YokiHosoShizaiMaster.aspx.cs">
+      <DependentUpon>013_YokiHosoShizaiMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\013_YokiHosoShizaiMaster.aspx.designer.cs">
+      <DependentUpon>013_YokiHosoShizaiMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\014_ShisaquickLaboUpload.aspx.cs">
+      <DependentUpon>014_ShisaquickLaboUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\014_ShisaquickLaboUpload.aspx.designer.cs">
+      <DependentUpon>014_ShisaquickLaboUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\015_RoguShutsuryokuDownload.aspx.cs">
+      <DependentUpon>015_RoguShutsuryokuDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\015_RoguShutsuryokuDownload.aspx.designer.cs">
+      <DependentUpon>015_RoguShutsuryokuDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\054_ShisakuBunsekiDataKakunin.aspx.cs">
+      <DependentUpon>054_ShisakuBunsekiDataKakunin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\054_ShisakuBunsekiDataKakunin.aspx.designer.cs">
+      <DependentUpon>054_ShisakuBunsekiDataKakunin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\055_BunsekichiNyuryoku.aspx.cs">
+      <DependentUpon>055_BunsekichiNyuryoku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\055_BunsekichiNyuryoku.aspx.designer.cs">
+      <DependentUpon>055_BunsekichiNyuryoku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\200_SeihoIchiran.aspx.cs">
+      <DependentUpon>200_SeihoIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\200_SeihoIchiran.aspx.designer.cs">
+      <DependentUpon>200_SeihoIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\202_G-LabelRenkei.aspx.cs">
+      <DependentUpon>202_G-LabelRenkei.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\202_G-LabelRenkei.aspx.designer.cs">
+      <DependentUpon>202_G-LabelRenkei.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\203_HaigoTorokuKaihatsuBumon.aspx.cs">
+      <DependentUpon>203_HaigoTorokuKaihatsuBumon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\203_HaigoTorokuKaihatsuBumon.aspx.designer.cs">
+      <DependentUpon>203_HaigoTorokuKaihatsuBumon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_KihonJohyo_Tab.aspx.cs">
+      <DependentUpon>101_ShishakuData_KihonJohyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_KihonJohyo_Tab.aspx.designer.cs">
+      <DependentUpon>101_ShishakuData_KihonJohyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_GenkaShisan_Tab.aspx.cs">
+      <DependentUpon>101_ShishakuData_GenkaShisan_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_GenkaShisan_Tab.aspx.designer.cs">
+      <DependentUpon>101_ShishakuData_GenkaShisan_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\204_SeihoToroku.aspx.cs">
+      <DependentUpon>204_SeihoToroku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\204_SeihoToroku.aspx.designer.cs">
+      <DependentUpon>204_SeihoToroku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\205_IkkatsuShutsuryokuIchiran.aspx.cs">
+      <DependentUpon>205_IkkatsuShutsuryokuIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\205_IkkatsuShutsuryokuIchiran.aspx.designer.cs">
+      <DependentUpon>205_IkkatsuShutsuryokuIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\206_IkkatsuShutsuryokuToroku.aspx.cs">
+      <DependentUpon>206_IkkatsuShutsuryokuToroku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\206_IkkatsuShutsuryokuToroku.aspx.designer.cs">
+      <DependentUpon>206_IkkatsuShutsuryokuToroku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\207_HaigoJyushin.aspx.cs">
+      <DependentUpon>207_HaigoJyushin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\207_HaigoJyushin.aspx.designer.cs">
+      <DependentUpon>207_HaigoJyushin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\208_HaigoIchiran.aspx.cs">
+      <DependentUpon>208_HaigoIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\208_HaigoIchiran.aspx.designer.cs">
+      <DependentUpon>208_HaigoIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\209_HaigoTorokuKojyoBumon.aspx.cs">
+      <DependentUpon>209_HaigoTorokuKojyoBumon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\209_HaigoTorokuKojyoBumon.aspx.designer.cs">
+      <DependentUpon>209_HaigoTorokuKojyoBumon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\211_TenpuBunsho.aspx.cs">
+      <DependentUpon>211_TenpuBunsho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\211_TenpuBunsho.aspx.designer.cs">
+      <DependentUpon>211_TenpuBunsho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\212_GenryoIchiran.aspx.cs">
+      <DependentUpon>212_GenryoIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\212_GenryoIchiran.aspx.designer.cs">
+      <DependentUpon>212_GenryoIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_HaigoHyo_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_HaigoHyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_HaigoHyo_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_HaigoHyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_HaigoSeizoChuiJiko_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_HaigoSeizoChuiJiko_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_HaigoSeizoChuiJiko_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_HaigoSeizoChuiJiko_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_Hyoshi_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_Hyoshi_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_Hyoshi_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_Hyoshi_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_RirekiHyo_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_RirekiHyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_RirekiHyo_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_RirekiHyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_SeihinKikakuan_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_SeihinKikakuan_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_SeihinKikakuan_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_SeihinKikakuan_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_SeihojyoKakuninJiko_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_SeihojyoKakuninJiko_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_SeihojyoKakuninJiko_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_SeihojyoKakuninJiko_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_SeizoKoteizu_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_SeizoKoteizu_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_SeizoKoteizu_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_SeizoKoteizu_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_ShomikigenSetteiHyo_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_ShomikigenSetteiHyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_ShomikigenSetteiHyo_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_ShomikigenSetteiHyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_GenryoSetsubi_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_GenryoSetsubi_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_GenryoSetsubi_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_GenryoSetsubi_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\400_SekkeiHinshutsuGeto.aspx.cs">
+      <DependentUpon>400_SekkeiHinshutsuGeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\400_SekkeiHinshutsuGeto.aspx.designer.cs">
+      <DependentUpon>400_SekkeiHinshutsuGeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\401_BunruiIchiran.aspx.cs">
+      <DependentUpon>401_BunruiIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\401_BunruiIchiran.aspx.designer.cs">
+      <DependentUpon>401_BunruiIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\402_ChekkuMasutaIchiran.aspx.cs">
+      <DependentUpon>402_ChekkuMasutaIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\402_ChekkuMasutaIchiran.aspx.designer.cs">
+      <DependentUpon>402_ChekkuMasutaIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\403_KanrenShiryo.aspx.cs">
+      <DependentUpon>403_KanrenShiryo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\403_KanrenShiryo.aspx.designer.cs">
+      <DependentUpon>403_KanrenShiryo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\404_KoshinRireki.aspx.cs">
+      <DependentUpon>404_KoshinRireki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\404_KoshinRireki.aspx.designer.cs">
+      <DependentUpon>404_KoshinRireki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\056_TankanUpload.aspx.cs">
+      <DependentUpon>056_TankanUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\056_TankanUpload.aspx.designer.cs">
+      <DependentUpon>056_TankanUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData.aspx.cs">
+      <DependentUpon>151_ShishakuData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData.aspx.designer.cs">
+      <DependentUpon>151_ShishakuData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData_HaigoHyo_Tab.aspx.cs">
+      <DependentUpon>151_ShishakuData_HaigoHyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData_HaigoHyo_Tab.aspx.designer.cs">
+      <DependentUpon>151_ShishakuData_HaigoHyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData_KihonJohyo_Tab.aspx.cs">
+      <DependentUpon>151_ShishakuData_KihonJohyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData_KihonJohyo_Tab.aspx.designer.cs">
+      <DependentUpon>151_ShishakuData_KihonJohyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData_TokuseiChi_Tab.aspx.cs">
+      <DependentUpon>151_ShishakuData_TokuseiChi_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\151_ShishakuData_TokuseiChi_Tab.aspx.designer.cs">
+      <DependentUpon>151_ShishakuData_TokuseiChi_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\150_ShishakuIchiran.aspx.cs">
+      <DependentUpon>150_ShishakuIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\150_ShishakuIchiran.aspx.designer.cs">
+      <DependentUpon>150_ShishakuIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\405_CopyMotoSentakuDialog.aspx.cs">
+      <DependentUpon>405_CopyMotoSentakuDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\405_CopyMotoSentakuDialog.aspx.designer.cs">
+      <DependentUpon>405_CopyMotoSentakuDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\500_SeizoTantoKaishaKensaku_Dialog.aspx.cs">
+      <DependentUpon>500_SeizoTantoKaishaKensaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\500_SeizoTantoKaishaKensaku_Dialog.aspx.designer.cs">
+      <DependentUpon>500_SeizoTantoKaishaKensaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\501_TantoshaIchiranEigyo_Dialog.aspx.cs">
+      <DependentUpon>501_TantoshaIchiranEigyo_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\501_TantoshaIchiranEigyo_Dialog.aspx.designer.cs">
+      <DependentUpon>501_TantoshaIchiranEigyo_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\600_SeizoKoteiDialog.aspx.cs">
+      <DependentUpon>600_SeizoKoteiDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\600_SeizoKoteiDialog.aspx.designer.cs">
+      <DependentUpon>600_SeizoKoteiDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\601_MemoNyuryoku_Dialog.aspx.cs">
+      <DependentUpon>601_MemoNyuryoku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\601_MemoNyuryoku_Dialog.aspx.designer.cs">
+      <DependentUpon>601_MemoNyuryoku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\602_IroShitei_Dialog.aspx.cs">
+      <DependentUpon>602_IroShitei_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\602_IroShitei_Dialog.aspx.designer.cs">
+      <DependentUpon>602_IroShitei_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\604_BunsekiGenryoKakuninDataKakunin.aspx.cs">
+      <DependentUpon>604_BunsekiGenryoKakuninDataKakunin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\604_BunsekiGenryoKakuninDataKakunin.aspx.designer.cs">
+      <DependentUpon>604_BunsekiGenryoKakuninDataKakunin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\605_TantoEigyoKensaku_Dialog.aspx.cs">
+      <DependentUpon>605_TantoEigyoKensaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\605_TantoEigyoKensaku_Dialog.aspx.designer.cs">
+      <DependentUpon>605_TantoEigyoKensaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\606_GenzairyoKakunin_Dialog.aspx.cs">
+      <DependentUpon>606_GenzairyoKakunin_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\606_GenzairyoKakunin_Dialog.aspx.designer.cs">
+      <DependentUpon>606_GenzairyoKakunin_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\700_HaigoTorikomi_Dialog.aspx.cs">
+      <DependentUpon>700_HaigoTorikomi_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\700_HaigoTorikomi_Dialog.aspx.designer.cs">
+      <DependentUpon>700_HaigoTorikomi_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\705_HaigoCopy_Dialog.aspx.cs">
+      <DependentUpon>705_HaigoCopy_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\705_HaigoCopy_Dialog.aspx.designer.cs">
+      <DependentUpon>705_HaigoCopy_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\706_MarkKensaku_Dialog.aspx.cs">
+      <DependentUpon>706_MarkKensaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\706_MarkKensaku_Dialog.aspx.designer.cs">
+      <DependentUpon>706_MarkKensaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\707_LineKenSaKu_DiaLog.aspx.cs">
+      <DependentUpon>707_LineKenSaKu_DiaLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\707_LineKenSaKu_DiaLog.aspx.designer.cs">
+      <DependentUpon>707_LineKenSaKu_DiaLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\708_GenryoMasterSansho_Dialog.aspx.cs">
+      <DependentUpon>708_GenryoMasterSansho_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\708_GenryoMasterSansho_Dialog.aspx.designer.cs">
+      <DependentUpon>708_GenryoMasterSansho_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\709_BunruiKensaku_Dialog.aspx.cs">
+      <DependentUpon>709_BunruiKensaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\709_BunruiKensaku_Dialog.aspx.designer.cs">
+      <DependentUpon>709_BunruiKensaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\711_ShisakuCopy_Dialog.aspx.cs">
+      <DependentUpon>711_ShisakuCopy_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\711_ShisakuCopy_Dialog.aspx.designer.cs">
+      <DependentUpon>711_ShisakuCopy_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\804_SeihinSansho_Dialog.aspx.cs">
+      <DependentUpon>804_SeihinSansho_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\804_SeihinSansho_Dialog.aspx.designer.cs">
+      <DependentUpon>804_SeihinSansho_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\805_ShikakarihinSentaku_Dialog.aspx.cs">
+      <DependentUpon>805_ShikakarihinSentaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\805_ShikakarihinSentaku_Dialog.aspx.designer.cs">
+      <DependentUpon>805_ShikakarihinSentaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\603_ShisakuRetuTuika_Dialog.aspx.cs">
+      <DependentUpon>603_ShisakuRetuTuika_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\603_ShisakuRetuTuika_Dialog.aspx.designer.cs">
+      <DependentUpon>603_ShisakuRetuTuika_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\710_HinmeiKaihatsu_Dialog.aspx.cs">
+      <DependentUpon>710_HinmeiKaihatsu_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\710_HinmeiKaihatsu_Dialog.aspx.designer.cs">
+      <DependentUpon>710_HinmeiKaihatsu_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\800_HinmeiSentaku_Dialog.aspx.cs">
+      <DependentUpon>800_HinmeiSentaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\800_HinmeiSentaku_Dialog.aspx.designer.cs">
+      <DependentUpon>800_HinmeiSentaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\801_SeihobunshoSakusei_Dialog.aspx.cs">
+      <DependentUpon>801_SeihobunshoSakusei_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\801_SeihobunshoSakusei_Dialog.aspx.designer.cs">
+      <DependentUpon>801_SeihobunshoSakusei_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\802_CopyHaniSelection_Dialog.aspx.cs">
+      <DependentUpon>802_CopyHaniSelection_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\802_CopyHaniSelection_Dialog.aspx.designer.cs">
+      <DependentUpon>802_CopyHaniSelection_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\803_ExcelHaniSelection_Dialog.aspx.cs">
+      <DependentUpon>803_ExcelHaniSelection_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\803_ExcelHaniSelection_Dialog.aspx.designer.cs">
+      <DependentUpon>803_ExcelHaniSelection_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\806_ShisakuretsuSentaku_Dialog.aspx.cs">
+      <DependentUpon>806_ShisakuretsuSentaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\806_ShisakuretsuSentaku_Dialog.aspx.designer.cs">
+      <DependentUpon>806_ShisakuretsuSentaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\807_RenewalMotoSentaku.aspx.cs">
+      <DependentUpon>807_RenewalMotoSentaku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\807_RenewalMotoSentaku.aspx.designer.cs">
+      <DependentUpon>807_RenewalMotoSentaku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\ConfirmDialog.aspx.cs">
+      <DependentUpon>ConfirmDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\ConfirmDialog.aspx.designer.cs">
+      <DependentUpon>ConfirmDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\704_SeizoKojoShitei_Dialog.aspx.cs">
+      <DependentUpon>704_SeizoKojoShitei_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\704_SeizoKojoShitei_Dialog.aspx.designer.cs">
+      <DependentUpon>704_SeizoKojoShitei_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\703_SeihinKensaku_Dialog.aspx.cs">
+      <DependentUpon>703_SeihinKensaku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\703_SeihinKensaku_Dialog.aspx.designer.cs">
+      <DependentUpon>703_SeihinKensaku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\701_SeihinJohoNyuryoku_Dialog.aspx.cs">
+      <DependentUpon>701_SeihinJohoNyuryoku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\701_SeihinJohoNyuryoku_Dialog.aspx.designer.cs">
+      <DependentUpon>701_SeihinJohoNyuryoku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\102_GenryoIchiranDialog.aspx.cs">
+      <DependentUpon>102_GenryoIchiranDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\102_GenryoIchiranDialog.aspx.designer.cs">
+      <DependentUpon>102_GenryoIchiranDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\650_SeizoKoteiDialog.aspx.cs">
+      <DependentUpon>650_SeizoKoteiDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\650_SeizoKoteiDialog.aspx.designer.cs">
+      <DependentUpon>650_SeizoKoteiDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\S_IroSettingDialog2.aspx.cs">
+      <DependentUpon>S_IroSettingDialog2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\S_IroSettingDialog2.aspx.designer.cs">
+      <DependentUpon>S_IroSettingDialog2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\S_MemoDialog.aspx.cs">
+      <DependentUpon>S_MemoDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\S_MemoDialog.aspx.designer.cs">
+      <DependentUpon>S_MemoDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\S_ShisakuRetuTuikaDialog.aspx.cs">
+      <DependentUpon>S_ShisakuRetuTuikaDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\S_ShisakuRetuTuikaDialog.aspx.designer.cs">
+      <DependentUpon>S_ShisakuRetuTuikaDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\100_ShishakuIchiran.aspx.cs">
+      <DependentUpon>100_ShishakuIchiran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\100_ShishakuIchiran.aspx.designer.cs">
+      <DependentUpon>100_ShishakuIchiran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData.aspx.cs">
+      <DependentUpon>101_ShishakuData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData.aspx.designer.cs">
+      <DependentUpon>101_ShishakuData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_HaigoHyo_Tab.aspx.cs">
+      <DependentUpon>101_ShishakuData_HaigoHyo_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_HaigoHyo_Tab.aspx.designer.cs">
+      <DependentUpon>101_ShishakuData_HaigoHyo_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_TokuseiChi_Tab.aspx.cs">
+      <DependentUpon>101_ShishakuData_TokuseiChi_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\101_ShishakuData_TokuseiChi_Tab.aspx.designer.cs">
+      <DependentUpon>101_ShishakuData_TokuseiChi_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\702_TsuikaJohoNyuryoku_Dialog.aspx.cs">
+      <DependentUpon>702_TsuikaJohoNyuryoku_Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\702_TsuikaJohoNyuryoku_Dialog.aspx.designer.cs">
+      <DependentUpon>702_TsuikaJohoNyuryoku_Dialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\210_CodeFurikae.aspx.cs">
+      <DependentUpon>210_CodeFurikae.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\210_CodeFurikae.aspx.designer.cs">
+      <DependentUpon>210_CodeFurikae.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transfer.aspx.cs">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Transfer.aspx.designer.cs">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainMenu.aspx.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MainMenu.aspx.designer.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_YoukiHousou_Tab.aspx.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_YoukiHousou_Tab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\300_SeihoBunshoSakusei_YoukiHousou_Tab.aspx.designer.cs">
+      <DependentUpon>300_SeihoBunshoSakusei_YoukiHousou_Tab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resource.SVF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.SVF.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SvfClient.cs" />
+    <Compile Include="Services\ShisaQuickService.svc.cs">
+      <DependentUpon>ShisaQuickService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Manuals\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\headerdetail.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <None Include="Content\site.less" />
+    <EntityDeploy Include="Data\AuthorityMaster.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AuthorityMaster.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\AuthorityMaster.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+      <LastGenOutput>AuthorityMaster.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\AuthorityMaster.edmx.diagram">
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\AuthorityMaster.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+      <LastGenOutput>AuthorityMaster.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Resources\message.app.en.js" />
+    <None Include="Scripts\app.js.bundle" />
+    <Content Include="Scripts\app.min.js.map">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bignumber.min.js.map">
+      <DependentUpon>bignumber.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\calendar.min.js.map">
+      <DependentUpon>calendar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\datatable.min.js.map">
+      <DependentUpon>datatable.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\downloadfile.min.js.map">
+      <DependentUpon>downloadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\entertotab.min.js.map">
+      <DependentUpon>entertotab.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\flexmulticolumns.min.js.map">
+      <DependentUpon>flexmulticolumns.js</DependentUpon>
+    </Content>
+    <None Include="Content\constants.less" />
+    <None Include="Content\menu.less" />
+    <None Include="Content\reset.less" />
+    <Content Include="svfrclient.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\part.min.js.map">
+      <DependentUpon>part.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\subtotal.min.js.map">
+      <DependentUpon>subtotal.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\uploadfile.min.js.map">
+      <DependentUpon>uploadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.extablefocus.min.js.map">
+      <DependentUpon>jquery.extablefocus.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery.ui.monthpicker.min.js.map">
+      <DependentUpon>jquery.ui.monthpicker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\tabcomm.min.js.map">
+      <DependentUpon>tabcomm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\select2.min.js.map">
+      <DependentUpon>select2.js</DependentUpon>
+    </Content>
+    <None Include="Web.FORM.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <EmbeddedResource Include="Properties\Resource.SVF.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.SVF.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;UNDER_DEVELOPMENT</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FORM|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;UNDER_DEVELOPMENT</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64437</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15116/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="DeployFiles" AfterTargets="AfterBuild" Condition="'$(DeployFiles)'=='true'">
+    <TransformXml Source="$(WebProjectOutputDir)\Web.config" Transform="C:\Builds\5\TouSolusions\TOS.Web To CustomerWeb Server\Sources\TOS.web\web.$(ConfigurationName).config" Destination="$(WebProjectOutputDir)\Web.config" />
+    <Message Text="AfterBuild run start xcopy to CustomerWeb Server" Importance="high" />
+    <Exec Command="xcopy.exe /Y /S &quot;C:\Builds\5\TouSolusions\TOS.Web To CustomerWeb Server\Binaries\_PublishedWebsites\Tos.web&quot; &quot;\\customerweb\TosBase&quot;" />
+    <Message Text="AfterBuild run end" Importance="high" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>COPY /Y "$(ProjectDir)\Content\bootstrap\bootstrap.css" "$(ProjectDir)\Content\bootstrap.css"
+COPY /Y "$(ProjectDir)\Content\bootstrap\bootstrap.min.css" "$(ProjectDir)\Content\bootstrap.min.css"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)..\ConcurrencyDetector\ConcurrencyDetector -i $(ProjectDir)Data -c ts</PreBuildEvent>
+  </PropertyGroup>
+</Project>

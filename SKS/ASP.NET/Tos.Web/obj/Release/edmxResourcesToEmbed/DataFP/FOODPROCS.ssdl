@@ -1,0 +1,1466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FOODPROCSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="FOODPROCSModelStoreContainer">
+    <EntitySet Name="ma_bunrui" EntityType="FOODPROCSModel.Store.ma_bunrui" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_genshizai" EntityType="FOODPROCSModel.Store.ma_genshizai" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_haigo_mei" EntityType="FOODPROCSModel.Store.ma_haigo_mei" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_haigo_mei_hyoji" EntityType="FOODPROCSModel.Store.ma_haigo_mei_hyoji" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_haigo_recipe" EntityType="FOODPROCSModel.Store.ma_haigo_recipe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_haigo_recipe_hyoji" EntityType="FOODPROCSModel.Store.ma_haigo_recipe_hyoji" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_kojyo" EntityType="FOODPROCSModel.Store.ma_kojyo" store:Type="Tables" store:Schema="dbo" store:Name="ma_kojyo">
+      <DefiningQuery>SELECT 
+      [ma_kojyo].[cd_kojyo] AS [cd_kojyo], 
+      [ma_kojyo].[cd_kaisha] AS [cd_kaisha], 
+      [ma_kojyo].[nm_kojyo] AS [nm_kojyo], 
+      [ma_kojyo].[no_yubin] AS [no_yubin], 
+      [ma_kojyo].[jyusho_1] AS [jyusho_1], 
+      [ma_kojyo].[jyusho_2] AS [jyusho_2], 
+      [ma_kojyo].[jyusho_3] AS [jyusho_3], 
+      [ma_kojyo].[tel_1] AS [tel_1], 
+      [ma_kojyo].[tel_2] AS [tel_2], 
+      [ma_kojyo].[fax_1] AS [fax_1], 
+      [ma_kojyo].[fax_2] AS [fax_2], 
+      [ma_kojyo].[flg_sakujyo] AS [flg_sakujyo], 
+      [ma_kojyo].[dt_kakutei] AS [dt_kakutei], 
+      [ma_kojyo].[dt_toroku] AS [dt_toroku], 
+      [ma_kojyo].[dt_henko] AS [dt_henko], 
+      [ma_kojyo].[cd_koshin] AS [cd_koshin], 
+      [ma_kojyo].[rowguid] AS [rowguid], 
+      [ma_kojyo].[flg_ean] AS [flg_ean], 
+      [ma_kojyo].[param_edi_densokaishi] AS [param_edi_densokaishi], 
+      [ma_kojyo].[param_edi_saishodenso] AS [param_edi_saishodenso], 
+      [ma_kojyo].[cd_jigyobu_default] AS [cd_jigyobu_default], 
+      [ma_kojyo].[cd_depo_default] AS [cd_depo_default], 
+      [ma_kojyo].[cd_jigyosho_default] AS [cd_jigyosho_default], 
+      [ma_kojyo].[literal_iraisho] AS [literal_iraisho], 
+      [ma_kojyo].[literal_iraisho_shokuyu] AS [literal_iraisho_shokuyu], 
+      [ma_kojyo].[dt_joken_shiharai] AS [dt_joken_shiharai], 
+      [ma_kojyo].[tekiyo] AS [tekiyo], 
+      [ma_kojyo].[dt_data_kakutei] AS [dt_data_kakutei]
+      FROM [dbo].[ma_kojyo] AS [ma_kojyo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ma_konpo" EntityType="FOODPROCSModel.Store.ma_konpo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_line" EntityType="FOODPROCSModel.Store.ma_line" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_maeshori" EntityType="FOODPROCSModel.Store.ma_maeshori" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_mark" EntityType="FOODPROCSModel.Store.ma_mark" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_sagyo" EntityType="FOODPROCSModel.Store.ma_sagyo" store:Type="Tables" store:Schema="dbo" store:Name="ma_sagyo">
+      <DefiningQuery>SELECT 
+      [ma_sagyo].[no_seq] AS [no_seq], 
+      [ma_sagyo].[cd_sagyo] AS [cd_sagyo], 
+      [ma_sagyo].[nm_sagyo] AS [nm_sagyo], 
+      [ma_sagyo].[flg_sakujyo] AS [flg_sakujyo], 
+      [ma_sagyo].[flg_mishiyo] AS [flg_mishiyo], 
+      [ma_sagyo].[dt_toroku] AS [dt_toroku], 
+      [ma_sagyo].[dt_henko] AS [dt_henko], 
+      [ma_sagyo].[cd_koshin] AS [cd_koshin], 
+      [ma_sagyo].[rowguid] AS [rowguid]
+      FROM [dbo].[ma_sagyo] AS [ma_sagyo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ma_seihin" EntityType="FOODPROCSModel.Store.ma_seihin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_seizo_line" EntityType="FOODPROCSModel.Store.ma_seizo_line" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_seizo_line_hyoji" EntityType="FOODPROCSModel.Store.ma_seizo_line_hyoji" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_setsubi" EntityType="FOODPROCSModel.Store.ma_setsubi" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_tani" EntityType="FOODPROCSModel.Store.ma_tani" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_tanto" EntityType="FOODPROCSModel.Store.ma_tanto" store:Type="Tables" store:Schema="dbo" store:Name="ma_tanto">
+      <DefiningQuery>SELECT 
+      [ma_tanto].[no_seq] AS [no_seq], 
+      [ma_tanto].[cd_tanto] AS [cd_tanto], 
+      [ma_tanto].[nm_tanto] AS [nm_tanto], 
+      [ma_tanto].[cd_password] AS [cd_password], 
+      [ma_tanto].[nm_shozoku] AS [nm_shozoku], 
+      [ma_tanto].[renraku] AS [renraku], 
+      [ma_tanto].[e_mail] AS [e_mail], 
+      [ma_tanto].[flg_kengen_1] AS [flg_kengen_1], 
+      [ma_tanto].[flg_kengen_2] AS [flg_kengen_2], 
+      [ma_tanto].[flg_kengen_3] AS [flg_kengen_3], 
+      [ma_tanto].[flg_kengen_4] AS [flg_kengen_4], 
+      [ma_tanto].[flg_kengen_5] AS [flg_kengen_5], 
+      [ma_tanto].[flg_kengen_6] AS [flg_kengen_6], 
+      [ma_tanto].[flg_kengen_7] AS [flg_kengen_7], 
+      [ma_tanto].[flg_kengen_8] AS [flg_kengen_8], 
+      [ma_tanto].[flg_kengen_9] AS [flg_kengen_9], 
+      [ma_tanto].[flg_kengen_10] AS [flg_kengen_10], 
+      [ma_tanto].[flg_kengen_11] AS [flg_kengen_11], 
+      [ma_tanto].[flg_kengen_12] AS [flg_kengen_12], 
+      [ma_tanto].[flg_kengen_13] AS [flg_kengen_13], 
+      [ma_tanto].[flg_login] AS [flg_login], 
+      [ma_tanto].[flg_mrp] AS [flg_mrp], 
+      [ma_tanto].[flg_sakujyo] AS [flg_sakujyo], 
+      [ma_tanto].[flg_mishiyo] AS [flg_mishiyo], 
+      [ma_tanto].[dt_toroku] AS [dt_toroku], 
+      [ma_tanto].[dt_henko] AS [dt_henko], 
+      [ma_tanto].[cd_koshin] AS [cd_koshin], 
+      [ma_tanto].[cd_ope] AS [cd_ope], 
+      [ma_tanto].[cd_shokuba] AS [cd_shokuba], 
+      [ma_tanto].[flg_hakari] AS [flg_hakari], 
+      [ma_tanto].[flg_jitsusakujyo] AS [flg_jitsusakujyo], 
+      [ma_tanto].[flg_shikakari] AS [flg_shikakari], 
+      [ma_tanto].[flg_saikin] AS [flg_saikin], 
+      [ma_tanto].[flg_harikae] AS [flg_harikae], 
+      [ma_tanto].[dt_henko_password] AS [dt_henko_password], 
+      [ma_tanto].[dt_login] AS [dt_login], 
+      [ma_tanto].[flg_shokuyu_haigo_hiritsu] AS [flg_shokuyu_haigo_hiritsu], 
+      [ma_tanto].[flg_genshizai_chotatsu_bu] AS [flg_genshizai_chotatsu_bu], 
+      [ma_tanto].[flg_bun_master] AS [flg_bun_master], 
+      [ma_tanto].[flg_bun_shiyaku] AS [flg_bun_shiyaku], 
+      [ma_tanto].[flg_bun_tanto] AS [flg_bun_tanto]
+      FROM [dbo].[ma_tanto] AS [ma_tanto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_vw_hin" EntityType="FOODPROCSModel.Store.SS_vw_hin" store:Type="Views" store:Schema="dbo" store:Name="SS_vw_hin">
+      <DefiningQuery>SELECT 
+      [SS_vw_hin].[cd_hin] AS [cd_hin], 
+      [SS_vw_hin].[cd_hin_var] AS [cd_hin_var], 
+      [SS_vw_hin].[nm_hin] AS [nm_hin], 
+      [SS_vw_hin].[hijyu] AS [hijyu], 
+      [SS_vw_hin].[budomari] AS [budomari], 
+      [SS_vw_hin].[no_kikaku] AS [no_kikaku], 
+      [SS_vw_hin].[kbn_hin] AS [kbn_hin], 
+      [SS_vw_hin].[kbn_hin_toroku] AS [kbn_hin_toroku], 
+      [SS_vw_hin].[cd_tani_hin] AS [cd_tani_hin], 
+      [SS_vw_hin].[nisugata_gty] AS [nisugata_gty], 
+      [SS_vw_hin].[kbn_jyotai] AS [kbn_jyotai]
+      FROM [dbo].[SS_vw_hin] AS [SS_vw_hin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_vw_hin_hyoji" EntityType="FOODPROCSModel.Store.SS_vw_hin_hyoji" store:Type="Views" store:Schema="dbo" store:Name="SS_vw_hin_hyoji">
+      <DefiningQuery>SELECT 
+      [SS_vw_hin_hyoji].[cd_hin] AS [cd_hin], 
+      [SS_vw_hin_hyoji].[cd_hin_var] AS [cd_hin_var], 
+      [SS_vw_hin_hyoji].[nm_hin] AS [nm_hin], 
+      [SS_vw_hin_hyoji].[hijyu] AS [hijyu], 
+      [SS_vw_hin_hyoji].[budomari] AS [budomari], 
+      [SS_vw_hin_hyoji].[no_kikaku] AS [no_kikaku], 
+      [SS_vw_hin_hyoji].[kbn_hin] AS [kbn_hin], 
+      [SS_vw_hin_hyoji].[kbn_hin_toroku] AS [kbn_hin_toroku], 
+      [SS_vw_hin_hyoji].[cd_tani_hin] AS [cd_tani_hin], 
+      [SS_vw_hin_hyoji].[nisugata_gty] AS [nisugata_gty], 
+      [SS_vw_hin_hyoji].[kbn_jyotai] AS [kbn_jyotai], 
+      [SS_vw_hin_hyoji].[no_sort] AS [no_sort]
+      FROM [dbo].[SS_vw_hin_hyoji] AS [SS_vw_hin_hyoji]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_vw_hin_varchar" EntityType="FOODPROCSModel.Store.SS_vw_hin_varchar" store:Type="Views" store:Schema="dbo" store:Name="SS_vw_hin_varchar">
+      <DefiningQuery>SELECT 
+      [SS_vw_hin_varchar].[cd_hin] AS [cd_hin], 
+      [SS_vw_hin_varchar].[nm_hin] AS [nm_hin], 
+      [SS_vw_hin_varchar].[hijyu] AS [hijyu], 
+      [SS_vw_hin_varchar].[budomari] AS [budomari], 
+      [SS_vw_hin_varchar].[no_kikaku] AS [no_kikaku], 
+      [SS_vw_hin_varchar].[kbn_hin] AS [kbn_hin], 
+      [SS_vw_hin_varchar].[kbn_hin_toroku] AS [kbn_hin_toroku], 
+      [SS_vw_hin_varchar].[cd_tani_hin] AS [cd_tani_hin], 
+      [SS_vw_hin_varchar].[nisugata_gty] AS [nisugata_gty], 
+      [SS_vw_hin_varchar].[kbn_jyotai] AS [kbn_jyotai]
+      FROM [dbo].[SS_vw_hin_varchar] AS [SS_vw_hin_varchar]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SS_vw_hin_varchar_hyoji" EntityType="FOODPROCSModel.Store.SS_vw_hin_varchar_hyoji" store:Type="Views" store:Schema="dbo" store:Name="SS_vw_hin_varchar_hyoji">
+      <DefiningQuery>SELECT 
+      [SS_vw_hin_varchar_hyoji].[cd_hin] AS [cd_hin], 
+      [SS_vw_hin_varchar_hyoji].[nm_hin] AS [nm_hin], 
+      [SS_vw_hin_varchar_hyoji].[hijyu] AS [hijyu], 
+      [SS_vw_hin_varchar_hyoji].[budomari] AS [budomari], 
+      [SS_vw_hin_varchar_hyoji].[no_kikaku] AS [no_kikaku], 
+      [SS_vw_hin_varchar_hyoji].[kbn_hin] AS [kbn_hin], 
+      [SS_vw_hin_varchar_hyoji].[kbn_hin_toroku] AS [kbn_hin_toroku], 
+      [SS_vw_hin_varchar_hyoji].[cd_tani_hin] AS [cd_tani_hin], 
+      [SS_vw_hin_varchar_hyoji].[nisugata_gty] AS [nisugata_gty], 
+      [SS_vw_hin_varchar_hyoji].[kbn_jyotai] AS [kbn_jyotai], 
+      [SS_vw_hin_varchar_hyoji].[no_sort] AS [no_sort]
+      FROM [dbo].[SS_vw_hin_varchar_hyoji] AS [SS_vw_hin_varchar_hyoji]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ma_haigo_mei" EntityType="FOODPROCSModel.Store.vw_ma_haigo_mei" store:Type="Views" store:Schema="dbo" store:Name="vw_ma_haigo_mei">
+      <DefiningQuery>SELECT 
+      [vw_ma_haigo_mei].[no_seq] AS [no_seq], 
+      [vw_ma_haigo_mei].[cd_haigo] AS [cd_haigo], 
+      [vw_ma_haigo_mei].[nm_haigo] AS [nm_haigo], 
+      [vw_ma_haigo_mei].[nm_haigo_r] AS [nm_haigo_r], 
+      [vw_ma_haigo_mei].[kbn_hin] AS [kbn_hin], 
+      [vw_ma_haigo_mei].[cd_bunrui] AS [cd_bunrui], 
+      [vw_ma_haigo_mei].[budomari] AS [budomari], 
+      [vw_ma_haigo_mei].[qty_kihon] AS [qty_kihon], 
+      [vw_ma_haigo_mei].[ritsu_kihon] AS [ritsu_kihon], 
+      [vw_ma_haigo_mei].[cd_setsubi] AS [cd_setsubi], 
+      [vw_ma_haigo_mei].[flg_gasan] AS [flg_gasan], 
+      [vw_ma_haigo_mei].[qty_max] AS [qty_max], 
+      [vw_ma_haigo_mei].[no_han] AS [no_han], 
+      [vw_ma_haigo_mei].[qty_haigo_h] AS [qty_haigo_h], 
+      [vw_ma_haigo_mei].[qty_haigo_kei] AS [qty_haigo_kei], 
+      [vw_ma_haigo_mei].[biko] AS [biko], 
+      [vw_ma_haigo_mei].[no_seiho] AS [no_seiho], 
+      [vw_ma_haigo_mei].[cd_tanto_seizo] AS [cd_tanto_seizo], 
+      [vw_ma_haigo_mei].[dt_seizo] AS [dt_seizo], 
+      [vw_ma_haigo_mei].[cd_tanto_hinkan] AS [cd_tanto_hinkan], 
+      [vw_ma_haigo_mei].[dt_hinkan] AS [dt_hinkan], 
+      [vw_ma_haigo_mei].[dt_from] AS [dt_from], 
+      [vw_ma_haigo_mei].[dt_to] AS [dt_to], 
+      [vw_ma_haigo_mei].[kbn_vw] AS [kbn_vw], 
+      [vw_ma_haigo_mei].[hijyu] AS [hijyu], 
+      [vw_ma_haigo_mei].[flg_shorihin] AS [flg_shorihin], 
+      [vw_ma_haigo_mei].[flg_hinkan] AS [flg_hinkan], 
+      [vw_ma_haigo_mei].[flg_seizo] AS [flg_seizo], 
+      [vw_ma_haigo_mei].[flg_sakujyo] AS [flg_sakujyo], 
+      [vw_ma_haigo_mei].[flg_mishiyo] AS [flg_mishiyo], 
+      [vw_ma_haigo_mei].[dt_toroku] AS [dt_toroku], 
+      [vw_ma_haigo_mei].[dt_henko] AS [dt_henko], 
+      [vw_ma_haigo_mei].[cd_koshin] AS [cd_koshin], 
+      [vw_ma_haigo_mei].[kbn_shiagari] AS [kbn_shiagari], 
+      [vw_ma_haigo_mei].[nm_haigo_rm] AS [nm_haigo_rm], 
+      [vw_ma_haigo_mei].[cd_haigo_seiho] AS [cd_haigo_seiho], 
+      [vw_ma_haigo_mei].[flg_seiho_base] AS [flg_seiho_base], 
+      [vw_ma_haigo_mei].[nm_seiho] AS [nm_seiho], 
+      [vw_ma_haigo_mei].[kbn_koshin] AS [kbn_koshin], 
+      [vw_ma_haigo_mei].[kin_keihi] AS [kin_keihi]
+      FROM [dbo].[vw_ma_haigo_mei] AS [vw_ma_haigo_mei]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ma_haigo_mei_hyoji" EntityType="FOODPROCSModel.Store.vw_ma_haigo_mei_hyoji" store:Type="Views" store:Schema="dbo" store:Name="vw_ma_haigo_mei_hyoji">
+      <DefiningQuery>SELECT 
+      [vw_ma_haigo_mei_hyoji].[no_seq] AS [no_seq], 
+      [vw_ma_haigo_mei_hyoji].[cd_haigo] AS [cd_haigo], 
+      [vw_ma_haigo_mei_hyoji].[nm_haigo] AS [nm_haigo], 
+      [vw_ma_haigo_mei_hyoji].[nm_haigo_r] AS [nm_haigo_r], 
+      [vw_ma_haigo_mei_hyoji].[kbn_hin] AS [kbn_hin], 
+      [vw_ma_haigo_mei_hyoji].[cd_bunrui] AS [cd_bunrui], 
+      [vw_ma_haigo_mei_hyoji].[budomari] AS [budomari], 
+      [vw_ma_haigo_mei_hyoji].[qty_kihon] AS [qty_kihon], 
+      [vw_ma_haigo_mei_hyoji].[ritsu_kihon] AS [ritsu_kihon], 
+      [vw_ma_haigo_mei_hyoji].[cd_setsubi] AS [cd_setsubi], 
+      [vw_ma_haigo_mei_hyoji].[flg_gasan] AS [flg_gasan], 
+      [vw_ma_haigo_mei_hyoji].[qty_max] AS [qty_max], 
+      [vw_ma_haigo_mei_hyoji].[no_han] AS [no_han], 
+      [vw_ma_haigo_mei_hyoji].[qty_haigo_h] AS [qty_haigo_h], 
+      [vw_ma_haigo_mei_hyoji].[qty_haigo_kei] AS [qty_haigo_kei], 
+      [vw_ma_haigo_mei_hyoji].[biko] AS [biko], 
+      [vw_ma_haigo_mei_hyoji].[no_seiho] AS [no_seiho], 
+      [vw_ma_haigo_mei_hyoji].[cd_tanto_seizo] AS [cd_tanto_seizo], 
+      [vw_ma_haigo_mei_hyoji].[dt_seizo] AS [dt_seizo], 
+      [vw_ma_haigo_mei_hyoji].[cd_tanto_hinkan] AS [cd_tanto_hinkan], 
+      [vw_ma_haigo_mei_hyoji].[dt_hinkan] AS [dt_hinkan], 
+      [vw_ma_haigo_mei_hyoji].[dt_from] AS [dt_from], 
+      [vw_ma_haigo_mei_hyoji].[dt_to] AS [dt_to], 
+      [vw_ma_haigo_mei_hyoji].[kbn_vw] AS [kbn_vw], 
+      [vw_ma_haigo_mei_hyoji].[hijyu] AS [hijyu], 
+      [vw_ma_haigo_mei_hyoji].[flg_shorihin] AS [flg_shorihin], 
+      [vw_ma_haigo_mei_hyoji].[flg_hinkan] AS [flg_hinkan], 
+      [vw_ma_haigo_mei_hyoji].[flg_seizo] AS [flg_seizo], 
+      [vw_ma_haigo_mei_hyoji].[flg_sakujyo] AS [flg_sakujyo], 
+      [vw_ma_haigo_mei_hyoji].[flg_mishiyo] AS [flg_mishiyo], 
+      [vw_ma_haigo_mei_hyoji].[dt_toroku] AS [dt_toroku], 
+      [vw_ma_haigo_mei_hyoji].[dt_henko] AS [dt_henko], 
+      [vw_ma_haigo_mei_hyoji].[cd_koshin] AS [cd_koshin], 
+      [vw_ma_haigo_mei_hyoji].[kbn_shiagari] AS [kbn_shiagari], 
+      [vw_ma_haigo_mei_hyoji].[nm_haigo_rm] AS [nm_haigo_rm], 
+      [vw_ma_haigo_mei_hyoji].[cd_haigo_seiho] AS [cd_haigo_seiho], 
+      [vw_ma_haigo_mei_hyoji].[flg_seiho_base] AS [flg_seiho_base], 
+      [vw_ma_haigo_mei_hyoji].[nm_seiho] AS [nm_seiho]
+      FROM [dbo].[vw_ma_haigo_mei_hyoji] AS [vw_ma_haigo_mei_hyoji]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ma_haigo_recipe" EntityType="FOODPROCSModel.Store.vw_ma_haigo_recipe" store:Type="Views" store:Schema="dbo" store:Name="vw_ma_haigo_recipe">
+      <DefiningQuery>SELECT 
+      [vw_ma_haigo_recipe].[no_seq] AS [no_seq], 
+      [vw_ma_haigo_recipe].[cd_haigo] AS [cd_haigo], 
+      [vw_ma_haigo_recipe].[no_han] AS [no_han], 
+      [vw_ma_haigo_recipe].[qty_haigo_h] AS [qty_haigo_h], 
+      [vw_ma_haigo_recipe].[no_kotei] AS [no_kotei], 
+      [vw_ma_haigo_recipe].[no_tonyu] AS [no_tonyu], 
+      [vw_ma_haigo_recipe].[cd_hin] AS [cd_hin], 
+      [vw_ma_haigo_recipe].[kbn_hin] AS [kbn_hin], 
+      [vw_ma_haigo_recipe].[nm_hin] AS [nm_hin], 
+      [vw_ma_haigo_recipe].[cd_mark] AS [cd_mark], 
+      [vw_ma_haigo_recipe].[qty] AS [qty], 
+      [vw_ma_haigo_recipe].[qty_haigo] AS [qty_haigo], 
+      [vw_ma_haigo_recipe].[qty_nisugata] AS [qty_nisugata], 
+      [vw_ma_haigo_recipe].[su_nisugata] AS [su_nisugata], 
+      [vw_ma_haigo_recipe].[qty_kowake] AS [qty_kowake], 
+      [vw_ma_haigo_recipe].[su_kowake] AS [su_kowake], 
+      [vw_ma_haigo_recipe].[cd_futai] AS [cd_futai], 
+      [vw_ma_haigo_recipe].[qty_futai] AS [qty_futai], 
+      [vw_ma_haigo_recipe].[hijyu] AS [hijyu], 
+      [vw_ma_haigo_recipe].[budomari] AS [budomari], 
+      [vw_ma_haigo_recipe].[flg_sakujyo] AS [flg_sakujyo], 
+      [vw_ma_haigo_recipe].[flg_mishiyo] AS [flg_mishiyo], 
+      [vw_ma_haigo_recipe].[dt_toroku] AS [dt_toroku], 
+      [vw_ma_haigo_recipe].[dt_henko] AS [dt_henko], 
+      [vw_ma_haigo_recipe].[cd_koshin] AS [cd_koshin], 
+      [vw_ma_haigo_recipe].[kbn_jyotai] AS [kbn_jyotai], 
+      [vw_ma_haigo_recipe].[kbn_shitei] AS [kbn_shitei], 
+      [vw_ma_haigo_recipe].[kbn_bunkatsu] AS [kbn_bunkatsu]
+      FROM [dbo].[vw_ma_haigo_recipe] AS [vw_ma_haigo_recipe]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ma_haigo_recipe_hyoji" EntityType="FOODPROCSModel.Store.vw_ma_haigo_recipe_hyoji" store:Type="Views" store:Schema="dbo" store:Name="vw_ma_haigo_recipe_hyoji">
+      <DefiningQuery>SELECT 
+      [vw_ma_haigo_recipe_hyoji].[no_seq] AS [no_seq], 
+      [vw_ma_haigo_recipe_hyoji].[cd_haigo] AS [cd_haigo], 
+      [vw_ma_haigo_recipe_hyoji].[no_han] AS [no_han], 
+      [vw_ma_haigo_recipe_hyoji].[qty_haigo_h] AS [qty_haigo_h], 
+      [vw_ma_haigo_recipe_hyoji].[no_kotei] AS [no_kotei], 
+      [vw_ma_haigo_recipe_hyoji].[no_tonyu] AS [no_tonyu], 
+      [vw_ma_haigo_recipe_hyoji].[cd_hin] AS [cd_hin], 
+      [vw_ma_haigo_recipe_hyoji].[kbn_hin] AS [kbn_hin], 
+      [vw_ma_haigo_recipe_hyoji].[nm_hin] AS [nm_hin], 
+      [vw_ma_haigo_recipe_hyoji].[cd_mark] AS [cd_mark], 
+      [vw_ma_haigo_recipe_hyoji].[qty] AS [qty], 
+      [vw_ma_haigo_recipe_hyoji].[qty_haigo] AS [qty_haigo], 
+      [vw_ma_haigo_recipe_hyoji].[qty_nisugata] AS [qty_nisugata], 
+      [vw_ma_haigo_recipe_hyoji].[su_nisugata] AS [su_nisugata], 
+      [vw_ma_haigo_recipe_hyoji].[qty_kowake] AS [qty_kowake], 
+      [vw_ma_haigo_recipe_hyoji].[su_kowake] AS [su_kowake], 
+      [vw_ma_haigo_recipe_hyoji].[cd_futai] AS [cd_futai], 
+      [vw_ma_haigo_recipe_hyoji].[qty_futai] AS [qty_futai], 
+      [vw_ma_haigo_recipe_hyoji].[hijyu] AS [hijyu], 
+      [vw_ma_haigo_recipe_hyoji].[budomari] AS [budomari], 
+      [vw_ma_haigo_recipe_hyoji].[flg_sakujyo] AS [flg_sakujyo], 
+      [vw_ma_haigo_recipe_hyoji].[flg_mishiyo] AS [flg_mishiyo], 
+      [vw_ma_haigo_recipe_hyoji].[dt_toroku] AS [dt_toroku], 
+      [vw_ma_haigo_recipe_hyoji].[dt_henko] AS [dt_henko], 
+      [vw_ma_haigo_recipe_hyoji].[cd_koshin] AS [cd_koshin], 
+      [vw_ma_haigo_recipe_hyoji].[kbn_jyotai] AS [kbn_jyotai], 
+      [vw_ma_haigo_recipe_hyoji].[kbn_shitei] AS [kbn_shitei], 
+      [vw_ma_haigo_recipe_hyoji].[kbn_bunkatsu] AS [kbn_bunkatsu]
+      FROM [dbo].[vw_ma_haigo_recipe_hyoji] AS [vw_ma_haigo_recipe_hyoji]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ma_mark" EntityType="FOODPROCSModel.Store.vw_ma_mark" store:Type="Views" store:Schema="dbo" store:Name="vw_ma_mark">
+      <DefiningQuery>SELECT 
+      [vw_ma_mark].[cd_mark] AS [cd_mark], 
+      [vw_ma_mark].[nm_mark] AS [nm_mark], 
+      [vw_ma_mark].[mark] AS [mark], 
+      [vw_ma_mark].[cd_tani_shiyo] AS [cd_tani_shiyo], 
+      [vw_ma_mark].[kbn_qty_haigo] AS [kbn_qty_haigo], 
+      [vw_ma_mark].[kbn_qty_nisugata] AS [kbn_qty_nisugata], 
+      [vw_ma_mark].[kbn_su_nisugata] AS [kbn_su_nisugata], 
+      [vw_ma_mark].[kbn_qty_kowake] AS [kbn_qty_kowake], 
+      [vw_ma_mark].[kbn_su_kowake] AS [kbn_su_kowake], 
+      [vw_ma_mark].[kbn_hijyu] AS [kbn_hijyu], 
+      [vw_ma_mark].[kbn_budomari] AS [kbn_budomari], 
+      [vw_ma_mark].[kbn_futai] AS [kbn_futai], 
+      [vw_ma_mark].[dt_henko] AS [dt_henko], 
+      [vw_ma_mark].[ss_kbn_qty_haigo] AS [ss_kbn_qty_haigo], 
+      [vw_ma_mark].[ss_kbn_nisugata] AS [ss_kbn_nisugata], 
+      [vw_ma_mark].[ss_kbn_gosa] AS [ss_kbn_gosa], 
+      [vw_ma_mark].[ss_kbn_budomari] AS [ss_kbn_budomari], 
+      [vw_ma_mark].[ss_flg_genryo] AS [ss_flg_genryo], 
+      [vw_ma_mark].[ss_flg_maeshori] AS [ss_flg_maeshori], 
+      [vw_ma_mark].[ss_flg_shikakari] AS [ss_flg_shikakari], 
+      [vw_ma_mark].[ss_flg_sagyo] AS [ss_flg_sagyo]
+      FROM [dbo].[vw_ma_mark] AS [vw_ma_mark]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="ma_bunrui">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_bunrui" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="nm_bunrui" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="flg_egg" Type="bit" />
+  </EntityType>
+  <EntityType Name="ma_genshizai">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_hin_r" Type="varchar" MaxLength="20" />
+    <Property Name="nisugata_qty" Type="float" />
+    <Property Name="nisugata_hyoji" Type="varchar" MaxLength="26" />
+    <Property Name="su_iri" Type="int" Nullable="false" />
+    <Property Name="qty" Type="float" Nullable="false" />
+    <Property Name="cd_tani_nonyu" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_tani_shiyo" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_shukei" Type="varchar" MaxLength="13" />
+    <Property Name="budomari" Type="float" Nullable="false" />
+    <Property Name="hijyu" Type="float" Nullable="false" />
+    <Property Name="cd_bunrui" Type="varchar" MaxLength="2" />
+    <Property Name="size_hachu" Type="float" />
+    <Property Name="su_leadtime" Type="int" />
+    <Property Name="su_saitei" Type="float" />
+    <Property Name="cd_kura" Type="varchar" MaxLength="3" />
+    <Property Name="kin_tanka" Type="float" />
+    <Property Name="kbn_zei" Type="varchar" MaxLength="1" />
+    <Property Name="cd_hini" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_jyotai" Type="varchar" MaxLength="1" />
+    <Property Name="cd_seizo" Type="varchar" MaxLength="13" />
+    <Property Name="biko" Type="varchar" MaxLength="160" />
+    <Property Name="cd_niuke" Type="varchar" MaxLength="2" />
+    <Property Name="cd_maker_hin" Type="varchar" MaxLength="50" />
+    <Property Name="kikan_shomi" Type="int" />
+    <Property Name="tani_shomi" Type="varchar" MaxLength="1" />
+    <Property Name="kikan_shomi_kaifu" Type="int" />
+    <Property Name="tani_shomi_kaifu" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_ksys_denso" Type="varchar" MaxLength="1" />
+    <Property Name="cd_jigyosho" Type="varchar" MaxLength="4" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="nm_hin_rm" Type="varchar" MaxLength="60" />
+    <Property Name="no_kikaku" Type="varchar" MaxLength="17" />
+    <Property Name="nm_kikaku" Type="varchar" MaxLength="80" />
+    <Property Name="cd_hini_gmat" Type="varchar" MaxLength="3" />
+    <Property Name="nm_seizo" Type="varchar" MaxLength="80" />
+    <Property Name="nm_hanbai" Type="varchar" MaxLength="80" />
+    <Property Name="dt_toroku_kikaku" Type="datetime" />
+    <Property Name="nm_bussitsu" Type="varchar" MaxLength="74" />
+    <Property Name="cd_doto_hin" Type="varchar" MaxLength="13" />
+    <Property Name="dt_doto_SET_DATE" Type="datetime" />
+    <Property Name="cd_doto_kaisha" Type="varchar" MaxLength="4" />
+    <Property Name="su_order_leadtime" Type="int" />
+    <Property Name="nm_kana_name" Type="varchar" MaxLength="18" />
+    <Property Name="cd_spu" Type="int" />
+    <Property Name="kbn_genryohin" Type="int" />
+    <Property Name="nm_kana_nisugata" Type="varchar" MaxLength="12" />
+    <Property Name="cd_tani_keiri" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_hokan_kaifu1" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_hokan_kaifu2" Type="varchar" MaxLength="2" />
+    <Property Name="kikan_shomi_kaifu2" Type="int" />
+    <Property Name="tani_shomi_kaifu2" Type="varchar" MaxLength="1" />
+    <Property Name="size_hachu_min" Type="float" />
+    <Property Name="su_saidai" Type="float" Nullable="false" />
+    <Property Name="kbn_denso" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kin_tanka_zaiko" Type="float" />
+    <Property Name="kin_tanka_uriage" Type="float" />
+    <Property Name="kin_tanka_nisugata" Type="float" />
+    <Property Name="kbn_shiyo_tanka" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_shokuba_hachu" Type="varchar" MaxLength="2" />
+    <Property Name="cd_route" Type="varchar" MaxLength="6" />
+    <Property Name="kbn_uri" Type="varchar" MaxLength="2" />
+    <Property Name="cd_route_uriage" Type="varchar" MaxLength="6" />
+    <Property Name="kbn_qt" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_azuke_kura" Type="bit" Nullable="false" />
+    <Property Name="kbn_alarm_zaiko" Type="bit" Nullable="false" />
+    <Property Name="kbn_tsushin_hachu" Type="bit" Nullable="false" />
+    <Property Name="kbn_jit" Type="bit" Nullable="false" />
+    <Property Name="kbn_edi" Type="bit" Nullable="false" />
+    <Property Name="kbn_rat_shomi" Type="float" />
+    <Property Name="kbn_kisan_shomi" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_tani_a" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_tani_b" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_kamoku_b" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="kbn_genryo_shiyo" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_basho_kowake" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="kbn_conv_1" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_conv_2" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_conv_3" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_shokuba" Type="varchar" MaxLength="2" />
+    <Property Name="su_kanzan_kama" Type="float" />
+    <Property Name="kbn_senko" Type="bit" />
+    <Property Name="su_lot_shikakari" Type="float" />
+    <Property Name="kikan_su_saitei_2" Type="int" />
+    <Property Name="su_saitei_2" Type="float" />
+    <Property Name="kikan_size_hachu_min_2" Type="int" />
+    <Property Name="size_hachu_min_2" Type="float" />
+    <Property Name="kbn_size_hachu_min_2" Type="varchar" MaxLength="1" />
+    <Property Name="kikan_hosho_gmat" Type="int" />
+    <Property Name="tani_hosho_gmat" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_hokan_gmat" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_nisugata_hachu" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_sanshutsu" Type="varchar" MaxLength="1" />
+    <Property Name="qty_max_bin" Type="float" />
+    <Property Name="kbn_hayade" Type="bit" />
+    <Property Name="kbn_nonyubin" Type="bit" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="kikan_shomi_refreeze" Type="int" />
+    <Property Name="kikan_shomi_rethawing" Type="int" />
+    <Property Name="su_palette" Type="int" />
+    <Property Name="no_location" Type="varchar" MaxLength="10" />
+    <Property Name="flg_kuradashi_nonyu" Type="bit" />
+    <Property Name="kbn_labelnyukohyo" Type="varchar" MaxLength="1" />
+    <Property Name="kin_tanka_shiire_new" Type="float" />
+    <Property Name="dt_tanka_shiire_new" Type="datetime" />
+    <Property Name="kin_tanka_nisugata_new" Type="float" />
+    <Property Name="dt_tanka_nisugata_new" Type="datetime" />
+    <Property Name="su_leadtime_hachu" Type="int" />
+    <Property Name="su_leadtime_irai_from" Type="int" />
+    <Property Name="su_leadtime_irai_to" Type="int" />
+    <Property Name="kbn_unmatch" Type="bit" />
+    <Property Name="kbn_shiyo" Type="bit" />
+    <Property Name="zan_futai" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="su_nonyubin_from" Type="int" />
+    <Property Name="su_nonyubin_to" Type="int" />
+    <Property Name="flg_kanri_jika" Type="bit" />
+    <Property Name="su_ageing" Type="int" />
+    <Property Name="cd_tekiyo" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="ma_haigo_mei">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_haigo" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_haigo_r" Type="varchar" MaxLength="20" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_bunrui" Type="varchar" MaxLength="2" />
+    <Property Name="budomari" Type="float" Nullable="false" />
+    <Property Name="qty_kihon" Type="int" Nullable="false" />
+    <Property Name="ritsu_kihon" Type="float" />
+    <Property Name="cd_setsubi" Type="varchar" MaxLength="2" />
+    <Property Name="flg_gasan" Type="bit" Nullable="false" />
+    <Property Name="qty_max" Type="float" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_kei" Type="float" />
+    <Property Name="biko" Type="varchar" MaxLength="300" />
+    <Property Name="no_seiho" Type="varchar" MaxLength="20" />
+    <Property Name="cd_tanto_seizo" Type="varchar" MaxLength="10" />
+    <Property Name="dt_seizo" Type="datetime" />
+    <Property Name="cd_tanto_hinkan" Type="varchar" MaxLength="10" />
+    <Property Name="dt_hinkan" Type="datetime" />
+    <Property Name="dt_from" Type="datetime" Nullable="false" />
+    <Property Name="dt_to" Type="datetime" Nullable="false" />
+    <Property Name="kbn_vw" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="flg_shorihin" Type="bit" Nullable="false" />
+    <Property Name="flg_hinkan" Type="bit" Nullable="false" />
+    <Property Name="flg_seizo" Type="bit" Nullable="false" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_shiagari" Type="bit" />
+    <Property Name="nm_haigo_rm" Type="varchar" MaxLength="60" />
+    <Property Name="cd_haigo_seiho" Type="varchar" MaxLength="13" />
+    <Property Name="flg_seiho_base" Type="bit" />
+    <Property Name="nm_seiho" Type="varchar" MaxLength="120" />
+    <Property Name="kbn_koshin" Type="tinyint" />
+    <Property Name="kin_keihi" Type="float" />
+    <Property Name="flg_tenkai" Type="bit" />
+    <Property Name="qty_haigo_auto" Type="float" />
+    <Property Name="su_kigen_min" Type="int" />
+    <Property Name="su_kigen_max" Type="int" />
+    <Property Name="flg_mishiyo_seizo" Type="bit" />
+    <Property Name="qty_kowake" Type="float" />
+    <Property Name="su_kowake" Type="int" />
+    <Property Name="kikan_shomi" Type="int" />
+    <Property Name="qty_haigo_genka" Type="int" />
+    <Property Name="no_han_genka" Type="int" />
+    <Property Name="flg_unten" Type="bit" />
+    <Property Name="cd_tanto_unten" Type="varchar" MaxLength="50" />
+    <Property Name="dt_unten" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ma_haigo_mei_hyoji">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_haigo" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_haigo_r" Type="varchar" MaxLength="20" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_bunrui" Type="varchar" MaxLength="2" />
+    <Property Name="budomari" Type="float" Nullable="false" />
+    <Property Name="qty_kihon" Type="int" Nullable="false" />
+    <Property Name="ritsu_kihon" Type="float" />
+    <Property Name="cd_setsubi" Type="varchar" MaxLength="2" />
+    <Property Name="flg_gasan" Type="bit" Nullable="false" />
+    <Property Name="qty_max" Type="float" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_kei" Type="float" />
+    <Property Name="biko" Type="varchar" MaxLength="300" />
+    <Property Name="no_seiho" Type="varchar" MaxLength="20" />
+    <Property Name="cd_tanto_seizo" Type="varchar" MaxLength="10" />
+    <Property Name="dt_seizo" Type="datetime" />
+    <Property Name="cd_tanto_hinkan" Type="varchar" MaxLength="10" />
+    <Property Name="dt_hinkan" Type="datetime" />
+    <Property Name="dt_from" Type="datetime" Nullable="false" />
+    <Property Name="dt_to" Type="datetime" Nullable="false" />
+    <Property Name="kbn_vw" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="flg_shorihin" Type="bit" Nullable="false" />
+    <Property Name="flg_hinkan" Type="bit" Nullable="false" />
+    <Property Name="flg_seizo" Type="bit" Nullable="false" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_shiagari" Type="bit" />
+    <Property Name="nm_haigo_rm" Type="varchar" MaxLength="60" />
+    <Property Name="cd_haigo_seiho" Type="varchar" MaxLength="13" />
+    <Property Name="flg_seiho_base" Type="bit" />
+    <Property Name="nm_seiho" Type="varchar" MaxLength="120" />
+  </EntityType>
+  <EntityType Name="ma_haigo_recipe">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="no_kotei" Type="int" Nullable="false" />
+    <Property Name="no_tonyu" Type="int" Nullable="false" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="cd_mark" Type="varchar" MaxLength="2" />
+    <Property Name="qty" Type="float" />
+    <Property Name="qty_haigo" Type="float" />
+    <Property Name="qty_nisugata" Type="float" />
+    <Property Name="su_nisugata" Type="int" />
+    <Property Name="qty_kowake" Type="float" />
+    <Property Name="su_kowake" Type="int" />
+    <Property Name="cd_futai" Type="varchar" MaxLength="2" />
+    <Property Name="qty_futai" Type="float" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_jyotai" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_shitei" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_bunkatsu" Type="tinyint" Nullable="false" />
+    <Property Name="flg_kowake_nochk" Type="bit" />
+    <Property Name="cd_shokuba" Type="varchar" MaxLength="2" />
+    <Property Name="keisu" Type="float" />
+    <Property Name="flg_hijyu" Type="bit" />
+    <Property Name="cd_station" Type="varchar" MaxLength="3" />
+    <Property Name="su_leadtime_kura" Type="int" />
+  </EntityType>
+  <EntityType Name="ma_haigo_recipe_hyoji">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="no_kotei" Type="int" Nullable="false" />
+    <Property Name="no_tonyu" Type="int" Nullable="false" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="cd_mark" Type="varchar" MaxLength="2" />
+    <Property Name="qty" Type="float" />
+    <Property Name="qty_haigo" Type="float" />
+    <Property Name="qty_nisugata" Type="float" />
+    <Property Name="su_nisugata" Type="int" />
+    <Property Name="qty_kowake" Type="float" />
+    <Property Name="su_kowake" Type="int" />
+    <Property Name="cd_futai" Type="varchar" MaxLength="2" />
+    <Property Name="qty_futai" Type="float" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_jyotai" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_shitei" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_bunkatsu" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.ma_kojyo' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="ma_kojyo">
+    <Key>
+      <PropertyRef Name="cd_kojyo" />
+      <PropertyRef Name="cd_kaisha" />
+      <PropertyRef Name="dt_kakutei" />
+      <PropertyRef Name="dt_toroku" />
+      <PropertyRef Name="cd_koshin" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="flg_ean" />
+      <PropertyRef Name="param_edi_densokaishi" />
+      <PropertyRef Name="param_edi_saishodenso" />
+    </Key>
+    <Property Name="cd_kojyo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="cd_kaisha" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_kojyo" Type="varchar" MaxLength="60" />
+    <Property Name="no_yubin" Type="varchar" MaxLength="8" />
+    <Property Name="jyusho_1" Type="varchar" MaxLength="30" />
+    <Property Name="jyusho_2" Type="varchar" MaxLength="30" />
+    <Property Name="jyusho_3" Type="varchar" MaxLength="30" />
+    <Property Name="tel_1" Type="varchar" MaxLength="13" />
+    <Property Name="tel_2" Type="varchar" MaxLength="13" />
+    <Property Name="fax_1" Type="varchar" MaxLength="13" />
+    <Property Name="fax_2" Type="varchar" MaxLength="13" />
+    <Property Name="flg_sakujyo" Type="bit" />
+    <Property Name="dt_kakutei" Type="datetime" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="flg_ean" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="param_edi_densokaishi" Type="int" Nullable="false" />
+    <Property Name="param_edi_saishodenso" Type="int" Nullable="false" />
+    <Property Name="cd_jigyobu_default" Type="varchar" MaxLength="2" />
+    <Property Name="cd_depo_default" Type="varchar" MaxLength="4" />
+    <Property Name="cd_jigyosho_default" Type="varchar" MaxLength="2" />
+    <Property Name="literal_iraisho" Type="varchar" MaxLength="80" />
+    <Property Name="literal_iraisho_shokuyu" Type="varchar" MaxLength="80" />
+    <Property Name="dt_joken_shiharai" Type="datetime" />
+    <Property Name="tekiyo" Type="varchar" MaxLength="100" />
+    <Property Name="dt_data_kakutei" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ma_konpo">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nisugata_qty" Type="float" />
+    <Property Name="nisugata_hyoji" Type="varchar" MaxLength="26" />
+    <Property Name="su_iri" Type="int" Nullable="false" />
+    <Property Name="qty" Type="float" Nullable="false" />
+    <Property Name="su_iri_banju" Type="int" />
+    <Property Name="kbn_hako" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_jan" Type="varchar" MaxLength="13" />
+    <Property Name="su_uchibako" Type="int" />
+    <Property Name="su_sotobako" Type="int" />
+    <Property Name="su_palette" Type="int" />
+    <Property Name="kbn_data_convert" Type="bit" />
+    <Property Name="cd_hanbai_1" Type="varchar" MaxLength="13" />
+    <Property Name="cd_hanbai_2" Type="varchar" MaxLength="13" />
+    <Property Name="kin_keihi" Type="float" />
+    <Property Name="su_noritsu" Type="int" />
+    <Property Name="cd_shukei" Type="varchar" MaxLength="13" />
+    <Property Name="kbn_ksys_denso" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_ksys_dekidaka" Type="varchar" MaxLength="1" />
+    <Property Name="cd_bunrui" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_tenkai" Type="bit" />
+    <Property Name="nm_hin_tag" Type="varchar" MaxLength="60" />
+    <Property Name="kbn_itaku" Type="varchar" MaxLength="1" />
+    <Property Name="su_batch_dekidaka" Type="int" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cd_tani_keiri" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="ma_line">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_line" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="nm_line" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="cd_shokuba" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_team" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="flg_shuka_2" Type="bit" Nullable="false" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cd_line_2" Type="varchar" MaxLength="3" />
+    <Property Name="time_hayade_seizo_minute" Type="int" />
+    <Property Name="flg_egg" Type="bit" />
+    <Property Name="no_hyoji" Type="int" />
+    <Property Name="cd_pallet_line" Type="varchar" MaxLength="2" />
+    <Property Name="flg_autorack_denso" Type="bit" />
+  </EntityType>
+  <EntityType Name="ma_maeshori">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_maeshori" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_maeshori" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_maeshori_r" Type="varchar" MaxLength="20" />
+    <Property Name="nm_maeshori_rm" Type="varchar" MaxLength="60" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="shiji_sagyo" Type="varchar" MaxLength="30" />
+    <Property Name="cd_setsubi" Type="varchar" MaxLength="2" />
+    <Property Name="su_jyunbi" Type="int" />
+    <Property Name="cd_hini" Type="varchar" MaxLength="2" />
+    <Property Name="budomari" Type="float" Nullable="false" />
+    <Property Name="biko" Type="varchar" MaxLength="50" />
+    <Property Name="cd_shukei" Type="varchar" MaxLength="13" />
+    <Property Name="jikan_hinon" Type="varchar" MaxLength="30" />
+    <Property Name="percent_shio" Type="float" />
+    <Property Name="nm_tenkabutsu" Type="varchar" MaxLength="60" />
+    <Property Name="percent_tenkabutsu" Type="float" />
+    <Property Name="hoho_reikyaku" Type="varchar" MaxLength="30" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="budomari_second" Type="float" />
+  </EntityType>
+  <EntityType Name="ma_mark">
+    <Key>
+      <PropertyRef Name="cd_mark" />
+    </Key>
+    <Property Name="cd_mark" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="nm_mark" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="mark" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="kbn_shubetsu" Type="varchar" MaxLength="2" />
+    <Property Name="cd_tani_shiyo" Type="varchar" MaxLength="2" />
+    <Property Name="flg_label" Type="bit" Nullable="false" />
+    <Property Name="flg_lot" Type="bit" Nullable="false" />
+    <Property Name="kbn_qty_haigo" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_qty_nisugata" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_su_nisugata" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_qty_kowake" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_su_kowake" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_hijyu" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_budomari" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_futai" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="ss_kbn_qty_haigo" Type="tinyint" Nullable="false" />
+    <Property Name="ss_kbn_nisugata" Type="tinyint" Nullable="false" />
+    <Property Name="ss_kbn_gosa" Type="tinyint" Nullable="false" />
+    <Property Name="ss_kbn_budomari" Type="tinyint" Nullable="false" />
+    <Property Name="ss_flg_genryo" Type="bit" Nullable="false" />
+    <Property Name="ss_flg_maeshori" Type="bit" Nullable="false" />
+    <Property Name="ss_flg_shikakari" Type="bit" Nullable="false" />
+    <Property Name="ss_flg_sagyo" Type="bit" Nullable="false" />
+    <Property Name="kbn_kowake_shokuba" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_kowake_nochk" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.ma_sagyo' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="ma_sagyo">
+    <Key>
+      <PropertyRef Name="no_seq" />
+      <PropertyRef Name="cd_sagyo" />
+      <PropertyRef Name="nm_sagyo" />
+      <PropertyRef Name="flg_sakujyo" />
+      <PropertyRef Name="flg_mishiyo" />
+      <PropertyRef Name="dt_toroku" />
+      <PropertyRef Name="dt_henko" />
+      <PropertyRef Name="cd_koshin" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_sagyo" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="nm_sagyo" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ma_seihin">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_hin_r" Type="varchar" MaxLength="20" />
+    <Property Name="nm_hin_rm" Type="varchar" MaxLength="60" />
+    <Property Name="cd_tani_jyuchu" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_tani_shiyo" Type="varchar" MaxLength="2" />
+    <Property Name="cd_niuke" Type="varchar" MaxLength="2" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="kbn_jyotai" Type="varchar" MaxLength="1" />
+    <Property Name="su_saitei" Type="float" />
+    <Property Name="kikan_shomi" Type="int" />
+    <Property Name="tani_shomi" Type="varchar" MaxLength="1" />
+    <Property Name="kikan_shomi_kaifu" Type="int" />
+    <Property Name="tani_shomi_kaifu" Type="varchar" MaxLength="1" />
+    <Property Name="cd_hini" Type="varchar" MaxLength="2" />
+    <Property Name="kin_romu" Type="float" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_yusen" Type="int" />
+    <Property Name="cd_haigo_hyoji" Type="varchar" MaxLength="13" />
+    <Property Name="no_yusen_hyoji" Type="int" />
+    <Property Name="kin_tanka" Type="float" />
+    <Property Name="kbn_seisan" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="biko" Type="varchar" MaxLength="160" />
+    <Property Name="kbn_seihin" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_kuraire" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_vw" Type="varchar" MaxLength="2" />
+    <Property Name="su_leadtime" Type="int" />
+    <Property Name="cd_tani_nonyu" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_zei" Type="varchar" MaxLength="1" />
+    <Property Name="kin_tanka_nonyu" Type="float" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="cd_spu" Type="int" />
+    <Property Name="kbn_genryohin" Type="int" />
+    <Property Name="kin_genka" Type="float" />
+    <Property Name="no_kikaku" Type="varchar" MaxLength="17" />
+    <Property Name="nm_kikaku" Type="varchar" MaxLength="80" />
+    <Property Name="cd_hini_gmat" Type="varchar" MaxLength="3" />
+    <Property Name="nm_seizo" Type="varchar" MaxLength="80" />
+    <Property Name="nm_hanbai" Type="varchar" MaxLength="80" />
+    <Property Name="dt_toroku_kikaku" Type="datetime" />
+    <Property Name="nm_bussitsu" Type="varchar" MaxLength="74" />
+    <Property Name="cd_doto_hin" Type="varchar" MaxLength="13" />
+    <Property Name="dt_doto_SET_DATE" Type="datetime" />
+    <Property Name="cd_doto_kaisha" Type="varchar" MaxLength="4" />
+    <Property Name="cd_itf" Type="varchar" MaxLength="16" />
+    <Property Name="kbn_kisan_shomi" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kikan_shomi_kaifu2" Type="int" />
+    <Property Name="tani_shomi_kaifu2" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_hokan_kaifu1" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_hokan_kaifu2" Type="varchar" MaxLength="2" />
+    <Property Name="su_saidai" Type="float" />
+    <Property Name="kin_tanka_shiire" Type="float" />
+    <Property Name="cd_kura" Type="varchar" MaxLength="3" />
+    <Property Name="cd_shokuba_hachu" Type="varchar" MaxLength="2" />
+    <Property Name="kin_tanka_zaiko" Type="float" />
+    <Property Name="kbn_shiyo_tanka" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_uri" Type="varchar" MaxLength="2" />
+    <Property Name="cd_route_uriage" Type="varchar" MaxLength="6" />
+    <Property Name="kbn_deki" Type="bit" Nullable="false" />
+    <Property Name="kbn_kura" Type="bit" Nullable="false" />
+    <Property Name="kbn_auto_kura" Type="bit" Nullable="false" />
+    <Property Name="kbn_azuke_kura" Type="bit" Nullable="false" />
+    <Property Name="kbn_alarm_zaiko" Type="bit" Nullable="false" />
+    <Property Name="kbn_jit" Type="bit" Nullable="false" />
+    <Property Name="kbn_rat_shomi" Type="float" />
+    <Property Name="cd_route" Type="varchar" MaxLength="6" />
+    <Property Name="cd_tani_a" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_tani_b" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_kamoku_b" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="kbn_genryo_shiyo" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_basho_kowake" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="kin_tanka_nisugata" Type="float" />
+    <Property Name="kbn_conv_1" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_conv_2" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_conv_3" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_shokuba" Type="varchar" MaxLength="2" />
+    <Property Name="su_kanzan_kama" Type="float" />
+    <Property Name="kbn_sakusei" Type="tinyint" />
+    <Property Name="cd_depo" Type="varchar" MaxLength="4" />
+    <Property Name="su_jinin" Type="float" />
+    <Property Name="cd_haigo2" Type="varchar" MaxLength="13" />
+    <Property Name="kbn_check" Type="varchar" MaxLength="4" />
+    <Property Name="kbn_check_date" Type="varchar" MaxLength="4" />
+    <Property Name="kbn_sanshutsu" Type="varchar" MaxLength="1" />
+    <Property Name="kikan_shomi_refreeze" Type="int" />
+    <Property Name="kikan_shomi_rethawing" Type="int" />
+    <Property Name="kbn_hakodume" Type="bit" />
+    <Property Name="no_location" Type="varchar" MaxLength="10" />
+    <Property Name="kbn_labelnyukohyo" Type="varchar" MaxLength="1" />
+    <Property Name="kin_tanka_shiire_new" Type="float" />
+    <Property Name="dt_tanka_shiire_new" Type="datetime" />
+    <Property Name="kin_tanka_nisugata_new" Type="float" />
+    <Property Name="dt_tanka_nisugata_new" Type="datetime" />
+    <Property Name="su_leadtime_hachu" Type="int" />
+    <Property Name="su_leadtime_irai_from" Type="int" />
+    <Property Name="su_leadtime_irai_to" Type="int" />
+    <Property Name="kbn_unmatch" Type="bit" />
+    <Property Name="kbn_shiyo" Type="bit" />
+    <Property Name="zan_futai" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="su_hiritsu" Type="float" />
+    <Property Name="su_hiritsu2" Type="float" />
+    <Property Name="flg_kanri_jika" Type="bit" />
+    <Property Name="su_ageing" Type="int" />
+    <Property Name="flg_mishiyo_seizo" Type="bit" />
+  </EntityType>
+  <EntityType Name="ma_seizo_line">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_yusen" Type="int" Nullable="false" />
+    <Property Name="cd_line" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="qty_noryoku" Type="float" />
+  </EntityType>
+  <EntityType Name="ma_seizo_line_hyoji">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_yusen" Type="int" Nullable="false" />
+    <Property Name="cd_line" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ma_setsubi">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_shokuba" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_setsubi" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="nm_setsubi" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="no_node" Type="int" />
+    <Property Name="no_kotei" Type="int" />
+    <Property Name="kbn_jyushin" Type="bit" />
+    <Property Name="flg_line" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="ma_tani">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_tani" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="nm_tani" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="flg_kinshi" Type="bit" Nullable="false" />
+    <Property Name="flg_hasu_check" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.ma_tanto' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="ma_tanto">
+    <Key>
+      <PropertyRef Name="no_seq" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_tanto" Type="varchar" MaxLength="10" />
+    <Property Name="nm_tanto" Type="varchar" MaxLength="20" />
+    <Property Name="cd_password" Type="varchar" MaxLength="10" />
+    <Property Name="nm_shozoku" Type="varchar" MaxLength="20" />
+    <Property Name="renraku" Type="varchar" MaxLength="14" />
+    <Property Name="e_mail" Type="varchar" MaxLength="50" />
+    <Property Name="flg_kengen_1" Type="bit" />
+    <Property Name="flg_kengen_2" Type="bit" />
+    <Property Name="flg_kengen_3" Type="bit" />
+    <Property Name="flg_kengen_4" Type="bit" />
+    <Property Name="flg_kengen_5" Type="bit" />
+    <Property Name="flg_kengen_6" Type="bit" />
+    <Property Name="flg_kengen_7" Type="bit" />
+    <Property Name="flg_kengen_8" Type="bit" />
+    <Property Name="flg_kengen_9" Type="bit" />
+    <Property Name="flg_kengen_10" Type="bit" />
+    <Property Name="flg_kengen_11" Type="bit" />
+    <Property Name="flg_kengen_12" Type="bit" />
+    <Property Name="flg_kengen_13" Type="bit" />
+    <Property Name="flg_login" Type="varchar" MaxLength="2" />
+    <Property Name="flg_mrp" Type="bit" />
+    <Property Name="flg_sakujyo" Type="bit" />
+    <Property Name="flg_mishiyo" Type="bit" />
+    <Property Name="dt_toroku" Type="datetime" />
+    <Property Name="dt_henko" Type="datetime" />
+    <Property Name="cd_koshin" Type="varchar" MaxLength="10" />
+    <Property Name="cd_ope" Type="varchar" MaxLength="3" />
+    <Property Name="cd_shokuba" Type="varchar" MaxLength="2" />
+    <Property Name="flg_hakari" Type="bit" />
+    <Property Name="flg_jitsusakujyo" Type="bit" />
+    <Property Name="flg_shikakari" Type="bit" />
+    <Property Name="flg_saikin" Type="bit" />
+    <Property Name="flg_harikae" Type="bit" />
+    <Property Name="dt_henko_password" Type="datetime" />
+    <Property Name="dt_login" Type="datetime" />
+    <Property Name="flg_shokuyu_haigo_hiritsu" Type="bit" />
+    <Property Name="flg_genshizai_chotatsu_bu" Type="bit" />
+    <Property Name="flg_bun_master" Type="bit" />
+    <Property Name="flg_bun_shiyaku" Type="bit" />
+    <Property Name="flg_bun_tanto" Type="bit" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.SS_vw_hin' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="SS_vw_hin">
+    <Key>
+      <PropertyRef Name="cd_hin_var" />
+      <PropertyRef Name="nm_hin" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="kbn_hin_toroku" />
+    </Key>
+    <Property Name="cd_hin" Type="decimal" Precision="13" />
+    <Property Name="cd_hin_var" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="no_kikaku" Type="varchar" MaxLength="17" />
+    <Property Name="kbn_hin" Type="int" Nullable="false" />
+    <Property Name="kbn_hin_toroku" Type="int" Nullable="false" />
+    <Property Name="cd_tani_hin" Type="varchar" MaxLength="2" />
+    <Property Name="nisugata_gty" Type="float" />
+    <Property Name="kbn_jyotai" Type="int" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.SS_vw_hin_hyoji' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="SS_vw_hin_hyoji">
+    <Key>
+      <PropertyRef Name="cd_hin_var" />
+      <PropertyRef Name="nm_hin" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="kbn_hin_toroku" />
+      <PropertyRef Name="no_sort" />
+    </Key>
+    <Property Name="cd_hin" Type="decimal" Precision="13" />
+    <Property Name="cd_hin_var" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="no_kikaku" Type="varchar" MaxLength="17" />
+    <Property Name="kbn_hin" Type="int" Nullable="false" />
+    <Property Name="kbn_hin_toroku" Type="int" Nullable="false" />
+    <Property Name="cd_tani_hin" Type="varchar" MaxLength="2" />
+    <Property Name="nisugata_gty" Type="float" />
+    <Property Name="kbn_jyotai" Type="int" />
+    <Property Name="no_sort" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.SS_vw_hin_varchar' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="SS_vw_hin_varchar">
+    <Key>
+      <PropertyRef Name="cd_hin" />
+      <PropertyRef Name="nm_hin" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="kbn_hin_toroku" />
+    </Key>
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="no_kikaku" Type="varchar" MaxLength="17" />
+    <Property Name="kbn_hin" Type="int" Nullable="false" />
+    <Property Name="kbn_hin_toroku" Type="int" Nullable="false" />
+    <Property Name="cd_tani_hin" Type="varchar" MaxLength="2" />
+    <Property Name="nisugata_gty" Type="float" />
+    <Property Name="kbn_jyotai" Type="int" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.SS_vw_hin_varchar_hyoji' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="SS_vw_hin_varchar_hyoji">
+    <Key>
+      <PropertyRef Name="cd_hin" />
+      <PropertyRef Name="nm_hin" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="kbn_hin_toroku" />
+      <PropertyRef Name="no_sort" />
+    </Key>
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="no_kikaku" Type="varchar" MaxLength="17" />
+    <Property Name="kbn_hin" Type="int" Nullable="false" />
+    <Property Name="kbn_hin_toroku" Type="int" Nullable="false" />
+    <Property Name="cd_tani_hin" Type="varchar" MaxLength="2" />
+    <Property Name="nisugata_gty" Type="float" />
+    <Property Name="kbn_jyotai" Type="int" />
+    <Property Name="no_sort" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.vw_ma_haigo_mei' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_ma_haigo_mei">
+    <Key>
+      <PropertyRef Name="no_seq" />
+      <PropertyRef Name="cd_haigo" />
+      <PropertyRef Name="nm_haigo" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="budomari" />
+      <PropertyRef Name="qty_kihon" />
+      <PropertyRef Name="flg_gasan" />
+      <PropertyRef Name="no_han" />
+      <PropertyRef Name="qty_haigo_h" />
+      <PropertyRef Name="dt_from" />
+      <PropertyRef Name="dt_to" />
+      <PropertyRef Name="kbn_vw" />
+      <PropertyRef Name="flg_shorihin" />
+      <PropertyRef Name="flg_hinkan" />
+      <PropertyRef Name="flg_seizo" />
+      <PropertyRef Name="flg_sakujyo" />
+      <PropertyRef Name="flg_mishiyo" />
+      <PropertyRef Name="dt_toroku" />
+      <PropertyRef Name="dt_henko" />
+      <PropertyRef Name="cd_koshin" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_haigo" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_haigo_r" Type="varchar" MaxLength="20" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_bunrui" Type="varchar" MaxLength="2" />
+    <Property Name="budomari" Type="float" Nullable="false" />
+    <Property Name="qty_kihon" Type="int" Nullable="false" />
+    <Property Name="ritsu_kihon" Type="float" />
+    <Property Name="cd_setsubi" Type="varchar" MaxLength="2" />
+    <Property Name="flg_gasan" Type="bit" Nullable="false" />
+    <Property Name="qty_max" Type="float" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_kei" Type="float" />
+    <Property Name="biko" Type="varchar" MaxLength="300" />
+    <Property Name="no_seiho" Type="varchar" MaxLength="20" />
+    <Property Name="cd_tanto_seizo" Type="varchar" MaxLength="10" />
+    <Property Name="dt_seizo" Type="datetime" />
+    <Property Name="cd_tanto_hinkan" Type="varchar" MaxLength="10" />
+    <Property Name="dt_hinkan" Type="datetime" />
+    <Property Name="dt_from" Type="datetime" Nullable="false" />
+    <Property Name="dt_to" Type="datetime" Nullable="false" />
+    <Property Name="kbn_vw" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="flg_shorihin" Type="bit" Nullable="false" />
+    <Property Name="flg_hinkan" Type="bit" Nullable="false" />
+    <Property Name="flg_seizo" Type="bit" Nullable="false" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_shiagari" Type="bit" />
+    <Property Name="nm_haigo_rm" Type="varchar" MaxLength="60" />
+    <Property Name="cd_haigo_seiho" Type="varchar" MaxLength="13" />
+    <Property Name="flg_seiho_base" Type="bit" />
+    <Property Name="nm_seiho" Type="varchar" MaxLength="120" />
+    <Property Name="kbn_koshin" Type="tinyint" />
+    <Property Name="kin_keihi" Type="float" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.vw_ma_haigo_mei_hyoji' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_ma_haigo_mei_hyoji">
+    <Key>
+      <PropertyRef Name="no_seq" />
+      <PropertyRef Name="cd_haigo" />
+      <PropertyRef Name="nm_haigo" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="budomari" />
+      <PropertyRef Name="qty_kihon" />
+      <PropertyRef Name="flg_gasan" />
+      <PropertyRef Name="no_han" />
+      <PropertyRef Name="qty_haigo_h" />
+      <PropertyRef Name="dt_from" />
+      <PropertyRef Name="dt_to" />
+      <PropertyRef Name="kbn_vw" />
+      <PropertyRef Name="flg_shorihin" />
+      <PropertyRef Name="flg_hinkan" />
+      <PropertyRef Name="flg_seizo" />
+      <PropertyRef Name="flg_sakujyo" />
+      <PropertyRef Name="flg_mishiyo" />
+      <PropertyRef Name="dt_toroku" />
+      <PropertyRef Name="dt_henko" />
+      <PropertyRef Name="cd_koshin" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="nm_haigo" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="nm_haigo_r" Type="varchar" MaxLength="20" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="cd_bunrui" Type="varchar" MaxLength="2" />
+    <Property Name="budomari" Type="float" Nullable="false" />
+    <Property Name="qty_kihon" Type="int" Nullable="false" />
+    <Property Name="ritsu_kihon" Type="float" />
+    <Property Name="cd_setsubi" Type="varchar" MaxLength="2" />
+    <Property Name="flg_gasan" Type="bit" Nullable="false" />
+    <Property Name="qty_max" Type="float" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_kei" Type="float" />
+    <Property Name="biko" Type="varchar" MaxLength="300" />
+    <Property Name="no_seiho" Type="varchar" MaxLength="20" />
+    <Property Name="cd_tanto_seizo" Type="varchar" MaxLength="10" />
+    <Property Name="dt_seizo" Type="datetime" />
+    <Property Name="cd_tanto_hinkan" Type="varchar" MaxLength="10" />
+    <Property Name="dt_hinkan" Type="datetime" />
+    <Property Name="dt_from" Type="datetime" Nullable="false" />
+    <Property Name="dt_to" Type="datetime" Nullable="false" />
+    <Property Name="kbn_vw" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="flg_shorihin" Type="bit" Nullable="false" />
+    <Property Name="flg_hinkan" Type="bit" Nullable="false" />
+    <Property Name="flg_seizo" Type="bit" Nullable="false" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_shiagari" Type="bit" />
+    <Property Name="nm_haigo_rm" Type="varchar" MaxLength="60" />
+    <Property Name="cd_haigo_seiho" Type="varchar" MaxLength="13" />
+    <Property Name="flg_seiho_base" Type="bit" />
+    <Property Name="nm_seiho" Type="varchar" MaxLength="120" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.vw_ma_haigo_recipe' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_ma_haigo_recipe">
+    <Key>
+      <PropertyRef Name="no_seq" />
+      <PropertyRef Name="cd_haigo" />
+      <PropertyRef Name="no_han" />
+      <PropertyRef Name="qty_haigo_h" />
+      <PropertyRef Name="no_kotei" />
+      <PropertyRef Name="no_tonyu" />
+      <PropertyRef Name="cd_hin" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="nm_hin" />
+      <PropertyRef Name="flg_sakujyo" />
+      <PropertyRef Name="flg_mishiyo" />
+      <PropertyRef Name="dt_toroku" />
+      <PropertyRef Name="dt_henko" />
+      <PropertyRef Name="cd_koshin" />
+      <PropertyRef Name="kbn_bunkatsu" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="no_kotei" Type="int" Nullable="false" />
+    <Property Name="no_tonyu" Type="int" Nullable="false" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="cd_mark" Type="varchar" MaxLength="2" />
+    <Property Name="qty" Type="float" />
+    <Property Name="qty_haigo" Type="float" />
+    <Property Name="qty_nisugata" Type="float" />
+    <Property Name="su_nisugata" Type="int" />
+    <Property Name="qty_kowake" Type="float" />
+    <Property Name="su_kowake" Type="int" />
+    <Property Name="cd_futai" Type="varchar" MaxLength="2" />
+    <Property Name="qty_futai" Type="float" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_jyotai" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_shitei" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_bunkatsu" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.vw_ma_haigo_recipe_hyoji' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_ma_haigo_recipe_hyoji">
+    <Key>
+      <PropertyRef Name="no_seq" />
+      <PropertyRef Name="cd_haigo" />
+      <PropertyRef Name="no_han" />
+      <PropertyRef Name="qty_haigo_h" />
+      <PropertyRef Name="no_kotei" />
+      <PropertyRef Name="no_tonyu" />
+      <PropertyRef Name="cd_hin" />
+      <PropertyRef Name="kbn_hin" />
+      <PropertyRef Name="nm_hin" />
+      <PropertyRef Name="flg_sakujyo" />
+      <PropertyRef Name="flg_mishiyo" />
+      <PropertyRef Name="dt_toroku" />
+      <PropertyRef Name="dt_henko" />
+      <PropertyRef Name="cd_koshin" />
+      <PropertyRef Name="kbn_bunkatsu" />
+    </Key>
+    <Property Name="no_seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_haigo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="no_han" Type="int" Nullable="false" />
+    <Property Name="qty_haigo_h" Type="int" Nullable="false" />
+    <Property Name="no_kotei" Type="int" Nullable="false" />
+    <Property Name="no_tonyu" Type="int" Nullable="false" />
+    <Property Name="cd_hin" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="kbn_hin" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="nm_hin" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="cd_mark" Type="varchar" MaxLength="2" />
+    <Property Name="qty" Type="float" />
+    <Property Name="qty_haigo" Type="float" />
+    <Property Name="qty_nisugata" Type="float" />
+    <Property Name="su_nisugata" Type="int" />
+    <Property Name="qty_kowake" Type="float" />
+    <Property Name="su_kowake" Type="int" />
+    <Property Name="cd_futai" Type="varchar" MaxLength="2" />
+    <Property Name="qty_futai" Type="float" />
+    <Property Name="hijyu" Type="float" />
+    <Property Name="budomari" Type="float" />
+    <Property Name="flg_sakujyo" Type="bit" Nullable="false" />
+    <Property Name="flg_mishiyo" Type="bit" Nullable="false" />
+    <Property Name="dt_toroku" Type="datetime" Nullable="false" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="cd_koshin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="kbn_jyotai" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_shitei" Type="varchar" MaxLength="1" />
+    <Property Name="kbn_bunkatsu" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'FPROCQPT05_ma.dbo.vw_ma_mark' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_ma_mark">
+    <Key>
+      <PropertyRef Name="cd_mark" />
+      <PropertyRef Name="nm_mark" />
+      <PropertyRef Name="mark" />
+      <PropertyRef Name="kbn_qty_haigo" />
+      <PropertyRef Name="kbn_qty_nisugata" />
+      <PropertyRef Name="kbn_su_nisugata" />
+      <PropertyRef Name="kbn_qty_kowake" />
+      <PropertyRef Name="kbn_su_kowake" />
+      <PropertyRef Name="kbn_hijyu" />
+      <PropertyRef Name="kbn_budomari" />
+      <PropertyRef Name="kbn_futai" />
+      <PropertyRef Name="dt_henko" />
+      <PropertyRef Name="ss_kbn_qty_haigo" />
+      <PropertyRef Name="ss_kbn_nisugata" />
+      <PropertyRef Name="ss_kbn_gosa" />
+      <PropertyRef Name="ss_kbn_budomari" />
+      <PropertyRef Name="ss_flg_genryo" />
+      <PropertyRef Name="ss_flg_maeshori" />
+      <PropertyRef Name="ss_flg_shikakari" />
+      <PropertyRef Name="ss_flg_sagyo" />
+    </Key>
+    <Property Name="cd_mark" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="nm_mark" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="mark" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="cd_tani_shiyo" Type="varchar" MaxLength="2" />
+    <Property Name="kbn_qty_haigo" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_qty_nisugata" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_su_nisugata" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_qty_kowake" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_su_kowake" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_hijyu" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_budomari" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="kbn_futai" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="dt_henko" Type="datetime" Nullable="false" />
+    <Property Name="ss_kbn_qty_haigo" Type="tinyint" Nullable="false" />
+    <Property Name="ss_kbn_nisugata" Type="tinyint" Nullable="false" />
+    <Property Name="ss_kbn_gosa" Type="tinyint" Nullable="false" />
+    <Property Name="ss_kbn_budomari" Type="tinyint" Nullable="false" />
+    <Property Name="ss_flg_genryo" Type="bit" Nullable="false" />
+    <Property Name="ss_flg_maeshori" Type="bit" Nullable="false" />
+    <Property Name="ss_flg_shikakari" Type="bit" Nullable="false" />
+    <Property Name="ss_flg_sagyo" Type="bit" Nullable="false" />
+  </EntityType>
+  <Function Name="SS_Hin_Check_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_hin" Type="varchar" Mode="In" />
+    <Parameter Name="su_hinCD" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SS_Hin_Check_sp_hyoji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_hin" Type="varchar" Mode="In" />
+    <Parameter Name="su_hinCD" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SS_Hin_Check_sp_hyoji_qpnmacs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_hin" Type="varchar" Mode="In" />
+    <Parameter Name="su_hinCD" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SS_Hin_Check_sp_qpnmacs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_hin" Type="varchar" Mode="In" />
+    <Parameter Name="su_hinCD" Type="int" Mode="In" />
+  </Function>
+</Schema>
