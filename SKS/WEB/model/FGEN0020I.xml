@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FGEN0020>
+    <kihon>
+        <rec cd_shain=""  nen=""  no_oi="" no_eda="" no_sanpuru="" cd_kaisya="" irisu="" nisugata="" kibo_genka="" kibo_genka_cd_tani="" kibo_baika="" butu_sotei="" ziki_hanbai="" keikaku_uriage="" keikaku_rieki="" hanbaigo_uriage="" hanbaigo_rieki="" seizo_roto="" memo_genkashisan="" ragio_kesu_kg="" />
+    </kihon>
+    <genryo>
+        <rec cd_kotei="" seq_kotei="" cd_genryo="" tanka="" budomari="" no_gyo="" />
+    </genryo>
+    <keisan>
+        <rec seq_shisaku="" shisan_date="" yuuko_budomari="" heikinjyutenryo="" kesu_kotehi="" kg_kotehi="" kg_genkake="" kesu_rieki="" kg_rieki="" baika="" arari="" />
+    </keisan>
+    <shizai>
+        <rec seq_shizai="" cd_kaisya="" cd_kojyo="" cd_shizai="" nm_shizai="" tanka="" budomari="" shiyouryo="" />
+    </shizai>
+    <kihonsub>
+    	<rec seq_shisaku="" seizo_roto="" />
+    </kihonsub>
+</FGEN0020>

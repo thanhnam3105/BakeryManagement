@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+<beans>
+    <!-- HibernateのSessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+      	<property name="configLocation"> 
+      		<value>hibernate.cfg.xml</value> 
+   		</property>
+    </bean>
+    <!-- トランザクションマネージャ -->
+	<bean id="transactionManager"  class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	
+	  <property name="sessionFactory">
+	  	<ref local="sessionFactory"/>
+	  </property>
+	</bean>
+
+   <bean id="SA060" class="jp.co.blueflag.shisaquick.srv.datacheck.GroupDataKanriDataCheck" > 
+   </bean>
+   
+   <bean id="SA090" class="jp.co.blueflag.shisaquick.srv.datacheck.TeamDataKanriDataCheck" > 
+   </bean>
+   
+   <bean id="SA270" class="jp.co.blueflag.shisaquick.srv.datacheck.TantoushaDataKanriDataCheck" > 
+   </bean>    
+
+   <bean id="SA260" class="jp.co.blueflag.shisaquick.srv.datacheck.TantoushaDataSearch2DataCheck" > 
+   </bean>    
+
+   <bean id="SA330" class="jp.co.blueflag.shisaquick.srv.datacheck.LiteralDataKanriDataCheck" > 
+   </bean>    
+
+   <!-- ADD 2014/10/10【QP@40404】start -->
+   <bean id="SA331" class="jp.co.blueflag.shisaquick.srv.datacheck.GentyoLiteralDataKanriDataCheck" >
+   </bean>
+   <!-- ADD 2014/10/10【QP@40404】end -->
+
+   <bean id="SA340" class="jp.co.blueflag.shisaquick.srv.datacheck.KengenDataKanriDataCheck" > 
+   </bean>    
+       
+   <bean id="SA370" class="jp.co.blueflag.shisaquick.srv.datacheck.GenryoDataKanriDataCheck" > 
+   </bean>
+
+   <bean id="SA380" class="jp.co.blueflag.shisaquick.srv.datacheck.GenryoDataKanri2DataCheck" > 
+   </bean>
+      
+   <!-- QP@10181 No.67 Start  -->
+   <!--
+   <bean id="SA490" class="jp.co.blueflag.shisaquick.srv.datacheck.ShisakuTblKanriDataChekck" > 
+   </bean>
+   -->
+   <bean id="SA490" class="jp.co.blueflag.shisaquick.srv.datacheck.SA490DataCheck" >
+   </bean>
+   <!-- QP@10181 No.67 End  -->
+   
+   <bean id="SA500" class="jp.co.blueflag.shisaquick.srv.datacheck.SeihoNoTourokuDataCheck" > 
+   </bean>   
+      
+   <bean id="SA550" class="jp.co.blueflag.shisaquick.srv.datacheck.JNLPCreateDataCheck" > 
+   </bean>   
+      
+   <bean id="SA420" class="jp.co.blueflag.shisaquick.srv.datacheck.HaitaSeigyoDataCheck" > 
+   </bean>
+   
+   <bean id="SA820" class="jp.co.blueflag.shisaquick.srv.datacheck.ShisanRirekiTorokuDataCheck" > 
+   </bean>   
+   
+   <!-- QP@00342  -->
+   <bean id="FGEN2060" class="jp.co.blueflag.shisaquick.srv.datacheck_genka.FGEN2060_datacheck" >
+   </bean>
+   <bean id="FGEN2080" class="jp.co.blueflag.shisaquick.srv.datacheck_genka.FGEN2080_datacheck" >
+   </bean>
+   
+</beans> 

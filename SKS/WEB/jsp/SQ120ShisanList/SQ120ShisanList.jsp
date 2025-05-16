@@ -1,0 +1,592 @@
+<%@ page language="java" contentType="text/html;charset=Windows-31J" %>
+<!------------------------------------------------------------------------------------->
+<!-- ÉVÉTÉNÉCÉbÉNÅ@å¥âøéééZàÍóóâÊñ                                                 -->
+<!-- çÏê¨é“ÅFTT.Nishigawa                                                                -->
+<!-- çÏê¨ì˙ÅF2011/01/31                                                              -->
+<!-- äTóv  ÅFåüçıèåèÇ…àÍívÇ∑ÇÈå¥âøéééZÉfÅ[É^ÇàÍóóÇ≈ï\é¶Ç∑ÇÈÅB                          -->
+<!------------------------------------------------------------------------------------->
+<html>
+
+	<script type="text/javascript">
+    <!--//
+		window.onunload = function() {
+
+			document.getElementById("divMeisai").innerHTML = null;
+
+			<!-- ÅyQP@20505Åz2012/09/14 TT H.Shima ADD Start -->
+			document.getElementById("xmlJSP0320").src = null;
+			<!-- ÅyQP@20505Åz2012/09/14 TT H.Shima ADD End -->
+
+			document.getElementById("xmlRGEN2120").src = null;
+			document.getElementById("xmlRGEN2130").src = null;
+			document.getElementById("xmlRGEN2140").src = null;
+
+			document.getElementById("xmlRGEN2150").src = null;
+			document.getElementById("xmlRGEN2160").src = null;
+			<!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara S -->
+			document.getElementById("xmlRGEN2210").src = null;
+			<!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara E -->
+
+			<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD Start -->
+			document.getElementById("xmlRGEN2220").src = null;
+			<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD End   -->
+
+			document.getElementById("xmlUSERINFO_I").src = null;
+
+			document.getElementById("xmlSA030I").src = null;
+			document.getElementById("xmlSA050I").src = null;
+			document.getElementById("xmlSA080I").src = null;
+
+			document.getElementById("xmlSA140I").src = null;
+			<!-- ÅyQP@20505Åz2012/09/14 TT H.Shima ADD Start -->
+			document.getElementById("xmlSA250I").src = null;
+			<!-- ÅyQP@20505Åz2012/09/14 TT H.Shima ADD End   -->
+			document.getElementById("xmlSA290I").src = null;
+			document.getElementById("xmlFGEN2130I").src = null;
+
+			document.getElementById("xmlFGEN2140I").src = null;
+			document.getElementById("xmlFGEN2150I").src = null;
+			<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD Start -->
+			document.getElementById("xmlFGEN2220I").src = null;
+			<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD End   -->
+
+			document.getElementById("xmlUSERINFO_O").src = null;
+
+			document.getElementById("xmlSA030O").src = null;
+			document.getElementById("xmlSA050O").src = null;
+			document.getElementById("xmlSA080O").src = null;
+
+			<!-- ÅyQP@20505Åz2012/09/14 TT H.Shima ADD Start -->
+			document.getElementById("xmlSA250O").src = null;
+			<!-- ÅyQP@20505Åz2012/09/14 TT H.Shima ADD End   -->
+
+			document.getElementById("xmlSA140O").src = null;
+			document.getElementById("xmlSA290O").src = null;
+			document.getElementById("xmlFGEN2130O").src = null;
+
+			document.getElementById("xmlFGEN2140O").src = null;
+			document.getElementById("xmlFGEN2150O").src = null;
+			document.getElementById("xmlRESULT").src = null;
+
+			<!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara S -->
+			document.getElementById("xmlFGEN2210I").src = null;
+			document.getElementById("xmlFGEN2210O").src = null;
+			<!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara E -->
+
+			<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD Start -->
+			document.getElementById("xmlFGEN2220O").src = null;
+			<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD End   -->
+			<!-- ADD 2013/10/22 QP@30154 okano start -->
+			document.getElementById("xmlFGEN2230I").src = null;
+			document.getElementById("xmlFGEN2230O").src = null;
+			<!-- ADD 2013/10/22 QP@30154 okano end -->
+		}
+    -->
+    </script>
+
+	<head>
+
+        <title></title>
+        <!-- ã§í  -->
+        <script type="text/javascript" src="../common/js/Const.js"></script>
+        <script type="text/javascript" src="../common/js/MessageControl.js"></script>
+        <script type="text/javascript" src="../common/js/ConnectionControl.js"></script>
+        <script type="text/javascript" src="../common/js/XmlControl.js"></script>
+        <script type="text/javascript" src="../common/js/AjaxControl.js"></script>
+        <script type="text/javascript" src="../common/js/CheckControl.js"></script>
+        <script type="text/javascript" src="../common/js/DisplayControl.js"></script>
+        <script type="text/javascript" src="../common/js/InputControl.js"></script>
+        <!-- å¬ï  -->
+        <script type="text/javascript" src="include/SQ120ShisanList.js"></script>
+		<script type="text/javascript" src="include/js/prototype.js" charset="shift_jis"></script>
+		<script type="text/javascript" src="include/js/effects.js" charset="shift_jis"></script>
+		<script type="text/javascript" src="include/js/window.js" charset="shift_jis"></script>
+        <!-- ÉXÉ^ÉCÉãÉVÅ[Ég -->
+        <link rel="stylesheet" type="text/css" href="../common/css/shisaquick.css">
+        <link rel="stylesheet" href="include/css/default.css" type="text/css" media="all">
+		<link rel="stylesheet" href="include/css/alphacube.css" type="text/css" media="all">
+		<link rel="stylesheet" href="include/css/main.css" type="text/css" media="all">
+
+		<style type="text/css">
+		#container {
+			width: 100.0%;
+			margin: 0 auto;
+			text-align: left;
+			font-size: 62.5%;
+		}
+		#tab {
+			margin-left: 0;
+			padding-left: 0;
+			margin-bottom: 1em;
+			border-bottom: 1px solid #333;
+			height: 1.5em;
+			overflow: hidden;
+		}
+		#tab li {
+			float: left;
+			width: 64px;
+			height: 1.5em;
+		}
+		#tab li a {
+			display: block;
+			width: 200px;
+			height: 1.5em;
+			border: 1px solid #ccc;
+			border-bottom: 0;
+			color: #777;
+			text-align: center;
+		}
+		</style>
+
+		<script language="JavaScript" type="text/javascript">
+		    Event.observe(window, 'load', function() {
+		    	//èàóùë“ÇøÉEÉBÉìÉhÉEê∂ê¨ÅiîÒï\é¶Åj
+				openWin_mati();
+
+				//åüçıÉ{É^Éìâüâ∫äƒéãÅiprototype.jsÇÃã@î\Åj
+				Event.observe('btnSearch', 'click', function() {
+
+					//åüçıèàóù
+					//èàóùíÜÉEÉBÉìÉhÉEï\é¶ÇÃà◊ÅAsetTimeoutÇ≈èàóùó\ñÒ
+					setTimeout(function(){ funDataSearch(); }, 0);
+
+					//èàóùèIóπ
+					return true;
+				});
+
+				//TODOÉ^Éuâüâ∫äƒéãÅiprototype.jsÇÃã@î\Åj
+				Event.observe('todo', 'click', function() {
+
+					//âÊñ ê›íË
+					todo_click();
+
+					//åüçıèàóù
+					//èàóùíÜÉEÉBÉìÉhÉEï\é¶ÇÃà◊ÅAsetTimeoutÇ≈èàóùó\ñÒ
+					setTimeout(function(){ funDataSearch(); }, 0);
+
+					//èàóùèIóπ
+					return true;
+				});
+
+				//å¥âøéééZàÍóóÉ^Éuâüâ∫äƒéãÅiprototype.jsÇÃã@î\Åj
+				Event.observe('itiran', 'click', function() {
+
+					//âÊñ ê›íË
+					itiran_click();
+
+					//åüçıèàóù
+					//èàóùíÜÉEÉBÉìÉhÉEï\é¶ÇÃà◊ÅAsetTimeoutÇ≈èàóùó\ñÒ
+					setTimeout(function(){ funDataSearch(); }, 0);
+
+					//èàóùèIóπ
+					return true;
+				});
+			});
+	    </script>
+
+    </head>
+    <body class="pfcancel" onLoad="funLoad();">
+
+		<div id="container">
+			<ul id="tab">
+				<li class="present"><a href="#page1" id="todo" tabindex="1">TO DO</a></li>
+				<li><a href="#page2" id="itiran" tabindex="2">ëSÉAÉCÉeÉÄàÍóó</a></li>
+			</ul>
+		</div>
+
+        <!-- XML DocumentíËã` -->
+
+        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD Start -->
+        <xml id="xmlJSP0320"></xml>
+        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+
+        <xml id="xmlRGEN2120"></xml>
+        <xml id="xmlRGEN2130"></xml>
+        <xml id="xmlRGEN2140"></xml>
+        <xml id="xmlRGEN2150"></xml>
+        <xml id="xmlRGEN2160"></xml>
+        <!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara S -->
+        <xml id="xmlRGEN2210"></xml>
+        <!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara E -->
+
+		<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD Start -->
+        <xml id="xmlRGEN2220"></xml>
+		<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD End   -->
+
+        <xml id="xmlUSERINFO_I" src="../../model/USERINFO.xml"></xml>
+        <xml id="xmlSA030I" src="../../model/SA030I.xml"></xml>
+        <xml id="xmlSA050I" src="../../model/SA050I.xml"></xml>
+		<xml id="xmlSA080I" src="../../model/SA080I.xml"></xml>
+        <xml id="xmlSA140I" src="../../model/SA140I.xml"></xml>
+        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD Start -->
+        <xml id="xmlSA250I" src="../../model/SA250I.xml"></xml>
+		<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+        <xml id="xmlSA290I" src="../../model/SA290I.xml"></xml>
+        <xml id="xmlFGEN2130I" src="../../model/FGEN2130I.xml"></xml>
+        <xml id="xmlFGEN2140I" src="../../model/FGEN2140I.xml"></xml>
+        <xml id="xmlFGEN2150I" src="../../model/FGEN2150I.xml"></xml>
+        <!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara S -->
+        <xml id="xmlFGEN2210I" src="../../model/FGEN2210I.xml"></xml>
+        <!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara E -->
+
+		<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD Start -->
+        <xml id="xmlFGEN2220I" src="../../model/FGEN2220I.xml"></xml>
+		<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD End   -->
+
+        <xml id="xmlUSERINFO_O"></xml>
+        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD Start -->
+        <xml id="xmlSA250O"></xml>
+        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+        <xml id="xmlSA030O"></xml>
+        <xml id="xmlSA050O"></xml>
+        <xml id="xmlSA080O"></xml>
+        <xml id="xmlSA140O"></xml>
+        <xml id="xmlSA290O"></xml>
+        <xml id="xmlFGEN2130O"></xml>
+        <xml id="xmlFGEN2140O"></xml>
+        <xml id="xmlFGEN2150O"></xml>
+        <!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara S -->
+        <xml id="xmlFGEN2210O"></xml>
+        <!-- ADDÅyH24îNìxëŒâûÅz20120404 hagiwara E -->
+
+		<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD Start -->
+        <xml id="xmlFGEN2220O"></xml>
+		<!-- ÅyQP@20505Åz2012/09/20 TT H.Shima ADD End   -->
+
+        <xml id="xmlRESULT"></xml>
+
+        <!-- ÉRÉìÉ{É{ÉbÉNÉXÇ…ÉfÉtÉHÉãÉgÇ≈ê›íËÇ≥ÇÍÇƒÇ¢ÇÈílÇÃëﬁîópXML -->
+        <xml id="xmlSA050"></xml>
+        <xml id="xmlSA080"></xml>
+        <xml id="xmlFGEN2140"></xml>
+        <!-- ADD 2013/10/22 QP@30154 okano start -->
+        <xml id="xmlFGEN2230I" src="../../model/FGEN2230I.xml"></xml>
+        <xml id="xmlFGEN2230O"></xml>
+        <xml id="xmlRGEN2230"></xml>
+        <!-- ADD 2013/10/22 QP@30154 okano end -->
+
+        <form name="frm00" id="frm00" method="post">
+        	<!-- É_ÉEÉìÉçÅ[ÉhÉtÉ@ÉCÉã -->
+        	<input type="hidden" value="" name="strFilePath" id="strFilePath">
+            <table width="99%">
+                <tr>
+                    <td width="20%" class="title">å¥âøéééZàÍóó</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="55%" align="right">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                    	<!-- MODÅyH24îNìxëŒâûÅz20120402 hagiwara S -->
+                        <!--
+                        <input type="button" class="normalbutton" id="btnSearch" name="btnSearch" value="åüçı" tabindex="17">
+                        <input type="button" class="normalbutton" id="btnClear" name="btnClear" value="ÉNÉäÉA" onClick="funClear();" tabindex="18">
+                        <input type="button" class="normalbutton" id="btnEnd" name="btnEnd" value="èIóπ" onClick="funNext(0);" tabindex="19">
+						-->
+                        <!--
+                        <input type="button" class="normalbutton" id="btnSearch" name="btnSearch" value="åüçı" tabindex="17">
+                        <input type="button" class="normalbutton" id="btnClear" name="btnClear" value="ÉNÉäÉA" onClick="funClear();" tabindex="18">
+                        <input type="button" class="normalbutton" id="btnPrint" name="btnPrint" value="àÍóóèoóÕ" onClick="funOutput();" tabindex="19">
+                        <input type="button" class="normalbutton" id="btnEnd" name="btnEnd" value="èIóπ" onClick="funNext(0);" tabindex="20">
+                         -->
+                        <!-- MODÅyH24îNìxëŒâûÅz20120402 hagiwara E -->
+                        <input type="button" class="normalbutton" id="btnSearch" name="btnSearch" value="åüçı" tabindex="18">
+                        <input type="button" class="normalbutton" id="btnClear" name="btnClear" value="ÉNÉäÉA" onClick="funClear();" tabindex="19">
+                        <input type="button" class="normalbutton" id="btnPrint" name="btnPrint" value="àÍóóèoóÕ" onClick="funOutput();" tabindex="20">
+                        <input type="button" class="normalbutton" id="btnEnd" name="btnEnd" value="èIóπ" onClick="funNext(0);" tabindex="21">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Å[èÓïÒ -->
+            <table width="99%">
+                <tr>
+                    <td align="right"><div id="divUserInfo"></div></td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 2óÒñ⁄ -->
+                <tr>
+                    <td width="100">ééçÏNo</td>
+                    <td width="200">
+<!-- 2013/07/3 ogawa ÅyQP@30151ÅzNo.39 start -->
+<!-- èCê≥ëOÉ\Å[ÉX -->
+<!--
+                        <span class="cinput" format="0000000000-00-000-000" required="true" defaultfocus="false" id="em_ShisakuNo">
+                         <input type="text" class="disb_text" id="txtShisakuNo" name="txtShisakuNo" maxlength="17" value="" style="width:170px;" tabindex="3">
+ -->
+<!-- èCê≥å„É\Å[ÉX -->
+                        <span class="cinput"  format="9999999999-99-999-999"  required="true" defaultfocus="false" id="em_ShisakuNo">
+                         <input type="text" class=act_text id="txtShisakuNo" name="txtShisakuNo"  value="" style="width:170px;" tabindex="3"  onChange="funSpaceDel(this);funZenkakuDatDel(this);">
+<!-- 2013/07/3 ogawa ÅyQP@30151ÅzNo.39 end -->
+                        </span>
+                    </td>
+                    <td width="100">å§ÉOÉãÅ[Év</td>
+                    <td width="200">
+                        <select id="ddlGroup" name="ddlGroup" style="width:180px;" onChange="funChangeGroup();" tabindex="9">
+                        </select>
+                    </td>
+                    <td width="100">êªë¢âÔé–</td>
+                    <td width="200">
+	                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <!-- <select id="ddlKaisha" name="ddlKaisha" style="width:180px;"  onChange="funChangeKaisha();" tabindex="12"> -->
+                        <select id="ddlKaisha" name="ddlKaisha" style="width:180px;"  onChange="funChangeKaisha();" tabindex="13">
+                        </select>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End -->
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 3óÒñ⁄ -->
+                <tr>
+                    <td width="100">ééçÏñº</td>
+                    <td width="200">
+                        <input type="text" class="act_text" id="txtShisakuNm" name="txtShisakuNm" maxlength="16" value="" style="width:170px;" tabindex="4">
+                    </td>
+                    <td width="100">å§É`Å[ÉÄ</td>
+                    <td width="200">
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <select id="ddlTeam" name="ddlTeam" onChange="funChangeTeam();" style="width:180px;" tabindex="10">
+                        </select>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+                    </td>
+                    <td width="100">êªë¢çHèÍ</td>
+                    <td width="200">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <!-- <select id="ddlBusho" name="ddlBusho" style="width:180px;" tabindex="13"> -->
+                        <select id="ddlBusho" name="ddlBusho" style="width:180px;" tabindex="14">
+                        </select>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End -->
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 4óÒñ⁄ -->
+                <tr>
+                    <td width="100">éééZä˙ì˙</td>
+                    <td width="200">
+                        <input type="text" class="disb_text" id="txtKizitu_From" name="txtKizitu_From" maxlength="10" value="" style="width:74px;" tabindex="5">
+                        Å`
+                        <input type="text" class="disb_text" id="txtKizitu_To" name="txtKizitu_To" maxlength="10" value="" style="width:74px;" tabindex="6">
+                    </td>
+                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                    <!--
+                    <td width="100">ÉÜÅ[ÉUÅ[</td>
+                    <td width="200">
+                        <select id="ddlUser" name="ddlUser" style="width:180px;" tabindex="11">
+                        </select>
+                    </td>
+                     -->
+                    <!-- ÅyQP@40812ÅzNo.24 MOD start 2015/03/03 TT.Kitazawa -->
+                    <!-- <td width="100">íSìñé“</td> -->
+                    <td width="100">å§íSìñé“</td>
+                    <!-- ÅyQP@40812ÅzNo.24 MOD end 2015/03/03 TT.Kitazawa -->
+                    <td width="200">
+                        <select id="ddlTanto" name="ddlTanto" style="width:180px;" tabindex="11">
+                        </select>
+                    </td>
+                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+                    <td width="100">èÛãµïîèê</td>
+                    <td width="200">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <!-- <select id="ddlZyokyo" name="ddlZyokyo" onChange="funChangeZyokyo();" style="width:180px;" tabindex="14"> -->
+                        <select id="ddlZyokyo" name="ddlZyokyo" onChange="funChangeZyokyo();" style="width:180px;" tabindex="15">
+                        </select>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 5óÒñ⁄ -->
+                <tr>
+                    <td width="100">&nbsp;</td>
+                    <td width="205"><input type="checkbox" id="chkMinyuryoku" name="chkMinyuryoku" onClick="minyuryoku_click();" tabindex="7">ñ¢ì¸óÕ</td>
+                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                    <!--
+                    <td width="100">&nbsp;</td>
+                    <td width="200">&nbsp;</td>
+                     -->
+                    <td width="100">ÉÜÅ[ÉUÅ[</td>
+                    <td width="200">
+                        <select id="ddlUser" name="ddlUser" style="width:180px;" tabindex="12">
+                        </select>
+                    </td>
+                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+                    <td width="100">ÉXÉeÅ[É^ÉX</td>
+                    <td width="200">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <!-- <select id="ddlStatus" name="ddlStatus" style="width:180px;" tabindex="15"> -->
+                        <select id="ddlStatus" name="ddlStatus" style="width:180px;" tabindex="16">
+                        </select>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 5óÒñ⁄ -->
+                <tr>
+                    <td width="100">&nbsp;</td>
+                    <td width="205"><input type="checkbox" id="chkKanryo" name="chkKanryo" onClick="" tabindex="8">ämîFäÆóπ</td>
+                    <td width="100">&nbsp;</td>
+                    <td width="200">&nbsp;</td>
+                    <td width="100">é}î‘éÌóﬁ</td>
+                    <td width="200">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <!-- <select id="ddlShurui" name="ddlShurui" style="width:180px;" tabindex="16"> -->
+                        <select id="ddlShurui" name="ddlShurui" style="width:180px;" tabindex="17">
+                        </select>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End -->
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 6óÒñ⁄ -->
+                <tr>
+                    <td width="97">&nbsp;</td>
+                    <td width="200">&nbsp;</td>
+                    <td width="403">&nbsp;</td>
+                    <td width="180" align="right">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                    	<!--
+                    	<!-- MODÅyH24îNìxëŒâûÅz20120402 hagiwara S -->
+                        <!-- <input type="button" class="normalbutton" value="åüçıèåèÉNÉäÉA" style="width:150px;" onClick="funClear_zyoken();" tabindex="21"> -->
+                        <!-- MODÅyH24îNìxëŒâûÅz20120402 hagiwara E -->
+                        <input type="button" class="normalbutton" value="åüçıèåèÉNÉäÉA" style="width:150px;" onClick="funClear_zyoken();" tabindex="22">
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End -->
+                    </td>
+                    <td width="58">&nbsp;</td>
+                </tr>
+            </table>
+
+            <!-- [ééçÏ√ﬁ∞¿àÍóó]ÉäÉXÉg -->
+            <div class="scroll" id="sclList" style="height:45%;width:99%;" rowSelect="true">
+            <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+            <!-- <table id="dataTable" name="dataTable" cellspacing="0" width="1524px" align="center"> -->
+<!-- 2015/03/03 TT.KitazawaÅyQP@40812ÅzMOD start -->
+            <!-- <table id="dataTable" name="dataTable" cellspacing="0" width="1621px" align=center> -->
+            <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD End   -->
+            <table id="dataTable" name="dataTable" cellspacing="0" width="1621px">
+<!-- 2015/03/03 TT.KitazawaÅyQP@40812ÅzMOD end -->
+                <colgroup>
+                    <col style="width:28px;"/>
+                    <col style="width:30px;"/>
+                    <col style="width:80px;"/>
+                    <col style="width:28px;"/>
+                    <col style="width:130px;"/>
+                    <col style="width:30px;"/>
+                    <col style="width:200px;"/>
+                    <col style="width:40px;"/>
+                    <col style="width:99px;"/>
+                    <col style="width:256px;"/>
+                    <col style="width:100px;"/>
+                    <col style="width:100px;"/>
+                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD Start -->
+                    <col style="width:100px;"/>
+                    <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+                    <col style="width:200px;"/>
+                    <col style="width:100px;"/>
+                    <col style="width:100px;"/>
+
+                </colgroup>
+                <thead class="rowtitle">
+                    <tr style="top:expression(offsetParent.scrollTop);position:relative;">
+                        <th class="columntitle">&nbsp;</th>
+                        <th class="columntitle">ëI</th>
+                        <th class="columntitle">éééZä˙ì˙</th>
+                        <th class="columntitle">àÀâÒ</th>
+                        <th class="columntitle">ééçÏNo</th>
+                        <th class="columntitle">é}î‘</th>
+                        <th class="columntitle">ééçÏñº</th>
+                        <th class="columntitle">é}î‘éÌóﬁ</th>
+                        <th class="columntitle">éééZàÀóä<br>ÉTÉìÉvÉãNo</th>
+                        <th class="columntitle">
+                        	<table width="255" cellspacing="0" cellpadding="0" border="1" frame="void">
+                        		<tr class="columntitle" >
+                        			<th colspan="5">àÀóäÅEè≥îFèÛãµ</th>
+                        		</tr>
+                        		<tr class="columntitle" >
+                        			<th width="51">å§ãÜèä</th>
+                        			<th width="51">ê∂ä«</th>
+                        			<th width="51">å¥í≤</th>
+                        			<th width="52">çHèÍ</th>
+                        			<th width="51">âcã∆</th>
+                        		</tr>
+                        	</table>
+                        </th>
+                        <th class="columntitle">çÃópóLñ≥</th>
+                        <th class="columntitle">èäëÆÉ`Å[ÉÄ<br>ÅiÉJÉeÉSÉäÅj</th>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD Start -->
+                        <th class="columntitle">íSìñé“</th>
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+                        <th class="columntitle">ÉÜÅ[ÉUÅ[</th>
+                        <th class="columntitle">êªë¢âÔé–</th>
+                        <th class="columntitle">êªë¢çHèÍ</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                	<!-- <table class="detail" id="tblList" cellpadding="0" cellspacing="0" border="0" style="width:1525px;"> -->
+                	<table class="detail" id="tblList" cellpadding="0" cellspacing="0" border="0" style="width:1622px;">
+                	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+                		<tr>
+	                		<td>
+	                			<div id="divMeisai" name="divMeisai" />
+	                		</td>
+                		<tr>
+                	</table>
+<!-- 2015/03/03 TT.KitazawaÅyQP@40812ÅzMOD start -->
+                </tbody>
+<!--                 </table> -->
+<!-- 2015/03/03 TT.KitazawaÅyQP@40812ÅzMOD end -->
+             </table>
+            </div>
+
+            <table width="99%">
+                <!-- ÉfÅ[É^êî -->
+                <tr align="center">
+                    <td height="18px">
+                        <span id="spnRecInfo">ÉfÅ[É^êîÅ@ÅFÅ@<span id="spnRecCnt"></span> åèÇ≈Ç∑(<span id="spnRowMax"></span>åèñàÇ…ï\é¶ÇµÇƒÇ¢Ç‹Ç∑)Å@<span id="spnCurPage"></span></span>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- ÉyÅ[ÉWÉäÉìÉN -->
+            <div id="divPage" style="height:50px;font-size:12pt;"></div>
+
+            <table width="870">
+                <tr>
+                    <td>
+                    	<!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima MOD Start -->
+                        <!--
+                        <input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka" name="btnGenka" value="å¥âøéééZ" onClick="funNextPage(1);" tabindex="22">
+                        <input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka_Eigyo" name="btnGenka_Eigyo" value="å¥âøéééZÅiâcã∆Åj" onClick="funNextPage(2);" tabindex="23">
+                        <input type="button" class="normalbutton" id="btnStatusRireki" name="btnStatusRireki" value="ÉXÉeÅ[É^ÉXóöó" onClick="funNextPage(3);" tabindex="24">
+                         -->
+
+                        <!-- MOD 2013/10/22 QP@30154 okano start -->
+<!--                         	<input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka" name="btnGenka" value="å¥âøéééZ" onClick="funNextPage(1);" tabindex="23"> -->
+<!--                         	<input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka_Eigyo" name="btnGenka_Eigyo" value="å¥âøéééZÅiâcã∆Åj" onClick="funNextPage(2);" tabindex="24"> -->
+                        <input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka" name="btnGenka" value="å¥âøéééZ" onClick="funGenkaOpen(1);" tabindex="23">
+                        <input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka_Eigyo" name="btnGenka_Eigyo" value="å¥âøéééZÅiâcã∆Åj" onClick="funGenkaOpen(2);" tabindex="24">
+                        <!-- MOD 2013/10/22 QP@30154 okano end -->
+                        <input type="button" class="normalbutton" id="btnStatusRireki" name="btnStatusRireki" value="ÉXÉeÅ[É^ÉXóöó" onClick="funNextPage(3);" tabindex="25">
+                        <!-- ÅyQP@20505ÅzNo.31 2012/09/14 TT H.Shima ADD End   -->
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+
+        <input type="hidden" id="hidShisakuListKengen" name="hidShisakuListKengen" value="">
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="Windows-31J"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+    <!-- Servlet Class [ログイン画面]-Class　指定 -->
+	<servlet>
+		<servlet-name>AjaxServlet</servlet-name>
+		<servlet-class>jp.co.blueflag.shisaquick.srv.appFrame.AjaxServlet</servlet-class>
+	</servlet>
+    <!-- Servlet Class [ログイン画面]-URL　指定 -->
+	<servlet-mapping>
+		<servlet-name>AjaxServlet</servlet-name>
+		<url-pattern>/AjaxServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+    <!-- Servlet Class [ファイルダウンロード画面]-Class　指定 -->
+	<servlet>
+		<servlet-name>FileDownLoadServlet</servlet-name>
+		<servlet-class>jp.co.blueflag.shisaquick.srv.appFrame.FileDownLoadServlet</servlet-class>
+	</servlet>
+    <!-- Servlet Class [ファイルダウンロード画面]-URL　指定 -->
+	<servlet-mapping>
+		<servlet-name>FileDownLoadServlet</servlet-name>
+		<url-pattern>/FileDownLoadServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet Class [ファイルダウンロード画面]-Class　指定 ZIP用-->
+	<servlet>
+		<servlet-name>ZipFileDownLoadServlet</servlet-name>
+		<servlet-class>jp.co.blueflag.shisaquick.srv.appFrame.ZipFileDownLoadServlet</servlet-class>
+	</servlet>
+    <!-- Servlet Class [ファイルダウンロード画面]-URL　指定 -->
+	<servlet-mapping>
+		<servlet-name>ZipFileDownLoadServlet</servlet-name>
+		<url-pattern>/ZipFileDownLoadServlet</url-pattern>
+	</servlet-mapping>		
+
+    <!-- Servlet Class [ファイルダウンロード処理]-Class　指定 -->
+	<servlet>
+		<servlet-name>FileDownloadExec</servlet-name>
+		<servlet-class>jp.co.blueflag.shisaquick.srv.appFrame.FileDownloadExec</servlet-class>
+	</servlet>
+    <!-- Servlet Class [ファイルダウンロード処理]-URL　指定 -->
+	<servlet-mapping>
+		<servlet-name>FileDownloadExec</servlet-name>
+		<url-pattern>/FileDownloadExec</url-pattern>
+	</servlet-mapping>
+	
+    <!-- Servlet Class [ファイル削除処理]-Class　指定 -->
+	<servlet>
+		<servlet-name>FileDeleteServlet</servlet-name>
+		<servlet-class>jp.co.blueflag.shisaquick.srv.appFrame.FileDeleteServlet</servlet-class>
+	</servlet>
+    <!-- Servlet Class [ファイル削除処理]-URL　指定 -->
+	<servlet-mapping>
+		<servlet-name>FileDeleteServlet</servlet-name>
+		<url-pattern>/FileDeleteServlet</url-pattern>
+	</servlet-mapping>
+
+    <!-- Servlet Class [ファイルアップロード処理]-Class　指定 -->
+	<servlet>
+		<servlet-name>FileUpLoadExec</servlet-name>
+		<servlet-class>jp.co.blueflag.shisaquick.srv.appFrame.FileUpLoadExec</servlet-class>
+	</servlet>
+    <!-- Servlet Class [ファイルアップロード処理]-URL　指定 -->
+	<servlet-mapping>
+		<servlet-name>FileUpLoadExec</servlet-name>
+		<url-pattern>/FileUpLoadExec</url-pattern>
+	</servlet-mapping>
+	
+    <!-- JNLPダウンロード用 -->
+    <servlet>
+        <servlet-name>JnlpDownloadServlet</servlet-name>
+        <servlet-class>com.sun.javaws.servlet.JnlpDownloadServlet</servlet-class>         
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JnlpDownloadServlet</servlet-name>
+        <url-pattern>*.jnlp</url-pattern>
+    </servlet-mapping>
+    
+    <!-- セッションタイムアウト  -->
+    <session-config>
+    	<session-timeout>600</session-timeout>
+	</session-config>
+    
+</web-app>

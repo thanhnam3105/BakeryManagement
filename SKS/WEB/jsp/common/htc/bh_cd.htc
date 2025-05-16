@@ -1,0 +1,201 @@
+<!-- ---------------------------------------------------------------------
+// 試作/製法No入力操作
+// 作成者：M.Jinbo
+// 作成日：2009/03/25
+// 概要  ：数字キー以外のキー押下時の機能を停止する。
+//-------------------------------------------------------------------- -->
+
+<PUBLIC:COMPONENT >
+
+  <PUBLIC:ATTACH event="ondocumentready"    FOR="element" onevent="_ondocumentready()" />
+  <PUBLIC:ATTACH event="onkeydown"          FOR="element" onevent="_onkeydown()" />
+  <PUBLIC:ATTACH event="onkeypress"         FOR="element" onevent="_onkeypress()" />
+  <PUBLIC:ATTACH event="onpaste"            FOR="element" onevent="_onpaste()" />
+  <PUBLIC:ATTACH event="onbeforedeactivate" FOR="element" onevent="_onfocusout()" />
+
+</PUBLIC:COMPONENT>
+
+<SCRIPT>
+
+//+----------------------------------------------------------------------------
+// ELEMENT EVENT
+//-----------------------------------------------------------------------------
+
+
+//ondocumentready時
+function _ondocumentready() {
+
+//MOD 2013/07/3 ogawa 【QP@30151】No.39 start
+//修正前ソース
+//   element.style.imeMode = "disabled";
+//修正後ソース
+    var fmtAlpLen;
+    fmtAlpLen = element.format.indexOf("9");
+
+    //format内に9が存在する場合、activeにする。
+    if (fmtAlpLen != -1) {  //ｱﾙﾌｧﾍﾞｯﾄﾁｪｯｸ
+        element.style.imeMode = "active";
+    } else {
+        element.style.imeMode = "disabled";
+    }
+//MOD 2013/07/3 ogawa 【QP@30151】No.39 end
+
+    //maxlengthはformatの文字数と一致
+    if (element.format.length != 0) {
+        element.maxLength = element.format.length;
+    }
+
+}
+
+
+//+----------------------------------------------------------------------------
+// EVENT
+//-----------------------------------------------------------------------------
+
+//入力終了時
+function _onfocusout() {
+
+}
+
+//キーが押されたとき
+function _onkeydown() {
+
+    //propertyChangeイベントが発生しないことがあるための対応
+    if (event.keyCode == 46) {  //DELキー
+        if (element.readOnly) return;
+
+        var s = window.document.selection;
+        var r = s.createRange();
+        if (r.text != "") {  //SELECT状態ならクリア
+            r.text = "";
+        }
+    }
+
+    return;
+}
+
+//キーがしばらく押された時
+function _onkeypress() {
+
+    var kc = event.keyCode;
+    var cc = String.fromCharCode(kc);
+    var fmtAlpLen;
+
+    fmtAlpLen = element.format.indexOf("X");
+    if (fmtAlpLen == -1) {  //ｱﾙﾌｧﾍﾞｯﾄﾁｪｯｸ
+        var c = cc.replace(/[0-9\-]/gm, '');
+    } else {
+        var c = cc.replace(/[0-9A-Z\-]/gm, '');
+    }
+
+    if (c) {
+        event.keyCode = 0;
+        event.returnValue = false;
+        return false;
+    }
+
+    if (cc == "-") {  // ﾊｲﾌｫﾝﾁｪｯｸ
+        var fmtShLen;
+        var valShLen;
+
+        try {
+            fmtShLen = element.format.match(/\-/g).length;
+        } catch(e) {
+            fmtShLen = 0;
+        }
+
+        try {
+            valShLen = element.value.match(/\-/g).length;
+        } catch(e) {
+            valShLen = 0;
+        }
+
+        if (fmtShLen == valShLen) {
+            event.keyCode = 0;
+            event.returnValue = false;
+            return false;
+        }
+    }
+
+    //formatの限定
+    oStr = element.value;
+    var r = event.srcElement.ownerDocument.selection.createRange();
+    sStr = r.text;
+
+    r.moveEnd("textedit");
+    rStr = r.text;
+
+    oLen = oStr.length;
+    sLen = sStr.length;
+    rLen = rStr.length;
+
+    lStr = oStr.substring(0, oLen - rLen);
+    rStr = rStr.substring(sLen, rLen);
+
+    event.returnValue = _fn_propertyFormat(lStr + String.fromCharCode(event.keyCode) + rStr);
+
+    function _fn_propertyFormat(preResult){
+        if (fmtAlpLen == -1) {  //ｱﾙﾌｧﾍﾞｯﾄﾁｪｯｸ
+            return _fn_regNo(preResult).length <= 15;
+        } else {
+            return _fn_regNo(preResult).length <= 13;
+        }
+
+        //■コード値の正規化("-"を削除)
+        function _fn_regNo(val) {
+            return val.toString().replace(/(-)/gm, "");
+        }
+    }
+}
+
+//ペースト処理
+function _onpaste() {
+
+    var s = window.clipboardData.getData("Text");
+    var fmtAlpLen;
+ 
+//ADD 2013/07/3 ogawa 【QP@30151】No.39 start
+ //                 "－",   "０",    "１",   "２",   "３",   "４",   "５",   "６",   "７",   "８",   "９",   "　",  " ", Stopper
+    var cnvdata = [0xff0d, 0xff10, 0xff11, 0xff12, 0xff13, 0xff14, 0xff15, 0xff16, 0xff17, 0xff18, 0xff19, 0x3000, 0x20, 0];
+//ADD 2013/07/3 ogawa 【QP@30151】No.39 end
+
+//MOD 2013/07/3 ogawa 【QP@30151】No.39 start
+//修正前ソース
+//    fmtAlpLen = element.format.indexOf("X");
+//    if (fmtAlpLen == -1) {  //ｱﾙﾌｧﾍﾞｯﾄﾁｪｯｸ
+//        var c = s.replace(/[0-9\-\n\r]/gm, '');
+//    } else {
+//        var c = s.replace(/[0-9A-Z\-\n\r]/gm, '');
+//    }
+//修正後ソース
+    fmtAlpLen = element.format.indexOf("9");
+    if (fmtAlpLen != -1) {  //ｱﾙﾌｧﾍﾞｯﾄﾁｪｯｸ
+
+        //ストッパーまで繰り返す
+        for (var i=0; cnvdata[i] > 0; i++){
+            //対象文字を取得
+            var Hfn=String.fromCharCode( cnvdata[i]);
+            //対象文字を全て削除する。
+            while (s.search(Hfn) != -1){
+                s = s.replace(Hfn, "");
+            }
+        }
+        //半角の対象文字を削除する。
+        var c = s.replace(/[0-9\-\n\r]/gm, '');
+    } else {
+        fmtAlpLen = element.format.indexOf("X");
+        if (fmtAlpLen == -1) {  //ｱﾙﾌｧﾍﾞｯﾄﾁｪｯｸ
+            var c = s.replace(/[0-9\-\n\r]/gm, '');
+        } else {
+            var c = s.replace(/[0-9A-Z\-\n\r]/gm, '');
+        }
+    }
+//MOD 2013/07/3 ogawa 【QP@30151】No.39 end
+    if (c)  {
+        //データが全てなくなれば、チェックOK
+        event.returnValue = false;
+    }
+
+}
+
+</SCRIPT>

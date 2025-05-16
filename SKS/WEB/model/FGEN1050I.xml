@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FGEN1050>
+    <seihin_joken>
+        <rec joken_nm_kaisha="" joken_nm_kojo="" joken_cd_seihin="" joken_nm_seihin="" />
+    </seihin_joken>
+    <seihin>
+	<rec nm_kojo="" cd_seihin="" nm_seihin="" />
+    </seihin>
+    <shizai_joken>
+	<rec joken_nm_kaisha="" joken_nm_kojo=""  joken_cd_shizai="" joken_nm_shizai="" />
+    </shizai_joken>
+    <shizai>
+	<rec nm_kojo="" cd_shizai="" nm_shizai="" tanka="" budomari="" siyoryo="" cd_seihin="" />
+    </shizai>
+    <sentaku>
+	<rec nm_kojo="" cd_shizai="" nm_shizai="" tanka="" budomari="" siyoryo="" cd_seihin="" />
+    </sentaku>
+</FGEN1050>

@@ -1,0 +1,316 @@
+<!-- ---------------------------------------------------------------------
+// 数値入力操作
+// 作成者：M.Jinbo
+// 作成日：2009/03/25
+// 概要  ：数字キー以外のキー押下時の機能を停止する。
+//-------------------------------------------------------------------- -->
+
+<PUBLIC:COMPONENT >
+
+  <PUBLIC:ATTACH event="ondocumentready"    FOR="element" onevent="_ondocumentready()" />
+  <PUBLIC:ATTACH event="onkeydown"          FOR="element" onevent="_onkeydown()" />
+  <PUBLIC:ATTACH event="onkeypress"         FOR="element" onevent="_onkeypress()" />
+  <PUBLIC:ATTACH event="onpaste"            FOR="element" onevent="_onpaste()" />
+  <PUBLIC:ATTACH event="onbeforedeactivate" FOR="element" onevent="_onfocusout()" />
+
+  <PUBLIC:PROPERTY NAME="number" get="getNumber" />
+
+</PUBLIC:COMPONENT>
+
+<SCRIPT>
+
+var gCanMinus;
+var gCanComma;
+var gIntMaxLen, gDecMaxLen;    //整数長さ、少数長さ
+var gFillChar;
+
+//+----------------------------------------------------------------------------
+// ELEMENT EVENT
+//-----------------------------------------------------------------------------
+
+
+//ondocumentready時
+function _ondocumentready() {
+
+    element.style.imeMode = "disabled";
+
+    //フォーマット情報の抽出
+    var format = element.format;
+    gCanMinus = (format.indexOf("-") == 0);
+    if (gCanMinus) {
+        //cut symbol(-)
+        format = format.substr(1);
+    }
+
+    var commaPos = format.indexOf(",");
+    if (commaPos == -1) {
+        gIntMaxLen = parseInt(format, 10);
+        gDecMaxLen = 0;
+    } else {
+        gIntMaxLen = parseInt(format.substr(0, commaPos), 10);
+        gDecMaxLen = parseInt(format.substr(commaPos + 1), 10);
+    }
+
+   //カンマ編集
+   gCanComma = element.comma;
+
+   //パディング文字
+   gFillChar = element.fillChar;
+
+}
+
+
+//+----------------------------------------------------------------------------
+// EVENT
+//-----------------------------------------------------------------------------
+
+//入力終了時
+function _onfocusout() {
+
+    var pureVeValue = _fn_regNumber(element.value);
+
+    if ((pureVeValue == "") || isNaN(pureVeValue)) {
+        element.value = "";
+        return;
+    }
+
+    try {
+        pureVeValue = Number(pureVeValue);
+    } catch(e) {
+        pureVeValue = 0;
+    }
+
+    var veDispValue = pureVeValue;
+    if (gCanComma) {
+        veDispValue = _fn_addComma(pureVeValue);
+    } else {
+        if (gFillChar != "") {
+            veDispValue = _fn_propertyFillChar(pureVeValue);
+        }
+    }
+
+    veDispValue = _fn_propertyFillDeci(veDispValue);
+
+    if (element.value != veDispValue) {
+        element.value = veDispValue;
+    }
+
+}
+
+function _onkeydown() {
+
+    //propertyChangeイベントが発生しないことがあるための対応
+    if (event.keyCode == 46) {  //DELキー
+       if (element.readOnly) return;
+
+       var s = window.document.selection;
+       var r = s.createRange();
+
+       if (r.text != "") {  //SELECT状態ならクリア
+           r.text = "";
+       }
+    }
+
+    return;
+}
+
+function _onkeypress() {
+
+    var kc = event.keyCode;
+    var cc = String.fromCharCode(kc);
+
+    if (gCanComma) {
+        var c = cc.replace(/[0-9\-\.\,]/gm, '');
+    } else {
+        var c = cc.replace(/[0-9\-\.]/gm, '');
+    }
+
+    if (c) {
+        event.keyCode = 0;
+        event.returnValue = false;
+        return false;
+    }
+
+    //formatの限定
+    oStr = element.value;
+    var r = event.srcElement.ownerDocument.selection.createRange();
+    sStr = r.text;
+
+    r.moveEnd("textedit");
+    rStr = r.text;
+
+    oLen = oStr.length;
+    sLen = sStr.length;
+    rLen = rStr.length;
+
+    lStr = oStr.substring(0, oLen - rLen);
+    lLen = lStr.length;
+
+    rStr = rStr.substring(sLen, rLen);
+
+    event.returnValue = _fn_propertyFormat(
+        _fn_regNumber(lStr) + String.fromCharCode(event.keyCode) + _fn_regNumber(rStr));
+
+}
+
+function _onpaste() {
+
+    var s = window.clipboardData.getData("Text");
+
+    if (gCanComma) {
+        var c = s.replace(/[0-9\-\.\,]/gm, '');
+    } else {
+        var c = s.replace(/[0-9\-\.]/gm, '');
+    }
+
+    if (c) {
+        event.returnValue = false;
+    } else {
+        event.returnValue = _fn_propertyFormat(s);
+    }
+
+}
+
+
+//+----------------------------------------------------------------------------
+// FUNCTIONS format属性に対する処理
+//
+//  Arguments:      pattern - 予想値
+//
+//  Returns:        boolean - チェック結果
+//-----------------------------------------------------------------------------
+function _fn_propertyFormat(preResult){
+
+    ///VEの予想値を解析
+    var hasMinus = (preResult.toString().indexOf("-") == 0);
+    if (!gCanMinus && hasMinus) {
+        //マイナスチェック
+        return false;
+    }
+    var hasComma = (preResult.toString().indexOf(',') > 0);
+    if (!gCanComma && hasComma) {
+        //カンマチェック
+        return false;
+    }
+
+    //整数部
+    var inter = getIntPart(preResult);
+    if (inter.indexOf("-") > -1) {
+        //
+        return false;
+    }
+    if (gIntMaxLen < inter.length) {
+        //整数部は指定より大きい場合
+        return false;
+    }
+
+    //小数部
+    var dots = preResult.split(".");
+    if (dots.length > 2) return false;  //小数点が２つ以上ある
+
+    var dotPos = preResult.indexOf(".");
+    if (dotPos != -1) {
+        //小数部チェック
+        if (gDecMaxLen == 0) {
+            //小数部[0]指定時は[.]は入力不可
+            return false;
+        } else {
+            var deci = preResult.substr(dotPos+ 1);
+            if (gDecMaxLen < deci.length) {
+                //小数部が指定より大きい場合
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+//■数値の正規化
+function _fn_regNumber(val) {
+    return val.toString().replace(/,/gm, "");
+}
+
+//■数値を３桁カンマ付き文字列にする
+function _fn_addComma(val){
+    var strnum = new String(_fn_regNumber(val));
+    var strint = new String("");
+    var strdec = new String("");
+    var strnumary = new Array();
+    var strary = new Array();
+
+    strnumary = strnum.split(".");    //.で分割
+    strint = strnumary[0];            //0番は整数部
+     //strnumaryが2つ出来ていれば( = .がある)1番を小数部にする
+    if (strnumary.length > 1) strdec = "." + strnumary[1];
+
+    //配列へ展開
+    strary = strint.split("");
+
+    //カンマ追加
+    for(j = strary.length-4; j >= 0 ; j -= 3){
+        if (strary[j] != "-") {
+            strary[j] += ",";
+        }
+    }
+
+    //配列を結合して文字化
+    strint = strary.join("");
+    return strint + strdec;
+}
+
+//+----------------------------------------------------------------------------
+// FUNCTIONS 小数点後ろに「0」を補足する
+//
+//  Arguments:      pureResult - 値
+//
+//  Returns:
+//-----------------------------------------------------------------------------
+function _fn_propertyFillDeci(pureResult){
+
+    if (gDecMaxLen <= 0) {
+        //小数化は必要ではない
+        return pureResult;
+    }
+
+    if (pureResult !="") {
+        //
+        var decLen = getDecPart(pureResult).length;
+        if (decLen == 0) {
+            pureResult = pureResult + ".";
+        }
+
+        for (var i = 0; i < (gDecMaxLen - decLen); i++) {
+            pureResult = pureResult + "0";
+        }
+    }
+
+    return pureResult;
+}
+
+//+----------------------------------------------------------------------------
+// FUNCTIONS fillChar属性に対する処理
+//
+//  Arguments:      pureResult - 値
+//
+//  Returns:        処理結果
+//-----------------------------------------------------------------------------
+function _fn_propertyFillChar(pureResult){
+
+    var inter = getIntPart(pureResult);
+
+    for (var i = 0; i < (gIntMaxLen - inter.length); i++) {
+        pureResult = gFillChar + pureResult;
+    }
+
+    return pureResult;
+}
+
+function getNumber() {
+
+    var n = _fn_regNumber(element.value);
+
+    return Number(n);
+}
+
+</SCRIPT>

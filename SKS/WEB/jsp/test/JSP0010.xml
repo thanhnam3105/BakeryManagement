@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JSP0010>
+	<SA020O>
+	    <table>
+	        <rec flg_return="false"
+	             msg_error="何かが異常です！"
+	             nm_class="GetUserSession"
+	             cd_error="msnerror99999"
+	             msg_system="セッションタイムアウト。"
+	             no_errmsg="999999999"
+	             id_user=""/>
+	    </table>
+	</SA020O>
+	<SA010O>
+	    <table>
+	        <rec flg_return="false"
+	             msg_error="何かが異常です！"
+	             nm_class="CheckClass"
+	             cd_error="msnerror01153"
+	             msg_system="0で除算されました。"
+	             no_errmsg="900000001"/>
+	    </table>
+	</SA010O>
+</JSP0010>

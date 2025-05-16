@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JW820>
+	<USERINFO><table><rec kbn_shori="3" id_user="1"/></table></USERINFO>
+	<SA380>
+	    <table>
+	        <rec cd_kaisha="3" cd_genryo="N00031" nm_genryo="新規原料31_upd" ritu_sakusan="NULL" ritu_shokuen="NULL" ritu_sousan="NULL" ritu_abura="NULL" hyojian="NULL" tenkabutu="NULL" no_eiyo1="NULL" no_eiyo2="NULL" no_eiyo3="NULL" no_eiyo4="NULL" no_eiyo5="NULL" wariai1="NULL" wariai2="NULL" wariai3="NULL" wariai4="NULL" wariai5="NULL" memo="NULL" dt_toroku="2009/04/15 13:43:00" id_toroku="1" kbn_kakunin="" dt_kakunin="2009/04/15 13:43:00" id_kakunin="1" kbn_haishi="0" cd_kakutei="NULL" kbn_shori="1"/>
+	        <!--<rec cd_kaisha="3" cd_genryo="N00031" nm_genryo="新規原料31_upd" ritu_sakusan="1" ritu_shokuen="2" ritu_sousan="3" ritu_abura="4" hyojian="表示案31" tenkabutu="添加物31" no_eiyo1="1.1" no_eiyo2="2.1" no_eiyo3="3.1" no_eiyo4="4.1" no_eiyo5="5.1" wariai1="1.2" wariai2="2.2" wariai3="3.2" wariai4="4.2" wariai5="5.2" memo="メモ31" dt_toroku="2009/04/15 13:43:00" id_toroku="1" kbn_kakunin="" dt_kakunin="2009/04/15 13:43:00" id_kakunin="1" kbn_haishi="0" cd_kakutei="N00033" kbn_shori="1"/> -->
+	    </table>
+	</SA380>
+</JW820>

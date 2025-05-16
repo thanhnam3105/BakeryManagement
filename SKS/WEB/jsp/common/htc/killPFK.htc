@@ -1,0 +1,232 @@
+<PUBLIC:COMPONENT>
+
+//----------------------------------------------------------------------------------------
+// ファンクションキー操作停止
+// 作成者：TT.Jinbo
+// 作成日：2009/03/25
+// 概要  ：ファンクションその他のキー押下時の機能を停止する。
+//----------------------------------------------------------------------------------------
+
+<PUBLIC:ATTACH EVENT="onkeydown"      ONEVENT="funKillFunction()" />
+<PUBLIC:ATTACH EVENT="onhelp"         ONEVENT="funKillHelp()" />
+<PUBLIC:ATTACH EVENT="oncontextmenu"  ONEVENT="funKillMenu()" />
+
+<SCRIPT LANGUAGE="JavaScript">
+    var F1KEY  = 0x70;
+    var F2KEY  = 0x71;
+    var F3KEY  = 0x72;
+    var F4KEY  = 0x73;
+    var F5KEY  = 0x74;
+    var F6KEY  = 0x75;
+    var F7KEY  = 0x76;
+    var F8KEY  = 0x77;
+    var F9KEY  = 0x78;
+    var F10KEY = 0x79;
+    var F11KEY = 0x7A;
+    var F12KEY = 0x7B;
+    var HOME   = 0x24;
+    var LEFT   = 0x25;
+    var RIGHT  = 0x27;
+    var E      = 0x45;
+    var H      = 0x48;
+    var I      = 0x49;
+    var N      = 0x4E;
+    var O      = 0x4F;
+    var R      = 0x52;
+    var ESC    = 0x1B;
+    var BSPACE = 0x8;
+    var ENTER  = 0xD;
+    var TAB    = 0x9;
+
+//----------------------------------------------------------------------------------------
+// ＨＥＬＰキー停止処理
+// 作成者：TT.Jinbo
+// 作成日：2009/03/25
+// 概要  ：ＨＥＬＰキー押下時の機能を停止する。
+//----------------------------------------------------------------------------------------
+
+function funKillHelp() {
+    event.keyCode      = 0;
+    event.returnValue  = false;
+    event.cancelBubble = true;
+}
+
+//----------------------------------------------------------------------------------------
+// マウス右クリック停止処理
+// 作成者：TT.Jinbo
+// 作成日：2009/03/25
+// 概要  ：マウス右クリック時のメニュー表示機能を停止する。
+//----------------------------------------------------------------------------------------
+
+function funKillMenu() {
+    if (event.srcElement.type != "file") {
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+    }
+}
+
+//----------------------------------------------------------------------------------------
+// ファンクションキー停止処理
+// 作成者：TT.Jinbo
+// 作成日：2009/03/25
+// 概要  ：ファンクションキー押下時の機能を停止する。
+//----------------------------------------------------------------------------------------
+
+function funKillFunction() {
+    switch ( event.keyCode ) {
+    case F1KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F2KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F3KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F4KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F5KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F6KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F7KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F8KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F9KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F10KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F11KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case F12KEY:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case HOME:
+        if (event.altKey == true) {
+            alert(g_cstrErr00090);
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case LEFT:
+        if (event.altKey == true) {
+            alert(g_cstrErr00090);
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case RIGHT:
+        if (event.altKey == true) {
+            alert(g_cstrErr00090);
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case E:
+        if (event.ctrlKey == true) {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case H:
+        if (event.ctrlKey == true) {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case I:
+        if (event.ctrlKey == true) {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case N:
+        if (event.ctrlKey == true) {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case O:
+        if (event.ctrlKey == true) {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case R:
+        if (event.ctrlKey == true) {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case ESC:
+        event.keyCode      = 0;
+        event.returnValue  = false;
+        event.cancelBubble = true;
+        break;
+    case BSPACE:
+        if ((event.srcElement.type    == "text") ||
+            (event.srcElement.type    == "password") ||
+            (event.srcElement.type    == "file") ||
+            (event.srcElement.tagName == "TEXTAREA")) {
+        } else {
+            event.keyCode      = 0;
+            event.returnValue  = false;
+            event.cancelBubble = true;
+        }
+        break;
+    case ENTER:
+        if (event.srcElement.type == "button" ||
+            event.srcElement.tagName == "TEXTAREA") {
+        } else {
+            //Enter⇒Tabに置換
+            event.keyCode = TAB;
+        }
+        break;
+    }
+}
+</SCRIPT>
+
+</PUBLIC:COMPONENT>

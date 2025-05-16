@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+    
+  <!-- ログ出力詳細設定  -->
+  <appender name="Shisaquick_fld" class="org.apache.log4j.DailyRollingFileAppender">
+     <param name="File" value="D:\APP\04_SEISAN\0043_Shisaquick\logs\shisaquick_log.log" />
+    <param name="DatePattern" value="yyyyMMdd" />
+    <!--
+      <param name="MaxBackupIndex" value="9" /> <param name="MaxFileSize" value="2000000" />
+    -->
+    <param name="encoding" value="UTF-8" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n" />
+    </layout>
+  </appender>
+  
+  <!-- コンソール出力用  -->
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n" />
+    </layout>
+  </appender>
+  
+  <!-- ログ出力範囲  -->
+  <category name="jp">
+    <priority value="DEBUG" />
+  </category>
+
+  <!-- ログ出力設定  -->
+  <root>
+    <level value="DEBUG" />
+    <appender-ref ref="Shisaquick_fld" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+</log4j:configuration>

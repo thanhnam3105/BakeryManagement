@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- コンストXML : エクセルテンプレート -->
+<ConstXML>
+    <Rec code="サンプル説明書_合算"  value="表示作成用フォーマット(調味料版).xls" />
+    <Rec code="サンプル説明書"  value="表示作成用フォーマット(加食版).xls" />
+    <Rec code="調味料（五訂）"  value="調味料五訂Format.xls" />
+    <Rec code="調味料（五訂増補）"  value="調味料五訂増補Ｆｏｒｍａｔ.xls" />
+    <Rec code="その他原価試算表"  value="【研＿その他調味料以外】原価試算フォーマット.xls" />
+    <Rec code="調味料原価試算表"  value="【研＿調味料】原価試算フォーマット.xls" />
+    <Rec code="試作表(横)"  value="試作表(横バージョン).xls" />
+    <Rec code="試作表(縦)"  value="試作表(縦バージョン).xls" />
+    <Rec code="原価試算一覧"  value="原価試算一覧.xls" />
+
+    <Rec code="資材手配依頼書(新版)" value="資材手配依頼書フォーマット（新版）.xls" />
+    <Rec code="資材手配依頼書(改版)" value="資材手配依頼書フォーマット（改版）.xls" />
+
+    <Rec code="原価試算表（営業）"  value="原価試算(営業)フォーマット.xls" />
+    <Rec code="発注マスタ"  value="発注マスタフォーマット.xls" />
+    <Rec code="資材手配一覧"  value="資材手配一覧フォーマット.xls" />
+</ConstXML>

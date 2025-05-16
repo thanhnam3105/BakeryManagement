@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FGEN2021>
+    <kihon>
+        <rec cd_shain=""  nen=""  no_oi="" no_eda="" />
+    </kihon>
+    <keisan>
+        <rec seq_shisaku=""  zyusui="" zyuabura="" gokei="" hiju="" reberu="" hijukasan="" cs_genryo="" cs_zairyohi="" cs_genka="" ko_genka="" kg_genryo="" kg_zairyohi="" kg_genka="" baika="" arari="" />
+    </keisan>
+</FGEN2021>

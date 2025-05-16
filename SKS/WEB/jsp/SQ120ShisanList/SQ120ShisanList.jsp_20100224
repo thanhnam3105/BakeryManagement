@@ -1,0 +1,418 @@
+<%@ page language="java" contentType="text/html;charset=Windows-31J" %>
+<!------------------------------------------------------------------------------------->
+<!-- シサクイック　原価試算一覧画面                                                -->
+<!-- 作成者：TT.Nishigawa                                                                -->
+<!-- 作成日：2011/01/31                                                              -->
+<!-- 概要  ：検索条件に一致する原価試算データを一覧で表示する。                          -->
+<!------------------------------------------------------------------------------------->
+<html>
+
+	<script type="text/javascript">
+    <!--//
+		window.onunload = function() {
+		
+			document.getElementById("divMeisai").innerHTML = null;
+		
+			document.getElementById("xmlRGEN2120").src = null;
+			document.getElementById("xmlRGEN2130").src = null;
+			document.getElementById("xmlRGEN2140").src = null;
+			
+			document.getElementById("xmlRGEN2150").src = null;
+			document.getElementById("xmlRGEN2160").src = null;
+			document.getElementById("xmlUSERINFO_I").src = null;
+			
+			document.getElementById("xmlSA030I").src = null;
+			document.getElementById("xmlSA050I").src = null;
+			document.getElementById("xmlSA080I").src = null;
+			
+			document.getElementById("xmlSA140I").src = null;
+			document.getElementById("xmlSA290I").src = null;
+			document.getElementById("xmlFGEN2130I").src = null;
+			
+			document.getElementById("xmlFGEN2140I").src = null;
+			document.getElementById("xmlFGEN2150I").src = null;
+			document.getElementById("xmlUSERINFO_O").src = null;
+			
+			document.getElementById("xmlSA030O").src = null;
+			document.getElementById("xmlSA050O").src = null;
+			document.getElementById("xmlSA080O").src = null;
+			
+			document.getElementById("xmlSA140O").src = null;
+			document.getElementById("xmlSA290O").src = null;
+			document.getElementById("xmlFGEN2130O").src = null;
+			
+			document.getElementById("xmlFGEN2140O").src = null;
+			document.getElementById("xmlFGEN2150O").src = null;
+			document.getElementById("xmlRESULT").src = null;
+		}
+    -->
+    </script>
+
+	<head>
+	
+        <title></title>
+        <!-- 共通 -->
+        <script type="text/javascript" src="../common/js/Const.js"></script>
+        <script type="text/javascript" src="../common/js/MessageControl.js"></script>
+        <script type="text/javascript" src="../common/js/ConnectionControl.js"></script>
+        <script type="text/javascript" src="../common/js/XmlControl.js"></script>
+        <script type="text/javascript" src="../common/js/AjaxControl.js"></script>
+        <script type="text/javascript" src="../common/js/CheckControl.js"></script>
+        <script type="text/javascript" src="../common/js/DisplayControl.js"></script>
+        <script type="text/javascript" src="../common/js/InputControl.js"></script>
+        <!-- 個別 -->
+        <script type="text/javascript" src="include/SQ120ShisanList.js"></script>
+		<script type="text/javascript" src="include/js/prototype.js" charset="shift_jis"></script>
+		<script type="text/javascript" src="include/js/effects.js" charset="shift_jis"></script>
+		<script type="text/javascript" src="include/js/window.js" charset="shift_jis"></script>
+        <!-- スタイルシート -->
+        <link rel="stylesheet" type="text/css" href="../common/css/shisaquick.css">    
+        <link rel="stylesheet" href="include/css/default.css" type="text/css" media="all">
+		<link rel="stylesheet" href="include/css/alphacube.css" type="text/css" media="all">
+		<link rel="stylesheet" href="include/css/main.css" type="text/css" media="all">    
+
+		<style type="text/css">
+		#container {
+			width: 100.0%;
+			margin: 0 auto;
+			text-align: left;
+			font-size: 62.5%;
+		}
+		#tab {
+			margin-left: 0;
+			padding-left: 0;
+			margin-bottom: 1em;
+			border-bottom: 1px solid #333;
+			height: 1.5em;
+			overflow: hidden;
+		}
+		#tab li {
+			float: left;
+			width: 64px;
+			height: 1.5em;
+		}
+		#tab li a {
+			display: block;
+			width: 200px;
+			height: 1.5em;
+			border: 1px solid #ccc;
+			border-bottom: 0;
+			color: #777;
+			text-align: center;
+		}
+		</style>
+		
+		<script language="JavaScript" type="text/javascript">
+		    Event.observe(window, 'load', function() {
+		    	//処理待ちウィンドウ生成（非表示）
+				openWin_mati();
+				
+				//検索ボタン押下監視（prototype.jsの機能）
+				Event.observe('btnSearch', 'click', function() {
+					
+					//検索処理
+					//処理中ウィンドウ表示の為、setTimeoutで処理予約
+					setTimeout(function(){ funDataSearch(); }, 0);
+					
+					//処理終了
+					return true;
+				});
+				
+				//TODOタブ押下監視（prototype.jsの機能）
+				Event.observe('todo', 'click', function() {
+					
+					//画面設定
+					todo_click();
+					
+					//検索処理
+					//処理中ウィンドウ表示の為、setTimeoutで処理予約
+					setTimeout(function(){ funDataSearch(); }, 0);
+					
+					//処理終了
+					return true;
+				});
+				
+				//原価試算一覧タブ押下監視（prototype.jsの機能）
+				Event.observe('itiran', 'click', function() {
+					
+					//画面設定
+					itiran_click();
+					
+					//検索処理
+					//処理中ウィンドウ表示の為、setTimeoutで処理予約
+					setTimeout(function(){ funDataSearch(); }, 0);
+					
+					//処理終了
+					return true;
+				});
+			});
+	    </script>
+	    
+    </head>
+    <body class="pfcancel" onLoad="funLoad();">
+    
+		<div id="container">
+			<ul id="tab">
+				<li class="present"><a href="#page1" id="todo" tabindex="1">TO DO</a></li>
+				<li><a href="#page2" id="itiran" tabindex="2">原価試算一覧</a></li>
+			</ul>
+		</div>
+    
+        <!-- XML Document定義 -->
+        <xml id="xmlRGEN2120"></xml>
+        <xml id="xmlRGEN2130"></xml>
+        <xml id="xmlRGEN2140"></xml>
+        <xml id="xmlRGEN2150"></xml>
+        <xml id="xmlRGEN2160"></xml>
+        
+        <xml id="xmlUSERINFO_I" src="../../model/USERINFO.xml"></xml>
+        <xml id="xmlSA030I" src="../../model/SA030I.xml"></xml>
+        <xml id="xmlSA050I" src="../../model/SA050I.xml"></xml>
+		<xml id="xmlSA080I" src="../../model/SA080I.xml"></xml>
+        <xml id="xmlSA140I" src="../../model/SA140I.xml"></xml>
+        <xml id="xmlSA290I" src="../../model/SA290I.xml"></xml>
+        <xml id="xmlFGEN2130I" src="../../model/FGEN2130I.xml"></xml>
+        <xml id="xmlFGEN2140I" src="../../model/FGEN2140I.xml"></xml> 
+        <xml id="xmlFGEN2150I" src="../../model/FGEN2150I.xml"></xml>        
+        
+        <xml id="xmlUSERINFO_O"></xml>
+        <xml id="xmlSA030O"></xml>
+        <xml id="xmlSA050O"></xml>
+        <xml id="xmlSA080O"></xml>
+        <xml id="xmlSA140O"></xml>
+        <xml id="xmlSA290O"></xml>
+        <xml id="xmlFGEN2130O"></xml>
+        <xml id="xmlFGEN2140O"></xml>
+        <xml id="xmlFGEN2150O"></xml>
+        <xml id="xmlRESULT"></xml>
+        
+        <!-- コンボボックスにデフォルトで設定されている値の退避用XML -->
+        <xml id="xmlSA050"></xml>
+        <xml id="xmlSA080"></xml>
+        <xml id="xmlFGEN2140"></xml>
+
+        <form name="frm00" id="frm00" method="post">
+            <table width="99%">
+                <tr>
+                    <td width="20%" class="title">原価試算一覧</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="55%" align="right">
+                        <input type="button" class="normalbutton" id="btnSearch" name="btnSearch" value="検索" tabindex="17">
+                        <input type="button" class="normalbutton" id="btnClear" name="btnClear" value="クリア" onClick="funClear();" tabindex="18">
+                        <input type="button" class="normalbutton" id="btnEnd" name="btnEnd" value="終了" onClick="funNext(0);" tabindex="19">
+                    </td>
+                </tr>
+            </table>
+
+            <!-- ユーザー情報 -->
+            <table width="99%">
+                <tr>
+                    <td align="right"><div id="divUserInfo"></div></td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 2列目 -->
+                <tr>
+                    <td width="100">試作No</td>
+                    <td width="200">
+                        <span class="cinput" format="0000000000-00-000-000" required="true" defaultfocus="false" id="em_ShisakuNo">
+                        <input type="text" class="disb_text" id="txtShisakuNo" name="txtShisakuNo" maxlength="17" value="" style="width:170px;" tabindex="3">
+                        </span>
+                    </td>
+                    <td width="100">研グループ</td>
+                    <td width="200">
+                        <select id="ddlGroup" name="ddlGroup" style="width:180px;" onChange="funChangeGroup();" tabindex="9">
+                        </select>
+                    </td>
+                    <td width="100">製造会社</td>
+                    <td width="200">
+                        <select id="ddlKaisha" name="ddlKaisha" style="width:180px;"  onChange="funChangeKaisha();" tabindex="12">
+                        </select>
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 3列目 -->
+                <tr>
+                    <td width="100">試作名</td>
+                    <td width="200">
+                        <input type="text" class="act_text" id="txtShisakuNm" name="txtShisakuNm" maxlength="16" value="" style="width:170px;" tabindex="4">
+                    </td>
+                    <td width="100">研チーム</td>
+                    <td width="200">
+                        <select id="ddlTeam" name="ddlTeam" style="width:180px;" tabindex="10">
+                        </select>
+                    </td>
+                    <td width="100">製造工場</td>
+                    <td width="200">
+                        <select id="ddlBusho" name="ddlBusho" style="width:180px;" tabindex="13">
+                        </select>
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 4列目 -->
+                <tr>
+                    <td width="100">試算期日</td>
+                    <td width="200">
+                        <input type="text" class="disb_text" id="txtKizitu_From" name="txtKizitu_From" maxlength="10" value="" style="width:74px;" tabindex="5">
+                        ～
+                        <input type="text" class="disb_text" id="txtKizitu_To" name="txtKizitu_To" maxlength="10" value="" style="width:74px;" tabindex="6">
+                    </td>
+                    <td width="100">ユーザ</td>
+                    <td width="200">
+                        <select id="ddlUser" name="ddlUser" style="width:180px;" tabindex="11">
+                        </select>
+                    </td>
+                    <td width="100">状況部署</td>
+                    <td width="200">
+                        <select id="ddlZyokyo" name="ddlZyokyo" onChange="funChangeZyokyo();" style="width:180px;" tabindex="14">
+                        </select>
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 5列目 -->
+                <tr>
+                    <td width="100">&nbsp;</td>
+                    <td width="205"><input type="checkbox" id="chkMinyuryoku" name="chkMinyuryoku" onClick="minyuryoku_click();" tabindex="7">未入力</td>
+                    <td width="100">&nbsp;</td>
+                    <td width="200">&nbsp;</td>
+                    <td width="100">ステータス</td>
+                    <td width="200">
+                        <select id="ddlStatus" name="ddlStatus" style="width:180px;" tabindex="15">
+                        </select>
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+            
+            <table width="960">
+                <!-- 5列目 -->
+                <tr>
+                    <td width="100">&nbsp;</td>
+                    <td width="205"><input type="checkbox" id="chkKanryo" name="chkKanryo" onClick="" tabindex="8">確認完了</td>
+                    <td width="100">&nbsp;</td>
+                    <td width="200">&nbsp;</td>
+                    <td width="100">枝番種類</td>
+                    <td width="200">
+                        <select id="ddlShurui" name="ddlShurui" style="width:180px;" tabindex="16">
+                        </select>
+                    </td>
+                    <td width="38">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table width="960">
+                <!-- 6列目 -->
+                <tr>
+                    <td width="97">&nbsp;</td>
+                    <td width="200">&nbsp;</td>
+                    <td width="403">&nbsp;</td>
+                    <td width="180" align="right">
+                        <input type="button" class="normalbutton" value="検索条件クリア" style="width:150px;" onClick="funClear_zyoken();" tabindex="20">
+                    </td>
+                    <td width="58">&nbsp;</td>
+                </tr>
+            </table>
+
+            <!-- [試作ﾃﾞｰﾀ一覧]リスト -->
+            <div class="scroll" id="sclList" style="height:45%;width:99%;" rowSelect="true">
+            <table id="dataTable" name="dataTable" cellspacing="0" width="1523px" align="center">
+                <colgroup>
+                    <col style="width:28px;"/>
+                    <col style="width:30px;"/>
+                    <col style="width:80px;"/>
+                    <col style="width:28px;"/>
+                    <col style="width:130px;"/>
+                    <col style="width:30px;"/>
+                    <col style="width:200px;"/>
+                    <col style="width:40px;"/>
+                    <col style="width:99px;"/>
+                    <col style="width:255px;"/>
+                    <col style="width:100px;"/>
+                    <col style="width:100px;"/>
+                    <col style="width:200px;"/>
+                    <col style="width:100px;"/>
+                    <col style="width:100px;"/>
+                    
+                </colgroup>
+                <thead class="rowtitle">
+                    <tr style="top:expression(offsetParent.scrollTop);position:relative;">
+                        <th class="columntitle">&nbsp;</th>
+                        <th class="columntitle">選</th>
+                        <th class="columntitle">試算期日</th>
+                        <th class="columntitle">依回</th>
+                        <th class="columntitle">試作No</th>
+                        <th class="columntitle">枝番</th>
+                        <th class="columntitle">試作名</th>
+                        <th class="columntitle">枝番種類</th>
+                        <th class="columntitle">試算依頼<br>サンプルNo</th>
+                        <th class="columntitle">
+                        	<table width="255" cellspacing="0" cellpadding="0" border="1" frame="void">
+                        		<tr class="columntitle" >
+                        			<th colspan="5">依頼・承認状況</th>
+                        		</tr>
+                        		<tr class="columntitle" >
+                        			<th width="51">研究所</th>
+                        			<th width="51">生管</th>
+                        			<th width="51">原調</th>
+                        			<th width="51">工場</th>
+                        			<th width="51">営業</th>
+                        		</tr>
+                        	</table>
+                        </th>
+                        <th class="columntitle">採用有無</th>
+                        <th class="columntitle">所属チーム<br>（カテゴリ）</th>
+                        <th class="columntitle">ユーザー</th>
+                        <th class="columntitle">製造会社</th>
+                        <th class="columntitle">製造工場</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                	<table class="detail" id="tblList" cellpadding="0" cellspacing="0" border="0" style="width:1525px;">
+                		<tr>
+	                		<td>
+	                			<div id="divMeisai" name="divMeisai" />
+	                		</td>
+                		<tr>
+                	</table>
+                </table>
+            </table>
+            </div>
+
+            <table width="99%">
+                <!-- データ数 -->
+                <tr align="center">
+                    <td height="18px">
+                        <span id="spnRecInfo">データ数　：　<span id="spnRecCnt"></span> 件です(<span id="spnRowMax"></span>件毎に表示しています)　<span id="spnCurPage"></span></span>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- ページリンク -->
+            <div id="divPage" style="height:50px;font-size:12pt;"></div>
+
+            <table width="870">
+                <tr>
+                    <td>
+                        <input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka" name="btnGenka" value="原価試算" onClick="funNextPage(1);" tabindex="22">
+                        <input type="button" style="visibility:hidden" class="normalbutton" id="btnGenka_Eigyo" name="btnGenka_Eigyo" value="原価試算（営業）" onClick="funNextPage(2);" tabindex="23">
+                        <input type="button" class="normalbutton" id="btnStatusRireki" name="btnStatusRireki" value="ステータス履歴" onClick="funNextPage(3);" tabindex="24">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+
+        <input type="hidden" id="hidShisakuListKengen" name="hidShisakuListKengen" value="">
+    </body>
+</html>

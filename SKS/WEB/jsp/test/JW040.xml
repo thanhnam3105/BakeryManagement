@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<JW040>
+<USERINFO><table><rec kbn_shori="3" id_user="1"/></table></USERINFO>
+<SA490>
+    <tr_shisakuhin>
+        <rec cd_shain="10" nen="9" no_oi="1" no_irai="IR@10101" nm_hin="ドレッシング" cd_kaisha="1" cd_kojo="1" cd_shubetu="1" no_shubetu="1" cd_group="1" cd_team="1" cd_ikatu="1" cd_genre="1" cd_user="1" tokuchogenryo="1" youto="1" cd_kakaku="1" cd_eigyo="1" cd_hoho="1" cd_juten="1" hoho_sakin="1" youki="1" yoryo="1" cd_tani="ml" su_iri="1" cd_ondo="1" shomikikan="1" genka="1" baika="1" buturyo="1" dt_hatubai="1" uriage_k="1" rieki_k="1" uriage_h="1" rieki_h="1" cd_nisugata="1" memo="" keta_shosu="1" kbn_haishi="1" kbn_haita="0" seq_shisaku="0" id_toroku="1" dt_toroku="2008-01-01 00:00:00.000" id_koshin="1" dt_koshin="2008-01-01 00:00:00.000" />
+    </tr_shisakuhin>
+    <tr_haigo>
+        <rec0 cd_shain="10" nen="9" no_oi="1" cd_kotei="1" seq_kotei="1" nm_kotei="nm_kotei10" zoku_kotei="1" sort_kotei="1" sort_genryo="1" cd_genryo="1" nm_genryo="nm_genryo10" tanka="1" budomari="1" ritu_abura="1" ritu_sakusan="1" ritu_shokuen="1" ritu_sousan="1" color="BLACK" id_toroku="1" dt_toroku="2008-01-01 00:00:00.000" id_koshin="1" dt_koshin="2008-01-01 00:00:00.000"  />
+    </tr_haigo>
+    <tr_shisaku>
+        <rec0 cd_shain="10" nen="9" no_oi="1" seq_shisaku="1" sort_shisaku="1" no_chui="1" nm_sample="samp10" memo="memo10" memo_shisaku="memo_shiasku10" flg_print="0" flg_auto="0" no_shisan="0" no_seiho1="no_seiho1_10" no_seiho2="no_seiho2_10" no_seiho3="no_seiho3_10" no_seiho4="no_seiho4_10" no_seiho5="no_seiho5_10" ritu_sousan="0" flg_sousan="0" ritu_shokuen="0" flg_shokuen="0" sando_suiso="0" flg_sando_suiso="0" shokuen_suiso="0" flg_shokuen_suiso="0" sakusan_suiso="0" flg_sakusan_suiso="0" toudo="0" flg_toudo="0" nendo="0" flg_nendo="0" ondo="0" flg_ondo="0" ph="0" flg_ph="0" ritu_sousan_bunseki="0" flg_sousan_bunseki="0" ritu_shokuen_bunseki="0" flg_shokuen_bunseki="0" hiju="1" flg_hiju="0" suibun_kasei="0" flg_suibun_kasei="0" alcohol="0" flg_alcohol="0" memo_sakusei="" flg_memo="0" hyoka="" flg_hyoka="0" free_title1="" free_value1="" flg_free1="0" free_title2="" free_value2="" flg_free2="0" free_title3="" free_value3="" flg_free3="0" dt_shisaku="2008-01-01 00:00:00.000" id_toroku="1" dt_toroku="2008-01-01 00:00:00.000" id_koshin="1" dt_koshin="2008-01-01 00:00:00.000" />
+    </tr_shisaku>
+    <tr_shisaku_list>
+        <rec0 cd_shain="10" nen="9" no_oi="1" seq_shisaku="1" cd_kotei="1" seq_kotei="1" quantity="11111.1" color="WHITE" id_toroku="1" dt_toroku="2008-01-01 00:00:00.000" id_koshin="1" dt_koshin="2008-01-01 00:00:00.000" />
+    </tr_shisaku_list>
+    <tr_cyuui>
+        <rec0 cd_shain="10" nen="9" no_oi="1" seq_shisaku="1" no_chui="1" chuijiko="注意事項10" id_toroku="1" dt_toroku="2008-01-01 00:00:00.000" id_koshin="1" dt_koshin="2008-01-01 00:00:00.000"  />
+    </tr_cyuui>
+</SA490>
+</JW040>
