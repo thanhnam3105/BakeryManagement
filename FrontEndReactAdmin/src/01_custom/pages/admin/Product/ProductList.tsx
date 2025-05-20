@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Button } from '@mui/material';
+import { useEffect, useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import ProductDialog from './ProductDialog';
 import { useConfirm } from '../../../services/confirm.services';
 import { LBL_PRODUCT } from '../../../../config/constant';
-import { columns } from './settings/settings-columns';
+import { columns } from './settings/settings-table';
 import Common_GridTable from '../../../components/common/Common_GridTable';
 import ApiService from '../../../services/api.services';
 import { ToastService } from '../../../services/toast.service';
@@ -39,7 +38,6 @@ export default function ProductManagement() {
       .apiGet(urlAPI)
       .then((response) => {
         setRows(response);
-        ToastService.success('Đã tải dữ liệu thành công!');
       })
       .catch((error) => {
         ToastService.error(error);
@@ -65,10 +63,10 @@ export default function ProductManagement() {
       content: `${LBL_PRODUCT.CONFIRM_DELETE_MESSAGE}${product.nm_product}"?`,
       onConfirm: () => {
         apiService
-          .apiDelete(`${urlAPI}/${product.cd_product}`)
+          .apiDelete(urlAPI, { cd_product: product.cd_product })
           .then(() => {
-            setRows((prev) => prev.filter((p) => p.cd_product !== product.cd_product));
             ToastService.success('Xóa sản phẩm thành công!');
+            handleSearch();
           })
           .catch((error) => {
             ToastService.error(error);

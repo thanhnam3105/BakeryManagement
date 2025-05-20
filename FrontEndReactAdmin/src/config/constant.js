@@ -135,3 +135,11 @@ export const MESSAGES = {
     STATUS_REQUIRED: 'Trạng thái là bắt buộc'
   }
 };
+
+export const categoryOptions = [
+  { value: 'BM', name: 'Bánh mì' },
+  { value: 'BN', name: 'Bánh ngọt' },
+  { value: 'BK', name: 'Bánh kem' },
+  { value: 'BQ', name: 'Bánh quy' },
+  { value: 'BTT', name: 'Bánh trung thu' }
+];

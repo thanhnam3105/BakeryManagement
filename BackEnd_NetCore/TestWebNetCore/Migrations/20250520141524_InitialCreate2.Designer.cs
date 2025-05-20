@@ -12,8 +12,8 @@ using TestWebNetCore.Data;
 namespace TestWebNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250514065744_QMS_V2")]
-    partial class QMS_V2
+    [Migration("20250520141524_InitialCreate2")]
+    partial class InitialCreate2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,6 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_create")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_customer")
@@ -43,7 +42,6 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_payment_method")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_staff")
@@ -51,15 +49,12 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_update")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("delivery_address")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("dt_create")
@@ -88,21 +83,21 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_category")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_create")
                         .HasColumnType("text");
 
                     b.Property<string>("cd_size")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_update")
+                        .HasColumnType("text");
+
+                    b.Property<string>("description")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("dt_create")
@@ -112,7 +107,6 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("image")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("nm_product")

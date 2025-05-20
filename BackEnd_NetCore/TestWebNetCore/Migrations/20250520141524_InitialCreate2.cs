@@ -5,24 +5,24 @@
 namespace TestWebNetCore.Migrations
 {
     /// <inheritdoc />
-    public partial class QMS_V22 : Migration
+    public partial class InitialCreate2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "payment_method",
-                table: "Orders",
-                newName: "cd_payment_method");
+            migrationBuilder.AddColumn<string>(
+                name: "description",
+                table: "Products",
+                type: "text",
+                nullable: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "cd_payment_method",
-                table: "Orders",
-                newName: "payment_method");
+            migrationBuilder.DropColumn(
+                name: "description",
+                table: "Products");
         }
     }
 }

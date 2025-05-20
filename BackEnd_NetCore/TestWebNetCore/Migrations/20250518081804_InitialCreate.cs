@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TestWebNetCore.Migrations
 {
     /// <inheritdoc />
-    public partial class QMS_V2222222 : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,12 +21,12 @@ namespace TestWebNetCore.Migrations
                     cd_branch = table.Column<string>(type: "text", nullable: false),
                     dt_order = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     dt_delivery = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    cd_status = table.Column<string>(type: "text", nullable: false),
+                    cd_status = table.Column<string>(type: "text", nullable: true),
                     total_amount = table.Column<decimal>(type: "numeric", nullable: false),
-                    delivery_address = table.Column<string>(type: "text", nullable: false),
-                    payment_method = table.Column<string>(type: "text", nullable: false),
-                    cd_create = table.Column<string>(type: "text", nullable: false),
-                    cd_update = table.Column<string>(type: "text", nullable: false),
+                    delivery_address = table.Column<string>(type: "text", nullable: true),
+                    cd_payment_method = table.Column<string>(type: "text", nullable: true),
+                    cd_create = table.Column<string>(type: "text", nullable: true),
+                    cd_update = table.Column<string>(type: "text", nullable: true),
                     dt_create = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     dt_update = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -42,12 +42,12 @@ namespace TestWebNetCore.Migrations
                     cd_product = table.Column<string>(type: "text", nullable: false),
                     nm_product = table.Column<string>(type: "text", nullable: false),
                     price = table.Column<decimal>(type: "numeric", nullable: true),
-                    cd_category = table.Column<string>(type: "text", nullable: false),
-                    cd_size = table.Column<string>(type: "text", nullable: false),
-                    image = table.Column<string>(type: "text", nullable: false),
-                    cd_status = table.Column<string>(type: "text", nullable: false),
-                    cd_create = table.Column<string>(type: "text", nullable: false),
-                    cd_update = table.Column<string>(type: "text", nullable: false),
+                    cd_category = table.Column<string>(type: "text", nullable: true),
+                    cd_size = table.Column<string>(type: "text", nullable: true),
+                    image = table.Column<string>(type: "text", nullable: true),
+                    cd_status = table.Column<string>(type: "text", nullable: true),
+                    cd_create = table.Column<string>(type: "text", nullable: true),
+                    cd_update = table.Column<string>(type: "text", nullable: true),
                     dt_create = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     dt_update = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },

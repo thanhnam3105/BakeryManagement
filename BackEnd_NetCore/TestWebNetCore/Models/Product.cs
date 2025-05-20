@@ -12,6 +12,7 @@ namespace TestWebNetCore.Models
         public string? cd_category { get; set; }
         public string? cd_size { get; set; }
         public string? image { get; set; }
+        public string? description { get; set; }
         public string? cd_status { get; set; }
         public string? cd_create { get; set; }
         public string? cd_update { get; set; }

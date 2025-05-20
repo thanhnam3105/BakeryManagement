@@ -89,6 +89,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
           pageSizeOptions={[5, 10]}
           disableRowSelectionOnClick
           slots={{ toolbar: GridToolbar }}
+          rowHeight={70}
           sx={{
             borderRadius: 2,
             boxShadow: 2,

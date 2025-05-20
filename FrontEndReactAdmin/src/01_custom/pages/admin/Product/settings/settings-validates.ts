@@ -20,18 +20,16 @@ export const validationSettings = Yup.object().shape({
 
   cd_category: Yup.string()
     .required(MESSAGES.PRODUCT.CATEGORY_REQUIRED)
-    // .min(2, 'Danh mục phải có ít nhất 2 ký tự')
-    .max(50, MESSAGES.PRODUCT.CATEGORY_MAX_LENGTH),
 
-  cd_size: Yup.string()
-    .required(MESSAGES.PRODUCT.SIZE_REQUIRED),
-    // .oneOf(['Small', 'Medium', 'Large'], 'Kích thước phải là Small, Medium hoặc Large'),
+  // cd_size: Yup.string()
+  //   .required(MESSAGES.PRODUCT.SIZE_REQUIRED),
+  //   // .oneOf(['Small', 'Medium', 'Large'], 'Kích thước phải là Small, Medium hoặc Large'),
 
-  image: Yup.string()
-    .required(MESSAGES.PRODUCT.IMAGE_REQUIRED),
-    // .url('Hình ảnh phải là một URL hợp lệ'),
+  // image: Yup.string()
+  //   .required(MESSAGES.PRODUCT.IMAGE_REQUIRED),
+  //   // .url('Hình ảnh phải là một URL hợp lệ'),
 
-  cd_status: Yup.string()
-    .required(MESSAGES.PRODUCT.STATUS_REQUIRED)
-    // .oneOf(['Available', 'Unavailable'], 'Trạng thái phải là Available hoặc Unavailable')
+  // cd_status: Yup.string()
+  //   .required(MESSAGES.PRODUCT.STATUS_REQUIRED)
+  //   // .oneOf(['Available', 'Unavailable'], 'Trạng thái phải là Available hoặc Unavailable')
 }); 

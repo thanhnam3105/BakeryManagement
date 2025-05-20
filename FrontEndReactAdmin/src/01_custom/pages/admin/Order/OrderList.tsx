@@ -35,7 +35,6 @@ export default function OrderManagement(): JSX.Element {
       })
       .then((response) => {
         setRows(response);
-        ToastService.success('Đã search xong!');
       })
       .catch((error) => {
         ToastService.error(error);

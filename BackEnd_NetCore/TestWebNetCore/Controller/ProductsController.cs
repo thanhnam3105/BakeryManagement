@@ -77,10 +77,10 @@ namespace MyApi.Controllers
             return CreatedAtAction(nameof(GetProducts), new { id = data.cd_product }, data);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProduct([FromQuery] string cd_product)
         {
-            var Product = await _context.Products.FindAsync(id);
+            var Product = await _context.Products.FindAsync(cd_product);
             if (Product == null) return NotFound();
 
             _context.Products.Remove(Product);

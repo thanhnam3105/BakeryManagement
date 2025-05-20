@@ -94,6 +94,9 @@ namespace TestWebNetCore.Migrations
                     b.Property<string>("cd_update")
                         .HasColumnType("text");
 
+                    b.Property<string>("description")
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("dt_create")
                         .HasColumnType("timestamp with time zone");
 
