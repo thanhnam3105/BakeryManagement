@@ -5,9 +5,7 @@ export const formFieldSettings = {
     settingInput: {
       name: "cd_product",
       labelName: LBL_PRODUCT_FORM.PRODUCT_CODE,
-      type: "text"
-    },
-    validatesInput: {
+      type: "text",
       required: true
     },
     controlName: "cd_product",
@@ -16,9 +14,7 @@ export const formFieldSettings = {
     settingInput: {
       name: "nm_product",
       labelName: LBL_PRODUCT_FORM.PRODUCT_NAME,
-      type: "text"
-    },
-    validatesInput: {
+      type: "text",
       required: true
     },
     controlName: "nm_product",
@@ -27,9 +23,7 @@ export const formFieldSettings = {
     settingInput: {
       name: "price",
       labelName: LBL_PRODUCT_FORM.PRICE,
-      type: "number"
-    },
-    validatesInput: {
+      type: "number",
       required: true
     },
     controlName: "price",
@@ -39,9 +33,7 @@ export const formFieldSettings = {
       name: "cd_category",
       label: LBL_PRODUCT_FORM.CATEGORY,
       type: "select",
-      options: categoryOptions
-    },
-    validatesInput: {
+      options: categoryOptions,
       required: true
     },
     controlName: "cd_category",
@@ -52,9 +44,6 @@ export const formFieldSettings = {
       labelName: LBL_PRODUCT_FORM.SIZE,
       type: "text"
     },
-    validatesInput: {
-      required: false
-    },
     controlName: "cd_size",
   },
   cd_status: {
@@ -62,15 +51,12 @@ export const formFieldSettings = {
       name: "cd_status",
       label: LBL_PRODUCT_FORM.STATUS,
       type: "select",
-      options: [
-        { value: '1', name: 'Available' },
-        { value: '2', name: 'Out of Stock' },
-        { value: '3', name: 'Pending' },
-        { value: '4', name: 'Default' }
-      ]
-    },
-    validatesInput: {
-      required: true
+      // options: [
+      //   { value: '1', name: 'Available' },
+      //   { value: '2', name: 'Out of Stock' },
+      //   { value: '3', name: 'Pending' },
+      //   { value: '4', name: 'Default' }
+      // ]
     },
     controlName: "cd_status",
   },
@@ -79,9 +65,6 @@ export const formFieldSettings = {
       name: "image",
       labelName: LBL_PRODUCT_FORM.IMAGE,
       type: "text"
-    },
-    validatesInput: {
-      required: false
     },
     controlName: "image",
   },
@@ -92,9 +75,6 @@ export const formFieldSettings = {
       type: "text",
       multiline: true,
       rows: 4
-    },
-    validatesInput: {
-      required: false
     },
     controlName: "description",
   }

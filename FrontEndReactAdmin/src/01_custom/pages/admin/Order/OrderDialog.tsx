@@ -12,7 +12,7 @@ import {
   MenuItem
 } from '@mui/material';
 import ApiService from '../../../services/api.services';
-import { paymentMethodOptions, statusOptions } from 'config/constant';
+import { paymentMethodOptions, DataCbbProductStatus } from 'config/constant';
 import { ToastService } from '../../../services/toast.service';
 
 interface OrderDialogProps {
@@ -64,7 +64,7 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, data, onSave }
         <FormControl fullWidth margin="normal">
           <InputLabel>Status</InputLabel>
           <Select name="cd_status" value={formData?.status || ''} onChange={handleChange} label="Status">
-            {statusOptions.map((status) => (
+            {DataCbbProductStatus.map((status) => (
               <MenuItem key={status.value} value={status.value}>
                 {status.name}
               </MenuItem>

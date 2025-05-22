@@ -10,37 +10,17 @@ interface Common_InputProps extends Omit<TextFieldProps, 'variant'> {
     multiline?: boolean;
     rows?: number;
     [key: string]: any;
-  };
-  validatesInput?: {
     required?: boolean;
   };
 }
 
 const Common_Input: React.FC<Common_InputProps> = ({
   settingInput,
-  validatesInput,
   ...props
 }) => {
   const formik = useContext(FormikContext);
   const { name, labelName, type = 'text', multiline, rows, ...restSettings } = settingInput;
-
-  // Xử lý label có dấu * cho trường bắt buộc
-  const renderLabel = () => {
-    if (!labelName) return '';
-
-    if (typeof labelName === 'string') {
-      const isRequired = validatesInput?.required;
-      return isRequired ? (
-        <span>
-          {labelName}
-          <span style={{ color: 'red' }}> *</span>
-        </span>
-      ) : labelName;
-    }
-
-    return labelName;
-  };
-
+  
   // Get formik values and handlers
   const value = formik?.values[name] ?? '';
   const error = formik?.touched[name] && Boolean(formik?.errors[name]);
@@ -49,7 +29,7 @@ const Common_Input: React.FC<Common_InputProps> = ({
   return (
     <TextField
       name={name}
-      label={renderLabel()}
+      label={labelName}
       type={type}
       value={value}
       onChange={formik?.handleChange}

@@ -4,10 +4,14 @@ import { DataGrid, GridColDef, GridPaginationModel, GridToolbar } from '@mui/x-d
 import { Edit, Delete } from '@mui/icons-material';
 import { v4 as uuidv4 } from 'uuid';
 
+export type ExtendedGridColDef = GridColDef & {
+  formatType?: 'decimal';
+};
+
 interface Common_GridTableProps {
   title: string;
   rows: any[];
-  columns: GridColDef[];
+  columns: ExtendedGridColDef[];
   search: string;
   onSearchChange: (value: string) => void;
   paginationModel: GridPaginationModel;
@@ -62,6 +66,19 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
         )
       };
     }
+
+    // Add decimal formatting for columns with formatType: 'decimal'
+    if (col.formatType === 'decimal') {
+      return {
+        ...col,
+        valueFormatter: (params: any) => {
+          if (params == null) return '';
+          const numValue = Number(params);
+          return isNaN(numValue) ? params : numValue.toLocaleString('en-US') + ' VNĐ';
+        }
+      };
+    }
+
     return col;
   });
 

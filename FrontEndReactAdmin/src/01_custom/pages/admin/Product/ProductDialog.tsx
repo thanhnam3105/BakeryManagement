@@ -6,7 +6,7 @@ import { validationSettings } from './settings/settings-validates';
 import { formFieldSettings } from './settings/settings-columns';
 import ApiService from '../../../services/api.services';
 import { ToastService } from '../../../services/toast.service';
-import { LBL_PRODUCT_DIALOG, statusOptions } from '../../../../config/constant';
+import { LBL_PRODUCT_DIALOG, DataCbbProductStatus, PRODUCT_STATUS } from '../../../../config/constant';
 import Common_Input from '../../../components/common/Common_Input';
 import Common_Combobox from '../../../components/common/Common_Combobox';
 import Common_Button from '../../../components/common/Common_Button';
@@ -16,18 +16,9 @@ import Common_InputImage from '../../../components/common/Common_InputImage';
 function getInitialValues(data) {
   const initial = {};
   Object.entries(formFieldSettings).forEach(([key, field]) => {
-    initial[key] = data?.[key] ?? (key === 'cd_status' ? '1' : '');
+    initial[key] = data?.[key] ?? (key === 'cd_status' ? PRODUCT_STATUS.Available.value : '');
   });
   return initial;
-}
-
-// Add this new function before the ProductDialog component
-function loadDataInit() {
-  // Transform statusOptions to match the format expected by Common_Combobox
-  return statusOptions.map(option => ({
-    value: option.value,
-    name: option.name
-  }));
 }
 
 // Convert ProductDialog component to function declaration
@@ -39,9 +30,15 @@ function ProductDialog({ open, onClose, data, onSave }) {
 
   // Add useEffect to load status data when component mounts
   useEffect(() => {
-    const statusList = loadDataInit();
-    setStatusData(statusList);
+    setStatusData(DataCbbProductStatus);
   }, []);
+
+  // Thêm useEffect để reset form khi dialog mở
+  useEffect(() => {
+    if (open) {
+      formik.resetForm();
+    }
+  }, [open]);
 
   const formik = useFormik({
     initialValues: getInitialValues(data) as Record<string, any>,
@@ -51,7 +48,7 @@ function ProductDialog({ open, onClose, data, onSave }) {
       const apiMethod = data ? apiService.apiPut : apiService.apiPost;
 
       const formData = { ...values };
-   
+
       apiMethod(urlAPI, formData)
         .then((response) => {
           onSave(response);
@@ -67,13 +64,6 @@ function ProductDialog({ open, onClose, data, onSave }) {
         });
     }
   });
-
-  // Thêm useEffect để reset form khi dialog mở
-  useEffect(() => {
-    if (open) {
-      formik.resetForm();
-    }
-  }, [open]);
 
   return (
     <Dialog
@@ -108,7 +98,6 @@ function ProductDialog({ open, onClose, data, onSave }) {
                     maxSize: 5 * 1024 * 1024,
                     accept: 'image/*'
                   }}
-                  validatesInput={formFieldSettings.image.validatesInput}
                 />
               </Box>
 
@@ -117,49 +106,22 @@ function ProductDialog({ open, onClose, data, onSave }) {
                 <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 3 }}>
                   {/* Cột 1 của form fields */}
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                    <Common_Input
-                      settingInput={{
-                        ...formFieldSettings.cd_product.settingInput,
-                        disabled: !!data
-                      }}
-                      validatesInput={formFieldSettings.cd_product.validatesInput}
-                    />
-                    <Common_Input
-                      settingInput={formFieldSettings.price.settingInput}
-                      validatesInput={formFieldSettings.price.validatesInput}
-                    />
-                    <Common_Input
-                      settingInput={formFieldSettings.cd_size.settingInput}
-                      validatesInput={formFieldSettings.cd_size.validatesInput}
-                    />
+                    <Common_Input settingInput={{ ...formFieldSettings.cd_product.settingInput, disabled: !!data }} />
+                    <Common_Input settingInput={formFieldSettings.price.settingInput} />
+                    <Common_Input settingInput={formFieldSettings.cd_size.settingInput} />
                   </Box>
 
                   {/* Cột 2 của form fields */}
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                    <Common_Input
-                      settingInput={formFieldSettings.nm_product.settingInput}
-                      validatesInput={formFieldSettings.nm_product.validatesInput}
-                    />
-                    <Common_Combobox
-                      settingInput={formFieldSettings.cd_category.settingInput}
-                      validatesInput={formFieldSettings.cd_category.validatesInput}
-                    />
-                    <Common_Combobox
-                      settingInput={{
-                        ...formFieldSettings.cd_status.settingInput,
-                        options: statusData
-                      }}
-                      validatesInput={formFieldSettings.cd_status.validatesInput}
-                    />
+                    <Common_Input settingInput={formFieldSettings.nm_product.settingInput} />
+                    <Common_Combobox settingInput={formFieldSettings.cd_category.settingInput} />
+                    <Common_Combobox settingInput={{ ...formFieldSettings.cd_status.settingInput, options: statusData }} />
                   </Box>
                 </Box>
 
                 {/* Description field - Full width */}
                 <Box sx={{ width: '100%' }}>
-                  <Common_Input
-                    settingInput={formFieldSettings.description.settingInput}
-                    validatesInput={formFieldSettings.description.validatesInput}
-                  />
+                  <Common_Input settingInput={formFieldSettings.description.settingInput} />
                 </Box>
               </Box>
             </Box>

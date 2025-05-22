@@ -6,23 +6,25 @@ export const CONFIG = {
 };
 
 export const PRODUCT_STATUS = {
-  AVAILABLE: {
-    value: 'available',
+  Available: {
+    value: '1',
     color: 'success'
   },
-  OUT_OF_STOCK: {
-    value: 'out of stock',
+  OutOfStock: {
+    value: '2',
     color: 'error'
   },
-  PENDING: {
-    value: 'pending',
-    color: 'warning'
-  },
-  DEFAULT: {
-    value: 'default',
+  Hidden: {
+    value: '3',
     color: 'default'
   }
 };
+
+export const DataCbbProductStatus = [
+  { value: '1', name: 'Đang bán' },
+  { value: '2', name: 'Hết hàng' },
+  { value: '3', name: 'Tạm ẩn' }
+];
 
 export const LBL_PRODUCT = {
   TITLE: 'Products',
@@ -83,13 +85,6 @@ export const LABELS_ORDER = {
   CONFIRM_DELETE_MESSAGE: 'Bạn có chắc chắn muốn xóa đơn hàng "'
 };
 
-export const statusOptions = [
-  { value: '1', name: 'Pending' },
-  { value: '2', name: 'Processing' },
-  { value: '3', name: 'Shipped' },
-  { value: '4', name: 'Delivered' }
-];
-
 export const paymentMethodOptions = [
   { value: '1', name: 'Credit Card' },
   { value: '2', name: 'PayPal' },
@@ -143,3 +138,14 @@ export const categoryOptions = [
   { value: 'BQ', name: 'Bánh quy' },
   { value: 'BTT', name: 'Bánh trung thu' }
 ];
+
+export const TABLE_HEADERS = {
+  ACTIONS: '',
+  STATUS: 'Status',
+  IMAGE: 'Image',
+  PRODUCT_CODE: 'Product Code',
+  PRODUCT_NAME: 'Product Name',
+  PRICE: 'Price',
+  CATEGORY: 'Category',
+  SIZE: 'Size'
+};

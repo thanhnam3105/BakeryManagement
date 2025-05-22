@@ -41,7 +41,7 @@ export default function ProductManagement() {
       })
       .catch((error) => {
         ToastService.error(error);
-        console.log(error)
+        console.log(error);
       })
       .finally(() => {
         hideLoading();
@@ -99,12 +99,7 @@ export default function ProductManagement() {
         icon: <AddIcon />
       }}
     >
-      <ProductDialog 
-        open={openDialog} 
-        onClose={() => setOpenDialog(false)} 
-        data={selectedProduct} 
-        onSave={handleSave} 
-      />
+      <ProductDialog open={openDialog} onClose={() => setOpenDialog(false)} data={selectedProduct} onSave={handleSave} />
     </Common_GridTable>
   );
 }

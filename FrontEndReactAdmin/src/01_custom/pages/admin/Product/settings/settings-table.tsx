@@ -1,29 +1,14 @@
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { IconButton, Stack } from '@mui/material';
-import { LBL_PRODUCT, LBL_PRODUCT_FORM, statusOptions, categoryOptions } from '../../../../../config/constant';
-import { Link } from 'react-router-dom';
+import { IconButton, Stack, Chip } from '@mui/material';
+import { PRODUCT_STATUS, DataCbbProductStatus, categoryOptions, TABLE_HEADERS } from '../../../../../config/constant';
+import { ExtendedGridColDef } from '../../../../components/common/Common_GridTable';
 
-export const formFieldSettings = [
-  { name: 'cd_product', label: LBL_PRODUCT_FORM.PRODUCT_CODE, type: 'text' },
-  { name: 'nm_product', label: LBL_PRODUCT_FORM.PRODUCT_NAME, type: 'text' },
-  { name: 'price', label: LBL_PRODUCT_FORM.PRICE, type: 'number' },
-  { name: 'cd_category', label: LBL_PRODUCT_FORM.CATEGORY, type: 'text' },
-  { name: 'cd_size', label: LBL_PRODUCT_FORM.SIZE, type: 'text' },
-  { name: 'image', label: LBL_PRODUCT_FORM.IMAGE, type: 'text' },
-  { name: 'description', label: LBL_PRODUCT_FORM.DESCRIPTION, type: 'text' },
-  { name: 'cd_status', label: LBL_PRODUCT_FORM.STATUS, type: 'text' },
-  { name: 'cd_create', label: '', type: 'text', hidden: true },
-  { name: 'cd_update', label: '', type: 'text', hidden: true },
-  { name: 'dt_create', label: '', type: 'date', hidden: true },
-  { name: 'dt_update', label: '', type: 'date', hidden: true }
-];
-
-export const columns: GridColDef[] = [
+export const columns: ExtendedGridColDef[] = [
   {
     field: 'actions',
-    headerName: 'Actions',
+    headerName: TABLE_HEADERS.ACTIONS,
     width: 120,
     align: 'center',
     headerAlign: 'center',
@@ -40,83 +25,55 @@ export const columns: GridColDef[] = [
   },
   {
     field: 'cd_status',
-    headerName: 'Status',
+    headerName: TABLE_HEADERS.STATUS,
     width: 130,
     renderCell: (params: GridRenderCellParams) => {
-      const status = Object.values(statusOptions).find(
-        (status) => status.value === params.value
-      );
+      const status = Object.values(DataCbbProductStatus).find((status) => status.value === params.value);
 
-      // Get the appropriate color class based on status
-      const getStatusColorClass = (statusValue: string) => {
-        switch (statusValue) {
-          case '1': // Pending
-            return 'bg-warning';
-          case '2': // Processing
-            return 'bg-info';
-          case '3': // Shipped
-            return 'theme-bg2';
-          case '4': // Delivered
-            return 'theme-bg';
-          default:
-            return 'bg-secondary';
-        }
+      // Get the appropriate color based on status
+      const getStatusColor = (statusValue: string) => {
+        const status = Object.values(PRODUCT_STATUS).find((status) => status.value === statusValue);
+        return status ? status.color : 'default';
       };
 
-      return (
-        <Link
-          to="#"
-          className={`label ${getStatusColorClass(params.value)} text-white f-12`}
-        >
-          {status ? status.name : params.value}
-        </Link>
-      );
+      return <Chip label={status ? status.name : params.value} color={getStatusColor(params.value) as any} size="small" />;
     }
   },
   {
     field: 'image',
-    headerName: 'Image',
+    headerName: TABLE_HEADERS.IMAGE,
     width: 130,
-    renderCell: (params: GridRenderCellParams) => (
-      <img src={params.value} style={{ width: 60, height: 60, objectFit: 'cover' }} />
-    )
+    renderCell: (params: GridRenderCellParams) => <img src={params.value} style={{ width: 60, height: 60, objectFit: 'cover' }} />
   },
   {
     field: 'cd_product',
-    headerName: 'Product Code',
+    headerName: TABLE_HEADERS.PRODUCT_CODE,
     width: 130
   },
   {
     field: 'nm_product',
-    headerName: 'Product Name',
-    width: 200
+    headerName: TABLE_HEADERS.PRODUCT_NAME,
+    width: 500
   },
   {
     field: 'price',
-    headerName: 'Price',
+    headerName: TABLE_HEADERS.PRICE,
     width: 130,
-    valueFormatter: (params: number) => {
-      if (params == null) return '';
-      return params.toLocaleString('en-US');
-    }
+    formatType: 'decimal'
   },
   {
     field: 'cd_category',
-    headerName: 'Category',
+    headerName: TABLE_HEADERS.CATEGORY,
     width: 150,
     renderCell: (params: GridRenderCellParams) => {
-      const category = categoryOptions.find(
-        (category) => category.value === params.value
-      );
+      const category = categoryOptions.find((category) => category.value === params.value);
 
-      return (
-        category ? category.name : params.value
-      );
+      return category ? category.name : params.value;
     }
   },
   {
     field: 'cd_size',
-    headerName: 'Size',
+    headerName: TABLE_HEADERS.SIZE,
     width: 130
   }
 ];

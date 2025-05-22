@@ -7,13 +7,11 @@ interface Common_ComboboxProps {
     name: string;
     label: string;
     options: Array<{ value: string; name: string }>;
-  };
-  validatesInput?: {
     required?: boolean;
   };
 }
 
-function Common_Combobox({ settingInput, validatesInput }: Common_ComboboxProps) {
+function Common_Combobox({ settingInput }: Common_ComboboxProps) {
   const [field, meta] = useField(settingInput.name);
 
   return (
