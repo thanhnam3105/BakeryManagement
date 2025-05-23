@@ -13,6 +13,3 @@
 **/node_modules/
 dist/
 .env
-
-# Ignore appsettings for local only
-BackEnd_NetCore/TestWebNetCore/appsettings.json
