@@ -1,8 +1,6 @@
-import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { IconButton, Stack, Chip } from '@mui/material';
-import { PRODUCT_STATUS, DataCbbProductStatus, categoryOptions, TABLE_HEADERS } from '../../../../../config/constant';
+import {  GridRenderCellParams } from '@mui/x-data-grid';
+import {  Chip } from '@mui/material';
+import { PRODUCT_STATUS, DataCbbProductStatus, TABLE_HEADERS } from '../../../../../config/constant';
 import { ExtendedGridColDef } from '../../../../components/common/Common_GridTable';
 
 export const columns: ExtendedGridColDef[] = [
@@ -12,16 +10,8 @@ export const columns: ExtendedGridColDef[] = [
     width: 120,
     align: 'center',
     headerAlign: 'center',
-    renderCell: (params: GridRenderCellParams) => (
-      <Stack direction="row" spacing={1}>
-        <IconButton size="small" onClick={() => params.row.onEdit(params.row)}>
-          <EditIcon />
-        </IconButton>
-        <IconButton size="small" onClick={() => params.row.onDelete(params.row)}>
-          <DeleteIcon />
-        </IconButton>
-      </Stack>
-    )
+    actionEdit: true,
+    actionDelete: true
   },
   {
     field: 'cd_status',
@@ -43,7 +33,7 @@ export const columns: ExtendedGridColDef[] = [
     field: 'image',
     headerName: TABLE_HEADERS.IMAGE,
     width: 130,
-    renderCell: (params: GridRenderCellParams) => <img src={params.value} style={{ width: 60, height: 60, objectFit: 'cover' }} />
+    formatType: 'image'
   },
   {
     field: 'cd_product',
@@ -65,11 +55,7 @@ export const columns: ExtendedGridColDef[] = [
     field: 'cd_category',
     headerName: TABLE_HEADERS.CATEGORY,
     width: 150,
-    renderCell: (params: GridRenderCellParams) => {
-      const category = categoryOptions.find((category) => category.value === params.value);
-
-      return category ? category.name : params.value;
-    }
+    dataOptions: []
   },
   {
     field: 'cd_size',

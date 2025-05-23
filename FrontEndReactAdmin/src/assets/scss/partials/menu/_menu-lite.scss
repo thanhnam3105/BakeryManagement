@@ -1120,7 +1120,7 @@
 .pcoded-content {
   position: relative;
   display: block;
-  padding: 30px;
+  padding: 0 30px 0 30px;
 }
 
 .pcoded-main-container {
@@ -1131,7 +1131,7 @@
   float: unset;
   right: 0;
   margin-left: $Menu-width;
-  min-height: 100vh;
+  min-height: 90vh;
   transition: all 0.3s ease-in-out;
 }
 

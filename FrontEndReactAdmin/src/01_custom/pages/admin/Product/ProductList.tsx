@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import ProductDialog from './ProductDialog';
 import { useConfirm } from '../../../services/confirm.services';
-import { LBL_PRODUCT } from '../../../../config/constant';
+import { LBL_PRODUCT, categoryOptions } from '../../../../config/constant';
 import { columns } from './settings/settings-table';
 import Common_GridTable from '../../../components/common/Common_GridTable';
 import ApiService from '../../../services/api.services';
@@ -27,6 +27,13 @@ export default function ProductManagement() {
   const { confirm } = useConfirm() as ConfirmContextType;
 
   const filteredRows = filterRowsByName(rows, search);
+
+  const enhancedColumns = columns.map(col => {
+    if (col.field === 'cd_category') {
+      return { ...col, dataOptions: categoryOptions };
+    }
+    return col;
+  });
 
   useEffect(() => {
     handleSearch();
@@ -83,7 +90,7 @@ export default function ProductManagement() {
     <Common_GridTable
       title={LBL_PRODUCT.TITLE}
       rows={filteredRows}
-      columns={columns}
+      columns={enhancedColumns}
       search={search}
       onSearchChange={setSearch}
       paginationModel={paginationModel}
