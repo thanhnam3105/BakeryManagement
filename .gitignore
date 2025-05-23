@@ -1,0 +1,15 @@
+# Ignore bin and obj folders in all subdirectories
+**/bin/
+**/obj/
+
+# Optional: Ignore build output from Visual Studio
+*.user
+*.suo
+*.cache
+*.log
+*.vs/
+
+# Node modules for Frontend
+**/node_modules/
+dist/
+.env
