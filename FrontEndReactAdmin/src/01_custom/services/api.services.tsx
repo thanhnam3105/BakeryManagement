@@ -75,7 +75,7 @@ class ApiService {
      */
     apiGet = async (url: string, params = {}, signal?: AbortSignal): Promise<any> => {
         try {
-          const response = await this.apiClient.get(url, { ...params, signal });
+          const response = await this.apiClient.get(url, { params, signal });
           return response.data;
         } catch (error: any) {
           const err = this.getServerErrorMessage(error);

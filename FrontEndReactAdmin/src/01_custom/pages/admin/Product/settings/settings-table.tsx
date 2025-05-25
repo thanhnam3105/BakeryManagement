@@ -1,4 +1,4 @@
-import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import { GridRenderCellParams } from '@mui/x-data-grid';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton, Stack, Chip } from '@mui/material';

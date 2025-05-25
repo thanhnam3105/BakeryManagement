@@ -4,8 +4,6 @@ namespace TestWebNetCore.Models
 {
     public class Product
     {
-        [Required]
-        [Key]
         public string cd_product { get; set; }
         public string nm_product { get; set; }
         public Nullable<decimal> price { get; set; }

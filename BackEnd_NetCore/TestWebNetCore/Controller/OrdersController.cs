@@ -38,16 +38,45 @@ namespace MyApi.Controllers
             return CreatedAtAction(nameof(GetOrders), new { id = order.cd_order }, order);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrder(int id)
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteOrder(int id)
+        //{
+        //    var order = await _context.Orders.FindAsync(id);
+        //    if (order == null) return NotFound();
+
+        //    _context.Orders.Remove(order);
+        //    await _context.SaveChangesAsync();
+
+        //    return NoContent();
+        //}
+
+        [HttpGet("GetOrderDetails")]
+        public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetails([FromQuery] string cd_order)
         {
-            var order = await _context.Orders.FindAsync(id);
-            if (order == null) return NotFound();
+            var details = await _context.OrderDetail
+                .Where(d => d.cd_order == cd_order)
+                .ToListAsync();
 
-            _context.Orders.Remove(order);
-            await _context.SaveChangesAsync();
+            //var data = from orderDetail in _context.OrderDetail
+            //           join order in _context.Orders on orderDetail.cd_order equals order.cd_order
+            //           where orderDetail.cd_order == cd_order
+            //           select new
+            //           {
+            //               order.cd_order,
+            //               order.cd_staff,
+            //               order.cd_branch,
+            //               order.cd_customer,
+            //               order.cd_status,
+            //           };
 
-            return NoContent();
+            if (details == null || details.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(details);
         }
+
+
     }
 }

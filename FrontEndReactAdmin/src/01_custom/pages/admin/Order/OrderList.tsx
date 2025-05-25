@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { GridPaginationModel } from '@mui/x-data-grid';
 import { LABELS_ORDER } from '../../../../config/constant';
 import ApiService from '../../../services/api.services';
-import DataGridTable from '../../../components/common/Common_GridTable';
+import Common_GridTable from '../../../components/common/Common_GridTable';
 import OrderDialog from './OrderDialog';
-import { columns } from './settings/settings-columns';
+import { columns } from './settings/settings-table';
 import { ToastService } from '../../../services/toast.service';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLoading } from '../../../services/loading.services';
+import OrderDetail from './OrderDetail';
 
 export default function OrderManagement(): JSX.Element {
   const apiService = new ApiService();
@@ -20,19 +21,17 @@ export default function OrderManagement(): JSX.Element {
   const [selectedOrder, setSelectedData] = useState<any>(null);
   const { showLoading, hideLoading } = useLoading();
   const filteredRows = filterRowsByOrderId(rows, search);
+  const [openDetailDialog, setOpenDetailDialog] = useState(false);
+  const [selectedOrderDetail, setSelectedOrderDetail] = useState<any>(null);
 
   useEffect(() => {
     handleSearch();
   }, []);
 
   function handleSearch() {
-    // const searchParams = formGroupSearch.value;
     showLoading();
-    // Call API
     apiService
-      .apiGet(urlAPI, {
-        // params: searchParams
-      })
+      .apiGet(urlAPI)
       .then((response) => {
         setRows(response);
       })
@@ -50,15 +49,20 @@ export default function OrderManagement(): JSX.Element {
   }
 
   function handleSave(updatedOrder: any) {
-    setRows((prev) => prev.map((o) => (o.id === updatedOrder.id ? updatedOrder : o)));
+    handleSearch(); // Refresh the list after update
   }
 
   function filterRowsByOrderId(rows: any[], search: string) {
-    return rows.filter((row) => row.order_id?.toLowerCase().includes(search.toLowerCase()));
+    return rows.filter((row) => row.cd_order?.toLowerCase().includes(search.toLowerCase()));
+  }
+
+  function handleViewClick(order: any) {
+    setSelectedOrderDetail(order);
+    setOpenDetailDialog(true);
   }
 
   return (
-    <DataGridTable
+    <Common_GridTable
       title={LABELS_ORDER.TITLE}
       rows={filteredRows}
       columns={columns}
@@ -67,8 +71,19 @@ export default function OrderManagement(): JSX.Element {
       paginationModel={paginationModel}
       onPaginationModelChange={setPaginationModel}
       onEditClick={handleEditClick}
+      onViewClick={handleViewClick}
     >
-      <OrderDialog open={openDialog} onClose={() => setOpenDialog(false)} data={selectedOrder} onSave={handleSave} />
-    </DataGridTable>
+      <OrderDialog 
+        open={openDialog} 
+        onClose={() => setOpenDialog(false)} 
+        data={selectedOrder} 
+        onSave={handleSave} 
+      />
+      <OrderDetail
+        open={openDetailDialog}
+        onClose={() => setOpenDetailDialog(false)}
+        cdOrder={selectedOrderDetail?.cd_order}
+      />
+    </Common_GridTable>
   );
 }

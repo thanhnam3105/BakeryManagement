@@ -46,43 +46,62 @@ export const LBL_PRODUCT = {
 
 export const ORDER_STATUS = {
   DELIVERED: {
-    value: 'Delivered',
+    value: '1',
+    name: 'Đã giao hàng',
     color: 'success'
   },
   PENDING: {
-    value: 'Pending',
+    value: '2',
+    name: 'Chờ xử lý',
     color: 'warning'
   },
   PROCESSING: {
-    value: 'Processing',
+    value: '3',
+    name: 'Đang xử lý',
     color: 'info'
   },
   CANCELLED: {
-    value: 'Cancelled',
+    value: '4',
+    name: 'Đã hủy',
     color: 'error'
-  },
-  DEFAULT: {
-    value: 'default',
-    color: 'default'
   }
 };
 
+export const DataCbbOrderStatus = [
+  { value: '1', name: 'Đã giao hàng' },
+  { value: '2', name: 'Chờ xử lý' },
+  { value: '3', name: 'Đang xử lý' },
+  { value: '4', name: 'Đã hủy' }
+];
+
 export const LABELS_ORDER = {
-  TITLE: '📦 Orders',
+  TITLE: '📦 Quản lý đơn hàng',
   SEARCH: 'Tìm kiếm đơn hàng',
-  ACTIONS: 'Actions',
-  ORDER_ID: 'Order ID',
-  CUSTOMER_ID: 'Customer ID',
-  STAFF_ID: 'Staff ID',
-  BRANCH_ID: 'Branch ID',
-  ORDER_DATE: 'Order Date',
-  DELIVERY_DATE: 'Delivery Date',
-  STATUS: 'Status',
-  TOTAL_AMOUNT: 'Total (₫)',
-  DELIVERY_ADDRESS: 'Delivery Address',
-  PAYMENT_METHOD: 'Payment',
-  CONFIRM_DELETE: 'Xác nhận xóa',
-  CONFIRM_DELETE_MESSAGE: 'Bạn có chắc chắn muốn xóa đơn hàng "'
+  ACTIONS: 'Thao tác',
+  ORDER_ID: 'Mã đơn hàng',
+  CUSTOMER_ID: 'Mã khách hàng',
+  STAFF_ID: 'Mã nhân viên',
+  BRANCH_ID: 'Mã chi nhánh',
+  ORDER_DATE: 'Ngày đặt hàng',
+  DELIVERY_DATE: 'Ngày giao hàng',
+  STATUS: 'Trạng thái',
+  TOTAL_AMOUNT: 'Tổng tiền',
+  DELIVERY_ADDRESS: 'Địa chỉ giao hàng',
+  PAYMENT_METHOD: 'Phương thức thanh toán',
+  DIALOG_TITLE: 'Cập nhật trạng thái đơn hàng',
+  DIALOG_STATUS: 'Trạng thái',
+  BUTTON_CANCEL: 'Hủy',
+  BUTTON_SAVE: 'Lưu',
+  BUTTON_SAVING: 'Đang lưu...',
+  SUCCESS_UPDATE: 'Cập nhật trạng thái đơn hàng thành công!',
+  ERROR_UPDATE: 'Lỗi khi cập nhật trạng thái đơn hàng: ',
+  CLOSE: 'Đóng',
+  DETAIL_TITLE: 'Chi tiết đơn hàng',
+  CUSTOMER: 'Khách hàng',
+  ORDER_DATE: 'Ngày đặt hàng',
+  STATUS: 'Trạng thái',
+  PRODUCT_LIST: 'Danh sách sản phẩm',
+  TOTAL_PRICE: 'Tổng tiền'
 };
 
 export const paymentMethodOptions = [

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, TextField, Stack, IconButton, Button } from '@mui/material';
 import { DataGrid, GridColDef, GridPaginationModel, GridToolbar } from '@mui/x-data-grid';
-import { Edit, Delete } from '@mui/icons-material';
+import { Edit, Delete, Visibility } from '@mui/icons-material';
 import { v4 as uuidv4 } from 'uuid';
 
 export type ExtendedGridColDef = GridColDef & {
@@ -12,19 +12,24 @@ interface Common_GridTableProps {
   title: string;
   rows: any[];
   columns: ExtendedGridColDef[];
-  search: string;
-  onSearchChange: (value: string) => void;
-  paginationModel: GridPaginationModel;
-  onPaginationModelChange: (model: GridPaginationModel) => void;
+  search?: string;
+  onSearchChange?: (value: string) => void;
+  paginationModel?: GridPaginationModel;
+  onPaginationModelChange?: (model: GridPaginationModel) => void;
   onEditClick?: (row: any) => void;
   onDeleteClick?: (row: any) => void;
+  onViewClick?: (row: any) => void;
   children?: React.ReactNode;
   addButton?: {
     label: string;
     onClick: () => void;
     icon?: React.ReactNode;
   };
+  hideSearch?: boolean;
+  rowHeight?: number;
+  tableHeight?: number;
 }
+
 
 const Common_GridTable: React.FC<Common_GridTableProps> = ({
   title,
@@ -36,8 +41,12 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
   onPaginationModelChange,
   onEditClick,
   onDeleteClick,
+  onViewClick,
   children,
-  addButton
+  addButton,
+  hideSearch,
+  rowHeight,
+  tableHeight
 }) => {
   const rowsWithId = rows.map((row) => ({
     ...row,
@@ -45,13 +54,18 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
   }));
 
   const enhancedColumns = columns.map((col) => {
-    if (col.field === 'actions' && (onEditClick || onDeleteClick)) {
+    if (col.field === 'actions' && (onEditClick || onDeleteClick || onViewClick)) {
       return {
         ...col,
         sortable: false,
         filterable: false,
         renderCell: (params: any) => (
           <Stack direction="row" spacing={1}>
+            {onViewClick && (
+              <IconButton color="primary" onClick={() => onViewClick(params.row)}>
+                <Visibility />
+              </IconButton>
+            )}
             {onEditClick && (
               <IconButton color="warning" onClick={() => onEditClick(params.row)}>
                 <Edit />
@@ -84,20 +98,24 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
 
   return (
     <Box p={3}>
-      <Typography variant="h4" gutterBottom>
-        {title}
-      </Typography>
+      {title && ( <Typography variant="h4" gutterBottom>{title}</Typography> )}
 
-      <Box mb={2} display="flex" justifyContent="space-between" alignItems="center">
-        <TextField label="Search" variant="outlined" value={search} onChange={(e) => onSearchChange(e.target.value)} sx={{ width: 300 }} />
-        {addButton && (
-          <Button variant="contained" startIcon={addButton.icon} onClick={addButton.onClick}>
-            {addButton.label}
-          </Button>
-        )}
-      </Box>
+      {!hideSearch && (
+        <Box mb={2} display="flex" justifyContent="space-between" alignItems="center">
+          <TextField
+            label="Search"
+            variant="outlined"
+            value={search}
+            onChange={(e) => onSearchChange?.(e.target.value)}
+            sx={{ width: 300 }}
+          />
+          {addButton && (
+            <Button variant="contained" startIcon={addButton.icon} onClick={addButton.onClick}> {addButton.label} </Button>
+          )}
+        </Box>
+      )}
 
-      <Box height={500}>
+      <Box height={tableHeight ?? 500}>
         <DataGrid
           rows={rowsWithId}
           columns={enhancedColumns}
@@ -106,7 +124,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
           pageSizeOptions={[5, 10]}
           disableRowSelectionOnClick
           slots={{ toolbar: GridToolbar }}
-          rowHeight={70}
+          rowHeight={rowHeight ?? 70}
           sx={{
             borderRadius: 2,
             boxShadow: 2,
@@ -117,6 +135,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
 
       {children}
     </Box>
+
   );
 };
 

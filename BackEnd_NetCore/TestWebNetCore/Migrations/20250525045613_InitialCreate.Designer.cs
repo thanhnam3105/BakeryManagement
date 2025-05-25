@@ -12,7 +12,7 @@ using TestWebNetCore.Data;
 namespace TestWebNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250518081804_InitialCreate")]
+    [Migration("20250525045613_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,21 +31,18 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_branch")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_create")
                         .HasColumnType("text");
 
                     b.Property<string>("cd_customer")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_payment_method")
                         .HasColumnType("text");
 
                     b.Property<string>("cd_staff")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("cd_status")
@@ -69,12 +66,34 @@ namespace TestWebNetCore.Migrations
                     b.Property<DateTime?>("dt_update")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<decimal>("total_amount")
+                    b.Property<decimal?>("total_amount")
                         .HasColumnType("numeric");
 
                     b.HasKey("cd_order");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("TestWebNetCore.Models.OrderDetail", b =>
+                {
+                    b.Property<string>("cd_order")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_order_detail")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_product")
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("quantity")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal?>("unit")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("cd_order", "cd_order_detail");
+
+                    b.ToTable("OrderDetail");
                 });
 
             modelBuilder.Entity("TestWebNetCore.Models.Product", b =>
@@ -95,6 +114,9 @@ namespace TestWebNetCore.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("cd_update")
+                        .HasColumnType("text");
+
+                    b.Property<string>("description")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("dt_create")

@@ -4,21 +4,20 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  TextField,
-  Button,
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  Button
 } from '@mui/material';
 import ApiService from '../../../services/api.services';
-import { paymentMethodOptions, DataCbbProductStatus } from 'config/constant';
+import { DataCbbProductStatus, LABELS_ORDER, DataCbbOrderStatus } from '../../../../config/constant';
 import { ToastService } from '../../../services/toast.service';
 
 interface OrderDialogProps {
   open: boolean;
   onClose: () => void;
-  data?: any; // order có thể là bất kỳ kiểu gì từ backend, có thể thay thế bằng 'any'
+  data?: any;
   onSave: (updatedOrder: any) => void;
 }
 
@@ -30,7 +29,7 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, data, onSave }
 
   useEffect(() => {
     if (data) {
-      setFormData(data); // Chỉ khi có `order` mới set giá trị form
+      setFormData(data);
     }
   }, [data]);
 
@@ -43,40 +42,37 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, data, onSave }
   };
 
   const handleSave = () => {
-    setIsSaving(true); // Đánh dấu đang lưu
-    apiService.apiPut(urlAPI, formData).then((response) => {
+    setIsSaving(true);
+    apiService
+      .apiPut(urlAPI, formData)
+      .then((response) => {
         onSave(response);
-        onClose(); // Đóng dialog sau khi lưu
-        ToastService.success('Lưu dữ liệu thành công!');
-      }).catch((error) => {
-        ToastService.error('Lỗi khi lưu dữ liệu! '+error);
-      }).finally(() => {
+        onClose();
+        ToastService.success(LABELS_ORDER.SUCCESS_UPDATE);
+      })
+      .catch((error) => {
+        ToastService.error(LABELS_ORDER.ERROR_UPDATE + error);
+      })
+      .finally(() => {
         setIsSaving(false);
-        // loadingStore.hide();
-        // toggleSidebar();
       });
   };
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Edit Order</DialogTitle>
+      <DialogTitle>{LABELS_ORDER.DIALOG_TITLE}</DialogTitle>
       <DialogContent>
         <FormControl fullWidth margin="normal">
-          <InputLabel>Status</InputLabel>
-          <Select name="cd_status" value={formData?.status || ''} onChange={handleChange} label="Status">
-            {DataCbbProductStatus.map((status) => (
+          <InputLabel>{LABELS_ORDER.DIALOG_STATUS}</InputLabel>
+          <Select
+            name="cd_status"
+            value={formData?.cd_status || ''}
+            onChange={handleChange}
+            label={LABELS_ORDER.DIALOG_STATUS}
+          >
+            {DataCbbOrderStatus.map((status) => (
               <MenuItem key={status.value} value={status.value}>
                 {status.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <FormControl fullWidth margin="normal">
-          <InputLabel>Payment Method</InputLabel>
-          <Select name="cd_payment_method" value={formData?.payment_method || ''} onChange={handleChange} label="Payment Method">
-            {paymentMethodOptions.map((payment_method) => (
-              <MenuItem key={payment_method.value} value={payment_method.value}>
-                {payment_method.name}
               </MenuItem>
             ))}
           </Select>
@@ -84,10 +80,14 @@ const OrderDialog: React.FC<OrderDialogProps> = ({ open, onClose, data, onSave }
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose} color="primary">
-          Cancel
+          {LABELS_ORDER.BUTTON_CANCEL}
         </Button>
-        <Button onClick={handleSave} color="primary">
-          Save
+        <Button 
+          onClick={handleSave} 
+          color="primary" 
+          disabled={isSaving}
+        >
+          {isSaving ? LABELS_ORDER.BUTTON_SAVING : LABELS_ORDER.BUTTON_SAVE}
         </Button>
       </DialogActions>
     </Dialog>
