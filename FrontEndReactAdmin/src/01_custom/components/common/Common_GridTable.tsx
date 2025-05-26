@@ -1,11 +1,14 @@
 import React from 'react';
-import { Box, Typography, TextField, Stack, IconButton, Button } from '@mui/material';
+import { Box, Typography, TextField, Stack, IconButton, Button, Chip } from '@mui/material';
 import { DataGrid, GridColDef, GridPaginationModel, GridToolbar } from '@mui/x-data-grid';
 import { Edit, Delete, Visibility } from '@mui/icons-material';
 import { v4 as uuidv4 } from 'uuid';
 
 export type ExtendedGridColDef = GridColDef & {
-  formatType?: 'decimal';
+  formatType?: 'decimal' | 'status' | 'image';
+  dataOptions?: { value: string; name: string; color?: string }[];
+  actionEdit?: boolean;
+  actionDelete?: boolean;
 };
 
 interface Common_GridTableProps {
@@ -71,7 +74,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
                 <Edit />
               </IconButton>
             )}
-            {onDeleteClick && (
+            {col.actionDelete && onDeleteClick && (
               <IconButton color="error" onClick={() => onDeleteClick(params.row)}>
                 <Delete />
               </IconButton>
@@ -89,6 +92,24 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
           if (params == null) return '';
           const numValue = Number(params);
           return isNaN(numValue) ? params : numValue.toLocaleString('en-US') + ' VNĐ';
+        }
+      };
+    }
+
+    // Add image formatting for columns with formatType: 'image'
+    if (col.formatType === 'image') {
+      return {
+        ...col,
+        renderCell: (params: any) => <img src={params.value} style={{ width: 60, height: 60, objectFit: 'cover' }} />
+      };
+    }
+
+    if (col.dataOptions) {
+      return {
+        ...col,
+        renderCell: (params: any) => {
+          const option = col.dataOptions?.find((option) => option.value === params.value);
+          return option ? option.name : params.value;
         }
       };
     }
