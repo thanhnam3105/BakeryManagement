@@ -83,6 +83,7 @@ export default function OrderManagement(): JSX.Element {
         open={openDetailDialog}
         onClose={() => setOpenDetailDialog(false)}
         cdOrder={selectedOrderDetail?.cd_order}
+        orderData={selectedOrderDetail}
       />
     </Common_GridTable>
   );
