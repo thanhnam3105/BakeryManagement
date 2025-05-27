@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<SA340>
-    <ma_kengen>
-        <rec cd_kengen="" nm_kengen="" kbn_shori=""/>
-    </ma_kengen>
-    <ma_kinou>
-        <rec nm_kino="" id_gamen="" id_kino="" id_data="" biko="" kbn_shori=""/>
-    </ma_kinou>
-</SA340>

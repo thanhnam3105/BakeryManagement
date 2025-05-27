@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<SA270>
-    <ma_user>
-        <rec id_user="" password="" cd_kengen="" nm_user="" cd_kaisha="" cd_busho="" cd_group="" cd_team="" cd_yakushoku="" kbn_shori=""/>
-    </ma_user>
-    <ma_tantokaisya>
-        <rec id_user="" cd_tantokaisha="" kbn_shori=""/>
-    </ma_tantokaisya>
-</SA270>

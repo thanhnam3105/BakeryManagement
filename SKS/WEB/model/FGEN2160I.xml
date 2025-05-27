@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FGEN2160>
-    <kihon>
-        <rec st_setting="" cd_shain="" nen="" no_eda="" dt_kizitu="" yoryo="" su_iri="" nisugata="" genka="" genka_tani="" baika="" sotei_buturyo="" dt_hatubai="" hanbai_t="" hanabai_k="" keikakuuriage="" keikakurieki="" kuhaku_1="" kuhaku_2="" memo_eigyo="" no_saiyou="" st_kenkyu="" st_seikan="" st_gentyo="" st_kojo="" st_eigyo="" />
-    </kihon>
-    <kihonsub>
-        <rec seq_shisaku="" genka="" genka_tani="" baika="" sotei_buturyo_s="" sotei_buturyo_u="" sotei_buturyo_k="" sotei_buturyo="" dt_hatubai="" hanbai_t="" hanabai_k="" keikakuuriage="" keikakurieki="" kuhaku_1="" kuhaku_2="" chusi="" />
-    </kihonsub>
-</FGEN2160>

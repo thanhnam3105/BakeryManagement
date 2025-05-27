@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QPDATA2ModelStoreContainer" CdmEntityContainer="QPDATA2Entities">
-    <FunctionImportMapping FunctionImportName="sp_shohinkaihatsu_g3_save_202" FunctionName="QPDATA2Model.Store.sp_shohinkaihatsu_g3_save_202" />
-  </EntityContainerMapping>
-</Mapping>

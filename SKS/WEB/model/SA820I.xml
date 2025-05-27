@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 試算確定履歴登録処理  -->
-<SA820>
-    <table>
-        <rec cd_shain="" nen="" no_oi="" sort_rireki="" seq_shisaku=""  nm_sample=""  />
-    </table>
-</SA820>
