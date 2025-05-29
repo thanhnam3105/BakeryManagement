@@ -4,7 +4,7 @@ import { LABELS_ORDER } from '../../../../config/constant';
 import ApiService from '../../../services/api.services';
 import Common_GridTable from '../../../components/common/Common_GridTable';
 import OrderDialog from './OrderDialog';
-import { columns } from './settings/settings-table';
+import { settingTable } from './settings/settings-table';
 import { ToastService } from '../../../services/toast.service';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLoading } from '../../../services/loading.services';
@@ -65,7 +65,7 @@ export default function OrderManagement(): JSX.Element {
     <Common_GridTable
       title={LABELS_ORDER.TITLE}
       rows={filteredRows}
-      columns={columns}
+      columns={settingTable}
       search={search}
       onSearchChange={setSearch}
       paginationModel={paginationModel}
@@ -83,7 +83,6 @@ export default function OrderManagement(): JSX.Element {
         open={openDetailDialog}
         onClose={() => setOpenDetailDialog(false)}
         cdOrder={selectedOrderDetail?.cd_order}
-        orderData={selectedOrderDetail}
       />
     </Common_GridTable>
   );

@@ -51,7 +51,7 @@ export const columns: ExtendedGridColDef[] = [
     field: 'price',
     headerName: TABLE_HEADERS.PRICE,
     width: 130,
-    formatType: 'decimal'
+    formatType: 'currency'
   },
   {
     field: 'cd_category',

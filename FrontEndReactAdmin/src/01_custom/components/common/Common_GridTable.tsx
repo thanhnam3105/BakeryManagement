@@ -3,9 +3,10 @@ import { Box, Typography, TextField, Stack, IconButton, Button, Chip } from '@mu
 import { DataGrid, GridColDef, GridPaginationModel, GridToolbar } from '@mui/x-data-grid';
 import { Edit, Delete, Visibility } from '@mui/icons-material';
 import { v4 as uuidv4 } from 'uuid';
+import { formatDate, formatCurrency } from '../../utils/Common_format';
 
 export type ExtendedGridColDef = GridColDef & {
-  formatType?: 'decimal' | 'status' | 'image';
+  formatType?: 'decimal' | 'status' | 'image' | 'date'| 'currency' | 'index';
   dataOptions?: { value: string; name: string; color?: string }[];
   actionEdit?: boolean;
   actionDelete?: boolean;
@@ -56,7 +57,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
     id: row.id ?? uuidv4()
   }));
 
-  const enhancedColumns = columns.map((col) => {
+  const enhancedColumns: GridColDef[] = columns.map((col) => {
     if (col.field === 'actions' && (onEditClick || onDeleteClick || onViewClick)) {
       return {
         ...col,
@@ -85,7 +86,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
     }
 
     // Add decimal formatting for columns with formatType: 'decimal'
-    if (col.formatType === 'decimal') {
+    if (col.formatType == 'decimal') {
       return {
         ...col,
         valueFormatter: (params: any) => {
@@ -97,7 +98,7 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
     }
 
     // Add image formatting for columns with formatType: 'image'
-    if (col.formatType === 'image') {
+    if (col.formatType == 'image') {
       return {
         ...col,
         renderCell: (params: any) => <img src={params.value} style={{ width: 60, height: 60, objectFit: 'cover' }} />
@@ -110,6 +111,42 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
         renderCell: (params: any) => {
           const option = col.dataOptions?.find((option) => option.value === params.value);
           return option ? option.name : params.value;
+        }
+      };
+    }
+
+    // Add date formatting for columns with formatType: 'date'
+    if (col.formatType == 'date') {
+      return {
+        ...col,
+        valueFormatter: (value: any) => {
+          if (!value) return '';
+          return formatDate(value);
+        }
+      };
+    }
+
+    if (col.formatType == 'currency') {
+      return {
+        ...col,
+        valueFormatter: (value: any) => {
+          if (!value) return '';
+          return formatCurrency(value);
+        }
+      };
+    }
+
+    if (col.formatType == 'index') {
+      return {
+        ...col,
+        sortable: false,
+        filterable: false,
+        align: 'center',
+        headerAlign: 'center',
+        renderCell: (params: any) => {
+          // Lấy số thứ tự dựa trên vị trí hiển thị
+          const rowIndex = params.api.getRowIndexRelativeToVisibleRows(params.id);
+          return rowIndex + 1;
         }
       };
     }

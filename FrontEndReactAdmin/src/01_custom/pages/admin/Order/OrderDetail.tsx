@@ -1,35 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import Common_GridTable, { ExtendedGridColDef } from '../../../components/common/Common_GridTable';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Chip, Box, Typography } from '@mui/material';
 import ApiService from '../../../services/api.services';
 import { useLoading } from '../../../services/loading.services';
 import { ToastService } from '../../../services/toast.service';
 import { LABELS_ORDER } from '../../../../config/constant';
-import formatDate from '../../../utils/formatDate';
+import { formatDate, formatCurrency } from '../../../utils/Common_format';
+import { SettingTableDetail } from './settings/settings-table';
+import { getStatusColor } from '../../../../01_custom/services/common-funtion'
 
-interface OrderDetailItem {
-  cd_order: string;
-  cd_order_detail: string;
-  cd_product: string;
-  quantity: number;
-  price: number;
-  cd_unit: string;
-  id?: string;
-}
-
-interface OrderDetailProps {
+interface OrderDetailParams {
   open: boolean;
   onClose: () => void;
   cdOrder?: string;
-  orderData?: any;
 }
 
-const OrderDetail: React.FC<OrderDetailProps> = ({ open, onClose, cdOrder, orderData }) => {
+const OrderDetail: React.FC<OrderDetailParams> = ({ open, onClose, cdOrder }) => {
   const apiService = new ApiService();
   const urlAPI = 'https://localhost:7031/api/Orders';
   const { showLoading, hideLoading } = useLoading();
 
-  const [orderItems, setOrderItems] = useState<OrderDetailItem[]>([]);
+  const [orderItems, setOrderItems] = useState<any[]>([]);
+  const [orderHeader, setOrderHeader] = useState<any | null>(null);
 
   useEffect(() => {
     if (cdOrder && open) {
@@ -43,85 +35,105 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ open, onClose, cdOrder, order
 
     apiService.apiGet(`${urlAPI}/GetOrderDetails/`, params)
       .then((response) => {
-        const rowsWithId = response.map((item: OrderDetailItem, index: number) => ({
+        const rowsWithId = response.map((item: any, index: number) => ({
           ...item,
           id: `${item.cd_order_detail}-${index}`
         }));
         setOrderItems(rowsWithId);
+        if (rowsWithId.length > 0) {
+          setOrderHeader(rowsWithId[0]);
+        }
       }).catch((error) => {
         ToastService.error(error);
       }).finally(() => {
         hideLoading();
       });
-
   };
 
-  const columns: ExtendedGridColDef[] = [
-    { field: 'cd_order_detail', headerName: 'Mã CT Đơn', flex: 1 },
-    { field: 'cd_product', headerName: 'Mã Bánh', flex: 1 },
-    { field: 'quantity', headerName: 'Số Lượng', flex: 1 },
-    { field: 'price', headerName: 'Đơn gía', flex: 1, formatType: 'decimal' },
-    { 
-      field: 'total_amount', 
-      headerName: 'Thành tiền', 
-      flex: 1, 
-      formatType: 'decimal',
-      // valueGetter: (params: { row: OrderDetailItem }) => {
-      //   return params.row.price * params.row.quantity;
-      // }
-    },
-    { field: 'cd_unit', headerName: 'ĐV tính', flex: 1 }
-  ];
+  const handleClose = () => {
+    setOrderItems([]);
+    setOrderHeader(null);
+    onClose();
+  };
 
   return (
     <Dialog open={open}
       onClose={function (event, reason) {
         if (reason !== 'backdropClick') {
-          onClose();
+          handleClose();
         }
       }}
       fullWidth maxWidth="md" disableEscapeKeyDown>
-      <DialogTitle>{LABELS_ORDER.DETAIL_TITLE} - {cdOrder}</DialogTitle>
-      <DialogContent dividers>
-        {orderData && (
-          <div style={{ marginBottom: '20px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-              <div>
-                <strong>{LABELS_ORDER.CUSTOMER_ID}:</strong> {orderData.cd_customer}
-              </div>
-              <div>
-                <strong>{LABELS_ORDER.STAFF_ID}:</strong> {orderData.cd_staff}
-              </div>
-              <div>
-                <strong>{LABELS_ORDER.ORDER_DATE}:</strong> {formatDate(orderData.dt_order)}
-              </div>
-              <div>
-                <strong>{LABELS_ORDER.DELIVERY_DATE}:</strong> {formatDate(orderData.dt_delivery)}
-              </div>
-              <div>
-                <strong>{LABELS_ORDER.STATUS}:</strong> {orderData.cd_status}
-              </div>
-              <div>
-                <strong>{LABELS_ORDER.TOTAL_AMOUNT}:</strong> {orderData.total_amount?.toLocaleString()}
-              </div>
-              <div style={{ gridColumn: '1 / -1' }}>
-                <strong>{LABELS_ORDER.DELIVERY_ADDRESS}:</strong> {orderData.delivery_address}
-              </div>
-            </div>
-          </div>
-        )}
+      {/* <DialogTitle>{LABELS_ORDER.DETAIL_TITLE} - {cdOrder}</DialogTitle> */}
+      <DialogTitle>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span>{LABELS_ORDER.DETAIL_TITLE} - {cdOrder}</span>
+          <Chip
+            label={orderHeader?.nm_status}
+            color={getStatusColor(orderHeader?.cd_status)}
+            variant="filled"
+            // variant="outlined"
+            sx={{
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              px: 2,
+              py: 1
+            }}
+          />
+        </div>
+      </DialogTitle>
 
+      <DialogContent dividers>
+        {orderHeader && (
+          <Box>
+            <Box
+              display="grid"
+              gridTemplateColumns="repeat(2, 1fr)"
+              gap={2}
+              position="relative"
+            >
+              <Box>
+                <strong>{LABELS_ORDER.CUSTOMER_ID}:</strong> {orderHeader.nm_customer}
+              </Box>
+              <Box>
+                <strong>{LABELS_ORDER.STAFF_ID}:</strong> {orderHeader.nm_staff}
+              </Box>
+              <Box>
+                <strong>{LABELS_ORDER.ORDER_DATE}:</strong> {formatDate(orderHeader.dt_order)}
+              </Box>
+              <Box>
+                <strong>{LABELS_ORDER.PAYMENT_METHOD}:</strong> {orderHeader.nm_payment}
+              </Box>
+              <Box>
+                <strong>{LABELS_ORDER.DELIVERY_DATE}:</strong> {formatDate(orderHeader.dt_delivery)}
+              </Box>
+              <Box>
+                <strong>{LABELS_ORDER.DETAIL_NOTE}:</strong> {orderHeader.notes}
+              </Box>
+              <Box gridColumn="1 / -1">
+                <strong>{LABELS_ORDER.DELIVERY_ADDRESS}:</strong> {orderHeader.delivery_address}
+              </Box>
+            </Box>
+            <Box display="flex" justifyContent="flex-end">
+              <Typography variant="h6" fontWeight="bold">
+                {LABELS_ORDER.TOTAL_AMOUNT}: {formatCurrency(orderHeader.total_amount)}
+              </Typography>
+            </Box>
+          </Box>
+        )}
         <Common_GridTable
           title=""
           rows={orderItems}
-          columns={columns}
+          columns={SettingTableDetail}
           hideSearch
           rowHeight={60}
           tableHeight={300}
         />
+
+
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose} variant="contained" color="primary">
+        <Button onClick={handleClose} variant="contained" color="primary">
           Đóng
         </Button>
       </DialogActions>

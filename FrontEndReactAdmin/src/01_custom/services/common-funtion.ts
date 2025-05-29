@@ -26,3 +26,23 @@ export function convertBlankToNull(value: any): any {
   }
   return value;
 }
+
+
+
+export function getStatusColor(status: string) : any {
+  switch (status) {
+    case '1':
+      return 'info';
+    case '2':
+      return 'info';
+    case '3':
+      return 'warning';
+    case '4':
+      return 'success';
+    case '5':
+      return 'error';
+    default:
+      return 'default';
+  }
+};
+

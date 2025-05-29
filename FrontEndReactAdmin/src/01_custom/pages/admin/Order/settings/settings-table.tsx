@@ -5,7 +5,7 @@ import { Chip, IconButton, Stack } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { ExtendedGridColDef } from '../../../../components/common/Common_GridTable';
 
-export const columns: ExtendedGridColDef[] = [
+export const settingTable: ExtendedGridColDef[] = [
   { 
     field: 'actions', 
     headerName: LABELS_ORDER.ACTIONS, 
@@ -49,18 +49,29 @@ export const columns: ExtendedGridColDef[] = [
     field: 'dt_order', 
     headerName: LABELS_ORDER.ORDER_DATE, 
     width: 120,
+    formatType: 'date'
   },
   { 
     field: 'dt_delivery', 
     headerName: LABELS_ORDER.DELIVERY_DATE, 
     width: 120,
+    formatType: 'date'
   },
  
   { 
     field: 'total_amount', 
     headerName: LABELS_ORDER.TOTAL_AMOUNT, 
     width: 120,
-    formatType: 'decimal'
+    formatType: 'currency'
   },
   { field: 'delivery_address', headerName: LABELS_ORDER.DELIVERY_ADDRESS, flex: 2 }
+];
+
+export const SettingTableDetail: ExtendedGridColDef[] = [
+  { field: 'index', headerName: LABELS_ORDER.DETAIL_INDEX, flex: 0.3, formatType: 'index' },
+  { field: 'image', headerName: LABELS_ORDER.DETAIL_IMAGE, formatType: 'image', flex: 1 },
+  { field: 'nm_product', headerName: LABELS_ORDER.DETAIL_PRODUCT_NAME, flex: 1 },
+  { field: 'nm_quatity_unit', headerName: LABELS_ORDER.DETAIL_QUANTITY, flex: 1 },
+  { field: 'price', headerName: LABELS_ORDER.DETAIL_PRICE, flex: 1, formatType: 'currency' },
+  { field: 'total', headerName: LABELS_ORDER.DETAIL_TOTAL, flex: 1, formatType: 'currency' },
 ];

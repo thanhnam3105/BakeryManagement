@@ -22,6 +22,75 @@ namespace TestWebNetCore.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("TestWebNetCore.Models.Common", b =>
+                {
+                    b.Property<string>("cd_category")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_common")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_create")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_update")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("dt_create")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("dt_update")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool?>("flg_use")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("nm_common")
+                        .HasColumnType("text");
+
+                    b.HasKey("cd_category", "cd_common");
+
+                    b.ToTable("Common");
+                });
+
+            modelBuilder.Entity("TestWebNetCore.Models.Customer", b =>
+                {
+                    b.Property<string>("cd_customer")
+                        .HasColumnType("text");
+
+                    b.Property<string>("address")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_create")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_update")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("dt_create")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("dt_update")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nm_customer")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("phone")
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("points")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("cd_customer");
+
+                    b.ToTable("Customer");
+                });
+
             modelBuilder.Entity("TestWebNetCore.Models.Order", b =>
                 {
                     b.Property<string>("cd_order")
@@ -62,6 +131,9 @@ namespace TestWebNetCore.Migrations
 
                     b.Property<DateTime?>("dt_update")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("notes")
+                        .HasColumnType("text");
 
                     b.Property<decimal?>("total_amount")
                         .HasColumnType("numeric");
@@ -138,6 +210,47 @@ namespace TestWebNetCore.Migrations
                     b.HasKey("cd_product");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("TestWebNetCore.Models.User", b =>
+                {
+                    b.Property<string>("cd_user")
+                        .HasColumnType("text");
+
+                    b.Property<string>("address")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_branch")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_create")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_position")
+                        .HasColumnType("text");
+
+                    b.Property<string>("cd_update")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("dt_create")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("dt_update")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nm_user")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("phone")
+                        .HasColumnType("text");
+
+                    b.HasKey("cd_user");
+
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }

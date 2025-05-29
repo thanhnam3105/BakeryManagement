@@ -79,8 +79,8 @@ export const LABELS_ORDER = {
   SEARCH: 'Tìm kiếm đơn hàng',
   ACTIONS: 'Thao tác',
   ORDER_ID: 'Mã đơn hàng',
-  CUSTOMER_ID: 'Mã khách hàng',
-  STAFF_ID: 'Mã nhân viên',
+  CUSTOMER_ID: 'Khách hàng',
+  STAFF_ID: 'Nhân viên',
   BRANCH_ID: 'Mã chi nhánh',
   ORDER_DATE: 'Ngày đặt hàng',
   DELIVERY_DATE: 'Ngày giao hàng',
@@ -101,14 +101,21 @@ export const LABELS_ORDER = {
   ORDER_DATE: 'Ngày đặt hàng',
   STATUS: 'Trạng thái',
   PRODUCT_LIST: 'Danh sách sản phẩm',
-  TOTAL_PRICE: 'Tổng tiền'
+  TOTAL_PRICE: 'Tổng tiền',
+  DETAIL_INDEX: 'No.',
+  DETAIL_IMAGE: 'Image',
+  DETAIL_PRODUCT_NAME: 'Product',
+  DETAIL_QUANTITY: 'Quantity',
+  DETAIL_PRICE: 'Price',
+  DETAIL_TOTAL: 'Total',
+  DETAIL_NOTE: 'Note',
+  DETAIL_UNIT: 'Unit'
 };
 
 export const paymentMethodOptions = [
   { value: '1', name: 'Credit Card' },
-  { value: '2', name: 'PayPal' },
-  { value: '3', name: 'Bank Transfer' },
-  { value: '4', name: 'Cash on Delivery' }
+  { value: '2', name: 'Bank Transfer' },
+  { value: '3', name: 'Cash on Delivery' }
 ];
 
 export const LBL_PRODUCT_DIALOG = {
