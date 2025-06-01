@@ -72,7 +72,7 @@ export default function OrderManagement(): JSX.Element {
         onPaginationModelChange={setPaginationModel}
         onEditClick={handleEditClick}
         onViewClick={handleViewClick}
-        tableHeight={500}
+        tableHeight={600}
         loading={loading}
       >
         <OrderDialog 
