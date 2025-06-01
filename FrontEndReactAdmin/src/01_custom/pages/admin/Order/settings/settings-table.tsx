@@ -4,6 +4,7 @@ import { LABELS_ORDER, ORDER_STATUS, DataCbbOrderStatus } from '../../../../../c
 import { Chip, IconButton, Stack } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { ExtendedGridColDef } from '../../../../components/common/Common_GridTable';
+import { getStatusColor } from '../../../../services/common-funtion';
 
 export const settingTable: ExtendedGridColDef[] = [
   { 
@@ -24,27 +25,19 @@ export const settingTable: ExtendedGridColDef[] = [
       </Stack>
     )
   },
+  { field: 'cd_order', headerName: LABELS_ORDER.ORDER_ID, width: 120 },
   { 
     field: 'cd_status', 
     headerName: LABELS_ORDER.STATUS, 
     width: 120,
     renderCell: (params: GridRenderCellParams) => {
-      const status = Object.values(ORDER_STATUS).find(
-        (status) => status.value === params.value
-      );
-      
+      const statusColor = getStatusColor(params.row.cd_status);
       return (
-        <Chip 
-          label={status?.name || params.value} 
-          color={status?.color as any || 'default'} 
-          size="small" 
-        />
+        <Chip  variant="outlined" label={params.row.nm_status}  color={statusColor}  size="small"  />
       );
     }
   },
-  { field: 'cd_order', headerName: LABELS_ORDER.ORDER_ID, width: 120 },
-  { field: 'cd_customer', headerName: LABELS_ORDER.CUSTOMER_ID, width: 140 },
-  { field: 'cd_staff', headerName: LABELS_ORDER.STAFF_ID, width: 140 },
+  
   { 
     field: 'dt_order', 
     headerName: LABELS_ORDER.ORDER_DATE, 
@@ -57,6 +50,8 @@ export const settingTable: ExtendedGridColDef[] = [
     width: 120,
     formatType: 'date'
   },
+  { field: 'nm_payment', headerName: LABELS_ORDER.PAYMENT_METHOD, width: 190 },
+  { field: 'nm_customer', headerName: LABELS_ORDER.CUSTOMER_ID, width: 140 },
  
   { 
     field: 'total_amount', 
@@ -64,7 +59,7 @@ export const settingTable: ExtendedGridColDef[] = [
     width: 120,
     formatType: 'currency'
   },
-  { field: 'delivery_address', headerName: LABELS_ORDER.DELIVERY_ADDRESS, flex: 2 }
+  { field: 'notes', headerName: LABELS_ORDER.DETAIL_NOTE, flex: 2 }
 ];
 
 export const SettingTableDetail: ExtendedGridColDef[] = [

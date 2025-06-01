@@ -17,7 +17,7 @@ interface ConfirmContextType {
 export default function ProductManagement() {
   const apiService = new ApiService();
   const urlAPI = 'https://localhost:7031/api/Products';
-  const { showLoading, hideLoading } = useLoading();
+  // const { showLoading, hideLoading } = useLoading();
 
   const [rows, setRows] = useState([]);
   const [search, setSearch] = useState('');
@@ -25,8 +25,9 @@ export default function ProductManagement() {
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { confirm } = useConfirm() as ConfirmContextType;
+  const [loading, setLoading] = useState(false);
 
-  const filteredRows = filterRowsByName(rows, search);
+  const filteredRows = loading ? [] : filterRowsByName(rows, search);
 
   const enhancedColumns = columns.map(col => {
     if (col.field === 'cd_category') {
@@ -40,7 +41,7 @@ export default function ProductManagement() {
   }, []);
 
   function handleSearch() {
-    showLoading();
+    setLoading(true);
     apiService
       .apiGet(urlAPI)
       .then((response) => {
@@ -51,7 +52,9 @@ export default function ProductManagement() {
         console.log(error);
       })
       .finally(() => {
-        hideLoading();
+        // setTimeout(() => {
+          setLoading(false);
+        // }, 100);
       });
   }
 
@@ -88,13 +91,11 @@ export default function ProductManagement() {
 
   return (
     <Common_GridTable
-      title={LBL_PRODUCT.TITLE}
       rows={filteredRows}
       columns={enhancedColumns}
-      search={search}
-      onSearchChange={setSearch}
       paginationModel={paginationModel}
       onPaginationModelChange={setPaginationModel}
+      loading={loading}
       onEditClick={handleEditClick}
       onDeleteClick={handleDeleteClick}
       addButton={{

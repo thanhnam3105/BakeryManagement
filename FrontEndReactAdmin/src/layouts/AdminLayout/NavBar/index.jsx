@@ -51,8 +51,8 @@ const NavBar = () => {
           <i className="feather icon-more-vertical" />
         </Link>
       </div>
-      <div style={{ justifyContent: 'space-between' }} className={collapseClass.join(' ')}>
-        <NavLeft />
+      <div style={{ justifyContent: 'flex-end' }} className={collapseClass.join(' ')}>
+        {/* <NavLeft /> */}
         <NavRight />
       </div>
     </React.Fragment>

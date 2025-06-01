@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Common_GridTable, { ExtendedGridColDef } from '../../../components/common/Common_GridTable';
+import Common_GridTable from '../../../components/common/Common_GridTable';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Chip, Box, Typography } from '@mui/material';
 import ApiService from '../../../services/api.services';
 import { useLoading } from '../../../services/loading.services';
@@ -30,7 +30,7 @@ const OrderDetail: React.FC<OrderDetailParams> = ({ open, onClose, cdOrder }) =>
   }, [cdOrder, open]);
 
   const handleSearch = async (orderCode: string) => {
-    showLoading();
+    // showLoading();
     const params = { cd_order: orderCode };
 
     apiService.apiGet(`${urlAPI}/GetOrderDetails/`, params)
@@ -46,7 +46,7 @@ const OrderDetail: React.FC<OrderDetailParams> = ({ open, onClose, cdOrder }) =>
       }).catch((error) => {
         ToastService.error(error);
       }).finally(() => {
-        hideLoading();
+        // hideLoading();
       });
   };
 
@@ -64,15 +64,14 @@ const OrderDetail: React.FC<OrderDetailParams> = ({ open, onClose, cdOrder }) =>
         }
       }}
       fullWidth maxWidth="md" disableEscapeKeyDown>
-      {/* <DialogTitle>{LABELS_ORDER.DETAIL_TITLE} - {cdOrder}</DialogTitle> */}
       <DialogTitle>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span>{LABELS_ORDER.DETAIL_TITLE} - {cdOrder}</span>
           <Chip
             label={orderHeader?.nm_status}
             color={getStatusColor(orderHeader?.cd_status)}
-            variant="filled"
-            // variant="outlined"
+            // variant="filled"
+            variant="outlined"
             sx={{
               fontSize: '1rem',
               fontWeight: 'bold',
@@ -122,14 +121,12 @@ const OrderDetail: React.FC<OrderDetailParams> = ({ open, onClose, cdOrder }) =>
           </Box>
         )}
         <Common_GridTable
-          title=""
           rows={orderItems}
           columns={SettingTableDetail}
           hideSearch
           rowHeight={60}
           tableHeight={300}
         />
-
 
       </DialogContent>
       <DialogActions>

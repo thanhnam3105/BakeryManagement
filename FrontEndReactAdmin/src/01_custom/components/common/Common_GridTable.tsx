@@ -13,7 +13,6 @@ export type ExtendedGridColDef = GridColDef & {
 };
 
 interface Common_GridTableProps {
-  title: string;
   rows: any[];
   columns: ExtendedGridColDef[];
   search?: string;
@@ -32,15 +31,13 @@ interface Common_GridTableProps {
   hideSearch?: boolean;
   rowHeight?: number;
   tableHeight?: number;
+  loading?: boolean;
 }
 
 
 const Common_GridTable: React.FC<Common_GridTableProps> = ({
-  title,
   rows,
   columns,
-  search,
-  onSearchChange,
   paginationModel,
   onPaginationModelChange,
   onEditClick,
@@ -50,7 +47,8 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
   addButton,
   hideSearch,
   rowHeight,
-  tableHeight
+  tableHeight,
+  loading
 }) => {
   const rowsWithId = rows.map((row) => ({
     ...row,
@@ -155,41 +153,38 @@ const Common_GridTable: React.FC<Common_GridTableProps> = ({
   });
 
   return (
-    <Box p={3}>
-      {title && ( <Typography variant="h4" gutterBottom>{title}</Typography> )}
-
+    <Box>
       {!hideSearch && (
         <Box mb={2} display="flex" justifyContent="space-between" alignItems="center">
-          <TextField
-            label="Search"
-            variant="outlined"
-            value={search}
-            onChange={(e) => onSearchChange?.(e.target.value)}
-            sx={{ width: 300 }}
-          />
           {addButton && (
             <Button variant="contained" startIcon={addButton.icon} onClick={addButton.onClick}> {addButton.label} </Button>
           )}
         </Box>
       )}
 
-      <Box height={tableHeight ?? 500}>
-        <DataGrid
+      <div style={{ height: tableHeight ?? 600 }}>
+        <DataGrid 
+          style={{ width: '100%', height: '100%' }}
           rows={rowsWithId}
           columns={enhancedColumns}
           paginationModel={paginationModel}
           onPaginationModelChange={onPaginationModelChange}
           pageSizeOptions={[5, 10]}
-          disableRowSelectionOnClick
-          slots={{ toolbar: GridToolbar }}
+          loading={loading}
+          // disableRowSelectionOnClick
+          // slots={{ toolbar: GridToolbar }}
           rowHeight={rowHeight ?? 70}
           sx={{
             borderRadius: 2,
             boxShadow: 2,
-            backgroundColor: '#fff'
+            backgroundColor: '#fff',
+            '& .MuiDataGrid-columnHeaderTitle': {
+              fontWeight: '600',
+              fontSize: '13px'
+            }
           }}
         />
-      </Box>
+      </div>
 
       {children}
     </Box>

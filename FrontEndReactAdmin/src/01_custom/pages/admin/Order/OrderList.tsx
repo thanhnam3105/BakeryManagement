@@ -7,20 +7,22 @@ import OrderDialog from './OrderDialog';
 import { settingTable } from './settings/settings-table';
 import { ToastService } from '../../../services/toast.service';
 import 'react-toastify/dist/ReactToastify.css';
-import { useLoading } from '../../../services/loading.services';
+// import { useLoading } from '../../../services/loading.services';
 import OrderDetail from './OrderDetail';
+import { Card, Col } from 'react-bootstrap';
+import Common_Card from '01_custom/components/common/Common_Card';
 
 export default function OrderManagement(): JSX.Element {
   const apiService = new ApiService();
   const urlAPI = 'https://localhost:7031/api/Orders';
 
   const [rows, setRows] = useState<any[]>([]);
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({ page: 0, pageSize: 5 });
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedOrder, setSelectedData] = useState<any>(null);
-  const { showLoading, hideLoading } = useLoading();
-  const filteredRows = filterRowsByOrderId(rows, search);
+  // const { showLoading, hideLoading } = useLoading();
+  const [loading, setLoading] = useState(false);
   const [openDetailDialog, setOpenDetailDialog] = useState(false);
   const [selectedOrderDetail, setSelectedOrderDetail] = useState<any>(null);
 
@@ -29,17 +31,14 @@ export default function OrderManagement(): JSX.Element {
   }, []);
 
   function handleSearch() {
-    showLoading();
-    apiService
-      .apiGet(urlAPI)
+    setLoading(true);
+    apiService.apiGet(urlAPI)
       .then((response) => {
-        setRows(response);
-      })
-      .catch((error) => {
+          setRows(response);
+      }).catch((error) => {
         ToastService.error(error);
-      })
-      .finally(() => {
-        hideLoading();
+      }).finally(() => {
+          setLoading(false);
       });
   }
 
@@ -52,38 +51,42 @@ export default function OrderManagement(): JSX.Element {
     handleSearch(); // Refresh the list after update
   }
 
-  function filterRowsByOrderId(rows: any[], search: string) {
-    return rows.filter((row) => row.cd_order?.toLowerCase().includes(search.toLowerCase()));
-  }
-
   function handleViewClick(order: any) {
     setSelectedOrderDetail(order);
     setOpenDetailDialog(true);
   }
 
   return (
-    <Common_GridTable
-      title={LABELS_ORDER.TITLE}
-      rows={filteredRows}
-      columns={settingTable}
-      search={search}
-      onSearchChange={setSearch}
-      paginationModel={paginationModel}
-      onPaginationModelChange={setPaginationModel}
-      onEditClick={handleEditClick}
-      onViewClick={handleViewClick}
-    >
-      <OrderDialog 
-        open={openDialog} 
-        onClose={() => setOpenDialog(false)} 
-        data={selectedOrder} 
-        onSave={handleSave} 
-      />
-      <OrderDetail
-        open={openDetailDialog}
-        onClose={() => setOpenDetailDialog(false)}
-        cdOrder={selectedOrderDetail?.cd_order}
-      />
-    </Common_GridTable>
+    <>
+      <div className='row'>
+        <Common_Card title="Chờ duyệt" value={10} percentage={10} icon="fa-solid fa-chart-line" color="primary" />
+        <Common_Card title="Đang giao hàng" value={2} percentage={10} icon="fa-solid fa-chart-line" color="primary" />
+        <Common_Card title="Hoàn thành" value={10} percentage={10} icon="fa-solid fa-chart-line" color="primary" />
+        <Common_Card title="Đã hủy" value={1} percentage={10} icon="fa-solid fa-chart-line" color="primary" />
+      </div>
+
+      <Common_GridTable
+        rows={rows}
+        columns={settingTable}
+        paginationModel={paginationModel}
+        onPaginationModelChange={setPaginationModel}
+        onEditClick={handleEditClick}
+        onViewClick={handleViewClick}
+        tableHeight={500}
+        loading={loading}
+      >
+        <OrderDialog 
+          open={openDialog} 
+          onClose={() => setOpenDialog(false)} 
+          data={selectedOrder} 
+          onSave={handleSave} 
+        />
+        <OrderDetail
+          open={openDetailDialog}
+          onClose={() => setOpenDetailDialog(false)}
+          cdOrder={selectedOrderDetail?.cd_order}
+        />
+      </Common_GridTable>
+    </>
   );
 }
