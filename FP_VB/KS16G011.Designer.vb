@@ -46,7 +46,7 @@
         '
         Me.cmdCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmdCancel.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdCancel.Font = New System.Drawing.Font("MS Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cmdCancel.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdCancel.Location = New System.Drawing.Point(357, 210)
         Me.cmdCancel.Name = "cmdCancel"
@@ -60,7 +60,7 @@
         '
         Me.cmdExecute.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmdExecute.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExecute.Font = New System.Drawing.Font("MS Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cmdExecute.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmdExecute.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdExecute.Location = New System.Drawing.Point(253, 210)
         Me.cmdExecute.Name = "cmdExecute"
@@ -103,7 +103,7 @@
         Me.LblTitol.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.LblTitol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.LblTitol.Cursor = System.Windows.Forms.Cursors.Default
-        Me.LblTitol.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.LblTitol.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.LblTitol.ForeColor = System.Drawing.Color.White
         Me.LblTitol.Location = New System.Drawing.Point(59, 22)
         Me.LblTitol.Name = "LblTitol"
@@ -118,7 +118,7 @@
         Me.Frame2.BackColor = System.Drawing.Color.White
         Me.Frame2.Controls.Add(Me.optMaedaoshi)
         Me.Frame2.Controls.Add(Me.optKurikoshi)
-        Me.Frame2.Font = New System.Drawing.Font("MS Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Frame2.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Frame2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Frame2.Location = New System.Drawing.Point(240, 112)
         Me.Frame2.Name = "Frame2"
@@ -133,7 +133,7 @@
         Me.optMaedaoshi.AutoSize = True
         Me.optMaedaoshi.BackColor = System.Drawing.Color.White
         Me.optMaedaoshi.Cursor = System.Windows.Forms.Cursors.Default
-        Me.optMaedaoshi.Font = New System.Drawing.Font("MS Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.optMaedaoshi.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.optMaedaoshi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.optMaedaoshi.Location = New System.Drawing.Point(9, 19)
         Me.optMaedaoshi.Name = "optMaedaoshi"
@@ -149,7 +149,7 @@
         Me.optKurikoshi.AutoSize = True
         Me.optKurikoshi.BackColor = System.Drawing.Color.White
         Me.optKurikoshi.Cursor = System.Windows.Forms.Cursors.Default
-        Me.optKurikoshi.Font = New System.Drawing.Font("MS Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.optKurikoshi.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.optKurikoshi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.optKurikoshi.Location = New System.Drawing.Point(9, 43)
         Me.optKurikoshi.Name = "optKurikoshi"
@@ -165,7 +165,7 @@
         Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.ChMaeshori)
         Me.GroupBox1.Controls.Add(Me.ChShikakarihin)
-        Me.GroupBox1.Font = New System.Drawing.Font("MS Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("ÇlÇr ÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(126, 112)
         Me.GroupBox1.Name = "GroupBox1"
@@ -179,7 +179,7 @@
         '
         Me.ChMaeshori.BackColor = System.Drawing.Color.White
         Me.ChMaeshori.Cursor = System.Windows.Forms.Cursors.Default
-        Me.ChMaeshori.Font = New System.Drawing.Font("MS PGothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.ChMaeshori.Font = New System.Drawing.Font("ÇlÇr ÇoÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.ChMaeshori.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ChMaeshori.Location = New System.Drawing.Point(9, 44)
         Me.ChMaeshori.Name = "ChMaeshori"
@@ -193,7 +193,7 @@
         '
         Me.ChShikakarihin.BackColor = System.Drawing.Color.White
         Me.ChShikakarihin.Cursor = System.Windows.Forms.Cursors.Default
-        Me.ChShikakarihin.Font = New System.Drawing.Font("MS PGothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.ChShikakarihin.Font = New System.Drawing.Font("ÇlÇr ÇoÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.ChShikakarihin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ChShikakarihin.Location = New System.Drawing.Point(9, 18)
         Me.ChShikakarihin.Name = "ChShikakarihin"
@@ -217,7 +217,7 @@
         Me.Controls.Add(Me.cmdExecute)
         Me.Controls.Add(Me.Label3)
         Me.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Font = New System.Drawing.Font("MS PGothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Font = New System.Drawing.Font("ÇlÇr ÇoÉSÉVÉbÉN", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Location = New System.Drawing.Point(3, 22)
         Me.MaximizeBox = False

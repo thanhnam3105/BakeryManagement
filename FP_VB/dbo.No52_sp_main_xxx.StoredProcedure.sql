@@ -1,4 +1,5 @@
-use NMACSSET02_20084
+--use NMACS_SYS_2025_20084
+use NMACSSYU25_2025_20084	--MAIN
 --DROP PROCEDURE [dbo].[sp_update_xxx]
 GO
 SET ANSI_NULLS OFF
@@ -18,10 +19,10 @@ GO
 DECLARE
 --CREATE PROCEDURE [dbo].[sp_update_xxx]
 	@dt_seizo			DATE	='2025-08-06'	-- 仕込日
-	, @shikakari	INT						-- 仕掛品
-	, @maeshori	INT						-- 前処理品
+	, @shikakari		INT						-- 仕掛品
+	, @maeshori			INT						-- 前処理品
 	, @maedaoshi		INT						-- 前倒し
-	, @kurikosi		INT						-- 繰越し
+	, @kurikosi			INT						-- 繰越し
 --AS
 
 DECLARE @errCode	INT
@@ -66,6 +67,7 @@ BEGIN
 
 	LEFT JOIN ma_haigo_maedaoshi mhm
 	ON ths.cd_haigo = mhm.cd_haigo
+
 
 	WHERE
 		CAST(ths.dt_seizo AS DATE) = @dt_seizo

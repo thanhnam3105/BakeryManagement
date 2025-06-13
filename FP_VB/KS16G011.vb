@@ -23,8 +23,8 @@ Friend Class frmKS16G011
     Dim m_strSetDd As String = ""
     Dim m_Return As Short
 
-    Dim chkShikakarihin As Boolean
-    Dim chkMaeshori As Boolean
+    Dim chkShikakarihin As Short
+    Dim chkMaeshori As Short
     Dim rbMaedaoshi As Short = 0
     Dim rbKurikosi As Short = 0
     Dim strDtSeizo As String = ""
@@ -238,7 +238,6 @@ Friend Class frmKS16G011
 
         '仕込日FROM日がシステム日付以降であること
         If CInt(varDaySet) < CInt(varToday) Then '本日より以前はコピー不可
-            'g_ShowMsgBox("KK2032") 'エラーメッセージを表示
             g_ShowMsgBox("KK2016") 'エラーメッセージを表示
             Exit Function
         End If
@@ -275,7 +274,12 @@ Friend Class frmKS16G011
             Exit Sub
         End If
 
-        Call g_ExecBeginTrans() 'BeginTranceを実行
+        Dim rtn As Short
+
+        rtn = g_ShowMsgBox("KK3011")
+        If rtn = MsgBoxResult.No Then
+            Exit Sub
+        End If
 
         'Call m_Update()
         If (m_Update() = False) Then
@@ -295,21 +299,9 @@ Friend Class frmKS16G011
             Exit Sub '新規・更新中に失敗
         End If
 
-        'Call g_ExecCommitTrans() 'コミット処理
+
         'Call Me.Hide()
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
 
     '********************************************************************************
     ' 関数名  : m_chkValidDate
@@ -451,17 +443,26 @@ Friend Class frmKS16G011
 
 
     Private Function m_SearchData() As Decimal
+
         Dim adoParam As Parameter 'パラメーターオブジェクト
         Dim adoCommand As Command 'コマンドオブジェクト
         Dim adoResult As Recordset = Nothing  'レコードセットオブジェクト
 
+        '■DB接続
+        If (g_ConnectDB() = False) Then
+            'ＤＢ接続失敗
+            Call g_WriteLog(mc_strProgramId, "m_SearchData()", gc_strEvMsgConnect, gc_strLogStatusErr) 'ログ出力
+            Call g_ShowMsgBox("CM4004") 'エラー表示
+            Exit Function
+        End If
+
         m_SearchData = 0 '処理結果初期値（失敗）を設定
         adoCommand = g_GetCommand() 'コマンドオブジェクト設定
 
-        Call g_SetSpName(mc_strUpdateSPName) '呼び出すＳＰの設定
+        Call g_SetSpName(mc_strSearchSPName) '呼び出すＳＰの設定
 
         '検索条件（日付）設定
-        adoParam = adoCommand.CreateParameter("dt_seizo", DbType.String, ParameterDirectionEnum.adParamInput, 10, strDtSeizo)
+        adoParam = adoCommand.CreateParameter("dt_seizo", DbType.String, ParameterDirectionEnum.adParamInput, 8, strDtSeizo)
         Call g_SetParam(adoParam) '検索条件をコマンドに設定設定
 
         '仕掛品
@@ -491,6 +492,10 @@ Friend Class frmKS16G011
 
         End If
 
+        If (adoResult.RecordCount > 0) Then
+            m_SearchData = adoResult.Fields("cnt")
+        End If
+
         Call g_CloseResult(adoResult) 'レコードセットを閉じる
         Call g_CloseCommand()
         If (g_CloseDB() = False) Then 'ＤＢ切断に失敗
@@ -501,13 +506,6 @@ Friend Class frmKS16G011
             Call g_ShowMsgBox("CM4005") ' エラー表示
             Exit Function
         End If
-
-        Do Until adoResult.EOF
-            If (IsNull(adoResult.Fields("cnt"))) Then
-                m_SearchData = adoResult.Fields("cnt")
-            End If
-        Loop
-
     End Function
     '********************************************************************************
     ' 関数名  : m_Update
@@ -525,8 +523,18 @@ Friend Class frmKS16G011
         Dim adoCommand As Command 'コマンドオブジェクト
         Dim adoResult As Recordset = Nothing  'レコードセットオブジェクト
 
+        '■DB接続
+        If (g_ConnectDB() = False) Then
+            'ＤＢ接続失敗
+            Call g_WriteLog(mc_strProgramId, "m_Update()", gc_strEvMsgConnect, gc_strLogStatusErr) 'ログ出力
+            Call g_ShowMsgBox("CM4004") 'エラー表示
+            Exit Function
+        End If
+
         m_Update = False '処理結果初期値（失敗）を設定
         adoCommand = g_GetCommand() 'コマンドオブジェクト設定
+
+        Call g_ExecBeginTrans() 'BeginTranceを実行
 
         Call g_SetSpName(mc_strUpdateSPName) '呼び出すＳＰの設定
 
@@ -574,6 +582,8 @@ Friend Class frmKS16G011
 
         m_Update = True ' 処理結果初期値（成功）を設定
 
+        Call g_ExecCommitTrans() 'コミット処理
+
     End Function
 
     '********************************************************************************
@@ -596,4 +606,7 @@ Friend Class frmKS16G011
         Call g_CloseDB() 'ＤＢ切断
 
     End Sub
+
+
+
 End Class

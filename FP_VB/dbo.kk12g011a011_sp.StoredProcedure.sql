@@ -15,7 +15,7 @@ GO
 *****************************************************/
 
 CREATE PROCEDURE [dbo].[kk12g011a011_sp]
-	@dt_seizo			DATE		-- 仕込日
+	@dt_seizo			VARCHAR(8)	-- 仕込日
 	, @shikakari		INT			-- 仕掛品
 	, @maeshori			INT			-- 前処理品
 	, @maedaoshi		INT			-- 前倒し
@@ -32,7 +32,7 @@ BEGIN
 		ON ths.cd_haigo = mhm.cd_haigo
 	WHERE 
 		@shikakari = 1
-		AND ths.dt_seizo = @dt_seizo
+		AND ths.dt_seizo = CONVERT(VARCHAR, CONVERT(DATETIME,@dt_seizo),112)
 		AND (
 			(@maedaoshi = 1 
 			 AND ths.flg_maedaoshi_sumi = 0 
@@ -51,7 +51,7 @@ BEGIN
 		ON thm.cd_maeshori = mmm.cd_maeshori
 	WHERE 
 		@maeshori = 1
-		AND thm.dt_seizo = @dt_seizo
+		AND thm.dt_seizo = CONVERT(VARCHAR, CONVERT(DATETIME,@dt_seizo),112)
 		AND (
 			(@maedaoshi = 1 
 			 AND thm.flg_maedaoshi_sumi = 0 
