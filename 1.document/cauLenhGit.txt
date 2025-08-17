@@ -39,5 +39,3 @@ git push origin main
 test 1708
 
 tạo myHome
-update myhome lần 2
-tạo myCompany
