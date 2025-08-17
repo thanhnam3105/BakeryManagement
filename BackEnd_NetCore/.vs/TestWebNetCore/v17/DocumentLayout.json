@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB4AF88-A731-4B70-96E5-A7607E3B9320}|TestWebNetCore\\TestWebNetCore.csproj|e:\\01.source\\01.mysource\\01.test\\1.bakerymanagement\\bakerymanagement\\backend_netcore\\testwebnetcore\\controller\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFB4AF88-A731-4B70-96E5-A7607E3B9320}|TestWebNetCore\\TestWebNetCore.csproj|solutionrelative:testwebnetcore\\controller\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB4AF88-A731-4B70-96E5-A7607E3B9320}|TestWebNetCore\\TestWebNetCore.csproj|e:\\01.source\\01.mysource\\01.test\\1.bakerymanagement\\bakerymanagement\\backend_netcore\\testwebnetcore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AFB4AF88-A731-4B70-96E5-A7607E3B9320}|TestWebNetCore\\TestWebNetCore.csproj|solutionrelative:testwebnetcore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB4AF88-A731-4B70-96E5-A7607E3B9320}|TestWebNetCore\\TestWebNetCore.csproj|e:\\01.source\\01.mysource\\01.test\\1.bakerymanagement\\bakerymanagement\\backend_netcore\\testwebnetcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFB4AF88-A731-4B70-96E5-A7607E3B9320}|TestWebNetCore\\TestWebNetCore.csproj|solutionrelative:testwebnetcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\TestWebNetCore\\appsettings.json",
+              "RelativeDocumentMoniker": "TestWebNetCore\\appsettings.json",
+              "ToolTip": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\TestWebNetCore\\appsettings.json",
+              "RelativeToolTip": "TestWebNetCore\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-17T13:34:25.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\TestWebNetCore\\Program.cs",
+              "RelativeDocumentMoniker": "TestWebNetCore\\Program.cs",
+              "ToolTip": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\TestWebNetCore\\Program.cs",
+              "RelativeToolTip": "TestWebNetCore\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T13:34:24.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\TestWebNetCore\\Controller\\ProductsController.cs",
+              "RelativeDocumentMoniker": "TestWebNetCore\\Controller\\ProductsController.cs",
+              "ToolTip": "E:\\01.SOURCE\\01.MySource\\01.Test\\1.BakeryManagement\\BakeryManagement\\BackEnd_NetCore\\TestWebNetCore\\Controller\\ProductsController.cs",
+              "RelativeToolTip": "TestWebNetCore\\Controller\\ProductsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T13:31:55.286Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
