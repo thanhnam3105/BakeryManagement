@@ -34,8 +34,3 @@ B1:
 	git merge home
 
 git push origin main
-
-
-test 1708
-
-tạo myHome
