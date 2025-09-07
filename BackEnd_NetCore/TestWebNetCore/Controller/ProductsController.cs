@@ -28,17 +28,11 @@ namespace MyApi.Controllers
 
         }
 
-        [HttpGet("GetProducts-Guest")]
-        //[BakeryAuthorize("Guest", "Allowed")]
-        [Authorize]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts_Guest()
-        {
-            return await _context.Products.ToListAsync();
-        }
-
-        [HttpGet("GetProducts-User")]
-        [Authorize(Roles = AppConstants.AdminRole + "," + AppConstants.ManagerRole)]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts_User()
+        //[HttpGet("GetProducts-Guest")]
+        //[Authorize]
+        [HttpGet]
+        [Authorize(Roles = AppConstants.AdminRole + "," + AppConstants.ManagerRole)] // only Admin or Manager can be use
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
         }
@@ -58,11 +52,9 @@ namespace MyApi.Controllers
                 _context.Products.Add(values);
                 await _context.SaveChangesAsync();
 
-                // TODO: Add any additional related logic here, e.g., logging, audit trails, etc.
-
                 await transaction.CommitAsync();
 
-                return CreatedAtAction(nameof(GetProducts_User), new { id = values.cd_product }, values);
+                return CreatedAtAction(nameof(GetProducts), new { id = values.cd_product }, values);
             }
             catch (DbUpdateException dbEx)
             {
@@ -86,7 +78,7 @@ namespace MyApi.Controllers
         {
             _context.Products.Update(data);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetProducts_User), new { id = data.cd_product }, data);
+            return CreatedAtAction(nameof(GetProducts), new { id = data.cd_product }, data);
         }
 
         [HttpDelete]

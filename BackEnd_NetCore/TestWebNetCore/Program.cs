@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //thiết lập Authentication JWT - START
 // Đọc thông số JWT từ cấu hình
-var jwtSettings = builder.Configuration.GetSection("JwtTEST");
+var jwtSettings = builder.Configuration.GetSection("JwtConfig");
 
 builder.Services.AddAuthentication(options =>
 {
@@ -36,6 +36,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 //thiết lập Authentication JWT - END
 
+#region Authentication cookie
 //thiết lập Authentication cookie
 //builder.Services.AddAuthentication(options =>
 //{
@@ -50,6 +51,8 @@ builder.Services.AddAuthorization();
 //    options.LoginPath = "/api/authen/unauthorized";
 //    options.LogoutPath = "/api/authen/logout";
 //});
+#endregion
+
 
 // nam.pt - Cấu hình DbContext sử dụng PostgreSQL - START
 // Bật CORS

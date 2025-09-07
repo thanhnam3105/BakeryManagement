@@ -46,7 +46,7 @@ namespace TestWebNetCore.Controller
 
         private string GenerateJwtToken(LoginRequest userLogin)
         {
-            var jwtSettings = _configuration.GetSection("JwtTEST");
+            var jwtSettings = _configuration.GetSection("JwtConfig");
             var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);
 
             // Ví dụ: user có nhiều quyền
