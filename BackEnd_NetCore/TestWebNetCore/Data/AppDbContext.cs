@@ -12,6 +12,7 @@ namespace TestWebNetCore.Data
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Common> Common { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Roles> Roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,7 +22,7 @@ namespace TestWebNetCore.Data
             modelBuilder.Entity<Customer>().HasKey(od => new { od.cd_customer });
             modelBuilder.Entity<Common>().HasKey(od => new { od.cd_category, od.cd_common });
             modelBuilder.Entity<User>().HasKey(od => new { od.cd_user});
-
+            modelBuilder.Entity<Roles>().HasKey(od => new { od.cd_role });
             base.OnModelCreating(modelBuilder);
         }
     }

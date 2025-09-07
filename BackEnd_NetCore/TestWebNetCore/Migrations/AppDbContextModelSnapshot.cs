@@ -212,6 +212,41 @@ namespace TestWebNetCore.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("TestWebNetCore.Models.Roles", b =>
+                {
+                    b.Property<int>("cd_role")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("cd_role"));
+
+                    b.Property<string>("cd_create")
+                        .HasColumnType("text");
+
+                    b.Property<int>("cd_group")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("cd_update")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("dt_create")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("dt_update")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("flg_delete")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("nm_role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("cd_role");
+
+                    b.ToTable("Roles");
+                });
+
             modelBuilder.Entity("TestWebNetCore.Models.User", b =>
                 {
                     b.Property<string>("cd_user")
@@ -229,6 +264,9 @@ namespace TestWebNetCore.Migrations
                     b.Property<string>("cd_position")
                         .HasColumnType("text");
 
+                    b.Property<int>("cd_role")
+                        .HasColumnType("integer");
+
                     b.Property<string>("cd_update")
                         .HasColumnType("text");
 
@@ -241,7 +279,14 @@ namespace TestWebNetCore.Migrations
                     b.Property<string>("email")
                         .HasColumnType("text");
 
+                    b.Property<int>("flg_delete")
+                        .HasColumnType("integer");
+
                     b.Property<string>("nm_user")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("password")
                         .IsRequired()
                         .HasColumnType("text");
 

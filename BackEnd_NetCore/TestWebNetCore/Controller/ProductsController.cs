@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using System.Data.Common;
 using System.Net;
+using TestWebNetCore.Controller;
 using TestWebNetCore.Data;
 using TestWebNetCore.Models;
 using TestWebNetCore.Utilities;
@@ -13,6 +15,7 @@ namespace MyApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class ProductsController : ControllerBase
     {
         private readonly ILogger<ProductsController> _logger;
@@ -25,8 +28,17 @@ namespace MyApi.Controllers
 
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        [HttpGet("GetProducts-Guest")]
+        //[BakeryAuthorize("Guest", "Allowed")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts_Guest()
+        {
+            return await _context.Products.ToListAsync();
+        }
+
+        [HttpGet("GetProducts-User")]
+        [Authorize(Roles = AppConstants.AdminRole + "," + AppConstants.ManagerRole)]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts_User()
         {
             return await _context.Products.ToListAsync();
         }
@@ -50,7 +62,7 @@ namespace MyApi.Controllers
 
                 await transaction.CommitAsync();
 
-                return CreatedAtAction(nameof(GetProducts), new { id = values.cd_product }, values);
+                return CreatedAtAction(nameof(GetProducts_User), new { id = values.cd_product }, values);
             }
             catch (DbUpdateException dbEx)
             {
@@ -74,7 +86,7 @@ namespace MyApi.Controllers
         {
             _context.Products.Update(data);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetProducts), new { id = data.cd_product }, data);
+            return CreatedAtAction(nameof(GetProducts_User), new { id = data.cd_product }, data);
         }
 
         [HttpDelete]
